@@ -1,0 +1,4 @@
+# TODO: Delete this file
+
+All css files goes to this directory
+In jsp ==>> <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
