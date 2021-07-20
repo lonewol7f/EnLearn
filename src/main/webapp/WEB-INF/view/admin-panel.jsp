@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?3942">
     <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?1901">

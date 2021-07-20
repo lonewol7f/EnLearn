@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?1465">
     <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?3550">
@@ -88,7 +88,7 @@
                                     <a href="portal.jsp" class="nav-link">Portal</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="video-page.jsp" class="nav-link">video-page</a>
+                                    <a href="${pageContext.request.contextPath}/courses/videos" class="nav-link">video-page</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="profile-page-student.jsp" class="nav-link">profile-page-student</a>
@@ -112,7 +112,7 @@
                                     <a href="marks-and-access.jsp" class="a-btn nav-link">marks-and-access</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="notification-view.jsp" class="a-btn nav-link">notification-view</a>
+                                    <a href="${pageContext.request.contextPath}/users/teachers/notifications" class="a-btn nav-link">notification-view</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="admin-panel.jsp" class="a-btn nav-link">admin-panel</a>
