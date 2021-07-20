@@ -14,13 +14,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?4767">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?2158">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?3273">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?4767">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css?2158">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?3273">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>video-page</title>
@@ -48,14 +48,14 @@
             <div class="row">
                 <div class="col">
                     <nav class="navbar row navbar-expand-md navbar-light" role="navigation">
-                        <a class="navbar-brand" href="index.jsp"><img src="../../resources/img/logo.png" alt="logo" /></a>
+                        <a class="navbar-brand" href="index.jsp"><img src="${pageContext.request.contextPath}/resources/img/logo.png" alt="logo" /></a>
                         <button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-36863" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse navbar-36863 special-dropdown-nav  fullscreen-nav open-down">
                             <ul class="site-navigation nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="index.jsp" class="nav-link">Home</a>
+                                    <a href="${pageContext.request.contextPath}/" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="login.jsp" class="nav-link">login</a>
@@ -88,7 +88,7 @@
                                     <a href="portal.jsp" class="nav-link">Portal</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="video-page.jsp" class="nav-link">video-page</a>
+                                    <a href="${pageContext.request.contextPath}/courses/videos" class="nav-link">video-page</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="profile-page-student.jsp" class="nav-link">profile-page-student</a>
@@ -112,7 +112,7 @@
                                     <a href="marks-and-access.jsp" class="a-btn nav-link">marks-and-access</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="notification-view.jsp" class="a-btn nav-link">notification-view</a>
+                                    <a href="${pageContext.request.contextPath}/users/teachers/notifications" class="a-btn nav-link">notification-view</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="admin-panel.jsp" class="a-btn nav-link">admin-panel</a>
@@ -132,7 +132,7 @@
             <div class="row">
                 <div class="col">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item lazyload" src="../../resources/img/lazyload-ph.png" data-src="https://www.youtube.com/embed/kn271kr_ks0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        <iframe class="embed-responsive-item lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="https://www.youtube.com/embed/kn271kr_ks0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                                     <div class="col">
                                         <div class="row">
                                             <div class="col-lg-4">
-                                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-placeholder-us-style lazyload" alt="placeholder user" />
+                                                <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-placeholder-us-style lazyload" alt="placeholder user" />
                                             </div>
                                             <div class="col offset-lg-0">
                                                 <h4 class="mg-md">
@@ -304,7 +304,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
                                     </div>
                                     <div class="col-lg-9">
                                         <h3 class="mg-md">
@@ -350,7 +350,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
                                     </div>
                                     <div class="col-lg-9">
                                         <h3 class="mg-md">
@@ -378,7 +378,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-style lazyload" alt="placeholder user" />
                                     </div>
                                     <div class="col-lg-9">
                                         <h3 class="mg-md">
@@ -458,7 +458,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="placeholder user" />
+                                        <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="placeholder user" />
                                     </div>
                                     <div class="col">
                                         <h3 class="mg-md">
@@ -555,10 +555,10 @@
 
 
 <!-- Additional JS -->
-<script src="../../resources/js/jquery.js?8669"></script>
-<script src="../../resources/js/bootstrap.bundle.js?9765"></script>
-<script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
+<script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
+<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
 
 </body>
