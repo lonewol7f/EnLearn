@@ -112,7 +112,7 @@
                                     <a href="marks-and-access.jsp" class="a-btn nav-link">marks-and-access</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="${pageContext.request.contextPath}/users/teachers/notifications" class="a-btn nav-link">notification-view</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/notifications" class="a-btn nav-link">notification-view</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="admin-panel.jsp" class="a-btn nav-link">admin-panel</a>
@@ -198,7 +198,7 @@
                                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
                                         </p>
                                         <div class="text-center">
-                                            <a href="index.jsp" class="btn btn-d btn-lg btn-58-style">Button</a>
+                                            <a href="${pageContext.request.contextPath}/" class="btn btn-d btn-lg btn-58-style">Button</a>
                                         </div>
                                     </div>
                                 </div>

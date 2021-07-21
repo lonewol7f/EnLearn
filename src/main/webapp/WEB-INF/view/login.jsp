@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <a href="index.jsp" class="btn btn-lg go-to-home btn-wire">Go Back</a>
+                    <a href="${pageContext.request.contextPath}/" class="btn btn-lg go-to-home btn-wire">Go Back</a>
                     <div id="login-slides" class="carousel slide" data-ride="carousel" data-interval="false">
                         <ol class="carousel-indicators hide-indicators">
                             <li data-target="#login-slides" data-slide-to="0" class="active">
