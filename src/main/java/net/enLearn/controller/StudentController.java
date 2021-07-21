@@ -11,15 +11,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/students")
+public class StudentController {
 
     @Autowired
     private Logger logger;
 
-    @GetMapping("/teachers/notifications")
-    public String showNotificationPage() {
-        return "notification-view";
+    @GetMapping("")
+    public String showStudentProfilePage() {
+        return "profile-page-student";
+    }
+
+    @GetMapping("/register")
+    public String showStudentRegisterPage() {
+        return "register-student";
     }
 
 }
