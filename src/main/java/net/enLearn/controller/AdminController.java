@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by Kalana on 20/07/2021
+ * Created by Kalana on 21/07/2021
  */
 
 @Controller
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/admins")
+public class AdminController {
 
     @Autowired
     private Logger logger;
 
-    @GetMapping("/teachers/notifications")
-    public String showNotificationPage() {
-        return "notification-view";
+    @GetMapping("")
+    public String showAdminPanel() {
+        return "admin-panel";
     }
 
 }

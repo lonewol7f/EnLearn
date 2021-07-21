@@ -48,14 +48,14 @@
             <div class="row">
                 <div class="col">
                     <nav class="navbar row navbar-expand-md navbar-light" role="navigation">
-                        <a class="navbar-brand" href="index.jsp"><img src="../../resources/img/logo.png" alt="logo" /></a>
+                        <a class="navbar-brand" href="${pageContext.request.contextPath}/"><img src="../../resources/img/logo.png" alt="logo" /></a>
                         <button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-36863" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse navbar-36863 special-dropdown-nav  fullscreen-nav open-down">
                             <ul class="site-navigation nav navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a href="index.jsp" class="nav-link">Home</a>
+                                    <a href="${pageContext.request.contextPath}/" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="login.jsp" class="nav-link">login</a>

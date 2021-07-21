@@ -58,64 +58,64 @@
                                     <a href="${pageContext.request.contextPath}/" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="login.jsp" class="nav-link">login</a>
+                                    <a href="${pageContext.request.contextPath}/login" class="nav-link">login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-course.jsp" class="nav-link">add-course</a>
+                                    <a href="${pageContext.request.contextPath}/courses/add-courses" class="nav-link">add-course</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-video.jsp" class="nav-link">add video</a>
+                                    <a href="${pageContext.request.contextPath}/courses/add-videos" class="nav-link">add video</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="add-quiz.jsp" class="nav-link">add-quiz</a>
+                                    <a href="${pageContext.request.contextPath}/courses/add-quizzes" class="nav-link">add-quiz</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="register-student.jsp" class="nav-link">register-student</a>
+                                    <a href="${pageContext.request.contextPath}/students/register" class="nav-link">register-student</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="course-page.jsp" class="nav-link">course-page</a>
+                                    <a href="${pageContext.request.contextPath}/courses/" class="nav-link">course-page</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="shop.jsp" class="nav-link">shop</a>
+                                    <a href="${pageContext.request.contextPath}/shop" class="nav-link">shop</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="zoom-create.jsp" class="nav-link">zoom-create</a>
+                                    <a href="${pageContext.request.contextPath}/courses/create-zoom" class="nav-link">zoom-create</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="quiz-select-page.jsp" class="nav-link">quiz-select-page</a>
+                                    <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="nav-link">quiz-select-page</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="portal.jsp" class="nav-link">Portal</a>
+                                    <a href="${pageContext.request.contextPath}/portal" class="nav-link">Portal</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="${pageContext.request.contextPath}/courses/videos" class="nav-link">video-page</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="profile-page-student.jsp" class="nav-link">profile-page-student</a>
+                                    <a href="${pageContext.request.contextPath}/students/" class="nav-link">profile-page-student</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="register-teacher.jsp" class="nav-link a-btn">register-teacher</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/register" class="nav-link a-btn">register-teacher</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="profile-page-teacher.jsp" class="nav-link a-btn">profile-page-teacher</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/" class="nav-link a-btn">profile-page-teacher</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="test-lang.jsp" class="a-btn nav-link">test-lang</a>
+                                    <a href="${pageContext.request.contextPath}/test-lang" class="a-btn nav-link">test-lang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="profile-page-advertiser.jsp" class="nav-link a-btn">profile-page-advertiser</a>
+                                    <a href="${pageContext.request.contextPath}/advertisers/" class="nav-link a-btn">profile-page-advertiser</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="register-advertiser.jsp" class="nav-link a-btn">register-advertiser</a>
+                                    <a href="${pageContext.request.contextPath}/advertisers/register" class="nav-link a-btn">register-advertiser</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="marks-and-access.jsp" class="a-btn nav-link">marks-and-access</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/marks-and-access" class="a-btn nav-link">marks-and-access</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="${pageContext.request.contextPath}/users/teachers/notifications" class="a-btn nav-link">notification-view</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/notifications" class="a-btn nav-link">notification-view</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="admin-panel.jsp" class="a-btn nav-link">admin-panel</a>
+                                    <a href="${pageContext.request.contextPath}/admins/" class="a-btn nav-link">admin-panel</a>
                                 </li>
                             </ul>
                         </div>
@@ -165,7 +165,7 @@
                                                 </div>
                                             </div>
                                             <div class="col offset-lg-0">
-                                                <a href="index.jsp" class="btn btn-d btn-lg btn-block btn-76-style btn-rd">Button</a>
+                                                <a href="${pageContext.request.contextPath}/" class="btn btn-d btn-lg btn-block btn-76-style btn-rd">Button</a>
                                             </div>
                                         </div>
                                         <div class="row">
