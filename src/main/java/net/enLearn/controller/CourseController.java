@@ -18,8 +18,39 @@ public class CourseController {
     @Autowired
     private Logger logger;
 
+    @GetMapping("")
+    public String showCoursePage(){
+        return "course-page";
+    }
+
+    @GetMapping("/add-courses")
+    public String showAddCoursePage() {
+        return "add-course";
+    }
+
     @GetMapping("/videos")
     public String showVideoPage() {
         return "video-page";
+    }
+
+    @GetMapping("/add-videos")
+    public String showAddVideoPage() {
+        return "add-video";
+    }
+
+    @GetMapping("/add-quizzes")
+    public String showAddQuizPage() {
+        return "add-quiz";
+    }
+
+    @GetMapping("/select-quizzes")
+    public String showQuizSelectPage() {
+        return "quiz-select-page";
+    }
+
+
+    @GetMapping("/create-zoom")
+    public String showZoomCreatePage() {
+        return "zoom-create";
     }
 }
