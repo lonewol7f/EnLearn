@@ -1,5 +1,7 @@
 ## EnLearn
 
+![logo.png](src/main/webapp/resources/img/logo.png)
+
 ### Contribution Guide
 
 1. Clone the repository<br>
