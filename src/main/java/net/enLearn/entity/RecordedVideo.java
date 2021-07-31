@@ -1,5 +1,9 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,7 +20,12 @@ public class RecordedVideo {
     @Column(name = "id")
     private int id;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "v_id", cascade = CascadeType.ALL)
+    @Column(name = "name")
+    private String name;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "video", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    @JsonBackReference
     private List<Comment> comments;
 
     public RecordedVideo() {
@@ -28,6 +37,14 @@ public class RecordedVideo {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Comment> getComments() {

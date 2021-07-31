@@ -1,5 +1,7 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -30,6 +32,7 @@ public class Reply {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "c_id")
+    @JsonBackReference
     private Comment comment;
 
     public Reply() {
