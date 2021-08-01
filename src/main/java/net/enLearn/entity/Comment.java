@@ -1,5 +1,9 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -31,9 +35,12 @@ public class Comment {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "v_id")
+    @JsonManagedReference
     private RecordedVideo video;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "c_id", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    @JsonManagedReference
     private List<Reply> replies;
 
     public Comment() {

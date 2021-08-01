@@ -1,4 +1,4 @@
--- not fully coded, tobe implemented
+-- not fully coded, to be implemented
 
 DROP DATABASE IF EXISTS `enlearn`;
 
@@ -12,6 +12,7 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
 	`id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(50),
     CONSTRAINT `pk_user` PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
@@ -19,6 +20,7 @@ CREATE TABLE `user` (
 DROP TABLE IF EXISTS `recorded_video`;
 CREATE TABLE `recorded_video` (
 	`id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(50),
     CONSTRAINT `pk_recorded_video` PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
