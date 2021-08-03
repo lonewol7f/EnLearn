@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -37,6 +38,10 @@ public class ReplyDAOImpl implements ReplyDAO{
     public void saveOrUpdateReply(Reply reply) {
         // get current session
         Session session = sessionFactory.getCurrentSession();
+
+        long mills = System.currentTimeMillis();
+        Date date = new Date(mills);
+        reply.setModifiedDate(date);
 
         // if id associated with object, it will update else it will save
         session.saveOrUpdate(reply);
