@@ -22,6 +22,7 @@ import java.util.List;
  */
 
 @Controller
+@ResponseBody
 @RequestMapping("/comments")
 public class CommentController {
 
@@ -39,7 +40,6 @@ public class CommentController {
 
 
     @GetMapping("/list")
-    @ResponseBody
     public Response getCommentsAssociatedToVideo(@RequestParam("videoId") int vId) {
         List<Comment> comments = commentService.getCommentsByVideoId(vId);
 
@@ -49,7 +49,6 @@ public class CommentController {
     }
 
     @GetMapping("/add")
-    @ResponseBody
     public Response saveComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
                             @RequestParam("comment") String newComment) {
         RecordedVideo video = recordedVideoService.getVideoById(vId);
@@ -61,6 +60,8 @@ public class CommentController {
         comment.setVideo(video);
 
         commentService.saveOrUpdateComment(comment);
+
+        // TODO : add notification
 
         Response response = new Response("SUCCESS");
 
@@ -94,5 +95,7 @@ public class CommentController {
 
         return response;
     }
+
+
 
 }
