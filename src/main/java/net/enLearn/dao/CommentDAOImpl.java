@@ -4,6 +4,7 @@ import net.enLearn.entity.Comment;
 import net.enLearn.entity.RecordedVideo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -38,6 +39,7 @@ public class CommentDAOImpl implements CommentDAO{
         // get current session
         Session session = sessionFactory.getCurrentSession();
 
+
         // if id associated with object, it will update else it will save
         session.saveOrUpdate(comment);
     }
@@ -61,6 +63,19 @@ public class CommentDAOImpl implements CommentDAO{
 
         // get comment
         Comment comment = session.get(Comment.class, id);
+
+        return comment;
+    }
+
+    @Override
+    public Comment getLastComment() {
+        // get current session
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("from Comment order by id DESC");
+        query.setMaxResults(1);
+
+        Comment comment = (Comment) query.uniqueResult();
 
         return comment;
     }

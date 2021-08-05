@@ -14,5 +14,6 @@ public interface CommentService {
     void saveOrUpdateComment(Comment comment);
     void deleteCommentByCommentId(int id);
     Comment getCommentByCommentId(int id);
+    Comment getLastComment();
 
 }

@@ -13,6 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
     @Id
@@ -32,6 +33,11 @@ public class User {
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
     private List<Reply> replies;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<RedeemCode> redeemCodes;
 
     public User() {
     }
@@ -66,5 +72,13 @@ public class User {
 
     public void setReplies(List<Reply> replies) {
         this.replies = replies;
+    }
+
+    public List<RedeemCode> getRedeemCodes() {
+        return redeemCodes;
+    }
+
+    public void setRedeemCodes(List<RedeemCode> redeemCodes) {
+        this.redeemCodes = redeemCodes;
     }
 }

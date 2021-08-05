@@ -41,4 +41,10 @@ public class CommentServiceImpl implements CommentService{
     public Comment getCommentByCommentId(int id) {
         return commentDAO.getCommentByCommentId(id);
     }
+
+    @Override
+    @Transactional
+    public Comment getLastComment() {
+        return commentDAO.getLastComment();
+    }
 }

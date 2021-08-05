@@ -1,11 +1,12 @@
 package net.enLearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -24,8 +25,10 @@ public class Comment {
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "m_date")
-    private Date modifiedDate;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "createdOn")
+    private Timestamp createdOn;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
@@ -62,12 +65,12 @@ public class Comment {
         this.comment = comment;
     }
 
-    public Date getModifiedDate() {
-        return modifiedDate;
+    public Timestamp getCreatedOn() {
+        return createdOn;
     }
 
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public void setCreatedOn(Timestamp createdOn) {
+        this.createdOn = createdOn;
     }
 
     public User getUser() {
