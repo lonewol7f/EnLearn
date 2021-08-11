@@ -26,7 +26,6 @@ public class Comment {
     private String comment;
 
     @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "createdOn")
     private Timestamp createdOn;
 

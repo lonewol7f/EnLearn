@@ -23,7 +23,6 @@ public class Reply {
     private String reply;
 
     @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "createdOn")
     private Timestamp createdOn;
 

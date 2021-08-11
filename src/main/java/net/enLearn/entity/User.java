@@ -37,6 +37,7 @@ public class User {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.DETACH, CascadeType.REFRESH})
     @Fetch(value = FetchMode.SUBSELECT)
+    @JsonBackReference
     private List<RedeemCode> redeemCodes;
 
     public User() {

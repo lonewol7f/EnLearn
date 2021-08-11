@@ -34,7 +34,6 @@ public class Event {
     private Time time;
 
     @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "createdOn")
     private Timestamp createdOn;
 
