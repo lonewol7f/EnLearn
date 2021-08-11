@@ -375,7 +375,6 @@
                                                       placeholder="Type your comment..." rows="7"
                                                       style="resize: none;"></textarea>
                                         </div>
-                                        <%--<button onclick="addComment()" class="btn btn-primary" style="float: right;">Comment</button>--%>
                                         <button onclick="addComment()" class="btn btn-primary" style="float: right;">
                                             Comment
                                         </button>
