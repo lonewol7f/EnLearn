@@ -72,11 +72,11 @@ CREATE TABLE `comment`
     `id`        INT NOT NULL AUTO_INCREMENT,
     `comment`   TEXT,
     `user_id`   INT,
-    `v_id`      INT,
-    `createdOn` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `video_id`      INT,
+    `created_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `pk_comment` PRIMARY KEY (`id`),
     CONSTRAINT `fk_comment_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `fk_comment_2` FOREIGN KEY (`v_id`) REFERENCES `recorded_video` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT `fk_comment_2` FOREIGN KEY (`video_id`) REFERENCES `recorded_video` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
@@ -86,11 +86,11 @@ CREATE TABLE `reply`
     `id`        INT NOT NULL AUTO_INCREMENT,
     `reply`     TEXT,
     `user_id`   INT,
-    `c_id`      INT,
-    `createdOn` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `comment_id`      INT,
+    `created_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `pk_reply` PRIMARY KEY (`id`),
     CONSTRAINT `fk_reply_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `fk_reply_2` FOREIGN KEY (`c_id`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT `fk_reply_2` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
@@ -102,10 +102,23 @@ CREATE TABLE `event`
     `message`   TEXT,
     `date`      DATE,
     `time`      TIME,
-    `adminId`   INT,
-    `createdOn` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `admin_id`   INT,
+    `created_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT `pk_event` PRIMARY KEY (`id`),
-    CONSTRAINT `fk_event` FOREIGN KEY (`adminId`) REFERENCES `admin` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT `fk_event` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `notification`;
+CREATE TABLE `notification`
+(
+    `id`   INT NOT NULL AUTO_INCREMENT,
+    `created_on` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `comment_id` INT,
+    `teacher_id` INT,
+    CONSTRAINT `pk_notification` PRIMARY KEY (`id`),
+    CONSTRAINT `fk_notification_1` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `fk_notification_2` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 
