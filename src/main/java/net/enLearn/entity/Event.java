@@ -34,7 +34,7 @@ public class Event {
     private Time time;
 
     @CreationTimestamp
-    @Column(name = "createdOn")
+    @Column(name = "created_on")
     private Timestamp createdOn;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
