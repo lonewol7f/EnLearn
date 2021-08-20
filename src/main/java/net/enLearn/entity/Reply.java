@@ -23,7 +23,7 @@ public class Reply {
     private String reply;
 
     @CreationTimestamp
-    @Column(name = "createdOn")
+    @Column(name = "created_on")
     private Timestamp createdOn;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
@@ -33,7 +33,7 @@ public class Reply {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "c_id")
+    @JoinColumn(name = "comment_id")
     @JsonBackReference
     private Comment comment;
 
