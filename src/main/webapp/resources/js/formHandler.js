@@ -38,16 +38,16 @@ $(function () {
                         cache: false,
                         success: function (data) // Success
                         {
-                            if ($form.find('#form-feedback-alert').length == 0) // Add Alert
+                            if ($form.find('#form-feedback-alert').length === 0) // Add Alert
                             {
                                 $form.append("<div id='form-feedback-alert' class='mt-2'><div class='alert'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong></strong></div></div>");
                             }
 
-                            if (data == 'capture-error') // Capture Error
+                            if (data === 'capture-error') // Capture Error
                             {
                                 $('#form-feedback-alert').addClass('alert-danger').removeClass('alert-success');
                                 $('#form-feedback-alert strong').html($form.find('.g-recaptcha').attr('data-capture-warning'));
-                            } else if (data == 'capture-connection-error') // Capture Connection Error
+                            } else if (data === 'capture-connection-error') // Capture Connection Error
                             {
                                 $('#form-feedback-alert').addClass('alert-danger').removeClass('alert-success');
                                 $('#form-feedback-alert strong').html($form.find('.g-recaptcha').attr('data-capture-fail'));
@@ -66,7 +66,7 @@ $(function () {
                         },
                         error: function () // Fail
                         {
-                            if ($('#form-alert').length == 0) {
+                            if ($('#form-alert').length === 0) {
                                 $form.append("<div id='form-alert' class='mt-2'><div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>" + $form.attr('data-fail-msg') + "</strong></div></div>");
                             }
                         },
