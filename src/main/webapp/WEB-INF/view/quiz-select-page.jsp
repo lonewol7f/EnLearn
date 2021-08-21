@@ -27,6 +27,7 @@
 
 
 
+
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -204,6 +205,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+<%--     changed       --%>
+    <div class="col">
+        <div class="divider-h">
+            <span class="divider"></span>
+        </div>
+        <div>
+            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-person-with-checklist-4FDRP8KNVW.png" width="500rem" height="500rem" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
         </div>
     </div>
     <!-- bloc-15 END -->
