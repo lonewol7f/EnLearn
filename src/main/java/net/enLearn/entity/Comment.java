@@ -26,7 +26,7 @@ public class Comment {
     private String comment;
 
     @CreationTimestamp
-    @Column(name = "createdOn")
+    @Column(name = "created_on")
     private Timestamp createdOn;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
@@ -36,7 +36,7 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "v_id")
+    @JoinColumn(name = "video_id")
     @JsonManagedReference
     private RecordedVideo video;
 

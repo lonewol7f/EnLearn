@@ -31,7 +31,7 @@ import java.util.Properties;
 @PropertySource("classpath:enLearn.properties")
 public class AppConfig implements WebMvcConfigurer {
 
-    // setup a variable to hold property
+    // set up a variable to hold property
     @Autowired
     private Environment env;
 
