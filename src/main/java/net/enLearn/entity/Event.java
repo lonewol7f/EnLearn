@@ -39,7 +39,7 @@ public class Event {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "adminId")
+    @JoinColumn(name = "admin_id")
     @JsonManagedReference
     private Admin admin;
 
