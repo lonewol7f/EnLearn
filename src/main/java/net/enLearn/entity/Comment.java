@@ -47,7 +47,7 @@ public class Comment {
     private List<Reply> replies;
 
     @OneToOne(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
+    @Fetch(value = FetchMode.JOIN)
     @JsonBackReference
     private Notification notification;
 
