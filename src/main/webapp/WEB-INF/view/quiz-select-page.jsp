@@ -27,6 +27,7 @@
 
 
 
+
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -204,6 +205,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+<%--     changed       --%>
+    <div class="col">
+        <div class="divider-h">
+            <span class="divider"></span>
+        </div>
+        <div>
+            <img class="img-fluid lazyload test-img" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
         </div>
     </div>
     <!-- bloc-15 END -->

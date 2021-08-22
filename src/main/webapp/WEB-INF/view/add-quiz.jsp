@@ -253,7 +253,7 @@
                         <div class="col">
                             <div>
                                 <h3 class="mg-md no-margin">
-                                    Structured&nbsp;
+                                    Essay + Structured
                                 </h3>
                                 <div class="divider-h">
                                     <span class="divider"></span>
@@ -315,7 +315,7 @@
                             </div>
                             <div>
                                 <h3 class="mg-md no-margin">
-                                    Essay
+                                    Free Quiz
                                 </h3>
                                 <div class="divider-h">
                                     <span class="divider"></span>
