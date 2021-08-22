@@ -26,7 +26,7 @@ public class Notification {
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @Fetch(value = FetchMode.SUBSELECT)
+    @Fetch(value = FetchMode.JOIN)
     @JoinColumn(name = "comment_id")
     private Comment comment;
 
