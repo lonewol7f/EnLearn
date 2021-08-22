@@ -214,7 +214,7 @@
             <span class="divider"></span>
         </div>
         <div>
-            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-person-with-checklist-4FDRP8KNVW.png" width="500rem" height="500rem" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
+            <img class="img-fluid lazyload test-img" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
         </div>
     </div>
     <!-- bloc-15 END -->
