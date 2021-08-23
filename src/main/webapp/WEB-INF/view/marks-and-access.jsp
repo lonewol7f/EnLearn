@@ -156,6 +156,26 @@
                                 </div>
                                 <div class="col">
                                     <div class="text-center">
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option value="1">
+                                                    week 1
+                                                </option>
+                                                <option value="2">
+                                                    week 2
+                                                </option>
+                                                <option value="3">
+                                                    week 3
+                                                </option>
+                                                <option value="4">
+                                                    week 4
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="text-center">
                                         <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="student-marks,main-menu">View Details</a>
                                     </div>
                                 </div>
