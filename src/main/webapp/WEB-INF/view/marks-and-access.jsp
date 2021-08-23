@@ -14,13 +14,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?7208">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?5359">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?1795">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?7208">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css?5359">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?1795">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>marks-and-access</title>
@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29.png" class="img-fluid mx-auto d-block lazyload" alt="reshot illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29" />
+                            <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29.png" class="img-fluid mx-auto d-block lazyload" alt="reshot illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29" />
                         </div>
                     </div>
                 </div>
@@ -237,10 +237,10 @@
 
 
 <!-- Additional JS -->
-<script src="../../resources/js/jquery.js?8669"></script>
-<script src="../../resources/js/bootstrap.bundle.js?9765"></script>
-<script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
+<script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
+<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
 
 </body>
