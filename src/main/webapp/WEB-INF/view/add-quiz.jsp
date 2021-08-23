@@ -244,7 +244,7 @@
                                             <span class="divider"></span>
                                         </div>
                                         <div>
-                                            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-person-with-checklist-4FDRP8KNVW.png" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
+                                            <img class="img-fluid lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-business-person-with-checklist-4FDRP8KNVW.png" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
                                         </div>
                                     </div>
                                 </div>
