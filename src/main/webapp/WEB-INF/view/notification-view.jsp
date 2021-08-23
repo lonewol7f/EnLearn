@@ -13,7 +13,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?5573">
@@ -21,10 +21,11 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?9309">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
     <title>notification-view</title>
-
 
 
     <!-- Analytics -->
@@ -43,7 +44,7 @@
 <div class="page-container">
 
     <!-- bloc-0 -->
-    <%@include file="header.jsp"%>
+    <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
 
     <!-- bloc-29 -->
@@ -59,17 +60,19 @@
                         <div class="col">
                             <ul class="nav nav-tabs" id="nav-40313-tab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="a-btn nav-link active content-box-1 select-box-notif" id="nav-40313-tab-1" data-toggle="tab" href="#nav-40313-content-1" role="tab" aria-controls="nav-40313-content-1" aria-selected="true">Messages</a>
+                                    <a class="a-btn nav-link active content-box-1 select-box-notif" id="nav-40313-tab-1"
+                                       data-toggle="tab" href="#nav-40313-content-1" role="tab"
+                                       aria-controls="nav-40313-content-1" aria-selected="true">Notifications</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="a-btn nav-link content-box-2 select-box-notif" id="nav-40313-tab-2" data-toggle="tab" href="#nav-40313-content-2" role="tab" aria-controls="nav-40313-content-2" aria-selected="false">Admin Messages</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="a-btn nav-link content-box-3 select-box-notif" id="nav-40313-tab-3" data-toggle="tab" href="#nav-40313-content-3" role="tab" aria-controls="nav-40313-content-3" aria-selected="false">Events</a>
+                                    <a class="a-btn nav-link content-box-2 select-box-notif" id="nav-40313-tab-2"
+                                       data-toggle="tab" href="#nav-40313-content-2" role="tab"
+                                       aria-controls="nav-40313-content-2" aria-selected="false">Events</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="nav-40313-content-1" role="tabpanel" aria-labelledby="nav-40313-content-1">
+                                <div class="tab-pane fade show active" id="nav-40313-content-1" role="tabpanel"
+                                     aria-labelledby="nav-40313-content-1">
                                     <div>
                                         <div class="row">
                                             <div class="offset-lg-1 col-lg-6">
@@ -85,7 +88,8 @@
                                                 </div>
                                             </div>
                                             <div class="col offset-lg-0">
-                                                <a href="${pageContext.request.contextPath}/" class="btn btn-d btn-lg btn-block btn-76-style btn-rd">Button</a>
+                                                <a href="${pageContext.request.contextPath}/"
+                                                   class="btn btn-d btn-lg btn-block btn-76-style btn-rd">Button</a>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -93,9 +97,13 @@
                                                 <div>
                                                     <div class="blockquote">
                                                         <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
+                                                            ligula eget.
                                                         </p>
-                                                    </div><a href="index.jsp" class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to Video</a>
+                                                    </div>
+                                                    <a href="index.jsp"
+                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
+                                                        Video</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,9 +112,13 @@
                                                 <div>
                                                     <div class="blockquote">
                                                         <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
+                                                            ligula eget.
                                                         </p>
-                                                    </div><a href="index.jsp" class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to Video</a>
+                                                    </div>
+                                                    <a href="index.jsp"
+                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
+                                                        Video</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -115,9 +127,13 @@
                                                 <div>
                                                     <div class="blockquote">
                                                         <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
+                                                            ligula eget.
                                                         </p>
-                                                    </div><a href="index.jsp" class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to Video</a>
+                                                    </div>
+                                                    <a href="index.jsp"
+                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
+                                                        Video</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,49 +142,20 @@
                                                 <div>
                                                     <div class="blockquote">
                                                         <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
+                                                            ligula eget.
                                                         </p>
-                                                    </div><a href="index.jsp" class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to Video</a>
+                                                    </div>
+                                                    <a href="index.jsp"
+                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
+                                                        Video</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade-tab-bs" id="nav-40313-content-2" role="tabpanel" aria-labelledby="nav-40313-content-2">
-                                    <div class="blockquote">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
-                                        </p>
-                                    </div>
-                                    <div class="blockquote">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
-                                        </p>
-                                    </div>
-                                    <div class="blockquote">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
-                                        </p>
-                                    </div>
-                                    <div class="blockquote">
-                                        <p>
-                                            This message will be sent to admins , make sure to make it short and sweet<br>
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-lg-9">
-                                                <div class="form-group">
-                                                    <input class="form-control" />
-                                                </div>
-                                            </div>
-                                            <div class="col offset-lg--1">
-                                                <div class="text-center">
-                                                    <a href="index.jsp" class="btn btn-d btn-lg btn-81-style">Send</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade-tab-bs" id="nav-40313-content-3" role="tabpanel" aria-labelledby="nav-40313-content-3">
+                                <div class="tab-pane fade-tab-bs" id="nav-40313-content-2" role="tabpanel"
+                                     aria-labelledby="nav-40313-content-2">
                                     <div class="row">
                                         <div class="col">
                                             <div class="card">
@@ -246,7 +233,11 @@
     <!-- bloc-29 END -->
 
     <!-- ScrollToTop Button -->
-    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32"><path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/></svg></a>
+    <a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1',this)">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32">
+            <path class="scroll-to-top-btn-icon" d="M30,22.656l-14-13-14,13"/>
+        </svg>
+    </a>
     <!-- ScrollToTop Button END-->
 
 
@@ -257,17 +248,21 @@
                 <div class="col-md-3 col-sm-6">
                     <h4 class="mg-md text-sm-left text-center">
                         About
-                    </h4><a href="index.jsp" class="a-btn a-block footer-link">The Team</a><a href="index.jsp" class="a-btn a-block footer-link">Contact Us</a>
+                    </h4><a href="index.jsp" class="a-btn a-block footer-link">The Team</a><a href="index.jsp"
+                                                                                              class="a-btn a-block footer-link">Contact
+                    Us</a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="mg-md text-sm-left text-center">
                         Get the app
-                    </h4><a href="index.jsp" class="a-btn a-block footer-link">Android</a><a href="index.jsp" class="a-btn a-block footer-link">iOS</a>
+                    </h4><a href="index.jsp" class="a-btn a-block footer-link">Android</a><a href="index.jsp"
+                                                                                             class="a-btn a-block footer-link">iOS</a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="mg-md text-sm-left text-center">
                         Follow Us
-                    </h4><a href="index.jsp" class="a-btn a-block footer-link">Twitter</a><a href="index.jsp" class="a-btn a-block footer-link">Facebook</a>
+                    </h4><a href="index.jsp" class="a-btn a-block footer-link">Twitter</a><a href="index.jsp"
+                                                                                             class="a-btn a-block footer-link">Facebook</a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="mg-md text-sm-left text-center">
@@ -303,7 +298,6 @@
 
 </div>
 <!-- Main container END -->
-
 
 
 <!-- Additional JS -->
