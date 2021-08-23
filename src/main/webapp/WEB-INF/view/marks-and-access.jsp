@@ -150,6 +150,9 @@
                                                 <option value="2">
                                                     course 2
                                                 </option>
+                                                <option value="3">
+                                                    course 3
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
