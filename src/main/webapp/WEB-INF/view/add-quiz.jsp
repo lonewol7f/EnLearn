@@ -14,13 +14,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?1588">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?946">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?468">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?1588">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css?946">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?468">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>add-quiz</title>
