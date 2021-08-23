@@ -317,10 +317,10 @@
 
 
 <!-- Additional JS -->
-<script src="../../resources/js/jquery.js?8669"></script>
-<script src="../../resources/js/bootstrap.bundle.js?9765"></script>
-<script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
+<script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
+<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
 
 </body>
