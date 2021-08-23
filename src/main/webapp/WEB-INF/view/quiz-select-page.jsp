@@ -140,7 +140,7 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/112-book-morph-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/112-book-morph-outline.gif" alt="112 book-morph-outline" />
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/1103-confetti-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/1103-confetti-outline.gif" alt="112 book-morph-outline" />
                             </div>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
             <span class="divider"></span>
         </div>
         <div>
-            <img class="img-fluid lazyload test-img" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
+            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
         </div>
     </div>
     <!-- bloc-15 END -->

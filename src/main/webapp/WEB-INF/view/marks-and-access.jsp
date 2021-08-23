@@ -166,7 +166,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29.png" class="img-fluid mx-auto d-block lazyload" alt="reshot illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29" />
+                            <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29.png" class="img-fluid mx-auto d-block lazyload" alt="reshot illustration-business-problem-solving-9MNJFALXDW-4ed2d%281%29" />
                         </div>
                     </div>
                 </div>
