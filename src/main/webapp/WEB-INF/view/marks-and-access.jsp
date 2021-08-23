@@ -156,7 +156,7 @@
                                 </div>
                                 <div class="col">
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="student-marks,main-menu">Button</a>
+                                        <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="student-marks,main-menu">View Details</a>
                                     </div>
                                 </div>
                             </div>
