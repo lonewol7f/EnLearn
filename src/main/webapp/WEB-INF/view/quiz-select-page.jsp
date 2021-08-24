@@ -14,13 +14,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?8155">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?63">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?5610">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?8155">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css?63">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?5610">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>quiz-select-page</title>
@@ -60,7 +60,7 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/112-book-morph-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/112-book-morph-outline.gif" alt="112 book-morph-outline" />
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/1103-confetti-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/1103-confetti-outline.gif" alt="112 book-morph-outline" />
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
             <span class="divider"></span>
         </div>
         <div>
-            <img class="img-fluid lazyload test-img" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
+            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 22%" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
         </div>
     </div>
     <!-- bloc-15 END -->
@@ -201,10 +201,10 @@
 
 
 <!-- Additional JS -->
-<script src="../../resources/js/jquery.js?8669"></script>
-<script src="../../resources/js/bootstrap.bundle.js?9765"></script>
-<script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
+<script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
+<script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
+<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
 
 </body>
