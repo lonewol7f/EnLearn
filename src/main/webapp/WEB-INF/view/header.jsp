@@ -80,6 +80,9 @@
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/admins/" class="a-btn nav-link">admin-panel</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="${pageContext.request.contextPath}/courses/create-courses" class="nav-link">create-course</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>

@@ -23,6 +23,9 @@ public class CourseController {
         return "course-page";
     }
 
+    @GetMapping("/create-courses")
+    public String showCreateCoursePage(){ return "create-course";}
+
     @GetMapping("/add-courses")
     public String showAddCoursePage() {
         return "add-course";
