@@ -1,5 +1,6 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Fetch;
@@ -44,6 +45,11 @@ public class Comment {
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonManagedReference
     private List<Reply> replies;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.JOIN)
+    @JsonBackReference
+    private Notification notification;
 
     public Comment() {
     }
@@ -94,5 +100,13 @@ public class Comment {
 
     public void setReplies(List<Reply> replies) {
         this.replies = replies;
+    }
+
+    public Notification getNotification() {
+        return notification;
+    }
+
+    public void setNotification(Notification notification) {
+        this.notification = notification;
     }
 }
