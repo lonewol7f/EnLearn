@@ -18,10 +18,21 @@ public class RedeemCode {
     @Column(name = "code")
     private String code;
 
+    @Column(name = "coins")
+    private int coins;
+
+    @Column(name = "is_redeemed")
+    private boolean isRedeemed;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @JoinColumn(name = "u_id")
+    @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
 
     public RedeemCode() {
     }
@@ -42,6 +53,22 @@ public class RedeemCode {
         this.code = code;
     }
 
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
+    }
+
+    public boolean isRedeemed() {
+        return isRedeemed;
+    }
+
+    public void setRedeemed(boolean redeemed) {
+        isRedeemed = redeemed;
+    }
+
     public User getUser() {
         return user;
     }
@@ -49,4 +76,14 @@ public class RedeemCode {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    // TODO: update user and admin with associations
 }
