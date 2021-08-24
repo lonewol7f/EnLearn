@@ -23,7 +23,7 @@ public class RecordedVideo {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "video", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "video", cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
     private List<Comment> comments;
@@ -54,4 +54,6 @@ public class RecordedVideo {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+
+
 }
