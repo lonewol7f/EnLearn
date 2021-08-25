@@ -2,10 +2,12 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Comment;
 import net.enLearn.entity.RecordedVideo;
+import net.enLearn.entity.Reply;
 import net.enLearn.entity.User;
 import net.enLearn.helper.Response;
 import net.enLearn.service.CommentService;
 import net.enLearn.service.RecordedVideoService;
+import net.enLearn.service.ReplyService;
 import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,9 @@ public class CommentController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ReplyService replyService;
+
 
     @GetMapping("/list")
     public Response getCommentsAssociatedToVideo(@RequestParam("videoId") int vId) {
@@ -50,16 +55,16 @@ public class CommentController {
 
     @GetMapping("/add")
     public Response saveComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
-                            @RequestParam("comment") String newComment) {
+                                @RequestParam("comment") String comment) {
         RecordedVideo video = recordedVideoService.getVideoById(vId);
         User user = userService.getUserById(uId);
 
-        Comment comment = new Comment();
-        comment.setComment(newComment);
-        comment.setUser(user);
-        comment.setVideo(video);
+        Comment newComment = new Comment();
+        newComment.setComment(comment);
+        newComment.setUser(user);
+        newComment.setVideo(video);
 
-        commentService.saveOrUpdateComment(comment);
+        commentService.saveOrUpdateComment(newComment);
 
         // TODO : add notification
 
@@ -70,7 +75,7 @@ public class CommentController {
 
     @GetMapping("/update")
     public Response updateComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
-                              @RequestParam("commentId") int cId, @RequestParam("comment") String newComment) {
+                                  @RequestParam("commentId") int cId, @RequestParam("comment") String newComment) {
         RecordedVideo video = recordedVideoService.getVideoById(vId);
         User user = userService.getUserById(uId);
 
@@ -96,6 +101,53 @@ public class CommentController {
         return response;
     }
 
+    @GetMapping("/replies/add")
+    public Response saveReply(@RequestParam("commentId") int cId, @RequestParam("userId") int uId,
+                              @RequestParam("reply") String reply) {
 
+        Comment comment = commentService.getCommentByCommentId(cId);
+        User user = userService.getUserById(uId);
+
+        Reply newReply = new Reply();
+        newReply.setUser(user);
+        newReply.setComment(comment);
+        newReply.setReply(reply);
+
+        replyService.saveOrUpdateReply(newReply);
+
+        Response response = new Response("SUCCESS");
+
+        return response;
+    }
+
+    @GetMapping("/replies/update")
+    public Response updateReply(@RequestParam("replyId") int rId, @RequestParam("userId") int uId,
+                                @RequestParam("commentId") int cId, @RequestParam("reply") String newReply) {
+
+        Comment comment = commentService.getCommentByCommentId(cId);
+        User user = userService.getUserById(uId);
+
+        Reply reply = new Reply();
+        reply.setId(rId);
+        reply.setUser(user);
+        reply.setComment(comment);
+        reply.setReply(newReply);
+
+        replyService.saveOrUpdateReply(reply);
+
+        Response response = new Response("SUCCESS");
+
+        return response;
+
+    }
+
+    @GetMapping("/replies/delete")
+    public Response deleteReply(@RequestParam("replyId") int id) {
+        replyService.deleteReplyByReplyId(id);
+
+        Response response = new Response("SUCCESS");
+
+        return response;
+    }
 
 }

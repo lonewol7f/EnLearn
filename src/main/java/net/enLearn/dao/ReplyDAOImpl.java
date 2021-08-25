@@ -49,6 +49,8 @@ public class ReplyDAOImpl implements ReplyDAO{
 
         // get reply
         Reply reply = getReplyByReplyId(id);
+        reply.getComment().getReplies().remove(reply);
+        reply.getUser().getReplies().remove(reply);
 
         // delete reply
         session.delete(reply);
