@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col">
                     <h3 class="mg-md">
-                        Student Registration - School
+                        Teacher Registration
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
