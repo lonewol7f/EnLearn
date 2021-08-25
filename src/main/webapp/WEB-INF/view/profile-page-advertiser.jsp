@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <title>profile-page-student-1</title>
+    <title>profile-page-advertiser</title>
 
 
 
