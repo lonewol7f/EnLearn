@@ -1129,3 +1129,62 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 	
 }
 
+/*Fixes on Add code page*/
+.add-code-box {
+	display: grid;
+	grid-template-columns: 10% 80% 10%;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+            "none1  form form form form form none 2";
+}
+
+.empty-box-1 {
+	grid-area: none1;
+}
+
+.form-box {
+	grid-area: form;
+}
+
+.empty-box-2 {
+	grid-area: none2;
+}
+
+.view-codes-box {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+            "nonet1 table1 table2  nonet2 ";
+}
+
+.table-1-box {
+	grid-area: table1;
+}
+
+.table-2-box {
+	grid-area: table2;
+}
+
+.table-empty-1{
+	grid-area: nonet1;
+}
+
+.table-empty-2{
+	grid-area: nonet2;
+}
+
+
+
+
+.is-redeemed{
+	background-color: #d24949;
+}
+.is-not-redeemed{
+	background-color: #3fa43f
+}
+
+.table-style{
+	text-align: center;
+	border-spacing : 5px;
+}

@@ -16,7 +16,7 @@ public class DemoController {
     private Logger logger;
 
     @GetMapping("/")
-    public String showHome(){
+    public String showHome() {
         return "index";
     }
 
@@ -37,7 +37,6 @@ public class DemoController {
 
     @GetMapping("/test-lang")
     public String showTestLangPage() {
-        return "test-lang";
+        return "add-code";
     }
-
 }

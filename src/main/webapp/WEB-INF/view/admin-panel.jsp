@@ -85,7 +85,9 @@
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="create-less,create-more">Create</a>
                                 </div>
                                 <div class="object-hidden" id="create-more">
-                                    <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Course</a><a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#add-event">Event</a>
+                                    <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Course</a>
+                                    <a href="add-code.jsp" class="btn btn-d btn-lg btn-block">Code</a>
+                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#add-event">Event</a>
                                     <div class="divider-h">
                                         <span class="divider"></span>
                                     </div><a href="#" class="btn btn-lg btn-rd btn-wire btn-△-style" data-toggle-visibility="create-less,create-more">△</a>
