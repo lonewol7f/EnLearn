@@ -17,11 +17,20 @@ public class FreeQuiz {
    private int id;
 
    @Column(name = "quiz_link")
-   private String quiz_link;
+   private String quizLink;
 
-   @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+   @Column(name = "topic")
+   private String topic;
+
+   @Column(name = "grade")
+   private String grade;
+
+   @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
    @JoinColumn(name = "teacher_id")
    private Teacher teacher;
+
+   public FreeQuiz() {
+   }
 
    public int getId() {
       return id;
@@ -31,12 +40,12 @@ public class FreeQuiz {
       this.id = id;
    }
 
-   public String getQuiz_link() {
-      return quiz_link;
+   public String getQuizLink() {
+      return quizLink;
    }
 
-   public void setQuiz_link(String quiz_link) {
-      this.quiz_link = quiz_link;
+   public void setQuizLink(String quizLink) {
+      this.quizLink = quizLink;
    }
 
    public Teacher getTeacher() {
@@ -45,5 +54,21 @@ public class FreeQuiz {
 
    public void setTeacher(Teacher teacher) {
       this.teacher = teacher;
+   }
+
+   public String getTopic() {
+      return topic;
+   }
+
+   public void setTopic(String topic) {
+      this.topic = topic;
+   }
+
+   public String getGrade() {
+      return grade;
+   }
+
+   public void setGrade(String grade) {
+      this.grade = grade;
    }
 }
