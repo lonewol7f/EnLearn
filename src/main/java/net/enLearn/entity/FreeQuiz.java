@@ -19,7 +19,13 @@ public class FreeQuiz {
    @Column(name = "quiz_link")
    private String quizLink;
 
-   @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+   @Column(name = "topic")
+   private String topic;
+
+   @Column(name = "grade")
+   private String grade;
+
+   @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
    @JoinColumn(name = "teacher_id")
    private Teacher teacher;
 
@@ -48,5 +54,21 @@ public class FreeQuiz {
 
    public void setTeacher(Teacher teacher) {
       this.teacher = teacher;
+   }
+
+   public String getTopic() {
+      return topic;
+   }
+
+   public void setTopic(String topic) {
+      this.topic = topic;
+   }
+
+   public String getGrade() {
+      return grade;
+   }
+
+   public void setGrade(String grade) {
+      this.grade = grade;
    }
 }

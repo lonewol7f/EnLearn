@@ -1,6 +1,7 @@
 package net.enLearn.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Osini Kithma
@@ -28,10 +29,15 @@ public class SpecialQuiz {
     @Column(name = "e_and_s_link")
     private String eAndSLink;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+    @JoinTable(name = "special_quiz_student",
+                joinColumns = @JoinColumn(name = "quiz_id"),
+                inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private List<Student> studentList;
 
     public SpecialQuiz() {
     }
@@ -82,6 +88,14 @@ public class SpecialQuiz {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
     }
 }
 
