@@ -115,9 +115,16 @@ CREATE TABLE `advertiser_mobile`
 DROP TABLE IF EXISTS `recorded_video`;
 CREATE TABLE `recorded_video`
 (
-    `id`   INT NOT NULL AUTO_INCREMENT,
-    `name` VARCHAR(50),
-    CONSTRAINT `pk_recorded_video` PRIMARY KEY (`id`)
+    `id`          INT NOT NULL AUTO_INCREMENT,
+    `title`       VARCHAR(50),
+    `description` VARCHAR(255),
+    `video_url`   VARCHAR(255),
+    `thumbnail`   BLOB,
+    `quiz_id`     INT,
+    `course_id`   INT,
+    CONSTRAINT `pk_recorded_video` PRIMARY KEY (`id`),
+    CONSTRAINT `fk_recorded_video_1` FOREIGN KEY (`quiz_id`) REFERENCES `special_quiz` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `fk_recorded_video_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = latin1;
@@ -222,6 +229,8 @@ CREATE TABLE `free_quiz`
 (
     `id`         INT NOT NULL AUTO_INCREMENT,
     `quiz_link`  VARCHAR(255),
+    `topic`      VARCHAR(255),
+    `grade`      VARCHAR(50),
     `teacher_id` INT,
     CONSTRAINT `pk_free_quiz` PRIMARY KEY (`id`),
     CONSTRAINT `fk_free_quiz` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -384,10 +393,10 @@ CREATE TABLE `expenditure`
 DROP TABLE IF EXISTS `salary`;
 CREATE TABLE `salary`
 (
-    `user_id`         INT NOT NULL,
-    `admin_id`        INT NOT NULL,
-    `no_of_students`  INT,
-    `unit_price`      INT,
+    `user_id`          INT NOT NULL,
+    `admin_id`         INT NOT NULL,
+    `no_of_students`   INT,
+    `unit_price`       INT,
     `count_attendance` INT,
     CONSTRAINT `pk_salary` PRIMARY KEY (`user_id`),
     CONSTRAINT `fk_salary_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
