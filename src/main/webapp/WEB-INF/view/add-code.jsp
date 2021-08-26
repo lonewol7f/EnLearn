@@ -55,69 +55,67 @@
         <table class="table-style">
             <caption>Details about the Codes</caption>
             <tr>
+                <th scope="col">Code ID</th>
                 <th scope="col">Code</th>
                 <th scope="col">Coins</th>
                 <th scope="col">Redeemed Status</th>
             </tr>
             <tbody>
             <tr>
+                <td>c000001</td>
                 <td>1234 5678 ABCD EFGH</td>
                 <td>200</td>
                 <td class="is-not-redeemed"></td>
             </tr>
             <tr>
+                <td>c000002</td>
                 <td>1234 5678 ABCD EFGH</td>
                 <td>400</td>
                 <td class="is-redeemed"></td>
             </tr>
             <tr>
+                <td>c000003</td>
                 <td>1234 5678 ABCD EFGH</td>
                 <td>800</td>
                 <td class="is-not-redeemed"></td>
             </tr>
             <tr>
+                <td>c000004</td>
                 <td>1234 5678 ABCD EFGH</td>
-                <td>900</td>
-                <td class="is-redeemed"></td>
+                <td>300</td>
+                <td class="is-not-redeemed"></td>
             </tr>
-
             </tbody>
         </table>
     </div>
     <div class="table-2-box">
         <table class="table-style">
-            <caption>Details about the Codes2</caption>
+            <caption>Who got the codes</caption>
             <tr>
-                <th scope="col">Code</th>
-                <th scope="col">Coins</th>
-                <th scope="col">Redeemed Status</th>
+                <th scope="col">Code ID</th>
+                <th scope="col">Student ID</th>
             </tr>
             <tbody>
             <tr>
-                <td>1234 5678 ABCD EFGH</td>
+                <td>c000001</td>
                 <td>200</td>
-                <td class="is-not-redeemed"></td>
             </tr>
             <tr>
-                <td>1234 5678 ABCD EFGH</td>
+                <td>c000002</td>
                 <td>400</td>
-                <td class="is-redeemed"></td>
             </tr>
             <tr>
-                <td>1234 5678 ABCD EFGH</td>
+                <td>c000003</td>
                 <td>800</td>
-                <td class="is-not-redeemed"></td>
             </tr>
             <tr>
-                <td>1234 5678 ABCD EFGH</td>
+                <td>c000004</td>
                 <td>900</td>
-                <td class="is-redeemed"></td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="table-empty-2"></div>
 </div>
-
 </body>
 </html>
