@@ -97,19 +97,19 @@
                         <li class="nav-item">
                             <a class="a-btn nav-link active" id="nav-17627-tab-1" data-toggle="tab"
                                href="#nav-17627-content-1" role="tab" aria-controls="nav-17627-content-1"
-                               aria-selected="true">Content 1</a>
+                               aria-selected="true">Overview</a>
                         </li>
                         <li class="nav-item">
                             <a class="a-btn nav-link" id="nav-17627-tab-2" data-toggle="tab" href="#nav-17627-content-2"
-                               role="tab" aria-controls="nav-17627-content-2" aria-selected="false">Content 2</a>
+                               role="tab" aria-controls="nav-17627-content-2" aria-selected="false">Comment</a>
                         </li>
                         <li class="nav-item">
                             <a class="a-btn nav-link" id="nav-17627-tab-3" data-toggle="tab" href="#nav-17627-content-3"
-                               role="tab" aria-controls="nav-17627-content-3" aria-selected="false">Content 3</a>
+                               role="tab" aria-controls="nav-17627-content-3" aria-selected="false">Quiz</a>
                         </li>
                         <li class="nav-item">
                             <a class="a-btn nav-link" id="nav-17627-tab-4" data-toggle="tab" href="#nav-17627-content-4"
-                               role="tab" aria-controls="nav-17627-content-4" aria-selected="false">Content 4</a>
+                               role="tab" aria-controls="nav-17627-content-4" aria-selected="false">Announcement</a>
                         </li>
                     </ul>
                     <div class="tab-content">
@@ -303,14 +303,14 @@
                             <div class="tab-pane fade-tab-bs content-inside-tab" id="nav-20063-content-3"
                                  role="tabpanel" aria-labelledby="nav-20063-content-3">
                                 <h1 class="mg-md">
-                                    Notes
+                                    Quiz
                                 </h1>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
                                 <div>
                                     <div class="text-center">
-                                        <a href="index.jsp" class="btn btn-d btn-lg btn-59-style">Add a note</a>
+                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>
                                     </div>
                                 </div>
                                 <div class="divider-h">

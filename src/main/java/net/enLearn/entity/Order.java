@@ -23,6 +23,6 @@ public class Order {
     private Date boughtOn;
 
 
-    private RedeemCode code;
+//    private RedeemCode code;
 
 }
