@@ -37,4 +37,9 @@ public class TeacherController {
         return "marks-and-access";
     }
 
+    @GetMapping("/quiz-ans-sub-link")
+    public String showQuizAnswerSubmissionLinkPage() {
+        return "quiz-ans-sub-link";
+    }
+
 }
