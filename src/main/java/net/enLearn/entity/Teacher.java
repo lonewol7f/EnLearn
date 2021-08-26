@@ -27,6 +27,10 @@ public class Teacher extends User{
     @Fetch(value = FetchMode.SUBSELECT)
     private List<FreeQuiz> freeQuizList;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Course> courseList;
+
     public Teacher() {
     }
 
