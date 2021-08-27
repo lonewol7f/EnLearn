@@ -273,7 +273,8 @@ DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course`
 (
     `id`          INT NOT NULL AUTO_INCREMENT,
-    `name`        VARCHAR(50),
+    `title`       VARCHAR(255),
+    `type`        VARCHAR(50),
     `description` TEXT,
     `price`       INT,
     `image`       BLOB,
