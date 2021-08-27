@@ -30,6 +30,11 @@ public class DemoController {
         return "shop";
     }
 
+    @GetMapping("/Add-Discount")
+    public String showAddDiscountPage() {
+        return "Add-Discount";
+    }
+
     @GetMapping("/portal")
     public String showPortal() {
         return "portal";

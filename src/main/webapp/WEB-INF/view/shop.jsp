@@ -79,6 +79,9 @@
                                     <a href="shop.jsp" class="nav-link">shop</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="${pageContext.request.contextPath}/Add-Discount" class="nav-link">Add-Discounts</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="zoom-create.jsp" class="nav-link">zoom-create</a>
                                 </li>
                                 <li class="nav-item">
