@@ -1,9 +1,12 @@
 package net.enLearn.entity;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 
 /**
- * Created by Kalana on 05/08/2021
+ * Created by Flashminat0 on 05/08/2021
  */
 
 @Entity
@@ -15,7 +18,7 @@ public class RedeemCode {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "code")
+    @Column(name = "code", unique = true)
     private String code;
 
     @Column(name = "coins")
@@ -33,6 +36,11 @@ public class RedeemCode {
             CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "admin_id")
     private Admin admin;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "code", cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @Fetch(value = FetchMode.JOIN)
+    private Order order;
 
     public RedeemCode() {
     }
