@@ -82,6 +82,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
+                                        Select Course Type
+                                    </label>
+                                    <select name="type" class="select">
+                                        <option disabled selected>Select Course Type</option>
+                                        <option value="Recorded Video">Recorded Video</option>
+                                        <option value="Zoom Class">Zoom Class</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
                                         Photo
                                     </label>
                                     <input type="file" id="image" class="form-control" required name="image" />
