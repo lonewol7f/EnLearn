@@ -41,95 +41,8 @@
 <div class="page-container">
 
   <!-- bloc-0 -->
-  <div class="bloc l-bloc none full-width-bloc b-divider " id="bloc-0">
-    <div class="container bloc-no-padding-lg">
-      <div class="row">
-        <div class="col">
-          <nav class="navbar row navbar-expand-md navbar-light" role="navigation">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/"><img src="../../resources/img/logo.png" alt="logo" /></a>
-            <button id="nav-toggle" type="button" class="ml-auto ui-navbar-toggler navbar-toggler border-0 p-0" data-toggle="collapse" data-target=".navbar-36863" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar-36863 special-dropdown-nav  fullscreen-nav open-down">
-              <ul class="site-navigation nav navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/login" class="nav-link">login</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/add-courses" class="nav-link">add-course</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/add-videos" class="nav-link">add video</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/add-quizzes" class="nav-link">add-quiz</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/students/register" class="nav-link">register-student</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/" class="nav-link">course-page</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/shop" class="nav-link">shop</a>
-                </li>
-
-
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/Add-Discount" class="nav-link">Add-Discounts</a>
-                </li>
-
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/create-zoom" class="nav-link">zoom-create</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="nav-link">quiz-select-page</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/portal" class="nav-link">Portal</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/courses/videos" class="nav-link">video-page</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/students/" class="nav-link">profile-page-student</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/teachers/register" class="nav-link a-btn">register-teacher</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/teachers/" class="nav-link a-btn">profile-page-teacher</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/test-lang" class="a-btn nav-link">test-lang</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/advertisers/" class="nav-link a-btn">profile-page-advertiser</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/advertisers/register" class="nav-link a-btn">register-advertiser</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/teachers/marks-and-access" class="a-btn nav-link">marks-and-access</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/teachers/notifications" class="a-btn nav-link">notification-view</a>
-                </li>
-                <li class="nav-item">
-                  <a href="${pageContext.request.contextPath}/admins/" class="a-btn nav-link">admin-panel</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%@include file="header.jsp"%>
   <!-- bloc-0 END -->
-
 
 
   <!--Add Discount START -->
@@ -319,56 +232,7 @@
   <!-- ScrollToTop Button END-->
 
 
-  <!-- bloc-27 -->
-  <div class="bloc l-bloc" id="bloc-27">
-    <div class="container bloc-lg">
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <h4 class="mg-md text-sm-left text-center">
-            About
-          </h4><a href="index.jsp" class="a-btn a-block footer-link">The Team</a><a href="index.jsp" class="a-btn a-block footer-link">Contact Us</a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <h4 class="mg-md text-sm-left text-center">
-            Get the app
-          </h4><a href="index.jsp" class="a-btn a-block footer-link">Android</a><a href="index.jsp" class="a-btn a-block footer-link">iOS</a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <h4 class="mg-md text-sm-left text-center">
-            Follow Us
-          </h4><a href="index.jsp" class="a-btn a-block footer-link">Twitter</a><a href="index.jsp" class="a-btn a-block footer-link">Facebook</a>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <h4 class="mg-md text-sm-left text-center">
-            Connect
-          </h4>
-          <div class="row">
-            <div class="col-6 col-sm-2 col offset-sm-0">
-              <div class="text-center">
-                <a href="facebook.com"><span class="fab fa-facebook-f icon-md"></span></a>
-              </div>
-            </div>
-            <div class="col-6 col-sm-2">
-              <div class="text-center">
-                <a><span class="fab fa-twitter icon-md"></span></a>
-              </div>
-            </div>
-            <div class="col-6 col-sm-2">
-              <div class="text-center">
-                <a><span class="fab fa-instagram icon-md"></span></a>
-              </div>
-            </div>
-            <div class="col-6 col-sm-2">
-              <div class="text-center">
-                <a><span class="far fa-envelope icon-md"></span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- bloc-27 END -->
+  <%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->
