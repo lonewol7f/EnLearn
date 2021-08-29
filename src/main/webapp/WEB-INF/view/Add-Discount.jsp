@@ -287,6 +287,9 @@
                   <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
                     Submit
                   </button>
+                  <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
+                    Demo
+                  </button>
                 </div>
               </form>
             </div>
