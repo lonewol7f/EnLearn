@@ -65,7 +65,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input class="form-control field-style" />
+                      <input type="text" id="lable" class="form-control field-style" required/>
                     </div>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input class="form-control field-style" />
+                      <input type="number" required id="amount" class="form-control field-style" />
                     </div>
                   </div>
                 </div>
@@ -89,7 +89,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input class="form-control field-style" />
+                      <input type="text" required id="teacher" class="form-control field-style" />
                     </div>
                   </div>
                 </div>
@@ -169,7 +169,7 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3">
-                        <textarea class="form-control text-area-style" rows="4" cols="50"></textarea>
+                        <textarea type="text" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
                       </div>
                     </div>
                   </div>
@@ -212,19 +212,9 @@
 
 
 
-
-
     </div>
   </div>
   <!-- ADD Discount END -->
-
-
-
-
-
-
-
-
 
 
   <!-- ScrollToTop Button -->
