@@ -10,8 +10,9 @@ public class Discount {
     private int grade;
     private String description;
 
-    public Discount(){}
+    public Discount(){} //constructor
 
+    //Setters and getters
     public int getId(){
         return Id;
     }

@@ -77,7 +77,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input type="number" required id="amount" class="form-control field-style" />
+                      <input type="number" id="amount" class="form-control field-style" required/>
                     </div>
                   </div>
                 </div>
@@ -103,7 +103,7 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3 container-div-style">
-                        <select class="form-control">
+                        <select class="form-control" required>
                           <option disabled selected value>
                             -- Select Course/Module --
                           </option>
@@ -127,7 +127,7 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3 container-div-style">
-                        <select class="form-control">
+                        <select class="form-control" required>
                           <option disabled selected value>
                             -- Grade --
                           </option>
@@ -184,18 +184,22 @@
                     <div class="form-group mb-3">
                       <div class="row">
                         <div class="col-lg-3">
-                          <a href="index.html" class="btn btn-lg w-100 btn-wire btn-button-style">Button</a>
+                          <!--<a href="index.html" class="btn btn-lg w-100 btn-wire btn-button-style">Image</a>-->
+                          <input type="file" id="image" required name="Image">
                         </div>
-                        <div class="col-lg-4">
+                        <!--<div class="col-lg-4">
                           <h5 class="mg-md">
                             No file chosen
                           </h5>
-                        </div>
+                        </div>-->
                       </div>
                     </div>
                   </div>
                 </div>
 
+
+
+                <br><br>
                 <div class="text-center">
                   <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
                     Submit
