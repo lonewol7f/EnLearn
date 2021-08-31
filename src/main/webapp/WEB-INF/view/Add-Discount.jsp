@@ -185,7 +185,7 @@
                       <div class="row">
                         <div class="col-lg-3">
                           <!--<a href="index.html" class="btn btn-lg w-100 btn-wire btn-button-style">Image</a>-->
-                          <input type="file" id="image" required name="Image">
+                          <input type="file" id="image" required />
                         </div>
                         <!--<div class="col-lg-4">
                           <h5 class="mg-md">
