@@ -22,8 +22,8 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     @Transactional
-    public void createOrUpdate(Course course) {
-        courseDAO.createOrUpdate(course);
+    public void saveOrUpdate(Course course) {
+        courseDAO.saveOrUpdate(course);
 
     }
 
