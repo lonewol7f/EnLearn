@@ -347,6 +347,39 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="text-center">
+                                        <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="text-center">
+                                        <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >#</a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="text-center">
+                                        <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >#</a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="text-center">
+                                        <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >#</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
