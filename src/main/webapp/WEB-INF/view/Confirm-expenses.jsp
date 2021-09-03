@@ -51,9 +51,6 @@
     <div class="bloc l-bloc animDelay04" id="bloc-12">
         <div class="container bloc-lg bloc-no-padding-lg">
             <div class="row shop-heading">
-                <div class="col-lg-1">
-                    <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/146-basket-trolley-shopping-card-outline.gif" alt="146 basket-trolley-shopping-card-outline" />
-                </div>
                 <div class="col-lg-2">
                     <h2 class="mg-md">
                         Additional Expences
