@@ -36,6 +36,11 @@ public class DemoController {
         return "Add-Discount";
     }
 
+    @GetMapping("/Confirm-expenses")
+    public String showConfirmExpensePage() {
+        return "Confirm-expenses";
+    }
+
 
     @GetMapping("/portal")
     public String showPortal() {
