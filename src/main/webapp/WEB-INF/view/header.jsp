@@ -30,7 +30,7 @@
                                 <a href="${pageContext.request.contextPath}/courses/add-videos" class="nav-link">add video</a>
                             </li>
                             <li class="nav-item">
-                                <a href="${pageContext.request.contextPath}/courses/add-quizzes" class="nav-link">add-quiz</a>
+                                <a href="${pageContext.request.contextPath}/courses/special-quizzes" class="nav-link">add-special-quiz</a>
                             </li>
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/students/register" class="nav-link">register-student</a>

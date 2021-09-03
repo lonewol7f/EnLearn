@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <title>quiz-ans-sub-link</title>
+    <title>add-free-quiz</title>
 
 
 
@@ -47,17 +47,97 @@
     <%@include file="header.jsp"%>
     <!-- bloc-0 END -->
 
+    <!-- bloc-30 -->
+    <div class="bloc l-bloc" id="bloc-7">
+    <div class="container bloc-lg">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <a href="${pageContext.request.contextPath}/teachers/" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="divider-h">
+                            <span class="divider"></span>
+                        </div>
+                        <div>
+                            <img class="img-fluid lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-teacher-std-free-quiz-pic.png" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" width="85%" height="75%" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div>
+                            <h3 class="mg-md no-margin">
+                                Free Quiz
+                            </h3>
+                            <div class="divider-h">
+                                <span class="divider"></span>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="blockquote container-div-style">
+                                        <label>
+                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="blockquote container-div-style">
+                                        <label>
+                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div class="form-group">
+                                        <input class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    </div>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
     <%@include file="footer.jsp" %>
