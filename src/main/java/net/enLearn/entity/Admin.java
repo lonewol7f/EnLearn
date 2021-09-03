@@ -21,4 +21,30 @@ public class Admin extends User {
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
     private List<Event> events;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "admin", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<RedeemCode> redeemCodes;
+
+    public Admin() {
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    @Override
+    public List<RedeemCode> getRedeemCodes() {
+        return redeemCodes;
+    }
+
+    @Override
+    public void setRedeemCodes(List<RedeemCode> redeemCodes) {
+        this.redeemCodes = redeemCodes;
+    }
 }
