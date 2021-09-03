@@ -76,7 +76,7 @@
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a><a href="quiz-ans-sub-link.jsp" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
+                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a><a href="${pageContext.request.contextPath}/teachers/free-quiz" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
                                         </div>
                                     </div>
                                 </div>
