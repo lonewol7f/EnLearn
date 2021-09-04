@@ -1,14 +1,8 @@
 package net.enLearn.controller;
 
-import net.enLearn.entity.Comment;
-import net.enLearn.entity.RecordedVideo;
-import net.enLearn.entity.Reply;
-import net.enLearn.entity.User;
+import net.enLearn.entity.*;
 import net.enLearn.helper.Response;
-import net.enLearn.service.CommentService;
-import net.enLearn.service.RecordedVideoService;
-import net.enLearn.service.ReplyService;
-import net.enLearn.service.UserService;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,6 +37,9 @@ public class CommentController {
     @Autowired
     private ReplyService replyService;
 
+    @Autowired
+    private NotificationService notificationService;
+
 
     @GetMapping("/list")
     public Response getCommentsAssociatedToVideo(@RequestParam("videoId") int vId) {
@@ -67,6 +64,12 @@ public class CommentController {
         commentService.saveOrUpdateComment(newComment);
 
         // TODO : add notification
+        // Comment lastComment = commentService.getLastComment();
+        // Teacher teacher = lastComment.getVideo().getCourse().getTeacher();
+        //
+        // Notification notification = new Notification();
+        // notification.setTeacher(teacher);
+        // notification.setComment(lastComment);
 
         Response response = new Response("SUCCESS");
 
