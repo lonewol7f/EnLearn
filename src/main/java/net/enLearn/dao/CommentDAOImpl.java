@@ -2,6 +2,7 @@ package net.enLearn.dao;
 
 import net.enLearn.entity.Comment;
 import net.enLearn.entity.RecordedVideo;
+import net.enLearn.entity.Reply;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -53,6 +54,10 @@ public class CommentDAOImpl implements CommentDAO{
         Comment comment = getCommentByCommentId(id);
         comment.getVideo().getComments().remove(comment);
         comment.getUser().getComments().remove(comment);
+
+        for (Reply reply : comment.getReplies()) {
+            reply.getUser().getReplies().remove(reply);
+        }
 
         // delete comment
         session.delete(comment);

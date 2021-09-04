@@ -60,7 +60,9 @@
                     <div class="row">
                         <div class="col">
                             <div class="text-center">
-                                <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-teacher">Teacher approves</a><a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-banner">Banner Approves</a>
+                                <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-teacher">Teacher approves</a>
+                                <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-banner">Banner Approves</a>
+                                <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
                             </div>
                         </div>
                         <div class="col">
@@ -69,7 +71,8 @@
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="expenses-long,expenses-small">Expenses</a>
                                 </div>
                                 <div class="object-hidden" id="expenses-long">
-                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#send-expense">Send Expense</a><a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#confirm-expense">Confirm Expense</a>
+                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#send-expense">Send Expense</a>
+                                    <a href="${pageContext.request.contextPath}/Confirm-expenses" class="btn btn-d btn-lg btn-block">Confirm Expense</a>
                                     <div class="divider-h">
                                         <span class="divider"></span>
                                     </div>
@@ -122,7 +125,7 @@
                                                     <label>
                                                         Date
                                                     </label>
-                                                    <input id="name16" class="form-control" required name="name16" />
+                                                    <input id="date" class="form-control" required name="name16" />
                                                 </div>
                                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                                     Submit
@@ -252,6 +255,12 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
                             <div id="send-expense" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -264,10 +273,18 @@
                                             <form id="form_10445" data-form-type="blocs-form" action="message" method="POST">
                                                 <div class="form-group">
                                                     <label>
-                                                        Name
+                                                        Admin Name
                                                     </label>
                                                     <input id="name16_22767_28850_23581_10445" class="form-control" required name="name16_22767_28850_23581" />
                                                 </div>
+                                                <div class="form-group">
+                                                    <label>
+                                                        Admin ID
+                                                    </label>
+                                                    <input id="adminID" class="form-control" required name="name16_22767_28850_23581" />
+                                                </div>
+
+                                                <!--
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="col-lg-7">
@@ -281,19 +298,52 @@
                                                         <div class="col">
                                                             <div class="text-center w-100">
                                                                 <div class="row">
-                                                                    <div class="col-lg-7">
-                                                                        <a href="index.jsp" class="btn btn-lg btn-wire btn-103-style">Select</a>
+                                                                    <div class="col-lg-7">    -->
+                                                                        <!--<a href="index.jsp" class="btn btn-lg btn-wire btn-103-style">Select</a>-->
+                                        <!--                                <input type="file" required name="expense_image">Image</input>
                                                                     </div>
                                                                     <div class="col">
                                                                         <h5 class="mg-md">
                                                                             Select pic
                                                                         </h5>
                                                                     </div>
-                                                                </div><a href="index.jsp" class="btn btn-d btn-lg btn-block">Send</a>
+                                                                </div>--><!--<a href="index.jsp" class="btn btn-d btn-lg btn-block">Send</a>-->
+                                                <!--            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="form-group">
+                                                    <label>
+                                                        Price
+                                                    </label>
+                                                    <input class="form-control" id="input_413" name="input_413" required />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <label>
+                                                            Description
+                                                        </label>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-group mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <textarea type="text" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="text-center w-100">
+                                                    <div class="row">
+                                                        <div class="col-lg-7">
+                                                            <!--<a href="index.jsp" class="btn btn-lg btn-wire btn-103-style">Select</a>-->
+                                                            <input type="file" required name="expense_image" />
+                                                        </div>
+                                                    </div><br> <!--<a href="index.jsp" class="btn btn-d btn-lg btn-block">Send</a>-->
+                                                </div>
+
+
+
                                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                                     Submit
                                                 </button>
@@ -305,6 +355,11 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+                            <!--
                             <div id="confirm-expense" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -347,6 +402,21 @@
                                     </div>
                                 </div>
                             </div>
+                            -->
+
+
+
+                            <!--
+                            <br>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="text-center">
+                                        <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+
                         </div>
                     </div>
                 </div>
