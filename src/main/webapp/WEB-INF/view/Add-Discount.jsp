@@ -185,7 +185,7 @@
                       <div class="row">
                         <div class="col-lg-3">
                           <!--<a href="index.html" class="btn btn-lg w-100 btn-wire btn-button-style">Image</a>-->
-                          <input type="file" id="image" required name="Image">
+                          <input type="file" id="image" required />
                         </div>
                         <!--<div class="col-lg-4">
                           <h5 class="mg-md">
@@ -196,8 +196,6 @@
                     </div>
                   </div>
                 </div>
-
-
 
                 <br><br>
                 <div class="text-center">
@@ -219,6 +217,93 @@
     </div>
   </div>
   <!-- ADD Discount END -->
+
+
+  <!--Slide show-->
+  <div class="bloc l-bloc animDelay04" id="bloc-12">
+    <div class="container bloc-lg bloc-no-padding-lg">
+      <div class="row">
+        <div class="col">
+          <div class="divider-h">
+            <span class="divider"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="carousel-2" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-2" data-slide-to="0" class="active">
+              </li>
+              <li data-target="#carousel-2" data-slide-to="1">
+              </li>
+              <li data-target="#carousel-2" data-slide-to="2">
+              </li>
+              <li data-target="#carousel-2" data-slide-to="3">
+              </li>
+              <li data-target="#carousel-2" data-slide-to="4">
+              </li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <div class="carousel-item active">
+                <img class="d-inline-block w-100" alt="slide 1" src="../../resources/img/placeholder-image-wide.png" />
+                <div class="carousel-caption caption-area-shop">
+                  <div class="blockquote">
+                    <!--
+                    <p class="text-lg-left">
+                      Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                    </p>
+                    -->
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/placeholder-image-wide.png" />
+                <div class="carousel-caption caption-area-shop">
+                  <div class="blockquote">
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-inline-block w-100" alt="slide 3" src="../../resources/img/placeholder-image-wide.png" />
+                <div class="carousel-caption caption-area-shop">
+                  <div class="blockquote">
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
+                <div class="carousel-caption caption-area-shop">
+                  <div class="blockquote">
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
+                <div class="carousel-caption caption-area-shop">
+                  <div class="blockquote">
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
+                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                  </div>
+                </div>
+              </div>
+            </div><a class="carousel-nav-controls carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-prev-icon" d="M22,2L9,16,22,30"></path></svg><span class="sr-only">Previous</span></a><a class="carousel-nav-controls carousel-control-next" href="#carousel-2" role="button" data-slide="next"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-next-icon" d="M10.344,2l13,14-13,14"></path></svg><span class="sr-only">Next</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Slide show -->
+
+
 
 
   <!-- ScrollToTop Button -->
