@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col">
                             <div>
-                                <a href="${pageContext.request.contextPath}/teachers/" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                                <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
                             </div>
                         </div>
                     </div>
