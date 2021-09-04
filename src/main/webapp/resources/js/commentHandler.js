@@ -95,7 +95,7 @@ function addReply(id) {
     let url = $(location).attr('origin') + "/comments/replies/add";
 
     if (reply === '') {
-        $('#replyBox').val('');
+        $('#replyBox' + commentId).val('');
         console.log('Reply field not set');
     } else {
         $.getJSON(url,
