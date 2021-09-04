@@ -18,6 +18,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
 
+
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?759">
     <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?7076">
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?9014">
@@ -39,9 +40,70 @@
         <%@include file="header.jsp"%>
         <!-- bloc-0 END -->
 
-        <h1>hgaieruhgieurhieurgirugier</h1>
-        <h2>eghierhiheueruiter</h2>
-        <h3>dhghergruertheruh</h3>
+        <div class="bloc l-bloc" id="bloc-8">
+            <div class="container bloc-lg">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="mg-md">
+                            Teacher Income Report
+                        </h3>
+                        <div class="row">
+                            <table  class="table th td table-dark">
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Grade</th>
+                                    <th>Unit Price</th>
+                                    <th>Monthly Income</th>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>10</td>
+                                    <td>100</td>
+                                    <td>10000</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <button class="bloc-button btn btn-d btn-lg btn-block">Print</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <!-- Footer -->
         <%@include file="footer.jsp" %>
