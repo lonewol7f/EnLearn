@@ -2,6 +2,8 @@ function loadComments() {
 
     let url = $(location).attr('origin') + "/comments/list";
     let videoId = 1;
+    // let userId = $('#userId').val();
+    let userId = 2;
 
     $.getJSON(url,
         {
@@ -19,12 +21,12 @@ function loadComments() {
                         response.data[index].user.name + '\n' +
                         '        <div class="col-12 border border-1 rounded mb-2">\n' +
                         '            <div class="item">\n' +
-                        '                <p>' + response.data[index].comment + '</p>\n' +
+                        '                <p class="mt-1">' + response.data[index].comment + '</p>\n' +
                         '            </div>\n' +
                         '            <div class="row">\n' +
                         '                <div class="col-6"></div>\n' +
-                        '                <div class="col-3"><a href="javascript:void(0);" onclick="updateComment('+ response.data[index].id +')">Update</a></div>\n' +
-                        '                <div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>\n' +
+                                        (response.data[index].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="updateComment('+ response.data[index].id +')">Update</a></div>':'') +
+                                        (response.data[index].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>':'') +
                         '            </div>\n' +
                         '        </div>\n' +
                         '        <div id="rep' + response.data[index].id + '">\n' +
@@ -34,16 +36,17 @@ function loadComments() {
                         '    <div id="div' + response.data[index].id + '"></div>\n' +
                         '    <div id="repliesDiv' + response.data[index].id + '" class="mb-3 row" style="margin-left: 15%;margin-right: 5%"></div>' +
                         '</div>');
+                    response.data[index].replies.reverse();
                     for (let reply in response.data[index].replies) {
                         $('#repliesDiv' + response.data[index].id).append('' +
                             '    <div class="col-12 border border-1 rounded mb-2">\n' +
                             '        <div class="item">\n' +
-                            '            <p>' + response.data[index].replies[reply].reply + '</p>\n' +
+                            '            <p class="mt-1">' + response.data[index].replies[reply].reply + '</p>\n' +
                             '        </div>\n' +
                             '        <div class="row">\n' +
                             '            <div class="col-6"></div>\n' +
-                            '            <div class="col-3"><a href="javascript:void(0);" onclick="updateReply(' + response.data[index].replies[reply].id + ')">Update</a></div>\n' +
-                            '            <div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>\n' +
+                                        (response.data[index].replies[reply].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="updateReply(' + response.data[index].replies[reply].id + ')">Update</a></div>':'') +
+                                        (response.data[index].replies[reply].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>':'') +
                             '        </div>\n' +
                             '    </div>');
                     }
@@ -87,7 +90,27 @@ function addReply(id) {
 
     let commentId = id.substring(8);
     let reply = $('#replyBox' + commentId).val().trim();
-    let userId = $('#userId').val();
+    // let userId = $('#userId').val();
+    let userId = 1;
+    let url = $(location).attr('origin') + "/comments/replies/add";
+
+    if (reply === '') {
+        $('#replyBox').val('');
+        console.log('Reply field not set');
+    } else {
+        $.getJSON(url,
+            {
+                commentId: commentId,
+                userId: userId,
+                reply: reply
+            },
+            function (response) {
+                if (response.status === 'SUCCESS') {
+                    $('#commentBox').val('');
+                    loadComments();
+                }
+            });
+    }
 
 }
 
@@ -136,7 +159,17 @@ function updateReply() {
 }
 
 
-function deleteReply() {
+function deleteReply(id) {
+    let url = $(location).attr('origin') + "/comments/replies/delete"
 
+    $.getJSON(url,
+        {
+            replyId: id
+        },
+        function (response) {
+            if (response.status === 'SUCCESS') {
+                loadComments();
+            }
+        });
 }
 

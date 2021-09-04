@@ -34,7 +34,7 @@ public class User {
     @JsonBackReference
     private List<Reply> replies;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.DETACH, CascadeType.REFRESH})
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
