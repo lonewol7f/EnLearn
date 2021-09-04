@@ -67,6 +67,7 @@
                         </div>
                         <div class="col">
                             <div class="text-center">
+                                <a href="${pageContext.request.contextPath}/teachers/Teacher-Income_report" class="btn btn-d btn-lg btn-block" >Teacher Income Report</a><br>
                                 <div class="text-center" id="expenses-small">
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="expenses-long,expenses-small">Expenses</a>
                                 </div>

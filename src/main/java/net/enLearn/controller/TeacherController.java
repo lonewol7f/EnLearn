@@ -42,4 +42,9 @@ public class TeacherController {
         return "quiz-ans-sub-link";
     }
 
+    @GetMapping("/Teacher-Income_report")
+    public String showTeacherIncomeReportPage() {
+        return "Teacher-Income-Report";
+    }
+
 }
