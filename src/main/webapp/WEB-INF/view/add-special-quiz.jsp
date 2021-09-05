@@ -67,78 +67,9 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
+
                                 <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <form id="form_4" data-form-type="blocs-form" action="c-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="input_2404" name="input_2404" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="input_1263" name="input_1263" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <form id="form_15821" data-form-type="blocs-form" action="b-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821" name="undefined_15821" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821" name="undefined_15821" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12 mb-5">
                                         <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
                                             <div>
                                                 <div class="row">
@@ -159,12 +90,28 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="col">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="blockquote container-div-style">
+                                                <label>
+                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <img class="img-fluid lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-business-person-with-checklist-4FDRP8KNVW.png" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" />
+                                        <div class="col">
+                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="blockquote container-div-style">
+                                                <label>
+                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
                                 </div>
@@ -179,6 +126,24 @@
                                     <span class="divider"></span>
                                 </div>
                                 <div class="row">
+                                    <div class="col-lg-12 mb-5">
+                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-lg-9">
+                                                         <div class="form-group">
+                                                        <input class="form-control" />
+                                                         </div>
+                                                    </div>
+                                                 <div class="col">
+                                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                                                   </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row">
                                     <div class="col-lg-8">
                                         <div class="blockquote container-div-style">
                                             <label>
@@ -200,39 +165,31 @@
                                     </div>
                                     <div class="col">
                                         <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-9">
-                                        <div class="form-group">
-                                            <input class="form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-9">
-                                        <div class="form-group">
-                                            <input class="form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-9">
-                                        <div class="form-group">
-                                            <input class="form-control" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
                                     </div>
                                 </div>
                             </div>
+
+<%--                                <div class="row">--%>
+<%--                                    <div class="col-lg-9">--%>
+<%--                                        <div class="form-group">--%>
+<%--                                            <input class="form-control" />--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="col">--%>
+<%--                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <div class="row">--%>
+<%--                                    <div class="col-lg-9">--%>
+<%--                                        <div class="form-group">--%>
+<%--                                            <input class="form-control" />--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="col">--%>
+<%--                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+
 <%--                            <div>--%>
 <%--                                <h3 class="mg-md no-margin">--%>
 <%--                                    Free Quiz--%>

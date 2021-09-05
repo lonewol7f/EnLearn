@@ -37,9 +37,12 @@ public class TeacherController {
         return "marks-and-access";
     }
 
-    @GetMapping("/free-quiz")
-    public String showQuizAnswerSubmissionLinkPage() {
-        return "add-free-quiz";
+    @GetMapping("/free-quiz-links")
+    public String showFreeQuizLinksPage() {
+        return "free-quiz-links";
     }
+
+    @GetMapping("/add-free-quiz")
+    public String showAddFreeQuizPage(){ return "add-free-quiz"; }
 
 }

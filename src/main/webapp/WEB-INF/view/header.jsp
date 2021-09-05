@@ -84,7 +84,7 @@
                                 <a href="${pageContext.request.contextPath}/courses/create-courses" class="nav-link">create-course</a>
                             </li>
                             <li class="nav-item">
-                                <a href="${pageContext.request.contextPath}/teachers/free-quiz" class="nav-link">add-free-quiz</a>
+                                <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="nav-link">free-quiz-links</a>
                             </li>
                         </ul>
                     </div>
