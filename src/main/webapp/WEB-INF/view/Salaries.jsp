@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Maneesha
+  User: Pehesara
   Date: 9/5/2021
   Time: 12:32 AM
   To change this template use File | Settings | File Templates.
@@ -62,14 +62,17 @@
                                         <label>
                                             Enter Your ID
                                         </label>
-                                        <input type="number" id="name7_10830_22096_19919" class="form-control" required name="userid" />
+                                        <input type="number" id="Sal-ID" class="form-control" required name="userid" />
                                     </div>
                                     <div class="form-group">
                                         <div class="form-group">
                                             <label>
                                                 Select month
                                             </label>
-                                            <select class="form-control" id="select_month" name="select_month" required>
+                                            <select class="form-control" id="Sal_select_month" name="select_month" required>
+                                                <option disabled selected value>
+                                                    -- Select Month --
+                                                </option>
                                                 <option value="1">
                                                     January
                                                 </option>
@@ -113,7 +116,10 @@
                                                 Select your job type&nbsp;<br>
                                             </label>
                                             <div class="form-group">
-                                                <select class="form-control" id="select_2708" name="select_2708" required>
+                                                <select class="form-control" id="Sal_select_type" name="select_2708" required>
+                                                    <option disabled selected value>
+                                                        -- Select Type --
+                                                    </option>
                                                     <option value="1">
                                                         Teacher
                                                     </option>
@@ -127,9 +133,13 @@
                                     <div class="divider-h">
                                         <span class="divider"></span>
                                     </div>
+                                    <!--
                                     <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                         Submit
                                     </button>
+                                    -->
+                                    <button type="submit" class="bloc-button btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#check-salary">Check Salary</button>
+                                    <!--<a href="#" class="bloc-button btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#check-salary">Check Salary</a>-->
                                 </form>
                             </div>
                             <div class="col">
@@ -145,6 +155,43 @@
     </div>
     <!-- Main container END -->
 
+
+
+    <!--  Popup Message  -->
+    <div id="check-salary" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mg-clear">
+                        Your Salary
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <form id="form_22767" data-form-type="blocs-form" action="teacher" method="POST">
+                        <div class="form-group" style="text-align: center">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Month</h5>
+                                </div>
+                                <div class="col">
+                                    <h5>January</h5>
+                                </div>
+                            </div>
+                            <h4>
+                                100000/=
+                            </h4>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#check-salary">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup END -->
+
+
     <!-- Footer -->
     <%@include file="footer.jsp" %>
 
@@ -154,7 +201,9 @@
     <script src="../../resources/js/blocs.js?5117"></script>
     <script src="../../resources/js/jqBootstrapValidation.js"></script>
     <script src="../../resources/js/formHandler.js?1725"></script>
-    <script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+    <script src="../../resources/js/lazysizes.min.js" defer></script>
+    <script src="../../resources/js/formHandler.js"></script>
+    <!-- Additional JS END -->
 
 </body>
 </html>

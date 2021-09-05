@@ -42,7 +42,7 @@
                             Admin Income Report
                         </h3>
                         <div class="row">
-                            <table  class="table th td table-dark">
+                            <table  class="table">
                                 <tr>
                                     <th>Admin ID</th>
                                     <th>Admin Name</th>

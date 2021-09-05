@@ -48,7 +48,7 @@
                             Teacher Income Report
                         </h3>
                         <div class="row">
-                            <table  class="table th td table-dark">
+                            <table  class="table">
                                 <tr>
                                     <th>Subject</th>
                                     <th>Grade</th>

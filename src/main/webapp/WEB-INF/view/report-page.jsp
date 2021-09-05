@@ -48,16 +48,19 @@
                             <div class="col">
                                 <div class="text-center">
                                     <a href="${pageContext.request.contextPath}/teachers/Teacher-Income_report" class="btn btn-d btn-lg btn-block" >Teacher Income Report</a>
+                                    <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="text-center">
                                     <a href="${pageContext.request.contextPath}/admins/admin-report" class="btn btn-d btn-lg btn-block" >Admin Income Report</a>
+                                    <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="text-center">
                                     <a href="${pageContext.request.contextPath}/discount-rate-report" class="btn btn-d btn-lg btn-block" >Discount Rate Report</a>
+                                    <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
                                 </div>
                             </div>
                         </div>
