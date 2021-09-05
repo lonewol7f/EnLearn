@@ -48,9 +48,9 @@ public class CourseController {
         return "add-video";
     }
 
-    @GetMapping("/add-quizzes")
+    @GetMapping("/special-quizzes")
     public String showAddQuizPage() {
-        return "add-quiz";
+        return "add-special-quiz";
     }
 
     @GetMapping("/select-quizzes")

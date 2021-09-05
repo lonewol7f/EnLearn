@@ -30,7 +30,7 @@
                                 <a href="${pageContext.request.contextPath}/courses/add-videos" class="nav-link">add video</a>
                             </li>
                             <li class="nav-item">
-                                <a href="${pageContext.request.contextPath}/courses/add-quizzes" class="nav-link">add-quiz</a>
+                                <a href="${pageContext.request.contextPath}/courses/special-quizzes" class="nav-link">add-special-quiz</a>
                             </li>
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/students/register" class="nav-link">register-student</a>
@@ -84,7 +84,7 @@
                                 <a href="${pageContext.request.contextPath}/courses/create-courses" class="nav-link">create-course</a>
                             </li>
                             <li class="nav-item">
-                                <a href="${pageContext.request.contextPath}/teachers/quiz-ans-sub-link" class="nav-link">quiz-ans-sub-link</a>
+                                <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="nav-link">free-quiz-links</a>
                             </li>
                         </ul>
                     </div>
