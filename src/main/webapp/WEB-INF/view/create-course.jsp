@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
-                                    Submit
+                                    Create Course
                                 </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
                             </form>
                         </div>

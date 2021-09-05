@@ -31,8 +31,8 @@ public class Teacher extends User{
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Course> courseList;
 
-    public Teacher() {
-    }
+
+    public Teacher() { }
 
     public List<Notification> getNotifications() {
         return notifications;
@@ -57,4 +57,8 @@ public class Teacher extends User{
     public void setFreeQuizList(List<FreeQuiz> freeQuizList) {
         this.freeQuizList = freeQuizList;
     }
+
+    public List<Course> getCourseList() { return courseList; }
+
+    public void setCourseList(List<Course> courseList) { this.courseList = courseList; }
 }
