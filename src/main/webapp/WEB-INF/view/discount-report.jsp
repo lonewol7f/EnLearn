@@ -38,9 +38,10 @@
       <div class="container bloc-lg">
         <div class="row">
           <div class="col">
-            <h3 class="mg-md">
+            <h3 class="mg-md" style="text-align: center">
               Discount Rate Report
             </h3>
+            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/discount.png" data-src="${pageContext.request.contextPath}/resources/img/discount.png" width="450rem" height="450rem"  style="position: relative;left: 32%; padding-bottom: 30px;" alt="Discount Image" />
             <div class="row">
               <table  class="table">
                 <tr>
