@@ -65,22 +65,9 @@
                             <div class="divider-h">
                                 <span class="divider"></span>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div>
-                                        <div class="text-center">
-                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Create a course</a><a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Go back to saved course</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <div class="text-center">
-                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a><a href="quiz-ans-sub-link.jsp" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <button class="bloc-button btn btn-d btn-lg btn-block" type="button" onclick="window.location.href='create-course'; return false;">
+                                Create Course
+                            </button>
                         </div>
                         <div class="col offset-lg-1">
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/e91b91aa-c033-4f41-b5aa-585a81bf4cd4.jpg" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" />
