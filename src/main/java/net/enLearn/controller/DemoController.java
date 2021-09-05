@@ -49,6 +49,14 @@ public class DemoController {
         return "Salaries";
     }
 
+    @GetMapping("/report")
+    public String showReportPage() {
+        return "report-page";
+    }
+
+    @GetMapping("/discount-rate-report")
+    public String showDiscountRateReportPage() { return "discount-report"; }
+
 
     @GetMapping("/portal")
     public String showPortal() {
