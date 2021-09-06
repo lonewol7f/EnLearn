@@ -27,9 +27,9 @@ public class Teacher extends User{
     @Fetch(value = FetchMode.SUBSELECT)
     private List<FreeQuiz> freeQuizList;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher", cascade = CascadeType.ALL)
-    @Fetch(value = FetchMode.SUBSELECT)
-    private List<Course> courseList;
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher", cascade = CascadeType.ALL)
+//    @Fetch(value = FetchMode.SUBSELECT)
+//    private List<Course> courseList;
 
 
     public Teacher() { }
@@ -58,7 +58,7 @@ public class Teacher extends User{
         this.freeQuizList = freeQuizList;
     }
 
-    public List<Course> getCourseList() { return courseList; }
-
-    public void setCourseList(List<Course> courseList) { this.courseList = courseList; }
+//    public List<Course> getCourseList() { return courseList; }
+//
+//    public void setCourseList(List<Course> courseList) { this.courseList = courseList; }
 }

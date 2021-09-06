@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: hasin
@@ -24,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<%--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--%>
     <title>add video</title>
 
 
@@ -61,53 +63,53 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <form id="add-video" data-form-type="blocs-form" action="add-video-action" method="POST">
+                            <form:form  data-form-type="blocs-form" action="/courses/save" modelAttribute="course" method="post">
                                 <div class="form-group">
-                                    <label>
+                                    <form:label path="title">
                                         Course Name
-                                    </label>
-                                    <input id="course_name" class="form-control" required name="course_name" />
+                                    </form:label>
+                                    <form:input path="title" cssClass= "form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>
+                                    <form:label path="price">
                                         Course Fee
-                                    </label>
-                                    <input id="course_fee" class="form-control" required name="course_fee" />
+                                    </form:label>
+                                    <form:input path="price" cssClass="form-control" />
                                 </div>
                                 <div class="form-group">
-                                    <label>
+                                    <form:label path="description">
                                         Description
-                                    </label>
-                                    <input id="description" class="form-control" required name="description" />
+                                    </form:label>
+                                    <form:input path="description" cssClass="form-control" />
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        Select Course Type
-                                    </label>
-                                    <select name="type" class="select">
-                                        <option disabled selected>Select Course Type</option>
-                                        <option value="Recorded Video">Recorded Video</option>
-                                        <option value="Zoom Class">Zoom Class</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Image
-                                    </label>
-                                    <input type="file" id="image" class="form-control" required name="image" />
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Description
-                                    </label>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="4" cols="50" id="textarea_1485" name="textarea_1485"></textarea>
-                                    </div>
-                                </div>
+<%--                                <div class="form-group">--%>
+<%--                                    <label>--%>
+<%--                                        Select Course Type--%>
+<%--                                    </label>--%>
+<%--                                    <select name="type" class="select">--%>
+<%--                                        <option disabled selected>Select Course Type</option>--%>
+<%--                                        <option value="Recorded Video">Recorded Video</option>--%>
+<%--                                        <option value="Zoom Class">Zoom Class</option>--%>
+<%--                                    </select>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <label>--%>
+<%--                                        Image--%>
+<%--                                    </label>--%>
+<%--                                    <input type="file" id="image" class="form-control" required name="image" />--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group">--%>
+<%--                                    <label>--%>
+<%--                                        Description--%>
+<%--                                    </label>--%>
+<%--                                    <div class="form-group">--%>
+<%--                                        <textarea class="form-control" rows="4" cols="50" id="textarea_1485" name="textarea_1485"></textarea>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                     Create Course
                                 </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
-                            </form>
+                            </form:form>
                         </div>
                         <div class="col offset-lg-1">
                             <div class="video-box">

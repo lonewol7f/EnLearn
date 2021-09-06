@@ -20,7 +20,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="EnLearn" value="ce89d539-7319-4f3d-895f-25a783779b05" />
+          <factory-entry name="EnLearn" value="709507b6-5017-4db5-a23b-cc68fa6d9882" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -41,9 +41,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.15.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.15.RELEASE" level="project" />
@@ -110,6 +110,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
-    <orderEntry type="library" name="tailwindcss" level="application" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" level="project" />
   </component>
 </module>

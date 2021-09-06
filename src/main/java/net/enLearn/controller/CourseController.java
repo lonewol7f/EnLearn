@@ -66,8 +66,7 @@ public class CourseController {
     @PostMapping("/save")
     public String saveCourse(@ModelAttribute("course") Course course) {
         courseService.saveOrUpdate(course);
-
-        return "redirect:/teachers/profile-page-teacher";
+        return "zoom-create";
     }
 
 

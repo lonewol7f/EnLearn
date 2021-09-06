@@ -1,8 +1,6 @@
 package net.enLearn.entity;
 
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 
 @Entity
@@ -17,8 +15,8 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "type")
-    private String type;
+//    @Column(name = "type")
+//    private String type;
 
     @Column(name = "description")
     private String description;
@@ -26,13 +24,13 @@ public class Course {
     @Column(name = "price")
     private int price;
 
-    @Transient
-    @Column(name = "image")
-    private MultipartFile image;
+//    @Transient
+//    @Column(name = "image")
+//    private MultipartFile image;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+//    @JoinColumn(name = "teacher_id")
+//    private Teacher teacher;
 
     public Course(){};
 
@@ -52,13 +50,13 @@ public class Course {
         this.title = title;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public String getType() {
+//        return type;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public String getDescription() {
         return description;
@@ -76,19 +74,30 @@ public class Course {
         this.price = price;
     }
 
-    public MultipartFile getImage() {
-        return image;
+//    public MultipartFile getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(MultipartFile image) {
+//        this.image = image;
+//    }
+//
+//    public Teacher getTeacher() {
+//        return teacher;
+//    }
+//
+//    public void setTeacher(Teacher teacher) {
+//        this.teacher = teacher;
+//    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price='" + price +
+                '}';
     }
 
-    public void setImage(MultipartFile image) {
-        this.image = image;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
 }
