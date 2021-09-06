@@ -22,10 +22,7 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     @Transactional
-    public void createOrUpdate(Course course) {
-        courseDAO.createOrUpdate(course);
-
-    }
+    public void saveOrUpdate(Course course) { courseDAO.saveOrUpdate(course); }
 
     @Override
     @Transactional
@@ -35,8 +32,5 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     @Transactional
-    public void deleteCourse(int id) {
-        courseDAO.deleteCourse(id);
-
-    }
+    public void deleteCourse(int id) { courseDAO.deleteCourse(id); }
 }
