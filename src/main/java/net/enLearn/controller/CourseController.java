@@ -1,10 +1,13 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Course;
 import net.enLearn.service.CourseService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -59,6 +62,17 @@ public class CourseController {
     public String showZoomCreatePage() {
         return "zoom-create";
     }
+
+    @PostMapping("/save")
+    public String saveCourse(@ModelAttribute("course") Course course) {
+        courseService.saveOrUpdate(course);
+
+        return "redirect:/teachers/profile-page-teacher";
+    }
+
+
+
+
 
 
 
