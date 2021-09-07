@@ -43,9 +43,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.2.15.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.15.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.2.15.RELEASE" level="project" />
@@ -112,6 +112,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.1" level="project" />
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
-    <orderEntry type="library" name="tailwindcss" level="application" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" level="project" />
   </component>
 </module>
