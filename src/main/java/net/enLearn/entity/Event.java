@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
@@ -28,10 +26,10 @@ public class Event {
     private String message;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     @Column(name = "time")
-    private Time time;
+    private String  time;
 
     @CreationTimestamp
     @Column(name = "created_on")
@@ -70,19 +68,19 @@ public class Event {
         this.message = message;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 

@@ -75,24 +75,6 @@
                                      aria-labelledby="nav-40313-content-1">
                                     <div>
                                         <div class="row">
-                                            <div class="offset-lg-1 col-lg-6">
-                                                <div class="form-group">
-                                                    <select class="form-control">
-                                                        <option value="0">
-                                                            Option 1
-                                                        </option>
-                                                        <option value="1">
-                                                            Option 2
-                                                        </option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col offset-lg-0">
-                                                <a href="${pageContext.request.contextPath}/"
-                                                   class="btn btn-d btn-lg btn-block btn-76-style btn-rd">Button</a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col">
                                                 <div>
                                                     <div class="blockquote">

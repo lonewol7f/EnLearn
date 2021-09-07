@@ -47,8 +47,4 @@ public class DemoController {
         return "portal";
     }
 
-    @GetMapping("/test-lang")
-    public String showTestLangPage() {
-        return "add-code";
-    }
 }
