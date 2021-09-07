@@ -1,3 +1,5 @@
+
+
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -15,7 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
-
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?286">
     <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?9809">
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?245">
@@ -24,28 +25,18 @@
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>profile-page-teacher</title>
-
-
-
     <!-- Analytics -->
-
     <!-- Analytics END -->
-
 </head>
 <body>
-
 <!-- Preloader -->
 <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
 <!-- Preloader END -->
-
-
 <!-- Main container -->
 <div class="page-container">
-
     <!-- bloc-0 -->
     <%@include file="header.jsp"%>
     <!-- bloc-0 END -->
-
     <!-- bloc-19 -->
     <div class="bloc l-bloc" id="bloc-19">
         <div class="container bloc-lg">
@@ -69,7 +60,9 @@
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Create a course</a><a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Go back to saved course</a>
+                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Create a course</a>
+                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Go back to saved course</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/marks-and-access" class="btn btn-d btn-lg btn-block">Students Marks</a>
                                         </div>
                                     </div>
                                 </div>
@@ -77,6 +70,8 @@
                                     <div>
                                         <div class="text-center">
                                             <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>
+                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +184,6 @@
         </div>
     </div>
     <!-- bloc-19 END -->
-
     <!-- bloc-22 -->
     <div class="bloc l-bloc" id="bloc-22">
         <div class="container bloc-lg bloc-sm-lg">
@@ -318,21 +312,14 @@
         </div>
     </div>
     <!-- bloc-22 END -->
-
     <%@include file="footer.jsp" %>
-
 </div>
 <!-- Main container END -->
-
-
-
 <!-- Additional JS -->
 <script src="../../resources/js/jquery.js?8669"></script>
 <script src="../../resources/js/bootstrap.bundle.js?9765"></script>
 <script src="../../resources/js/blocs.js?5117"></script>
 <script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
-
-
 </body>
 </html>
 

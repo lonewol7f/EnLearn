@@ -52,6 +52,13 @@
             <div class="row">
                 <div class="col">
                     <div class="row">
+                        <div class="col">
+                            <div>
+                                <a href="${pageContext.request.contextPath}/teachers/" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-7">
                             <h3 class="mg-md">
                                 Heading content

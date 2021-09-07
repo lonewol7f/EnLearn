@@ -1,14 +1,18 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Admin;
+import net.enLearn.entity.Event;
 import net.enLearn.entity.RedeemCode;
+import net.enLearn.service.AdminService;
+import net.enLearn.service.EventService;
 import net.enLearn.service.RedeemCodeService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Created by Kalana on 21/07/2021
@@ -23,6 +27,12 @@ public class AdminController {
 
     @Autowired
     private RedeemCodeService redeemCodeService;
+
+    @Autowired
+    private EventService eventService;
+
+    @Autowired
+    private AdminService adminService;
 
     @GetMapping("")
     public String showAdminPanel() {
@@ -54,6 +64,57 @@ public class AdminController {
         redeemCodeService.deleteUsedCodes();
 
         return "redirect:/test-lang";  // TODO: edit this redirect to correct mapping
+    }
+
+    @GetMapping("/codes")
+    public String showAddCodePage() {
+        return "add-code";
+    }
+
+    @PostMapping("/events/save")
+    public String saveEvent(@ModelAttribute("event") Event event, @RequestParam("adminId") int adminId) {
+
+        Admin admin = adminService.getAdminById(adminId);
+        event.setAdmin(admin);
+
+        eventService.saveOrUpdateEvent(event);
+
+        return "redirect:/admins/events/list";
+    }
+
+    @GetMapping("/events/list")
+    public String showEventListPage(Model model) {
+
+        List<Event> events = eventService.getEventList();
+
+        model.addAttribute("eventList", events);
+
+        return "event-list";
+    }
+
+    @GetMapping("/events/delete")
+    public String deleteEvent(@RequestParam("eventId") int id) {
+
+        eventService.deleteEvent(id);
+
+        return "redirect:/admins/events/list";
+    }
+
+    @GetMapping("/events/add")
+    public String showAddEventPage(Model model) {
+        Event event = new Event();
+        model.addAttribute("event", event);
+
+        return "event-form";
+    }
+
+    @GetMapping("/events/update")
+    public String showEventUpdateForm(@RequestParam("eventId") int eventId, Model model) {
+        Event event = eventService.getEventById(eventId);
+
+        model.addAttribute("event", event);
+
+        return "event-form";
     }
 
 }

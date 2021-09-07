@@ -6,6 +6,7 @@
         <exploded>true</exploded>
         <module>EnLearn</module>
         <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
     <root id="root">
@@ -16,7 +17,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.15.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.2.15.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:5.2.15.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.2.15.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.15.RELEASE" />
@@ -76,6 +76,7 @@
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -89,9 +90,9 @@
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="create-less,create-more">Create</a>
                                 </div>
                                 <div class="object-hidden" id="create-more">
-                                    <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Course</a>
-                                    <a href="add-code.jsp" class="btn btn-d btn-lg btn-block">Code</a>
-                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#add-event">Event</a>
+                                    <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-d btn-lg btn-block">Course</a>
+                                    <a href="${pageContext.request.contextPath}/admins/codes" class="btn btn-d btn-lg btn-block">Code</a>
+                                    <a href="${pageContext.request.contextPath}/admins/events/list" class="btn btn-d btn-lg btn-block">Event</a>
                                     <div class="divider-h">
                                         <span class="divider"></span>
                                     </div><a href="#" class="btn btn-lg btn-rd btn-wire btn-△-style" data-toggle-visibility="create-less,create-more">△</a>
@@ -106,39 +107,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div id="add-event" class="modal fade" tabindex="-1" role="dialog">
-                                <div class="modal-dialog  modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="mg-clear">
-                                                Event
-                                            </h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form id="form_16" data-form-type="blocs-form" action="event" method="POST">
-                                                <div class="form-group">
-                                                    <label>
-                                                        Name
-                                                    </label>
-                                                    <input id="name16" class="form-control" required name="name16" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>
-                                                        Date
-                                                    </label>
-                                                    <input id="date" class="form-control" required name="name16" />
-                                                </div>
-                                                <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
-                                                    Submit
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#add-event">Close</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div id="approve-teacher" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
