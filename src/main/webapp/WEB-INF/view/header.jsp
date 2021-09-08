@@ -63,7 +63,7 @@
                                 <a href="${pageContext.request.contextPath}/teachers/" class="nav-link a-btn">profile-page-teacher</a>
                             </li>
                             <li class="nav-item">
-                                <a href="${pageContext.request.contextPath}/test-lang" class="a-btn nav-link">test-lang</a>
+                                <a href="${pageContext.request.contextPath}/admins/codes" class="a-btn nav-link">add-code</a>
                             </li>
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/advertisers/" class="nav-link a-btn">profile-page-advertiser</a>
@@ -85,6 +85,9 @@
                             </li>
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="nav-link">free-quiz-links</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="${pageContext.request.contextPath}/Salaries" class="nav-link">Salaries</a>
                             </li>
                         </ul>
                     </div>

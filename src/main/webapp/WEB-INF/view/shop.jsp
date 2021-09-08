@@ -144,9 +144,37 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -163,9 +191,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -182,9 +237,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -201,9 +283,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -212,7 +321,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row animDelay02">
+            <div class="row">
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
@@ -222,9 +331,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -241,9 +377,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -260,9 +423,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -279,9 +469,36 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Course
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            Grade 6
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            400(new)
+                                        </h6>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mg-md text-lg-center">
+                                            100(rate)
+                                        </h6>
+                                    </div>
+                                </div>
+                                <h6 class="mg-md text-lg-center">
+                                    Teacher
+                                </h6>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Button</a>
+                                <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -290,6 +507,38 @@
                     </div>
                 </div>
             </div>
+
+
+            <!--  Popup Message  -->
+            <div id="shop-code" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog  modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="mg-clear">
+                                Discount Code
+                            </h3>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form_22767" data-form-type="blocs-form" action="teacher" method="POST">
+                                <div class="form-group" style="text-align: center">
+                                    <h5>
+                                        Use below code to get discount
+                                    </h5>
+                                    <h3>
+                                        45679874
+                                    </h3>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#shop-code">Close</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Popup END -->
+
+
             <div class="row">
                 <div class="col">
                     <div class="divider-h">

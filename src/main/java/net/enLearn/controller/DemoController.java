@@ -36,10 +36,26 @@ public class DemoController {
         return "Add-Discount";
     }
 
+    @GetMapping("/Add-expenses")
+    public String showAddExpensePage(){return "Add-expenses";}
+
     @GetMapping("/Confirm-expenses")
     public String showConfirmExpensePage() {
         return "Confirm-expenses";
     }
+
+    @GetMapping("/Salaries")
+    public String showSalariesPage() {
+        return "Salaries";
+    }
+
+    @GetMapping("/report")
+    public String showReportPage() {
+        return "report-page";
+    }
+
+    @GetMapping("/discount-rate-report")
+    public String showDiscountRateReportPage() { return "discount-report"; }
 
 
     @GetMapping("/portal")
@@ -47,8 +63,4 @@ public class DemoController {
         return "portal";
     }
 
-    @GetMapping("/test-lang")
-    public String showTestLangPage() {
-        return "add-code";
-    }
 }
