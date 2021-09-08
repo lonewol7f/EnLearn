@@ -68,11 +68,12 @@
                         </div>
                         <div class="col">
                             <div class="text-center">
+                                <a href="${pageContext.request.contextPath}/report" class="btn btn-d btn-lg btn-block" >Reports</a><br>
                                 <div class="text-center" id="expenses-small">
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="expenses-long,expenses-small">Expenses</a>
                                 </div>
                                 <div class="object-hidden" id="expenses-long">
-                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#send-expense">Send Expense</a>
+                                    <a href="${pageContext.request.contextPath}/Add-expenses" class="btn btn-d btn-lg btn-block" >Send Expense</a>
                                     <a href="${pageContext.request.contextPath}/Confirm-expenses" class="btn btn-d btn-lg btn-block">Confirm Expense</a>
                                     <div class="divider-h">
                                         <span class="divider"></span>
@@ -229,7 +230,7 @@
 
 
 
-
+                    <!--
                             <div id="send-expense" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -252,7 +253,7 @@
                                                     </label>
                                                     <input id="adminID" class="form-control" required name="name16_22767_28850_23581" />
                                                 </div>
-
+                    -->
                                                 <!--
                                                 <div class="form-group">
                                                     <div class="row">
@@ -282,6 +283,7 @@
                                                     </div>
                                                 </div>
                                                 -->
+                    <!--
                                                 <div class="form-group">
                                                     <label>
                                                         Price
@@ -305,10 +307,10 @@
                                                 <div class="text-center w-100">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <!--<a href="index.jsp" class="btn btn-lg btn-wire btn-103-style">Select</a>-->
+
                                                             <input type="file" required name="expense_image" />
                                                         </div>
-                                                    </div><br> <!--<a href="index.jsp" class="btn btn-d btn-lg btn-block">Send</a>-->
+                                                    </div><br>
                                                 </div>
 
 
@@ -326,7 +328,7 @@
                             </div>
 
 
-
+                    -->
 
                             <!--
                             <div id="confirm-expense" class="modal fade" tabindex="-1" role="dialog">

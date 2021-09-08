@@ -39,6 +39,11 @@ public class AdminController {
         return "admin-panel";
     }
 
+    @GetMapping("/admin-report")
+    public String showAdminReportPanel() {
+        return "admin-report-page";
+    }
+
     @PostMapping("/save-coupon")
     public String saveCoupon(@ModelAttribute("coupon")RedeemCode code) {
 
