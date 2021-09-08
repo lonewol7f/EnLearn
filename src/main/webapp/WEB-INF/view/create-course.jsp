@@ -63,7 +63,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <form:form  data-form-type="blocs-form" action="/courses/save" modelAttribute="course" method="post">
+                            <form:form  enctype="multipart/form-data" data-form-type="blocs-form" action="/courses/save" modelAttribute="course" method="post">
                                 <div class="form-group">
                                     <form:label path="title">
                                         Course Name
@@ -82,22 +82,27 @@
                                     </form:label>
                                     <form:input path="description" cssClass="form-control" />
                                 </div>
-<%--                                <div class="form-group">--%>
-<%--                                    <label>--%>
-<%--                                        Select Course Type--%>
-<%--                                    </label>--%>
-<%--                                    <select name="type" class="select">--%>
-<%--                                        <option disabled selected>Select Course Type</option>--%>
-<%--                                        <option value="Recorded Video">Recorded Video</option>--%>
-<%--                                        <option value="Zoom Class">Zoom Class</option>--%>
-<%--                                    </select>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label>--%>
-<%--                                        Image--%>
-<%--                                    </label>--%>
-<%--                                    <input type="file" id="image" class="form-control" required name="image" />--%>
-<%--                                </div>--%>
+                                <div class="form-group">
+                                    <form:label path="type">
+                                        Select Course Type
+                                    </form:label>
+                                    <div class="form-group">
+                                        <form:select  path="type" cssClass="form-control" id="select_2708">
+                                            <form:option value="Recorded Video">
+                                                Recorded Video
+                                            </form:option>
+                                            <form:option value="Zoom Class">
+                                                Zoom Class
+                                            </form:option>
+                                        </form:select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <form:label path="image">
+                                        Image
+                                    </form:label>
+                                    <form:input path="image" type="file"  cssClass="form-control" name="image" />
+                                </div>
 <%--                                <div class="form-group">--%>
 <%--                                    <label>--%>
 <%--                                        Description--%>

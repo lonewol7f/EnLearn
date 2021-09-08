@@ -60,8 +60,10 @@
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Create a course</a>
-                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Go back to saved course</a>
+                                            <button class="bloc-button btn btn-d btn-lg btn-block" type="button" onclick="window.location.href='create-course'; return false;">
+                                                Create Course
+                                            </button>
+<%--                                            <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Go back to saved course</a>--%>
                                             <a href="${pageContext.request.contextPath}/teachers/marks-and-access" class="btn btn-d btn-lg btn-block">Students Marks</a>
                                         </div>
                                     </div>
@@ -69,8 +71,8 @@
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>
-                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>
+<%--                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>--%>
+<%--                                            <a href="zoom-create.jsp" class="btn btn-d btn-lg btn-block">Create a live class</a>--%>
                                             <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
                                         </div>
                                     </div>
