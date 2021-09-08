@@ -44,7 +44,7 @@
 
     <div class="container">
         <div class="mt-5 mb-5">
-            <input type="button" value="Go Back" onclick="window.location.href='/admins'; return false;"
+            <input type="button" value="Go Back" onclick="window.location.href='/admins/events/list'; return false;"
                    class="btn btn-info"/>
         </div>
         <h3 class="h3 text-center">Save/Update Event</h3>
