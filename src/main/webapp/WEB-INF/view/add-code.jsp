@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Flashminat0
@@ -38,20 +40,24 @@
 <body>
 <div class="grid grid-cols-3 place-items-center pt-3">
     <div class=""></div>
+    <%--TODO: replace form action with saveLink, after login created--%>
+    <%--            <c:url var="saveLink" value="/admins/save-coupon">--%>
+    <%--                <c:param name="adminId" value="${}"/>--%>
+    <%--            </c:url>--%>
     <div class="shadow-lg rounded-2xl w-64 p-4 bg-white relative overflow-hidden">
-        <form action="">
-            <label> Code
-                <input type="text"
-                       class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-            </label><br>
-            <label> Coins
-                <input type="text"
-                       class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-            </label><br><br>
-            <button class="py-2 px-4 flex justify-center items-center  bg-green-500 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+        <form:form action="/admins/save-coupon" modelAttribute="code" method="post">
+            <form:label path="code"> Code
+                <form:input type="text" path="code"
+                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+            </form:label><br>
+            <form:label path="coins"> Coins
+                <form:input type="text" path="coins"
+                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+            </form:label><br><br>
+            <button type="submit" class="py-2 px-4 flex justify-center items-center  bg-green-500 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
                 Submit Code !
             </button>
-        </form>
+        </form:form>
     </div>
     <div class=""></div>
 </div>
@@ -86,87 +92,39 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                c000001
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                1234 5678 ABCD EFGH
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                2000
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden="true"
-                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
+                    <c:forEach var="code" items="${codeList}">
+                        <%-- construct an 'delete' link with code id --%>
+                        <c:url var="deleteLink" value="/admins/events/delete">
+                            <c:param name="codeId" value="${code.id}"/>
+                        </c:url>
+                        <tr>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                        ${code.id}
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                        ${code.code}
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">
+                                        ${code.coins}
+                                </p>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <c:if test="${!code.redeemed}">
+                                        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                            <span aria-hidden="true"
+                                                  class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
+                                            </span>
+                                            <span class="relative">
+                                                active
+                                            </span>
                                         </span>
-                                        <span class="relative">
-                                            active
-                                        </span>
-                                    </span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900 modal-open">
-                                Remove
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                c000002
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                1234 5678 ABCD EFGH
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                1200
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden="true"
-                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
-                                        </span>
-                                        <span class="relative">
-                                            active
-                                        </span>
-                                    </span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900 modal-open">
-                                Remove
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                c000003
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                1234 5678 ABCD EFGH
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                2600
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                </c:if>
+                                <c:if test="${code.redeemed}">
                                     <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                         <span aria-hidden="true"
                                               class="absolute inset-0 bg-red-200 opacity-50 rounded-full">
@@ -175,45 +133,15 @@
                                             redeemed
                                         </span>
                                     </span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900 modal-open">
-                                Remove
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                c000004
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                1234 5678 ABCD EFGH
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
-                                200
-                            </p>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                                        <span aria-hidden="true"
-                                              class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
-                                        </span>
-                                        <span class="relative">
-                                            active
-                                        </span>
-                                    </span>
-                        </td>
-                        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900 modal-open">
-                                Remove
-                            </a>
-                        </td>
-                    </tr>
+                                </c:if>
+                            </td>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                <a href="${deleteLink}" class="text-indigo-600 hover:text-indigo-900 modal-open">
+                                    Remove
+                                </a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -229,10 +157,12 @@
                 Clear All Redeemed Recordings
             </span>
             <br>
-            <button type="button"
-                    class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                Clear
-            </button>
+            <form:form method="get" action="/admins/remove-used-coupons">
+                <button type="submit"
+                        class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                    Clear
+                </button>
+            </form:form>
         </div>
     </div>
 
@@ -254,54 +184,20 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    c000001
-                                </p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    s000001
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    c000002
-                                </p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    s000002
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    c000003
-                                </p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    s000003
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    c000004
-                                </p>
-                            </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                    s000004
-                                </p>
-                            </td>
-                        </tr>
+                        <c:forEach var="usedCode" items="${usedCodes}">
+                            <tr>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                            ${usedCode.id}
+                                    </p>
+                                </td>
+                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                            ${usedCode.user.id}
+                                    </p>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
