@@ -53,7 +53,7 @@
 <%--            <c:param name="adminId" value="${}"/>--%>
 <%--        </c:url>--%>
         <div class="container border border-2 rounded-1 mt-5" style="width: 60%; margin-top: 20px">
-            <form:form id="form_16" data-form-type="blocs-form" action="/admins/events/save" method="POST"
+            <form:form id="form_16" data-form-type="blocs-form" action="/admins/events/save" method="post"
                        modelAttribute="event" cssClass="mt-5 mb-5 ml-5 mr-5">
 
                 <form:hidden path="id"/>
