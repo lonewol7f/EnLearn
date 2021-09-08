@@ -47,4 +47,22 @@ public class RedeemCodeServiceImpl implements RedeemCodeService{
     public void deleteUsedCodes() {
         redeemCodeDAO.deleteUsedCodes();
     }
+
+    @Override
+    @Transactional
+    public List<RedeemCode> getUsedCodes() {
+        return redeemCodeDAO.getUsedCodes();
+    }
+
+    @Override
+    @Transactional
+    public List<RedeemCode> listCodes() {
+        return redeemCodeDAO.listCodes();
+    }
+
+    @Override
+    @Transactional
+    public void deleteCouponById(int codeId) {
+        redeemCodeDAO.deleteCouponById(codeId);
+    }
 }

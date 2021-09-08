@@ -68,11 +68,12 @@
                         </div>
                         <div class="col">
                             <div class="text-center">
+                                <a href="${pageContext.request.contextPath}/report" class="btn btn-d btn-lg btn-block" >Reports</a><br>
                                 <div class="text-center" id="expenses-small">
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="expenses-long,expenses-small">Expenses</a>
                                 </div>
                                 <div class="object-hidden" id="expenses-long">
-                                    <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#send-expense">Send Expense</a>
+                                    <a href="${pageContext.request.contextPath}/Add-expenses" class="btn btn-d btn-lg btn-block" >Send Expense</a>
                                     <a href="${pageContext.request.contextPath}/Confirm-expenses" class="btn btn-d btn-lg btn-block">Confirm Expense</a>
                                     <div class="divider-h">
                                         <span class="divider"></span>
@@ -89,7 +90,7 @@
                                     <a href="#" class="btn btn-d btn-lg btn-block" data-toggle-visibility="create-less,create-more">Create</a>
                                 </div>
                                 <div class="object-hidden" id="create-more">
-                                    <a href="add-course.jsp" class="btn btn-d btn-lg btn-block">Course</a>
+                                    <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-d btn-lg btn-block">Course</a>
                                     <a href="${pageContext.request.contextPath}/admins/codes" class="btn btn-d btn-lg btn-block">Code</a>
                                     <a href="${pageContext.request.contextPath}/admins/events/list" class="btn btn-d btn-lg btn-block">Event</a>
                                     <div class="divider-h">
@@ -106,43 +107,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <%-----------------------------------%>
-                            <%--<div id="add-event" class="modal fade" tabindex="-1" role="dialog">--%>
-                            <%--    <div class="modal-dialog  modal-dialog-centered" role="document">--%>
-                            <%--        <div class="modal-content">--%>
-                            <%--            <div class="modal-header">--%>
-                            <%--                <h3 class="mg-clear">--%>
-                            <%--                    Event--%>
-                            <%--                </h3>--%>
-                            <%--            </div>--%>
-                            <%--            <div class="modal-body">--%>
-                            <%--                <form:form id="form_16" data-form-type="blocs-form" action="events/save" method="POST" modelAttribute="event">--%>
-                            <%--                    <div class="form-group">--%>
-                            <%--                        <form:label path="topic">Topic</form:label>--%>
-                            <%--                        <form:input path="topic" id="name16" class="form-control" required="required"/>--%>
-                            <%--                    </div>--%>
-                            <%--                    <div class="form-group">--%>
-                            <%--                        <form:label path="message">Message</form:label>--%>
-                            <%--                        <form:textarea path="message" id="name16" class="form-control" rows="3" cols="20" style="resize: none;" required="required"/>--%>
-                            <%--                    </div>--%>
-                            <%--                    <div class="form-group">--%>
-                            <%--                        <form:label path="date">Date</form:label>--%>
-                            <%--                        <form:input path="date" type="date" id="name16" class="form-control" required="required"/>--%>
-                            <%--                    </div>--%>
-                            <%--                    <div class="form-group">--%>
-                            <%--                        <form:label path="time">Time</form:label>--%>
-                            <%--                        <form:input path="time" type="time" min="09:00" max="20:00" id="name16" class="form-control" required="required"/>--%>
-                            <%--                    </div>--%>
-                            <%--                    <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">Submit</button>--%>
-                            <%--                </form:form>--%>
-                            <%--            </div>--%>
-                            <%--            <div class="modal-footer">--%>
-                            <%--                <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#add-event">Close</a>--%>
-                            <%--            </div>--%>
-                            <%--        </div>--%>
-                            <%--    </div>--%>
-                            <%--</div>--%>
-                                <%-----------------------------------%>
+
                             <div id="approve-teacher" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -265,7 +230,7 @@
 
 
 
-
+                    <!--
                             <div id="send-expense" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">
@@ -288,7 +253,7 @@
                                                     </label>
                                                     <input id="adminID" class="form-control" required name="name16_22767_28850_23581" />
                                                 </div>
-
+                    -->
                                                 <!--
                                                 <div class="form-group">
                                                     <div class="row">
@@ -318,6 +283,7 @@
                                                     </div>
                                                 </div>
                                                 -->
+                    <!--
                                                 <div class="form-group">
                                                     <label>
                                                         Price
@@ -341,10 +307,10 @@
                                                 <div class="text-center w-100">
                                                     <div class="row">
                                                         <div class="col-lg-7">
-                                                            <!--<a href="index.jsp" class="btn btn-lg btn-wire btn-103-style">Select</a>-->
+
                                                             <input type="file" required name="expense_image" />
                                                         </div>
-                                                    </div><br> <!--<a href="index.jsp" class="btn btn-d btn-lg btn-block">Send</a>-->
+                                                    </div><br>
                                                 </div>
 
 
@@ -362,7 +328,7 @@
                             </div>
 
 
-
+                    -->
 
                             <!--
                             <div id="confirm-expense" class="modal fade" tabindex="-1" role="dialog">

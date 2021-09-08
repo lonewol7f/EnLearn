@@ -39,6 +39,11 @@ public class AdminController {
         return "admin-panel";
     }
 
+    @GetMapping("/admin-report")
+    public String showAdminReportPanel() {
+        return "admin-report-page";
+    }
+
     @PostMapping("/save-coupon")
     public String saveCoupon(@ModelAttribute("coupon")RedeemCode code) {
 
@@ -62,8 +67,23 @@ public class AdminController {
     }
 
     @GetMapping("/codes")
-    public String showAddCodePage() {
+    public String showAddCodePage(Model model) {
+        RedeemCode code = new RedeemCode();
+
+        List<RedeemCode> usedCodeList = redeemCodeService.getUsedCodes();
+        List<RedeemCode> codeList = redeemCodeService.listCodes();
+
+        model.addAttribute("code", code);
+        model.addAttribute("usedCodes", usedCodeList);
+        model.addAttribute("codeList", codeList);
         return "add-code";
+    }
+
+    @GetMapping("/codes/delete")
+    public String deleteCoupon(@RequestParam("codeId") int codeId) {
+        redeemCodeService.deleteCouponById(codeId);
+
+        return "redirect:/admins/codes";
     }
 
     @PostMapping("/events/save")

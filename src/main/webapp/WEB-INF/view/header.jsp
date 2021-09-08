@@ -86,6 +86,9 @@
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="nav-link">free-quiz-links</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="${pageContext.request.contextPath}/Salaries" class="nav-link">Salaries</a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
