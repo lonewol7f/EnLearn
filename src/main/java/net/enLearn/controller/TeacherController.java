@@ -22,10 +22,17 @@ public class TeacherController {
     public String showTeacherRegisterPage() {
         return "register-teacher";
     }
+
+    @GetMapping("/Teacher-confirm")
+    public String showTeacherConfirm() {
+        return "Teacher-confirm";
+    }
+
     @GetMapping("/notifications")
     public String showNotificationPage() {
         return "notification-view";
     }
+
     @GetMapping("/marks-and-access")
     public String showMarksAndAccessPage() {
         return "marks-and-access";
