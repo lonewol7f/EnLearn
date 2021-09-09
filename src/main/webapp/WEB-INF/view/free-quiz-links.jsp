@@ -41,7 +41,7 @@
         z-index: 1; /* Sit on top */
         left: 0;
         top: 0;
-        width: 50%; /* Full width */
+        width: 100%; /* Full width */
         height: 100%; /* Full height */
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
@@ -166,36 +166,6 @@
                                            class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                     </div>
                                 </div>
-                                <%--                            <div class="row">--%>
-                                <%--                                <div class="col-lg-9">--%>
-                                <%--                                    <div class="form-group">--%>
-                                <%--                                        <input class="form-control" />--%>
-                                <%--                                    </div>--%>
-                                <%--                                </div>--%>
-                                <%--                                <div class="col">--%>
-                                <%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-                                <%--                                </div>--%>
-                                <%--                            </div>--%>
-                                <%--                            <div class="row">--%>
-                                <%--                                <div class="col-lg-9">--%>
-                                <%--                                    <div class="form-group">--%>
-                                <%--                                        <input class="form-control" />--%>
-                                <%--                                    </div>--%>
-                                <%--                                </div>--%>
-                                <%--                                <div class="col">--%>
-                                <%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-                                <%--                                </div>--%>
-                                <%--                            </div>--%>
-                                <%--                            <div class="row">--%>
-                                <%--                                <div class="col-lg-9">--%>
-                                <%--                                    <div class="form-group">--%>
-                                <%--                                        <input class="form-control" />--%>
-                                <%--                                    </div>--%>
-                                <%--                                </div>--%>
-                                <%--                                <div class="col">--%>
-                                <%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-                                <%--                                </div>--%>
-                                <%--                            </div>--%>
                             </div>
                         </div>
                     </div>
@@ -208,9 +178,19 @@
     <div id="myModal" class="modal" style=":mx-9">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content" style="margin-left: auto;margin-right: auto">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+                  <h3 style="text-align: center">Add Free Quiz Links In Here</h3>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="form-group">
+                        <input class="form-control" />
+                    </div>
+                </div>
+                <div class="col">
+                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                </div>
+            </div>
         </div>
     </div>
     <%@include file="footer.jsp" %>
