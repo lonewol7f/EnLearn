@@ -67,6 +67,12 @@
                             </div>
                         </li>
 
+
+                        <li class="nav-item">
+                            <a class="hs-mega-menu-invoker nav-link" href="${pageContext.request.contextPath}/shop">Shop</a>
+                        </li>
+
+
                         <li class="hs-has-sub-menu nav-item">
                             <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link   " href="#" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
@@ -79,8 +85,6 @@
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
                             </div>
                         </li>
-
-
 
 
                         <li class="nav-item">
