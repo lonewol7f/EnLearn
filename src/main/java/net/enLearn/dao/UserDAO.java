@@ -1,5 +1,8 @@
 package net.enLearn.dao;
 
+
+
+
 import net.enLearn.entity.User;
 
 /**
@@ -12,3 +15,4 @@ public interface UserDAO {
     int getLoggedUserId();
 
 }
+
