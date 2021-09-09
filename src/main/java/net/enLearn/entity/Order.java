@@ -1,8 +1,5 @@
 package net.enLearn.entity;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -27,7 +24,7 @@ public class Order {
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
-    @Fetch(value = FetchMode.JOIN)
+    // @Fetch(value = FetchMode.JOIN)
     @JoinColumn(name = "coupon_id")
     private RedeemCode code;
 
