@@ -1,3 +1,5 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   
   User: lonewol7f
@@ -88,6 +90,13 @@
                             </li>
                             <li class="nav-item">
                                 <a href="${pageContext.request.contextPath}/Salaries" class="nav-link">Salaries</a>
+                            </li>
+                            <li>
+                                <security:authorize access="isAuthenticated()">
+                                    <form:form action="${pageContext.request.contextPath}/logout" method="post">
+                                        <input type="submit" value="Logout"/>
+                                    </form:form>
+                                </security:authorize>
                             </li>
                         </ul>
                     </div>
