@@ -71,12 +71,12 @@
 
                                 <div class="row">
                                     <div class="col-12 mb-5">
-                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
+                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">
                                             <div>
                                                 <div class="row">
                                                     <div class="col-lg-7">
                                                         <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />
+                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />
                                                         </div>
                                                     </div>
                                                     <div class="col">
