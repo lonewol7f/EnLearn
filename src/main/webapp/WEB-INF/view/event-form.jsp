@@ -50,7 +50,7 @@
         <h3 class="h3 text-center">Save/Update Event</h3>
         <%--TODO: replace form action with saveLink, after login created--%>
 <%--        <c:url var="saveLink" value="/admins/events/save">--%>
-<%--            <c:param name="adminId" value="${}"/>--%>
+<%--            <c:param name="adminEmail" value=""/>--%>
 <%--        </c:url>--%>
         <div class="container border border-2 rounded-1 mt-5" style="width: 60%; margin-top: 20px">
             <form:form id="form_16" data-form-type="blocs-form" action="/admins/events/save" method="post"
