@@ -9,5 +9,6 @@ import net.enLearn.entity.User;
 public interface UserService {
 
     User getUserById(int id);
+    int getLoggedUserId();
 
 }
