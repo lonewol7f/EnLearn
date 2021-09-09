@@ -6,6 +6,7 @@ import net.enLearn.entity.RedeemCode;
 import net.enLearn.service.AdminService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.RedeemCodeService;
+import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,9 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("")
     public String showAdminPanel() {
         return "admin-panel";
@@ -47,9 +51,14 @@ public class AdminController {
     @PostMapping("/save-coupon")
     public String saveCoupon(@ModelAttribute("coupon")RedeemCode code) {
 
+        int id = userService.getLoggedUserId();
+
+        Admin admin = adminService.getAdminById(id);
+        code.setAdmin(admin);
+
         redeemCodeService.saveCode(code);
 
-        return "redirect:/test-lang";  // TODO: edit this redirect to correct mapping
+        return "redirect:/admins/codes";  // TODO: edit this redirect to correct mapping
     }
 
     @PostMapping("/search-coupon")
@@ -87,7 +96,9 @@ public class AdminController {
     }
 
     @PostMapping("/events/save")
-    public String saveEvent(@ModelAttribute("event") Event event, @RequestParam("adminId") int adminId) {
+    public String saveEvent(@ModelAttribute("event") Event event) {
+
+        int adminId = userService.getLoggedUserId();
 
         Admin admin = adminService.getAdminById(adminId);
         event.setAdmin(admin);
