@@ -54,7 +54,8 @@
                                 <a class="dropdown-item " href="#">Shop for Courses list (create this)</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single
                                     Course</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue Video</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue
+                                    Video</a>
                             </div>
                         </li>
 
@@ -64,8 +65,11 @@
                                data-bs-toggle="dropdown" aria-expanded="false">Stuff</a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="portfolioMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/special-quizzes">Special Quiz</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/free-quiz-links">Free Quiz Links</a>
+                                <a class="dropdown-item "
+                                   href="${pageContext.request.contextPath}/courses/special-quizzes">Special Quiz</a>
+                                <a class="dropdown-item "
+                                   href="${pageContext.request.contextPath}/teachers/free-quiz-links">Free Quiz
+                                    Links</a>
                             </div>
                         </li>
 
@@ -75,22 +79,31 @@
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/portal">Portal</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User Profile</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User
+                                    Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin Panel</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin
+                                    Panel</a>
+                                <a class="dropdown-item "
+                                   href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
                             </div>
                         </li>
 
 
-
-
                         <li class="nav-item">
-                            <a class="btn btn-primary btn-transition"
-                               href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/">
-                                Login
-                            </a>
+                            <security:authorize access="!isAuthenticated()">
+                                <a class="btn btn-primary btn-transition"
+                                   href="${pageContext.request.contextPath}/login">
+                                    Login
+                                </a>
+                            </security:authorize>
+                            <security:authorize access="isAuthenticated()">
+                                <form:form action="${pageContext.request.contextPath}/logout" method="post">
+                                    <button class="btn btn-primary btn-transition" type="submit">Logout</button>
+                                </form:form>
+                            </security:authorize>
                         </li>
+
                     </ul>
                 </div>
             </div>
