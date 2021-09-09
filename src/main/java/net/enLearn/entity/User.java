@@ -24,6 +24,18 @@ public class User {
     @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "enabled")
+    private boolean enabled;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
@@ -34,11 +46,19 @@ public class User {
     @JsonBackReference
     private List<Reply> replies;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.DETACH, CascadeType.REFRESH})
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
     private List<RedeemCode> redeemCodes;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "user_authorities",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "authority_id"))
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Authorities> authorities;
 
     public User() {
     }
@@ -57,6 +77,38 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public List<Comment> getComments() {
@@ -83,4 +135,11 @@ public class User {
         this.redeemCodes = redeemCodes;
     }
 
+    public List<Authorities> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<Authorities> authorities) {
+        this.authorities = authorities;
+    }
 }
