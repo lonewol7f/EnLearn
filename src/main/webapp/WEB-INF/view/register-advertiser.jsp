@@ -59,9 +59,17 @@
                             <form id="form_22096" data-form-type="blocs-form" action="custom-action-url" method="POST">
                                 <div class="form-group">
                                     <label>
-                                        Name
+                                        Company Name
                                     </label>
                                     <input id="name7_10830_22096" class="form-control" required name="name7" />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Contact Number
+                                    </label>
+
+                                    <input id="telNo" class="form-control" name="telNo" type="tel" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -70,9 +78,64 @@
                                     <input id="email7_10830_22096" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email7" />
                                 </div>
                                 <div class="form-group">
+                                    <label>
+                                        Bussiness Website URL
+                                    </label>
+
+                                    <input id="url" class="form-control" required name="name7" placeholder="Optional"/>
+
+                                </div>
+
+                                <div class="form-group">
                                     <div class="form-group">
                                         <label>
-                                            Profile Picture
+                                            Advertisement Title
+                                        </label>
+                                        <input id="name200_10830_22096" class="form-control" required name="name7" />
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label>
+                                            Advertising Packages
+                                        </label>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group mb-3">
+                                            <div class="form-group mb-3 container-div-style">
+                                                <select class="form-control" required>
+                                                    <option disabled selected value>
+                                                        -- Select Package --
+                                                    </option>
+                                                    <option value="0">
+                                                        Basic-LKR 1000 over 3 days
+                                                    </option>
+                                                    <option value="1">
+                                                        Standard-LKR 5000 over 8 days
+                                                    </option>
+                                                    <option value="1">
+                                                        Premium-LKR 10000 over 15 days
+                                                    </option>
+                                                    <option value="1">
+                                                        VIP-LKR 20000 over 30 days
+                                                    </option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>
+                                            Description
+                                        </label>
+                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50"> </textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Add Banner
                                         </label>
                                         <div class="row">
                                             <div class="col">
@@ -163,4 +226,5 @@
 
 </body>
 </html>
+
 

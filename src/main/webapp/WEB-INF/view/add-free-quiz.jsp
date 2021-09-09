@@ -48,7 +48,7 @@
 
     <!-- bloc-7 -->
     <div class="bloc l-bloc" id="bloc-7">
-        <div class="container bloc-lg">
+        <div class="container bloc-lg" style="padding-bottom:5px">
             <div class="row">
                 <div class="col">
                     <div class="row">
@@ -70,32 +70,42 @@
                                     <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                </div>
-                            </div>
+<%--                            <div class="row">--%>
+<%--                                <div class="col-lg-9">--%>
+<%--                                    <div class="form-group">--%>
+<%--                                        <input class="form-control" />--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <div class="col">--%>
+<%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="row">--%>
+<%--                                <div class="col-lg-9">--%>
+<%--                                    <div class="form-group">--%>
+<%--                                        <input class="form-control" />--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <div class="col">--%>
+<%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
 
 
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <%--     changed       --%>
+    <div class="col mb-0">
+        <div class="divider-h" style="padding-top:5px;padding-bottom: 5px ">
+            <span class="divider mb-1"></span>
+        </div>
+        <div>
+            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="550rem" height="550rem" style="position: relative;left: 29%" alt="reshot-illustration-woman-thinking-quizzes" />
         </div>
     </div>
     <!-- bloc-7 END-->

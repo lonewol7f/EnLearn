@@ -62,7 +62,7 @@
                         <div class="col">
                             <div class="text-center">
                                 <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-teacher">Teacher approves</a>
-                                <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-banner">Banner Approves</a>
+                                <a href="${pageContext.request.contextPath}/admins/confirm-advertisement" class="btn btn-d btn-lg btn-block" >Banner Approval</a>
                                 <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
                             </div>
                         </div>
@@ -101,6 +101,7 @@
                         </div>
                         <div class="col">
                             <div class="text-center">
+                                <a href="${pageContext.request.contextPath}/teachers/Teacher-confirm" class="btn btn-d btn-lg btn-block" >Confirm Teacher</a>
                                 <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#message">Send A Message</a>
                             </div>
                         </div>
@@ -150,54 +151,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="approve-banner" class="modal fade" tabindex="-1" role="dialog">
-                                <div class="modal-dialog  modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="mg-clear">
-                                                Banner
-                                            </h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form id="form_27299" data-form-type="blocs-form" action="teacher" method="POST">
-                                                <div class="form-group">
-                                                    <select class="form-control" id="select_2861" name="select_2861">
-                                                        <option value="0">
-                                                            Option 1
-                                                        </option>
-                                                        <option value="1">
-                                                            Option 2
-                                                        </option>
-                                                    </select>
-                                                    <div class="form-group">
-                                                        <label>
-                                                            Price
-                                                        </label>
-                                                        <input class="form-control" id="input_719" name="input_719" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <div class="text-center w-100">
-                                                                <a href="index.jsp" class="btn btn-d btn-lg btn-95-style">Approve</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col">
-                                                            <div class="text-center w-100">
-                                                                <a href="index.jsp" class="btn btn-d btn-lg btn-96-style">Disapprove</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#approve-banner">Close</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+
                             <div id="message" class="modal fade" tabindex="-1" role="dialog">
                                 <div class="modal-dialog  modal-dialog-centered" role="document">
                                     <div class="modal-content">

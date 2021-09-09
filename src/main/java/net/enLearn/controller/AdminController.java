@@ -34,6 +34,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @GetMapping("/confirm-advertisement")
+    public String showAdvertiserConfirmPage() {
+        return "Advertisement-Confirm";
+    }
+
     @GetMapping("")
     public String showAdminPanel() {
         return "admin-panel";

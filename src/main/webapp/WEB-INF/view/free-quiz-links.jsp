@@ -68,7 +68,7 @@
                             <span class="divider"></span>
                         </div>
                         <div>
-                            <img class="img-fluid lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-teacher-std-free-quiz-pic.png" alt="reshot illustration-business-person-with-checklist-4FDRP8KNVW" width="85%" height="75%" />
+                            <img class="img-fluid lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-teacher-std-free-quiz-pic.png" alt="reshot-illustration-teacher-std-free-quiz-pic" width="85%" height="75%" />
                         </div>
                     </div>
                     <div class="col">
