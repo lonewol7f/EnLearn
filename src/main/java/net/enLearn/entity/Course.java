@@ -30,11 +30,11 @@ public class Course {
     @Column(name = "image")
     private MultipartFile image;
 
-//    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
-//    @JoinColumn(name = "teacher_id")
-//    private Teacher teacher;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
-    public Course(){};
+    public Course(){}
 
     public int getId() {
         return id;
@@ -76,24 +76,13 @@ public class Course {
 
     public void setImage(MultipartFile image) { this.image = image; }
 
-//    public Teacher getTeacher() {
-//        return teacher;
-//    }
-//
-//    public void setTeacher(Teacher teacher) {
-//        this.teacher = teacher;
-//    }
-
-    @Override
-    public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
-                ", price='" + price + '\'' +
-                ", image='" + image +
-                '}';
+    public Teacher getTeacher() {
+        return teacher;
     }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
 
 }
