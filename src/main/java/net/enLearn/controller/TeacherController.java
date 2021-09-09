@@ -1,21 +1,32 @@
 
-
 package net.enLearn.controller;
+
+import net.enLearn.entity.Course;
+import net.enLearn.service.CourseService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-/**
- * Created by Kalana on 21/07/2021
- */
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
 @Controller
 @RequestMapping("/teachers")
 public class TeacherController {
+
     @Autowired
     private Logger logger;
+
+    @Autowired
+    private CourseService courseService;
+
     @GetMapping("")
-    public String showTeacherProfilePage() {
+    public String showTeacherProfilePage(@RequestParam("teacherId") int id, Model model) {
+        List<Course> courses = courseService.getCourseListByTeacherId(id);
+        model.addAttribute("courses", courses);
         return "profile-page-teacher";
     }
     @GetMapping("/register")

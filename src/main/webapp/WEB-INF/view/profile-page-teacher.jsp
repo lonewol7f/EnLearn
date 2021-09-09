@@ -1,4 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <!--Created by Yasas on 20/07/2021-->
@@ -90,6 +93,63 @@
     </div>
     <!-- bloc-19 END -->
     <!-- bloc-22 -->
+
+    <div style="display: flex; justify-content: center">
+        <c:if test="${fn:length(courses) > 0}">
+            <table class="table table-hover">
+                <thead class="table-primary">
+                <th>Title</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Action</th>
+                </thead>
+
+
+                    <%-- Loop over and print teachers --%>
+                <c:forEach var="tempCourse" items="${courses}">
+
+                                        <%-- construct an 'update' link with teacher id --%>
+                                        <c:url var="updateLink" value="/courses/update">
+                                            <c:param name="teacherId" value="${tempCourse.id}"/>
+                                        </c:url>
+
+                                        <%-- construct an 'delete' link with teacher id --%>
+                                        <c:url var="deleteLink" value="/courses/delete">
+                                            <c:param name="teacherId" value="${tempCourse.id}"/>
+                                        </c:url>
+
+<%--                                        <c:url var="coursesLink" value="/teachers/courses">--%>
+<%--                                            <c:param name="teacherId" value="${tempTeacher.id}"/>--%>
+<%--                                        </c:url>--%>
+
+
+                    <tr>
+                        <td>${tempCourse.title}</td>
+                        <td>${tempCourse.type}</td>
+                        <td>${tempCourse.description}</td>
+                        <td>${tempCourse.price}</td>
+                        <td>${tempCourse.image}</td>
+<%--                        <td><a href="${coursesLink}">Courses</a></td>--%>
+                        <td>
+                                <%-- display the update link --%>
+                            <a href="${updateLink}">Update</a>
+                            |
+                            <a href="${deleteLink}"   <%-- delete link --%>
+                               onclick="if (!(confirm('Are you sure, You want to delete this course?'))) return false">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+        <c:if test="${fn:length(courses) == 0}">
+            <div class="text-center border border-2 rounded" style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                <p>Nothing to show</p>
+            </div>
+        </c:if>
+    </div>
+
 
     <!-- bloc-22 END -->
     <%@include file="footer.jsp" %>

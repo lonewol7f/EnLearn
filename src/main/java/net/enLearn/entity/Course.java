@@ -1,6 +1,5 @@
 package net.enLearn.entity;
 
-
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
@@ -72,9 +71,13 @@ public class Course {
         this.price = price;
     }
 
-    public MultipartFile getImage() { return image; }
+    public MultipartFile getImage() {
+        return image;
+    }
 
-    public void setImage(MultipartFile image) { this.image = image; }
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
 
     public Teacher getTeacher() {
         return teacher;
