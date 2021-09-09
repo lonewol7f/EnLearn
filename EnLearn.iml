@@ -113,5 +113,6 @@
     <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.4" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.15.RELEASE" level="project" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
   </component>
 </module>
