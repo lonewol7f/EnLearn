@@ -47,11 +47,11 @@ CREATE TABLE `authorities`
 DROP TABLE IF EXISTS `user_authorities`;
 CREATE TABLE `user_authorities`
 (
-    `userId`  INT NOT NULL,
-    `authority` varchar(50) NOT NULL,
-    UNIQUE KEY `idx_authorities_1` (`userId`, `authority`),
-    CONSTRAINT `fk_authorities_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`),
-    CONSTRAINT `fk_authorities_2` FOREIGN KEY (`authority`) REFERENCES `authorities` (`authority`)
+    `user_id`  INT NOT NULL,
+    `authority_id` INT NOT NULL,
+    UNIQUE KEY `idx_authorities_1` (`user_id`, `authority_id`),
+    CONSTRAINT `fk_authorities_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+    CONSTRAINT `fk_authorities_2` FOREIGN KEY (`authority_id`) REFERENCES `authorities` (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
 
