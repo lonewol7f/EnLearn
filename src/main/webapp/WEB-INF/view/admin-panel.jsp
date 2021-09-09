@@ -101,6 +101,7 @@
                         </div>
                         <div class="col">
                             <div class="text-center">
+                                <a href="${pageContext.request.contextPath}/teachers/Teacher-confirm" class="btn btn-d btn-lg btn-block" >Confirm Teacher</a>
                                 <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#message">Send A Message</a>
                             </div>
                         </div>
