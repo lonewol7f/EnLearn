@@ -274,13 +274,13 @@ CREATE TABLE `course`
 (
     `id`          INT NOT NULL AUTO_INCREMENT,
     `title`       VARCHAR(255),
-#     `type`        VARCHAR(50),
+    `type`        VARCHAR(50),
     `description` TEXT,
     `price`       INT,
-#     `image`       BLOB,
-#     `teacher_id`  INT,
-    CONSTRAINT `pk_course` PRIMARY KEY (`id`)
-#     CONSTRAINT `fk_course` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    `image`       BLOB,
+    `teacher_id`  INT,
+    CONSTRAINT `pk_course` PRIMARY KEY (`id`),
+    CONSTRAINT `fk_course` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = latin1;
