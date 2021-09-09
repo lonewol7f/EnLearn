@@ -1,13 +1,13 @@
 -- not fully coded, to be implemented
 
 DROP
-    DATABASE IF EXISTS `enlearn`;
+    DATABASE IF EXISTS `enlearn-dev`;
 
 CREATE
-    DATABASE `enlearn`;
+    DATABASE `enlearn-dev`;
 
 use
-    `enlearn`;
+    `enlearn-dev`;
 
 SET
     FOREIGN_KEY_CHECKS = 0;
@@ -24,10 +24,35 @@ CREATE TABLE `user`
     `dob`        DATE,
     `email`      VARCHAR(100),
     `district`   VARCHAR(20),
-    `password`   VARCHAR(60) NOT NULL,
+    `password`   VARCHAR(68) NOT NULL,
+    `enabled`    TINYINT(1)  DEFAULT 1,
     CONSTRAINT `pk_user` PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
+  DEFAULT CHARSET = latin1;
+
+
+DROP TABLE IF EXISTS `authorities`;
+CREATE TABLE `authorities`
+(
+    `id`        INT         NOT NULL AUTO_INCREMENT,
+    `authority` varchar(50) NOT NULL,
+    UNIQUE KEY `idx_authorities_1` (`authority`),
+    CONSTRAINT `pk_authorities` PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = latin1;
+
+
+DROP TABLE IF EXISTS `user_authorities`;
+CREATE TABLE `user_authorities`
+(
+    `userId`  INT NOT NULL,
+    `authority` varchar(50) NOT NULL,
+    UNIQUE KEY `idx_authorities_1` (`userId`, `authority`),
+    CONSTRAINT `fk_authorities_1` FOREIGN KEY (`userId`) REFERENCES `user` (`id`),
+    CONSTRAINT `fk_authorities_2` FOREIGN KEY (`authority`) REFERENCES `authorities` (`authority`)
+) ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
 
 
