@@ -77,7 +77,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3 class="mg-md text-lg-center">
+                            <h3 class="mg-md text-lg-center" style="color:#e60000">
                                 MCQ
                             </h3>
                             <div class="text-center">
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h3 class="mg-md text-lg-center">
+                            <h3 class="mg-md text-lg-center" style="color:#e60000">
                                 Essay + Structured
                             </h3>
                             <div class="text-center">
@@ -121,7 +121,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <h3 class="mg-md text-lg-center">
+                            <h3 class="mg-md text-lg-center" style="color:#e60000" >
                                 MCQ
                             </h3>
                             <div class="text-center">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <h3 class="mg-md text-lg-center">
+                            <h3 class="mg-md text-lg-center" style="color:#e60000">
                                 Essay + Structured
                             </h3>
                             <div class="text-center">
@@ -141,10 +141,10 @@
             </div>
             <img class="img-fluid lazyload test-img"
                  src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
-                 data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png"
-                 width="550rem" height="550rem"
-                 style="position:absolute; top: 30%;left: 35%; z-index: -999"
-                 alt="reshot-illustration-quiz-time-card-with-colorful"/>
+                 data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-icon-concept-sign-game.png"
+                 width="450rem" height="450rem"
+                 style="position:absolute; top: 30%;left: 32%; z-index: -999"
+                 alt="reshot-illustration-quiz-time-icon-concept-sign-game"/>
 
         </div>
     </div>
