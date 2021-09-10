@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AuthController {
 
     @GetMapping("/login")
-    public String showLoginPage(Model model) {
-
-        model.addAttribute("user", new Student());
+    public String showLoginPage() {
 
         return "login";
     }
@@ -35,5 +33,18 @@ public class AuthController {
         }
         
         return "redirect:/login";
+    }
+
+    @GetMapping("/register")
+    public String register(Model model) {
+        model.addAttribute("student", new Student());
+
+        return "register-page";
+    }
+
+    @GetMapping("/new-login")
+    public String showNewLoginPage() {
+
+        return "login-page";
     }
 }
