@@ -141,7 +141,7 @@
             <span class="divider"></span>
         </div>
         <div>
-            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="750rem" height="750rem" style="position: relative;left: 21%" alt="reshot-illustration-quiz-time-card-with-colorful" />
+            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="550rem" height="550rem" style="position: relative;left: 27%" alt="reshot-illustration-quiz-time-card-with-colorful" />
         </div>
     </div>
     <!-- bloc-15 END -->
