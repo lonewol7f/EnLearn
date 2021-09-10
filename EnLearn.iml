@@ -22,7 +22,9 @@
         <datasource-mapping>
           <factory-entry name="EnLearn" value="894d8e5e-8400-4176-b2ca-6866d805ce71" />
         </datasource-mapping>
-        <naming-strategy-map />
+        <naming-strategy-map>
+          <unit-entry name="EnLearn" />
+        </naming-strategy-map>
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
