@@ -1,6 +1,6 @@
 package net.enLearn.entity;
 
-import java.awt.*;
+import java.sql.Blob;
 
 public class Discount {
 
@@ -12,10 +12,10 @@ public class Discount {
     private String sub;
     private int grade;
     private String description;
-    private Image image;
+    private Blob image;
 
     //constructor
-    public Discount(int id, String lable, double amount, String Teacher, String sub, int grade, String description){
+    public Discount(int id, String lable, double amount, String Teacher, String sub, int grade, String description, Blob image){
         this.Id = id;
         this.lable = lable;
         this.amount =amount;
@@ -23,16 +23,19 @@ public class Discount {
         this.sub = sub;
         this.grade = grade;
         this.description = description;
+        this.image = image;
     }
 
-    public Discount(String lable, double amount, String Teacher, String sub, int grade, String description){
+    public Discount(String lable, double amount, String Teacher, String sub, int grade, String description, Blob image){
         this.lable = lable;
         this.amount =amount;
         this.Teacher = Teacher;
         this.sub = sub;
         this.grade = grade;
         this.description = description;
+        this.image = image;
     }
+
 
     //Setters and getters
     public int getId(){
@@ -93,11 +96,11 @@ public class Discount {
         return description;
     }
 
-    public void setImage(Image image){
+    public void setImage(Blob image){
         this.image = image;
     }
 
-    public Image getImage(){
+    public Blob getImage(){
         return image;
     }
 }
