@@ -1,4 +1,5 @@
 
+
 package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
@@ -9,10 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+/**
+ * Created by Kalana on 21/07/2021
+ */
 @Controller
 @RequestMapping("/teachers")
 public class TeacherController {
@@ -24,11 +27,12 @@ public class TeacherController {
     private CourseService courseService;
 
     @GetMapping("")
-    public String showTeacherProfilePage(@RequestParam("teacherId") int id, Model model) {
-        List<Course> courses = courseService.getCourseListByTeacherId(id);
+    public String showTeacherProfilePage(Model model) {
+        List<Course> courses = courseService.getCourseListByTeacherId();
         model.addAttribute("courses", courses);
         return "profile-page-teacher";
     }
+
     @GetMapping("/register")
     public String showTeacherRegisterPage() {
         return "register-teacher";

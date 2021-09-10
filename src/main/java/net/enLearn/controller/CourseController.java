@@ -3,7 +3,6 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
-import net.enLearn.entity.Teacher;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.TeacherService;
 import org.apache.log4j.Logger;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Created by Kalana on 20/07/2021
@@ -34,7 +32,9 @@ public class CourseController {
     }
 
     @GetMapping("/create-courses")
-    public String showCreateCoursePage(){
+    public String showCreateCoursePage(Model model){
+        Course course = new Course();
+        model.addAttribute("course", course);
         return "create-course";
     }
 
@@ -68,14 +68,21 @@ public class CourseController {
         return "zoom-create";
     }
 
+//    @PostMapping("/save")
+//    public String saveCourse(@ModelAttribute("course") Course course, @RequestParam("teacherId") int teacherId, RedirectAttributes redirectAttributes) {
+//        Teacher teacher = teacherService.getTeacherById(teacherId);
+//        course.setTeacher(teacher);
+//        courseService.saveOrUpdate(course);
+//        redirectAttributes.addAttribute("teacherId", teacherId);
+//        return "redirect:/teachers";
+//    }
+
     @PostMapping("/save")
-    public String saveCourse(@ModelAttribute("course") Course course, @RequestParam("teacherId") int teacherId, RedirectAttributes redirectAttributes) {
-        Teacher teacher = teacherService.getTeacherById(teacherId);
-        course.setTeacher(teacher);
+    public String saveCourse(@ModelAttribute("course") Course course) {
         courseService.saveOrUpdate(course);
-        redirectAttributes.addAttribute("teacherId", teacherId);
         return "redirect:/teachers";
     }
+
 
     @GetMapping("/update")
     public String showCourseUpdateForm(@RequestParam("courseId") int id, Model model) {
@@ -84,11 +91,17 @@ public class CourseController {
         return "create-course";
     }
 
+//    @GetMapping("/delete")
+//    public String deleteCourse(@RequestParam("courseId") int id, Model model, RedirectAttributes redirectAttribute) {
+//        Course course = courseService.getCourseById(id);
+//        Teacher teacher = course.getTeacher();
+//        redirectAttribute.addAttribute("teacherId", teacher.getId());
+//        courseService.deleteCourse(id);
+//        return "redirect:/teachers";
+//    }
+
     @GetMapping("/delete")
-    public String deleteCourse(@RequestParam("courseId") int id, Model model, RedirectAttributes redirectAttribute) {
-        Course course = courseService.getCourseById(id);
-        Teacher teacher = course.getTeacher();
-        redirectAttribute.addAttribute("teacherId", teacher.getId());
+    public String deleteTeacher(@RequestParam("courseId") int id) {
         courseService.deleteCourse(id);
         return "redirect:/teachers";
     }

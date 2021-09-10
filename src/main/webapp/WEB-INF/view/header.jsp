@@ -50,8 +50,7 @@
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single
-                                    Course</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single Course</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue Video</a>
                             </div>
                         </li>
@@ -74,14 +73,14 @@
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/portal">Portal</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User Profile</a>
-                                <a class="dropdown-item"  href="${pageContext.request.contextPath}/advertisers/">Advertiser Profile</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/" >profile-page-teacher</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/students">User Profile</a>
+                                <a class="dropdown-item"  href="${pageContext.request.contextPath}/advertisers">Advertiser Profile</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers" >Teacher Profile Page</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin Panel</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
                                 <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item " href="${pageContext.request.contextPath}/new-login">New login</a>
+                                  <a class="dropdown-item " href="${pageContext.request.contextPath}/new-login">New Login</a>
                                   <a class="dropdown-item "
                                      href="${pageContext.request.contextPath}/register">New Register</a>
                             </div>
