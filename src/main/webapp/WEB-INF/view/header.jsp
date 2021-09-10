@@ -21,7 +21,7 @@
     <title>Heading</title>
 </head>
 <body>
-<header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-light bg-white">
+<header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-light bg-white" style="position: relative">
     <div class="container">
         <nav class="js-mega-menu navbar-nav-wrap">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/" aria-label="Front">

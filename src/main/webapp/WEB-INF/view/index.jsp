@@ -84,11 +84,8 @@
                     <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-user.png" class="img-fluid rounded-circle mx-auto d-block img-2-style animated pulse-hvr lazyload" alt="placeholder user" />
                     <div>
                         <h4 class="text-lg-center mg-clear h4-style text-sm-center text-center">
-
-                            <a href="${pageContext.request.contextPath}/advertisers/register">Advertiser Registration </a>
-
+                            Advertiser Registration
                         </h4>
-
                     </div>
                 </div>
             </div>
