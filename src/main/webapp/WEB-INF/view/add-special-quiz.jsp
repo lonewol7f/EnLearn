@@ -52,11 +52,12 @@
             <div class="row">
                 <div class="col">
                     <div class="row">
-                        <div class="col">
+
                             <div>
                                 <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                                <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
                             </div>
-                        </div>
+
                     </div>
                     <div class="row">
                         <div class="col">
@@ -70,12 +71,12 @@
 
                                 <div class="row">
                                     <div class="col-12 mb-5">
-                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
+                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">
                                             <div>
                                                 <div class="row">
                                                     <div class="col-lg-7">
                                                         <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />
+                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />
                                                         </div>
                                                     </div>
                                                     <div class="col">

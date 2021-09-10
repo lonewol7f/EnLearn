@@ -70,26 +70,6 @@
                                     <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
                                 </div>
                             </div>
-<%--                            <div class="row">--%>
-<%--                                <div class="col-lg-9">--%>
-<%--                                    <div class="form-group">--%>
-<%--                                        <input class="form-control" />--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="col">--%>
-<%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="row">--%>
-<%--                                <div class="col-lg-9">--%>
-<%--                                    <div class="form-group">--%>
-<%--                                        <input class="form-control" />--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                                <div class="col">--%>
-<%--                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
 
 
                         </div>
