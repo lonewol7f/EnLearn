@@ -87,6 +87,10 @@
                                     Panel</a>
                                 <a class="dropdown-item "
                                    href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/new-login">New login</a>
+                                <a class="dropdown-item "
+                                   href="${pageContext.request.contextPath}/register">New Register</a>
                             </div>
                         </li>
 
