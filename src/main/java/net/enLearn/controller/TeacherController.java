@@ -42,11 +42,6 @@ public class TeacherController {
         return "add-free-quiz";
     }
 
-    @GetMapping("/free-quiz-links")
-    public String showFreeQuizLinksPage() {
-        return "free-quiz-links";
-    }
-
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
