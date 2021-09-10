@@ -18,6 +18,9 @@ public class DiscountDAOImpl implements DiscountDAO{
         this.jdbcTemplate = new JdbcTemplate(datasource);
     }
 
+
+
+    //---------------------------------------------------------------------------------------------------------
     //Save Discount
     //CREATE
     @Override
@@ -27,6 +30,8 @@ public class DiscountDAOImpl implements DiscountDAO{
     }
 
 
+
+    //---------------------------------------------------------------------------------------------------------
     //Get Discount method
     //READ
     @Override
@@ -56,16 +61,22 @@ public class DiscountDAOImpl implements DiscountDAO{
 
 
 
-
-    //Update Discount
-    //UPDATE
-    public int UpdateDiscount(Discount discount){
-        return 0;
-    }
-
+    //----------------------------------------------------------------------------------------------------------
     //Delete Discount
     //DELETE
-    public int DeleteDiscount(Discount discount){
-        return 0;
+    @Override
+    public int DeleteDiscount(Integer id){
+        String sql = "DELETE FROM discount WHERE id="+id;
+        return jdbcTemplate.update(sql);
+    }
+
+
+    //----------------------------------------------------------------------------------------------------------
+    //Update Discount
+    //UPDATE
+    @Override
+    public int UpdateDiscount(Discount d){
+        String sql = "UPDATE discount SET admin_id=?,discount=?,teacher_name=?,course=?,image=?,description=?,grade=?,title=? WHERE id=?";
+        return jdbcTemplate.update(sql,d.getAdminIDId(),d.getAmount(),d.getTeacher(),d.getSub(),d.getImage(),d.getDescription(),d.getGrade(),d.getLable());
     }
 }
