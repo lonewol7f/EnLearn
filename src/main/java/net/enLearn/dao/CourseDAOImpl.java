@@ -1,9 +1,9 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.Course;
-import net.enLearn.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -16,10 +16,10 @@ public class CourseDAOImpl implements CourseDAO{
     private SessionFactory sessionFactory;
 
     @Override
-    public List<Course> getCourseByTeacherID(int id) {
+    public List<Course> getCourseList() {
         Session session = sessionFactory.getCurrentSession();
-        Teacher teacher = session.get(Teacher.class, id);
-        List<Course> courses = teacher.getCourseList();
+        Query<Course> courseQuery = session.createQuery("from Course", Course .class);
+        List<Course> courses = courseQuery.getResultList();
         return courses;
     }
 
@@ -40,7 +40,7 @@ public class CourseDAOImpl implements CourseDAO{
     public void deleteCourse(int id) {
         Session session = sessionFactory.getCurrentSession();
         Course course = session.get(Course.class, id);
-        course.getTeacher().getCourseList().remove(course);
+//        course.getTeacher().getCourseList().remove(course);
         session.delete(course);
 
 

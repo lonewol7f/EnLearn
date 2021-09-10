@@ -51,7 +51,7 @@
                             </a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="#">Shop for Courses list (create this)</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single
                                     Course</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue
@@ -72,6 +72,7 @@
                                     Links</a>
                             </div>
                         </li>
+
 
                         <li class="hs-has-sub-menu nav-item">
                             <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link   " href="#" role="button"
