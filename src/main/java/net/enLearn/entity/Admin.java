@@ -27,6 +27,13 @@ public class Admin extends User {
     @Fetch(value = FetchMode.SUBSELECT)
     private List<RedeemCode> redeemCodes;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "advertisements_approve",
+            joinColumns = @JoinColumn(name = "admin_id"),
+            inverseJoinColumns = @JoinColumn(name = "advertisement_id"))
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<Advertisement> advertisements;
+
     public Admin() {
     }
 
