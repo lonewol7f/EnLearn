@@ -21,7 +21,7 @@
     <title>Heading</title>
 </head>
 <body>
-<header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-light bg-white">
+<header id="header" class="navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-light bg-white" style="position: relative">
     <div class="container">
         <nav class="js-mega-menu navbar-nav-wrap">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/" aria-label="Front">
@@ -49,7 +49,7 @@
                             </a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="#">Shop for Courses list (create this)</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single
                                     Course</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue Video</a>
@@ -67,6 +67,7 @@
                             </div>
                         </li>
 
+
                         <li class="hs-has-sub-menu nav-item">
                             <a id="blogMegaMenu" class="hs-mega-menu-invoker nav-link   " href="#" role="button"
                                data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
@@ -74,14 +75,17 @@
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/portal">Portal</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User Profile</a>
+                                <a class="dropdown-item"  href="${pageContext.request.contextPath}/advertisers/">Advertiser Profile</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/" >profile-page-teacher</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin Panel</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>
+                                <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item " href="${pageContext.request.contextPath}/new-login">New login</a>
+                                  <a class="dropdown-item "
+                                     href="${pageContext.request.contextPath}/register">New Register</a>
                             </div>
                         </li>
-
-
 
 
                         <li class="nav-item">

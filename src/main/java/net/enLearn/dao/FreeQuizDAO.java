@@ -5,4 +5,11 @@ package net.enLearn.dao;
  * 8/25/21
  */
 public interface FreeQuizDAO {
+/*
+    List<FreeQuiz> getFreeQuizListById(int id);
+    void saveOrUpdateFreeQuiz(FreeQuiz freeQuiz);
+    void deleteFreeQuiz(int FreeQuizId);
+    List<FreeQuiz> getFreeQuizByGrade(String grade);
+
+ */
 }
