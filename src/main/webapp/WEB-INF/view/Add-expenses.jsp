@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <label>
                                         Upload Image
-                                    </label>
+                                    </label><br>
                                     <input type="file"  required />
                                 </div>
                                 <!--
