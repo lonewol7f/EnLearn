@@ -79,6 +79,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
+                                        Password
+                                    </label>
+                                    <input id="name00_10830_22096" class="form-control" required name="name7" />
+                                </div>
+                                <div class="form-group">
+                                    <label>
                                         Bussiness Website URL
                                     </label>
 

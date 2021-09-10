@@ -75,6 +75,7 @@
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/portal">Portal</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User Profile</a>
+                                <a class="dropdown-item"  href="${pageContext.request.contextPath}/advertisers/">Advertiser Profile</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/" >profile-page-teacher</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin Panel</a>
