@@ -13,7 +13,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?8155">
@@ -21,11 +21,11 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?5610">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
     <title>quiz-select-page</title>
-
-
 
 
     <!-- Analytics -->
@@ -44,7 +44,7 @@
 <div class="page-container">
 
     <!-- bloc-0 -->
-    <%@include file="header.jsp"%>
+    <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
 
     <!-- bloc-15 -->
@@ -55,7 +55,8 @@
                     <div class="row">
                         <div class="col">
                             <div>
-                                <a href="${pageContext.request.contextPath}/courses/videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                                <a href="${pageContext.request.contextPath}/courses/videos"
+                                   class="btn btn-lg go-back-btn btn-wire">Go Back</a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +68,10 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/112-book-morph-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload"
+                                     src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
+                                     data-src="${pageContext.request.contextPath}/resources/img/112-book-morph-outline.gif"
+                                     alt="112 book-morph-outline"/>
                             </div>
                         </div>
                     </div>
@@ -108,7 +112,10 @@
                         </div>
                         <div class="col offset-lg-5">
                             <div class="text-lg-right">
-                                <img class="img-fluid img-32-style lazyload" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/1103-confetti-outline.gif" alt="112 book-morph-outline" />
+                                <img class="img-fluid img-32-style lazyload"
+                                     src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
+                                     data-src="${pageContext.request.contextPath}/resources/img/1103-confetti-outline.gif"
+                                     alt="112 book-morph-outline"/>
                             </div>
                         </div>
                     </div>
@@ -132,25 +139,21 @@
                     </div>
                 </div>
             </div>
+            <img class="img-fluid lazyload test-img"
+                 src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
+                 data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png"
+                 width="550rem" height="550rem"
+                 style="position:absolute; top: 30%;left: 35%; z-index: -999"
+                 alt="reshot-illustration-quiz-time-card-with-colorful"/>
+
         </div>
     </div>
 
-<%--     changed       --%>
-    <div class="col">
-        <div class="divider-h">
-            <span class="divider"></span>
-        </div>
-        <div>
-            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-quiz-time-card-with-colorful.png" width="550rem" height="550rem" style="position: relative;left: 27%" alt="reshot-illustration-quiz-time-card-with-colorful" />
-        </div>
-    </div>
-    <!-- bloc-15 END -->
 
     <%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->
-
 
 
 <!-- Additional JS -->
