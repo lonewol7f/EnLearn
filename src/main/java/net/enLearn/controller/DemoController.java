@@ -20,11 +20,6 @@ public class DemoController {
         return "index";
     }
 
-    @GetMapping("/login")
-    public String showLoginPage() {
-        return "login";
-    }
-
     @GetMapping("/shop")
     public String showShopPage() {
         return "shop";
