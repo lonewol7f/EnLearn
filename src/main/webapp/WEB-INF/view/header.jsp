@@ -80,7 +80,7 @@
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="blogMegaMenu"
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/portal">Portal</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/students/">User
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/profile">User
                                     Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin
