@@ -25,7 +25,7 @@ CREATE TABLE `user`
     `email`      VARCHAR(100),
     `district`   VARCHAR(20),
     `password`   VARCHAR(68) NOT NULL,
-    `enabled`    TINYINT(1)  DEFAULT 1,
+    `enabled`    TINYINT(1) DEFAULT 1,
     CONSTRAINT `pk_user` PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
@@ -47,7 +47,7 @@ CREATE TABLE `authorities`
 DROP TABLE IF EXISTS `user_authorities`;
 CREATE TABLE `user_authorities`
 (
-    `user_id`  INT NOT NULL,
+    `user_id`      INT NOT NULL,
     `authority_id` INT NOT NULL,
     UNIQUE KEY `idx_authorities_1` (`user_id`, `authority_id`),
     CONSTRAINT `fk_authorities_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
@@ -465,3 +465,36 @@ CREATE TABLE `discount`
 
 SET
     FOREIGN_KEY_CHECKS = 1;
+
+INSERT INTO `user` (first_name, last_name, email, password)
+VALUES ('Kalana', 'Madusanka', 'km@gmail.com', '$2a$10$W3E8YRbuHkjD4CBRyUdXX.qjI3T6BDeF28NTxQPK3NWVyJe52958i'),
+       ('Yasas', 'Lowe', 'yl@gmail.com', '$2a$10$m/33.M/d/SBguM8w8D4cw.1SoLTB5Lkr.ENa7PrUoHezUyhx7Zl7q'),
+       ('Osini', 'Kithma', 'ok@gmail.com', '$2a$10$ORdHGQEno9r9D8piFv8./OGITWOR8UFVhQSFLKK714mcQPfnfV.x2'),
+       ('Hasintha', 'Dhanushka', 'hd@gmail.com', '$2a$10$e0N6kMTRvhUKy84emaRcYO6CMNWxVD9bw42wTSD.M3HK94KGQjaAi');
+
+INSERT INTO `student` (id, module, grade, type)
+VALUES (1, 'Who Knows_1', 12, 'IDK'),
+       (2, 'Who Knows_2', 12, 'IDK'),
+       (3, 'Who Knows_3', 12, 'IDK'),
+       (4, 'Who Knows_4', 12, 'IDK');
+
+INSERT INTO `teacher` (id, module, grade, type)
+VALUES (2, 'Who Knows_2', 12, 'IDK'),
+       (3, 'Who Knows_3', 12, 'IDK');
+
+INSERT INTO `admin` (id, no_of_shares)
+VALUES (3, 51);
+
+INSERT INTO `authorities` (authority)
+VALUES ('ROLE_STUDENT'),
+       ('ROLE_TEACHER'),
+       ('ROLE_ADMIN');
+
+INSERT INTO `user_authorities` (user_id, authority_id)
+VALUES (1,1),
+       (2,1),
+       (2,2),
+       (3,1),
+       (3,2),
+       (3,3),
+       (4,1);
