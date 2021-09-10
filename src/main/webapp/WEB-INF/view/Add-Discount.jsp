@@ -254,8 +254,8 @@
                       Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
                     </p>
                     -->
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                    <a href="index.html" class="btn btn-danger" >Delete</a>
+                    <a href="index.html" class="btn btn-success">Update</a>
                   </div>
                 </div>
               </div>
@@ -263,8 +263,8 @@
                 <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/placeholder-image-wide.png" />
                 <div class="carousel-caption caption-area-shop">
                   <div class="blockquote">
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                    <a href="index.html" class="btn btn-danger" >Delete</a>
+                    <a href="index.html" class="btn btn-success">Update</a>
                   </div>
                 </div>
               </div>
@@ -272,8 +272,8 @@
                 <img class="d-inline-block w-100" alt="slide 3" src="../../resources/img/placeholder-image-wide.png" />
                 <div class="carousel-caption caption-area-shop">
                   <div class="blockquote">
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                    <a href="index.html" class="btn btn-danger" >Delete</a>
+                    <a href="index.html" class="btn btn-success">Update</a>
                   </div>
                 </div>
               </div>
@@ -281,8 +281,8 @@
                 <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
                 <div class="carousel-caption caption-area-shop">
                   <div class="blockquote">
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                    <a href="index.html" class="btn btn-danger" >Delete</a>
+                    <a href="index.html" class="btn btn-success">Update</a>
                   </div>
                 </div>
               </div>
@@ -290,8 +290,8 @@
                 <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
                 <div class="carousel-caption caption-area-shop">
                   <div class="blockquote">
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Delete</a>
-                    <a href="index.html" class="btn btn-d btn-lg float-lg-none">Update</a>
+                    <a href="index.html" class="btn btn-danger" >Delete</a>
+                    <a href="index.html" class="btn btn-success">Update</a>
                   </div>
                 </div>
               </div>

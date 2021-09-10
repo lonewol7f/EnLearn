@@ -34,7 +34,7 @@ public class Course {
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
-    public Course(){};
+    public Course(){}
 
     public int getId() {
         return id;
@@ -52,13 +52,9 @@ public class Course {
         this.title = title;
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public void setType(String type) { this.type = type; }
 
     public String getDescription() {
         return description;
@@ -76,13 +72,9 @@ public class Course {
         this.price = price;
     }
 
-    public MultipartFile getImage() {
-        return image;
-    }
+    public MultipartFile getImage() { return image; }
 
-    public void setImage(MultipartFile image) {
-        this.image = image;
-    }
+    public void setImage(MultipartFile image) { this.image = image; }
 
     public Teacher getTeacher() {
         return teacher;
@@ -91,4 +83,6 @@ public class Course {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
+
 }

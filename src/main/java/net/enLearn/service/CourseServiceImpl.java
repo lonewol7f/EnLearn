@@ -16,9 +16,7 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     @Transactional
-    public List<Course> getCourseByTeacherID(int id) {
-        return courseDAO.getCourseByTeacherID(id);
-    }
+    public List<Course> getCourseList() { return courseDAO.getCourseList(); }
 
     @Override
     @Transactional
