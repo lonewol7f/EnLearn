@@ -250,6 +250,7 @@
         </div>
 
     </div>
+</div>
 
     <script>
         var openmodal = document.querySelectorAll('.modal-open')
