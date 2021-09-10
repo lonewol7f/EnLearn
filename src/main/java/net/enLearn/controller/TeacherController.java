@@ -4,12 +4,14 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
 import net.enLearn.service.CourseService;
+import net.enLearn.service.FreeQuizService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,6 +27,9 @@ public class TeacherController {
 
     @Autowired
     private CourseService courseService;
+
+    @Autowired
+    private FreeQuizService freeQuizService;
 
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
@@ -57,10 +62,20 @@ public class TeacherController {
         return "add-free-quiz";
     }
 
+    @GetMapping("/free-quiz/delete")
+    public String deleteFreeQuiz(@RequestParam("freeQuizId") int id){
+        freeQuizService.deleteFreeQuiz(id);
+        return "redirect:/free-quiz-links";
+
+    }
+
+
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
     }
+
+
 
 }
 
