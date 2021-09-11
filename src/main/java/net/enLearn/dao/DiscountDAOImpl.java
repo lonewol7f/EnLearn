@@ -26,9 +26,10 @@ public class DiscountDAOImpl implements DiscountDAO{
     @Override
     public int SavaDiscount(Discount d){
         String sql = "INSERT INTO discount(admin_id,discount,teacher_name,course,image,description,grade,title) VALUES(?,?,?,?,?,?,?,?)";
-        return jdbcTemplate.update(sql,d.getAdminIDId(),d.getAmount(),d.getTeacher(),d.getSub(),d.getImage(),d.getDescription(),d.getGrade(),d.getLable());
+        return jdbcTemplate.update(sql,d.getAdmin_id(),d.getDiscount(),d.getTeacher_name(),d.getCourse(),d.getImage(),d.getDescription(),d.getGrade(),d.getTitle());
     }
 
+    public DiscountDAOImpl(){}
 
 
     //---------------------------------------------------------------------------------------------------------
@@ -77,6 +78,6 @@ public class DiscountDAOImpl implements DiscountDAO{
     @Override
     public int UpdateDiscount(Discount d){
         String sql = "UPDATE discount SET admin_id=?,discount=?,teacher_name=?,course=?,image=?,description=?,grade=?,title=? WHERE id=?";
-        return jdbcTemplate.update(sql,d.getAdminIDId(),d.getAmount(),d.getTeacher(),d.getSub(),d.getImage(),d.getDescription(),d.getGrade(),d.getLable());
+        return jdbcTemplate.update(sql,d.getAdmin_id(),d.getDiscount(),d.getTeacher_name(),d.getCourse(),d.getImage(),d.getDescription(),d.getGrade(),d.getTitle());
     }
 }
