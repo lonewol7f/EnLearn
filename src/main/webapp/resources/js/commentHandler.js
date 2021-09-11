@@ -25,7 +25,6 @@ function loadComments() {
                         '            </div>\n' +
                         '            <div class="row">\n' +
                         '                <div class="col-6"></div>\n' +
-                                        (response.data[index].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="updateComment('+ response.data[index].id +')">Update</a></div>':'') +
                                         (response.data[index].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>':'') +
                         '            </div>\n' +
                         '        </div>\n' +
@@ -45,7 +44,6 @@ function loadComments() {
                             '        </div>\n' +
                             '        <div class="row">\n' +
                             '            <div class="col-6"></div>\n' +
-                                        (response.data[index].replies[reply].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="updateReply(' + response.data[index].replies[reply].id + ')">Update</a></div>':'') +
                                         (response.data[index].replies[reply].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>':'') +
                             '        </div>\n' +
                             '    </div>');
@@ -63,8 +61,6 @@ function addComment() {
     let comment = $('#commentBox').val().trim();
     let videoId = 1;
     // let videoId = $('#videoId').val();
-    // let userId = $('#userId').val();
-    let userId = 1;
     let url = $(location).attr('origin') + "/comments/add"
 
     if (comment === '') {
@@ -74,7 +70,6 @@ function addComment() {
         $.getJSON(url,
             {
                 videoId: videoId,
-                userId: userId,
                 comment: comment
             },
             function (response) {
@@ -90,8 +85,6 @@ function addReply(id) {
 
     let commentId = id.substring(8);
     let reply = $('#replyBox' + commentId).val().trim();
-    // let userId = $('#userId').val();
-    let userId = 1;
     let url = $(location).attr('origin') + "/comments/replies/add";
 
     if (reply === '') {
@@ -101,7 +94,6 @@ function addReply(id) {
         $.getJSON(url,
             {
                 commentId: commentId,
-                userId: userId,
                 reply: reply
             },
             function (response) {
@@ -133,11 +125,6 @@ function cancelRep(id) {
     $('#div' + id.substring(6)).text('');
 }
 
-
-function updateComment(id) {
-}
-
-
 function deleteComment(id) {
 
     let url = $(location).attr('origin') + "/comments/delete"
@@ -152,12 +139,6 @@ function deleteComment(id) {
             }
         });
 }
-
-
-function updateReply() {
-
-}
-
 
 function deleteReply(id) {
     let url = $(location).attr('origin') + "/comments/replies/delete"
