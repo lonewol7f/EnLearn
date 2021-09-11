@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: osini
@@ -127,45 +128,27 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
+                                <c:forEach var="freeQuiz" items="${freeQuizList}">
+
+                                    <%-- construct an 'delete' link with free quiz id --%>
+                                    <c:url var="deleteLink" value="/teachers/free-quiz/delete">
+                                        <c:param name="freeQuizId" value="${freeQuiz.id}"/>
+                                    </c:url>
+
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="blockquote container-div-style">
+                                                <label>
+                                                    ${freeQuiz.quizLink}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <a href="${deleteLink}"
+                                               class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
