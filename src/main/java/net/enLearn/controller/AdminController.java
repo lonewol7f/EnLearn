@@ -37,11 +37,6 @@ public class AdminController {
 
     @Autowired
     private UserService userService;
-    
-    @GetMapping("/confirm-advertisement")
-    public String showAdvertiserConfirmPage() {
-        return "Advertisement-Confirm";
-    }
 
     @GetMapping("")
     public String showAdminPanel() {
@@ -147,5 +142,12 @@ public class AdminController {
 
         return "event-form";
     }
+
+
+    @GetMapping("/confirm-advertisement")
+    public String showAdvertiserConfirmPage() {
+        return "Advertisement-Confirm";
+    }
+
 
 }
