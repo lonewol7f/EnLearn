@@ -11,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Created by Kalana on 20/07/2021
+ */
 
 @Controller
 @RequestMapping("/courses")
