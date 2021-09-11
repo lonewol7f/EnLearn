@@ -10,5 +10,6 @@ public interface UserService {
 
     User getUserById(int id);
     int getLoggedUserId();
+    boolean checkExistingUser(String email);
 
 }

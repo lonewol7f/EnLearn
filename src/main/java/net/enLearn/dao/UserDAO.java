@@ -13,6 +13,7 @@ public interface UserDAO {
 
     User getUserById(int id);
     int getLoggedUserId();
+    boolean checkExistingUser(String email);
 
 }
 

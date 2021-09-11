@@ -49,5 +49,17 @@ public class UserDAOImpl implements UserDAO{
 
         return 0;
     }
+
+    @Override
+    public boolean checkExistingUser(String email) {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("select count(*) from User where email= :email");
+        query.setParameter("email", email);
+
+        int no = (int) query.uniqueResult();
+        return no > 0;
+    }
 }
 
