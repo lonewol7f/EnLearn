@@ -51,8 +51,10 @@ public class CommentController {
     }
 
     @GetMapping("/add")
-    public Response saveComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
-                                @RequestParam("comment") String comment) {
+    public Response saveComment(@RequestParam("videoId") int vId, @RequestParam("comment") String comment) {
+
+        int uId = userService.getLoggedUserId();
+
         RecordedVideo video = recordedVideoService.getVideoById(vId);
         User user = userService.getUserById(uId);
 
@@ -76,24 +78,24 @@ public class CommentController {
         return response;
     }
 
-    @GetMapping("/update")
-    public Response updateComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
-                                  @RequestParam("commentId") int cId, @RequestParam("comment") String newComment) {
-        RecordedVideo video = recordedVideoService.getVideoById(vId);
-        User user = userService.getUserById(uId);
-
-        Comment comment = new Comment();
-        comment.setId(cId);
-        comment.setComment(newComment);
-        comment.setUser(user);
-        comment.setVideo(video);
-
-        commentService.saveOrUpdateComment(comment);
-
-        Response response = new Response("SUCCESS");
-
-        return response;
-    }
+    // @GetMapping("/update")
+    // public Response updateComment(@RequestParam("videoId") int vId, @RequestParam("userId") int uId,
+    //                               @RequestParam("commentId") int cId, @RequestParam("comment") String newComment) {
+    //     RecordedVideo video = recordedVideoService.getVideoById(vId);
+    //     User user = userService.getUserById(uId);
+    //
+    //     Comment comment = new Comment();
+    //     comment.setId(cId);
+    //     comment.setComment(newComment);
+    //     comment.setUser(user);
+    //     comment.setVideo(video);
+    //
+    //     commentService.saveOrUpdateComment(comment);
+    //
+    //     Response response = new Response("SUCCESS");
+    //
+    //     return response;
+    // }
 
     @GetMapping("/delete")
     public Response deleteComment(@RequestParam("commentId") int id) {
@@ -105,8 +107,9 @@ public class CommentController {
     }
 
     @GetMapping("/replies/add")
-    public Response saveReply(@RequestParam("commentId") int cId, @RequestParam("userId") int uId,
-                              @RequestParam("reply") String reply) {
+    public Response saveReply(@RequestParam("commentId") int cId, @RequestParam("reply") String reply) {
+
+        int uId = userService.getLoggedUserId();
 
         Comment comment = commentService.getCommentByCommentId(cId);
         User user = userService.getUserById(uId);
@@ -123,26 +126,26 @@ public class CommentController {
         return response;
     }
 
-    @GetMapping("/replies/update")
-    public Response updateReply(@RequestParam("replyId") int rId, @RequestParam("userId") int uId,
-                                @RequestParam("commentId") int cId, @RequestParam("reply") String newReply) {
-
-        Comment comment = commentService.getCommentByCommentId(cId);
-        User user = userService.getUserById(uId);
-
-        Reply reply = new Reply();
-        reply.setId(rId);
-        reply.setUser(user);
-        reply.setComment(comment);
-        reply.setReply(newReply);
-
-        replyService.saveOrUpdateReply(reply);
-
-        Response response = new Response("SUCCESS");
-
-        return response;
-
-    }
+    // @GetMapping("/replies/update")
+    // public Response updateReply(@RequestParam("replyId") int rId, @RequestParam("userId") int uId,
+    //                             @RequestParam("commentId") int cId, @RequestParam("reply") String newReply) {
+    //
+    //     Comment comment = commentService.getCommentByCommentId(cId);
+    //     User user = userService.getUserById(uId);
+    //
+    //     Reply reply = new Reply();
+    //     reply.setId(rId);
+    //     reply.setUser(user);
+    //     reply.setComment(comment);
+    //     reply.setReply(newReply);
+    //
+    //     replyService.saveOrUpdateReply(reply);
+    //
+    //     Response response = new Response("SUCCESS");
+    //
+    //     return response;
+    //
+    // }
 
     @GetMapping("/replies/delete")
     public Response deleteReply(@RequestParam("replyId") int id) {
