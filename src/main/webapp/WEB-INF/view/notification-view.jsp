@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -138,71 +140,33 @@
                                 </div>
                                 <div class="tab-pane fade-tab-bs" id="nav-40313-content-2" role="tabpanel"
                                      aria-labelledby="nav-40313-content-2">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
+                                    <div class="row d-flex align-items-center justify-content-around">
+                                        <c:if test="${fn:length(events) > 0}">
+                                            <c:forEach var="event" items="${events}">
+                                                <div class="col-4 mt-2 mb-2" id="${event.id}">
+                                                    <div class="card">
+                                                        <div class="divider-h">
+                                                            <span class="divider"></span>
+                                                        </div>
+                                                        <h3 class="ml-2 mr-2 mg-md text-lg-center">
+                                                            ${event.topic}
+                                                        </h3>
+                                                        <div class="divider-h">
+                                                            <span class="divider"></span>
+                                                        </div>
+                                                        <h3 class="mg-md text-lg-center">
+                                                            ${event.date}
+                                                        </h3>
+                                                    </div>
                                                 </div>
-                                                <h1 class="mg-md text-lg-center">
-                                                    21 may
-                                                </h1>
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h3 class="mg-md text-lg-center">
-                                                    What
-                                                </h3>
+                                            </c:forEach>
+                                        </c:if>
+                                        <c:if test="${fn:length(events) == 0}">
+                                            <div class="text-center border border-2 rounded mt-5"
+                                                 style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                                                <p>No Events to show</p>
                                             </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h1 class="mg-md text-lg-center">
-                                                    21 may
-                                                </h1>
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h3 class="mg-md text-lg-center">
-                                                    What
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h1 class="mg-md text-lg-center">
-                                                    21 may
-                                                </h1>
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h3 class="mg-md text-lg-center">
-                                                    What
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="card">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h1 class="mg-md text-lg-center">
-                                                    21 may
-                                                </h1>
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                                <h3 class="mg-md text-lg-center">
-                                                    What
-                                                </h3>
-                                            </div>
-                                        </div>
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>

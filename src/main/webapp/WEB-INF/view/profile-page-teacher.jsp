@@ -66,6 +66,7 @@
                                     <div>
                                         <div class="text-center">
                                             <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/notifications" class="btn btn-d btn-lg btn-block">Notifications</a>
                                         </div>
                                     </div>
                                 </div>
@@ -143,6 +144,17 @@
         </c:if>
     </div>
 
+    <br><br>
+    <div class="text-center">
+        <div class="row">
+            <div class="col">
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
+            </div>
+            <div class="col">
+                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+            </div>
+        </div>
+    </div>
 
 
     <!-- bloc-22 END -->
