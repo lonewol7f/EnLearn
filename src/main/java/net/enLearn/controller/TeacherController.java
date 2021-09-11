@@ -3,7 +3,9 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
+import net.enLearn.entity.Event;
 import net.enLearn.service.CourseService;
+import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,9 @@ public class TeacherController {
     @Autowired
     private FreeQuizService freeQuizService;
 
+    @Autowired
+    private EventService eventService;
+
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
         List<Course> courses = courseService.getCourseListByTeacherId();
@@ -49,7 +54,11 @@ public class TeacherController {
     }
     
     @GetMapping("/notifications")
-    public String showNotificationPage() {
+    public String showNotificationPage(Model model) {
+
+        List<Event> events = eventService.getEventList();
+        model.addAttribute("events", events);
+
         return "notification-view";
     }
     @GetMapping("/marks-and-access")
