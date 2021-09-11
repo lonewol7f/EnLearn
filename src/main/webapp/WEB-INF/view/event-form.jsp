@@ -60,20 +60,20 @@
 
                 <div class="form-group">
                     <form:label path="topic">Topic</form:label>
-                    <form:input path="topic" id="name16" class="form-control" required="required"/>
+                    <form:input path="topic" id="name16" cssClass="form-control" required="required"/>
                 </div>
                 <div class="form-group">
                     <form:label path="message">Message</form:label>
-                    <form:textarea path="message" id="name16" class="form-control" rows="3" cols="20"
+                    <form:textarea path="message" id="name16" cssClass="form-control" rows="3" cols="20"
                                    style="resize: none;" required="required"/>
                 </div>
                 <div class="form-group">
                     <form:label path="date">Date</form:label>
-                    <form:input path="date" type="date" id="name16" class="form-control" required="required"/>
+                    <form:input path="date" type="date" id="name16" cssClass="form-control" required="required"/>
                 </div>
                 <div class="form-group">
                     <form:label path="time">Time</form:label>
-                    <form:input path="time" type="time" min="09:00" max="20:00" id="name16" class="form-control"
+                    <form:input path="time" type="time" min="09:00" max="20:00" id="name16" cssClass="form-control"
                                 required="required"/>
                 </div>
                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">Submit</button>

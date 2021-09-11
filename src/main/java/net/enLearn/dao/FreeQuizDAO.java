@@ -16,5 +16,4 @@ public interface FreeQuizDAO {
     FreeQuiz getFreeQuizByQuizId(int id);
     List<FreeQuiz> getFreeQuizByGrade(String grade);
 
-
 }
