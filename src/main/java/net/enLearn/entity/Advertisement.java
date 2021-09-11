@@ -2,6 +2,7 @@ package net.enLearn.entity;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,11 +22,16 @@ public class Advertisement {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "price_range")
+    @Column(name = "package")
     private String prange;
 
     @Column(name = "description")
     private String descripton;
+
+
+    @Transient
+    @Column(name = "image")
+    private MultipartFile image;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "advertiser_id")
@@ -72,6 +78,15 @@ public class Advertisement {
     public void setDescription(String descripton) {
         this.descripton = descripton;
     }
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
+
 
 
 }
