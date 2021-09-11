@@ -64,6 +64,9 @@
                     <div class="row">
                         <div class="col">
                             <form:form  enctype="multipart/form-data" data-form-type="blocs-form" action="/courses/save" modelAttribute="course" method="post">
+
+                                <form:hidden path="id"/>
+
                                 <div class="form-group">
                                     <form:label path="title">
                                         Course Name

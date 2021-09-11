@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -56,21 +57,14 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" data-form-type="blocs-form" action="custom-action-url" method="POST">
+                            <form id="form_22096" data-form-type="blocs-form" action="custom-action-url" method="POST" modelAttribute="advertisement">
                                 <div class="form-group">
                                     <label>
                                         Company Name
                                     </label>
                                     <input id="name7_10830_22096" class="form-control" required name="name7" />
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        Contact Number
-                                    </label>
 
-                                    <input id="telNo" class="form-control" name="telNo" type="tel" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
-
-                                </div>
                                 <div class="form-group">
                                     <label>
                                         Email
@@ -83,14 +77,7 @@
                                     </label>
                                     <input id="name00_10830_22096" class="form-control" required name="name7" />
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        Bussiness Website URL
-                                    </label>
 
-                                    <input id="url" class="form-control" required name="name7" placeholder="Optional"/>
-
-                                </div>
 
                                 <div class="form-group">
                                     <div class="form-group">

@@ -58,9 +58,12 @@ public class Teacher extends User{
         this.freeQuizList = freeQuizList;
     }
 
-    public List<Course> getCourseList() { return courseList; }
+    public List<Course> getCourseList() {
+        return courseList;
+    }
 
-    public void setCourseList(List<Course> courseList) { this.courseList = courseList;
+    public void setCourseList(List<Course> courseList) {
+        this.courseList = courseList;
     }
 
 }

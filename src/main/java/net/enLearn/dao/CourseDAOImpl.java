@@ -15,10 +15,18 @@ public class CourseDAOImpl implements CourseDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
+//    @Override
+//    public List<Course> getCourseListByTeacherId(int id) {
+//        Session session = sessionFactory.getCurrentSession();
+//        Teacher teacher = session.get(Teacher.class, id);
+//        List<Course> courses = teacher.getCourseList();
+//        return courses;
+//    }
+
     @Override
-    public List<Course> getCourseList() {
+    public List<Course> getCourseListByTeacherId() {
         Session session = sessionFactory.getCurrentSession();
-        Query<Course> courseQuery = session.createQuery("from Course", Course .class);
+        Query<Course> courseQuery = session.createQuery("from Course", Course.class);
         List<Course> courses = courseQuery.getResultList();
         return courses;
     }
@@ -26,6 +34,8 @@ public class CourseDAOImpl implements CourseDAO{
     @Override
     public void saveOrUpdate(Course course) {
         Session session = sessionFactory.getCurrentSession();
+//        Teacher teacher = course.getTeacher();
+//        course.setTeacher(teacher);
         session.saveOrUpdate(course);
     }
 
@@ -42,7 +52,6 @@ public class CourseDAOImpl implements CourseDAO{
         Course course = session.get(Course.class, id);
 //        course.getTeacher().getCourseList().remove(course);
         session.delete(course);
-
 
     }
 }
