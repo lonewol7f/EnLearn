@@ -27,4 +27,10 @@ public class UserServiceImpl implements UserService {
     public int getLoggedUserId() {
         return userDAO.getLoggedUserId();
     }
+
+    @Override
+    @Transactional
+    public boolean checkExistingUser(String email) {
+        return userDAO.checkExistingUser(email);
+    }
 }
