@@ -73,6 +73,8 @@ CREATE TABLE `advertiser`
 (
     `id`           INT NOT NULL,
     `company_name` VARCHAR(50),
+
+
     CONSTRAINT `pk_advertiser` PRIMARY KEY (`id`),
     CONSTRAINT `fk_advertiser` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
@@ -101,11 +103,11 @@ CREATE TABLE `teacher_qualifications`
   DEFAULT CHARSET = latin1;
 
 
-DROP TABLE IF EXISTS `advertiser_mobile`;
-CREATE TABLE `advertiser_mobile`
+DROP TABLE IF EXISTS `advertiser_contact`;
+CREATE TABLE `advertiser_contact`
 (
     `advertiser_id` INT,
-    `mobile_no`     CHAR(10),
+    `contact_no`     CHAR(10),
     CONSTRAINT `pk_advertiser_mobile` PRIMARY KEY (`advertiser_id`),
     CONSTRAINT `fk_advertiser_mobile` FOREIGN KEY (`advertiser_id`) REFERENCES `advertiser` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
@@ -335,7 +337,7 @@ CREATE TABLE `advertisement`
 (
     `id`            INT NOT NULL AUTO_INCREMENT,
     `title`         VARCHAR(255),
-    `price_range`   VARCHAR(100),
+    `package`   VARCHAR(100),
     `image`         BLOB,
     `description`   TEXT,
     `advertiser_id` INT,

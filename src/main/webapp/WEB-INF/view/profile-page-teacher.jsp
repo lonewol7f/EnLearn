@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -90,6 +93,68 @@
     </div>
     <!-- bloc-19 END -->
     <!-- bloc-22 -->
+
+    <div style="display: flex; justify-content: center">
+        <c:if test="${fn:length(courses) > 0}">
+            <table class="table table-hover">
+
+
+                    <%-- Loop over and print teachers --%>
+                <c:forEach var="tempCourse" items="${courses}">
+
+                                        <%-- construct an 'update' link with teacher id --%>
+                                        <c:url var="updateLink" value="/courses/update">
+                                            <c:param name="courseId" value="${tempCourse.id}"/>
+                                        </c:url>
+
+                                        <%-- construct an 'delete' link with teacher id --%>
+                                        <c:url var="deleteLink" value="/courses/delete">
+                                            <c:param name="courseId" value="${tempCourse.id}"/>
+                                        </c:url>
+
+                                        <c:url var="coursesLink" value="/courses/add-courses">
+                                            <c:param name="courseId" value="${tempCourse.id}"/>
+                                        </c:url>
+
+
+                    <tr>
+                        <td>${tempCourse.title}</td>
+                        <td>${tempCourse.type}</td>
+                        <td>${tempCourse.description}</td>
+                        <td>${tempCourse.price}</td>
+                        <td>${tempCourse.image}</td>
+                        <td><a href="${coursesLink}">Course Content</a></td>
+                        <td>
+                                <%-- display the update link --%>
+                            <a href="${updateLink}"
+                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false">Update</a>
+                            |
+                            <a href="${deleteLink}"   <%-- delete link --%>
+                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false">Delete</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+        <c:if test="${fn:length(courses) == 0}">
+            <div class="text-center border border-2 rounded" style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                <p>No Courses Currently</p>
+            </div>
+        </c:if>
+    </div>
+
+    <br><br>
+    <div class="text-center">
+        <div class="row">
+            <div class="col">
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
+            </div>
+            <div class="col">
+                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+            </div>
+        </div>
+    </div>
+
 
     <!-- bloc-22 END -->
     <%@include file="footer.jsp" %>

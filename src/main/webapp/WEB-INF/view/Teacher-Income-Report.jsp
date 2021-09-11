@@ -44,7 +44,7 @@
             <div class="container bloc-lg">
                 <div class="row">
                     <div class="col">
-                        <h3 class="mg-md">
+                        <h3 class="mg-md" style="text-align: center;">
                             Teacher Income Report
                         </h3>
                         <div class="row">

@@ -103,6 +103,17 @@
 
 
                                         </div>
+                                        <br><br>
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div class="divider-h">
@@ -134,6 +145,17 @@
                                                 </h6>
                                             </div>
                                         </div>
+                                        <br><br>
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col">
                                                 <div class="divider-h">
@@ -163,6 +185,17 @@
                                                 <h6 class="mg-md">
                                                     Time it showed
                                                 </h6>
+                                            </div>
+                                        </div>
+                                        <br><br>
+                                        <div class="text-center">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
