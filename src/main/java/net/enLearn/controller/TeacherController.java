@@ -4,6 +4,7 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
 import net.enLearn.entity.Event;
+import net.enLearn.entity.FreeQuiz;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
@@ -11,9 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -66,9 +65,12 @@ public class TeacherController {
         return "marks-and-access";
     }
 
-    @GetMapping("/add-free-quiz")
-    public String showQuizAnswerSubmissionLinkPage() {
-        return "add-free-quiz";
+
+    @PostMapping("/free-quiz-link/save")
+    public String saveFreeQuizLink(@ModelAttribute("freeQuizLink") FreeQuiz freeQuiz){
+        freeQuizService.saveOrUpdateFreeQuiz(freeQuiz);
+
+        return "redirect:/free-quiz-links";
     }
 
     @GetMapping("/free-quiz/delete")
@@ -78,12 +80,10 @@ public class TeacherController {
 
     }
 
-
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
     }
-
 
 
 }
