@@ -61,6 +61,7 @@
                                     <div>
                                         <div class="text-center">
                                             <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/notifications" class="btn btn-d btn-lg btn-block">Notifications</a>
                                         </div>
                                     </div>
                                 </div>
