@@ -75,6 +75,7 @@ public class DemoController {
     public String showFreeQuizLinksPage(Model model) {
         List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
         model.addAttribute("freeQuizList",freeQuizList);
+        model.addAttribute("freeQuizLink",new FreeQuiz());
         return "free-quiz-links";
     }
 

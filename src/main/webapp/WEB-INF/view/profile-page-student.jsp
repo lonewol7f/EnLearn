@@ -191,7 +191,6 @@
         </div>
     </div>
 
-
     <!-- bloc-19 END -->
 
     <%@include file="footer.jsp" %>
