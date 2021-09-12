@@ -5,9 +5,8 @@ package net.enLearn.controller;
 import net.enLearn.entity.Course;
 import net.enLearn.entity.Event;
 import net.enLearn.entity.FreeQuiz;
-import net.enLearn.service.CourseService;
-import net.enLearn.service.EventService;
-import net.enLearn.service.FreeQuizService;
+import net.enLearn.entity.Teacher;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +32,12 @@ public class TeacherController {
 
     @Autowired
     private FreeQuizService freeQuizService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private TeacherService teacherService;
 
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
@@ -67,6 +72,11 @@ public class TeacherController {
 
     @PostMapping("/free-quiz-link/save")
     public String saveFreeQuizLink(@ModelAttribute("freeQuizLink") FreeQuiz freeQuiz){
+
+        int id  = userService.getLoggedUserId();
+        Teacher teacher = teacherService.getTeacherById(id);
+
+        freeQuiz.setTeacher(teacher);
         freeQuizService.saveOrUpdateFreeQuiz(freeQuiz);
 
         return "redirect:/free-quiz-links";
@@ -82,6 +92,14 @@ public class TeacherController {
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
+    }
+
+    @GetMapping("/free-quiz-links")
+    public String showFreeQuizLinksPage(Model model) {
+        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
+        model.addAttribute("freeQuizList",freeQuizList);
+        model.addAttribute("freeQuizLink",new FreeQuiz());
+        return "free-quiz-links";
     }
 
 }
