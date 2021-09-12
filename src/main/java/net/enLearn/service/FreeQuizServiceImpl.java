@@ -49,5 +49,9 @@ public class FreeQuizServiceImpl implements FreeQuizService {
         return freeQuizDAO.getFreeQuizByGrade(grade);
     }
 
-
+    @Override
+    @Transactional
+    public List<FreeQuiz> getFreeQuizListByTeacherId(int teacherId) {
+        return freeQuizDAO.getFreeQuizListByTeacherId(teacherId);
+    }
 }
