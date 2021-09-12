@@ -143,6 +143,17 @@
             </div>
         </c:if>
     </div>
+</div>
+<div class="text-center">
+    <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
+    <div class="row">
+        <div class="col">
+            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+        </div>
+        <div class="col">
+            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+        </div>
+    </div>
 
     <br><br>
     <div class="text-center">
