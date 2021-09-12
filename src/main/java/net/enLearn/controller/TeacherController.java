@@ -108,7 +108,7 @@ public class TeacherController {
         return "free-quiz-links";
     }
 
-    @RequestMapping("/courses/save")
+    @PostMapping("/courses/save")
     public String saveCourse(@ModelAttribute("course") Course course) {
 
         int teacherId = userService.getLoggedUserId();
