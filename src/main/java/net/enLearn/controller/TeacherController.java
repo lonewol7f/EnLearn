@@ -79,13 +79,13 @@ public class TeacherController {
         freeQuiz.setTeacher(teacher);
         freeQuizService.saveOrUpdateFreeQuiz(freeQuiz);
 
-        return "redirect:/free-quiz-links";
+        return "redirect:/teachers/free-quiz-links";
     }
 
     @GetMapping("/free-quiz/delete")
     public String deleteFreeQuiz(@RequestParam("freeQuizId") int id){
         freeQuizService.deleteFreeQuiz(id);
-        return "redirect:/free-quiz-links";
+        return "redirect:/teachers/free-quiz-links";
 
     }
 
@@ -96,7 +96,10 @@ public class TeacherController {
 
     @GetMapping("/free-quiz-links")
     public String showFreeQuizLinksPage(Model model) {
-        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
+
+        int teacherId = userService.getLoggedUserId();
+
+        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizListByTeacherId(teacherId);
         model.addAttribute("freeQuizList",freeQuizList);
         model.addAttribute("freeQuizLink",new FreeQuiz());
         return "free-quiz-links";
