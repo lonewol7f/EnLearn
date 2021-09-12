@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <label>
                                         Upload Image
-                                    </label>
+                                    </label><br>
                                     <input type="file"  required />
                                 </div>
                                 <!--
@@ -109,20 +109,20 @@
             </div>
 
 
-    <%@include file="footer.jsp" %>
+            <%@include file="footer.jsp" %>
 
-</div>
-<!-- Main container END -->
+        </div>
+        <!-- Main container END -->
 
 
 
-<!-- Additional JS -->
-<script src="../../resources/js/jquery.js?8669"></script>
-<script src="../../resources/js/bootstrap.bundle.js?9765"></script>
-<script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/jqBootstrapValidation.js"></script>
-<script src="../../resources/js/formHandler.js?1725"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+        <!-- Additional JS -->
+        <script src="../../resources/js/jquery.js?8669"></script>
+        <script src="../../resources/js/bootstrap.bundle.js?9765"></script>
+        <script src="../../resources/js/blocs.js?5117"></script>
+        <script src="../../resources/js/jqBootstrapValidation.js"></script>
+        <script src="../../resources/js/formHandler.js?1725"></script>
+        <script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
 
 </body>
