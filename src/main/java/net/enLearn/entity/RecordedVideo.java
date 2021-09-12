@@ -28,6 +28,10 @@ public class RecordedVideo {
     @JsonBackReference
     private List<Comment> comments;
 
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name = "quiz_id")
+    private SpecialQuiz specialQuiz;
+
     public RecordedVideo() {
     }
 
@@ -55,5 +59,11 @@ public class RecordedVideo {
         this.comments = comments;
     }
 
+    public SpecialQuiz getSpecialQuiz() {
+        return specialQuiz;
+    }
 
+    public void setSpecialQuiz(SpecialQuiz specialQuiz) {
+        this.specialQuiz = specialQuiz;
+    }
 }
