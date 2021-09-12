@@ -53,10 +53,10 @@
                 <div class="col">
                     <div class="row">
 
-                            <div>
-                                <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
-                                <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
-                            </div>
+                        <div>
+                            <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
+                        </div>
 
                     </div>
                     <div class="row">
@@ -132,13 +132,13 @@
                                             <div>
                                                 <div class="row">
                                                     <div class="col-lg-9">
-                                                         <div class="form-group">
-                                                        <input class="form-control" />
-                                                         </div>
+                                                        <div class="form-group">
+                                                            <input class="form-control" />
+                                                        </div>
                                                     </div>
-                                                 <div class="col">
-                                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                   </div>
+                                                    <div class="col">
+                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </form>
