@@ -51,17 +51,29 @@
                         Advertisement Confirm
                     </h2>
                 </div>
+
+
                 <div class="col go-dissapear">
                     <div class="divider-h">
                         <span class="divider"></span>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <br>
+            <form class="" action="" style="margin:auto;max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <br>
+
+
+
+
+                <div class="row">
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
-                            Heading content
+                            Title
                         </h5>
                         <div>
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -69,32 +81,38 @@
                                 <span class="divider"></span>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Course
+                                        <h6 text-align: right;>
+                                            Company Name
                                         </h6>
                                     </div>
-                                    <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Grade 6
-                                        </h6>
-                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            400(new)
+                                        <h6 text-align: right;>
+                                            Selected package
                                         </h6>
                                     </div>
+
+                                </div>
+                                <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            100(rate)
+                                        <h6 text-align: right;>
+                                            Email
+                                        </h6>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 text-align: right;>
+                                            Contact Number
                                         </h6>
                                     </div>
                                 </div>
-                                <h6 class="mg-md text-lg-center">
-                                    Teacher
-                                </h6>
                             </div>
+
+
                             <div class="text-center">
                                 <div class="row">
                                     <div class="col">
@@ -114,7 +132,7 @@
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
-                            Heading content
+                            Title
                         </h5>
                         <div>
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -122,32 +140,37 @@
                                 <span class="divider"></span>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Course
+                                        <h6 text-align: right;>
+                                            Company Name
                                         </h6>
                                     </div>
+
+                                </div>
+                                <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Grade 6
+                                        <h6 text-align: right;>
+                                            Selected Package
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            400(new)
-                                        </h6>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            100(rate)
+                                        <h6 text-align: right;>
+                                            Email
                                         </h6>
                                     </div>
                                 </div>
-                                <h6 class="mg-md text-lg-center">
-                                    Teacher
-                                </h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 text-align: right;>
+                                            Contact Number
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
+
+
+
                             <div class="text-center">
                                 <div class="row">
                                     <div class="col">
@@ -167,7 +190,7 @@
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
-                            Heading content
+                           Title
                         </h5>
                         <div>
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -175,32 +198,35 @@
                                 <span class="divider"></span>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Course
+                                        <h6 text-align: right;>
+                                            Company Name
                                         </h6>
                                     </div>
+
+                                </div>
+                                <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Grade 6
+                                        <h6 text-align: right;>
+                                            Selected Package
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            400(new)
-                                        </h6>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            100(rate)
+                                        <h6 text-align: right;>
+                                            Email
                                         </h6>
                                     </div>
                                 </div>
-                                <h6 class="mg-md text-lg-center">
-                                    Teacher
-                                </h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <h6 text-align: right;>
+                                            Contact Number
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="text-center">
                                 <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
                                 <div class="row">
@@ -221,7 +247,7 @@
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
-                            Heading content
+                            Title
                         </h5>
                         <div>
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -229,32 +255,35 @@
                                 <span class="divider"></span>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Course
+                                        <h6 text-align: right;>
+                                            Company Name
                                         </h6>
                                     </div>
+
+                                </div>
+                                <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            Grade 6
+                                        <h6 text-align: right;>
+                                            Selected Package
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            400(new)
-                                        </h6>
-                                    </div>
-                                    <div class="col">
-                                        <h6 class="mg-md text-lg-center">
-                                            100(rate)
+                                        <h6 text-align: right;>
+                                            Email
                                         </h6>
                                     </div>
                                 </div>
-                                <h6 class="mg-md text-lg-center">
-                                    Teacher
-                                </h6>
                             </div>
+                            <div class="row">
+                                <div class="col">
+                                    <h6 text-align: right;>
+                                        Contact Number
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
                             <div class="text-center">
                                 <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
                                 <div class="row">
