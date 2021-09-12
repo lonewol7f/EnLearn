@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -7,15 +9,17 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="../../resources/img/favicon.png">
     <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap.css?286">
     <link rel="stylesheet" type="text/css" href="../../resources/css/style.css?9809">
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?245">
     <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
     <title>profile-page-teacher</title>
     <!-- Analytics -->
     <!-- Analytics END -->
@@ -27,7 +31,7 @@
 <!-- Main container -->
 <div class="page-container">
     <!-- bloc-0 -->
-    <%@include file="header.jsp"%>
+    <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
     <!-- bloc-19 -->
     <div class="bloc l-bloc" id="bloc-19">
@@ -52,23 +56,30 @@
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="${pageContext.request.contextPath}/courses/create-courses" class="btn btn-d btn-lg btn-block">Create a course</a>
-                                            <a href="${pageContext.request.contextPath}/teachers/marks-and-access" class="btn btn-d btn-lg btn-block">Students Marks</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/create-courses"
+                                               class="btn btn-d btn-lg btn-block">Create a course</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/marks-and-access"
+                                               class="btn btn-d btn-lg btn-block">Students Marks</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div>
                                         <div class="text-center">
-                                            <a href="${pageContext.request.contextPath}/teachers/free-quiz-links" class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
-                                            <a href="${pageContext.request.contextPath}/teachers/notifications" class="btn btn-d btn-lg btn-block">Notifications</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/free-quiz-links"
+                                               class="btn btn-d btn-lg btn-block">Add Free Quiz</a>
+                                            <a href="${pageContext.request.contextPath}/teachers/notifications"
+                                               class="btn btn-d btn-lg btn-block">Notifications</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col offset-lg-1">
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/e91b91aa-c033-4f41-b5aa-585a81bf4cd4.jpg" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" />
+                            <img src="../../resources/img/lazyload-ph.png"
+                                 data-src="../../resources/img/e91b91aa-c033-4f41-b5aa-585a81bf4cd4.jpg"
+                                 class="img-fluid rounded-circle mx-auto d-block lazyload"
+                                 alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7"/>
                         </div>
                     </div>
                     <div class="row">
@@ -79,9 +90,13 @@
                             <h4 class="mg-md no-margin text-lg-center">
                                 Created Courses
                             </h4>
-                            <div><div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                            </div>
+                            <div>
+                                <div class="text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1"
+                                         stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px">
+                                        <path d="M2,25H498"></path>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -91,7 +106,57 @@
     </div>
     <!-- bloc-19 END -->
     <!-- bloc-22 -->
+    <div style="display: flex; justify-content: center">
+        <c:if test="${fn:length(courses) > 0}">
+            <table class="table table-hover">
 
+
+                    <%-- Loop over and print teachers --%>
+                <c:forEach var="tempCourse" items="${courses}">
+
+                    <%-- construct an 'update' link with course id --%>
+                    <c:url var="updateLink" value="/teachers/courses/update">
+                        <c:param name="courseId" value="${tempCourse.id}"/>
+                    </c:url>
+
+                    <%-- construct an 'delete' link with course id --%>
+                    <c:url var="deleteLink" value="/teachers/courses/delete">
+                        <c:param name="courseId" value="${tempCourse.id}"/>
+                    </c:url>
+
+                    <c:url var="coursesLink" value="/courses/add-courses">
+                        <c:param name="courseId" value="${tempCourse.id}"/>
+                    </c:url>
+
+
+                    <tr>
+                        <td>${tempCourse.title}</td>
+                        <td>${tempCourse.type}</td>
+                        <td style="height:100px;width:30%">${tempCourse.description}</td>
+                        <td>Rs. ${tempCourse.price}.00</td>
+                        <td>${tempCourse.image}</td>
+                        <td><a href="${coursesLink}">Course Content</a></td>
+                        <td>
+                                <%-- display the update link --%>
+                            <a href="${updateLink}"
+                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
+                               class="btn btn-success">Update</a>
+                            <a href="${deleteLink}"
+                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
+                               class="btn btn-danger">Delete</a>
+
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+        <c:if test="${fn:length(courses) == 0}">
+            <div class="text-center border border-2 rounded"
+                 style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                <p>No Courses Currently</p>
+            </div>
+        </c:if>
+    </div>
     <!-- bloc-22 END -->
     <%@include file="footer.jsp" %>
 </div>
