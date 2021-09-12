@@ -11,6 +11,7 @@ import java.util.List;
 public interface FreeQuizService {
 
     List<FreeQuiz> getFreeQuizList();
+    List<FreeQuiz> getFreeQuizListByTeacherId(int teacherId);
     void saveOrUpdateFreeQuiz(FreeQuiz freeQuiz);
     void deleteFreeQuiz(int id);
     FreeQuiz getFreeQuizByQuizId(int id);
