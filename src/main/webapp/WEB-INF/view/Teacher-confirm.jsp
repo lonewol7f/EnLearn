@@ -68,23 +68,23 @@
                             <div class="divider-h">
                                 <span class="divider"></span>
 
-                                        <h6 class="mg-md text-lg-center">
-                                            Name
-                                        </h6>
+                                <h6 class="mg-md text-lg-center">
+                                    Name
+                                </h6>
 
-                                        <h6 class="mg-md text-lg-center">
-                                            Grade
-                                        </h6>
-
-
-                                        <h6 class="mg-md text-lg-center">
-                                            Qualification
-                                        </h6>
+                                <h6 class="mg-md text-lg-center">
+                                    Grade
+                                </h6>
 
 
-                                        <h6 class="mg-md text-lg-center">
-                                            Email
-                                        </h6>
+                                <h6 class="mg-md text-lg-center">
+                                    Qualification
+                                </h6>
+
+
+                                <h6 class="mg-md text-lg-center">
+                                    Email
+                                </h6>
 
 
                             </div>
