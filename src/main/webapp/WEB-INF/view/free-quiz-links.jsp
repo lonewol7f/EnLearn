@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: osini
@@ -33,45 +35,45 @@
     <!-- Analytics -->
 
     <!-- Analytics END -->
-<style>
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
 
-    /* Modal Content/Box */
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-    }
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
 
-    /* The Close Button */
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-</style>
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -103,8 +105,8 @@
                         </div>
                         <div class="col">
                             <a
-                               class="btn btn-d btn-lg float-lg-right remove-btn btn-clean"
-                               id="myBtn">Add More Free Quiz</a>
+                                    class="btn btn-d btn-lg float-lg-right remove-btn btn-clean"
+                                    id="myBtn">Add More Free Quiz</a>
                         </div>
                     </div>
                     <div class="row">
@@ -122,50 +124,32 @@
                         <div class="col">
                             <div>
                                 <h3 class="mg-md no-margin">
-                                    Free Quiz Links
+                                    Free Quiz Topics
                                 </h3>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
+                                <c:forEach var="freeQuiz" items="${freeQuizList}">
+
+                                    <%-- construct an 'delete' link with free quiz id --%>
+                                    <c:url var="deleteLink" value="/teachers/free-quiz/delete">
+                                        <c:param name="freeQuizId" value="${freeQuiz.id}"/>
+                                    </c:url>
+
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="blockquote container-div-style">
+                                                <label>
+                                                        ${freeQuiz.topic}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <a href="${deleteLink}"
+                                               class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp"
-                                           class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -180,16 +164,28 @@
         <!-- Modal content -->
         <div class="modal-content" style="margin-left: auto;margin-right: auto">
             <span class="close">&times;</span>
-                  <h3 style="text-align: center">Add Free Quiz Links In Here</h3>
+            <h3 style="text-align: center">Add Free Quiz Links In Here</h3>
             <div class="row">
-                <div class="col-lg-9">
+                <form:form action="/teachers/free-quiz-link/save" method="post" modelAttribute="freeQuizLink">
+
                     <div class="form-group">
-                        <input class="form-control" />
+                        <form:label path="topic">Topic</form:label>
+                        <form:input path="topic" cssClass="form-control"/>
                     </div>
-                </div>
-                <div class="col">
-                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                </div>
+                    <div class="form-group">
+                        <form:label path="grade">Grade</form:label>
+                        <form:input path="grade" cssClass="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <form:label path="quizLink">Free Quiz Link</form:label>
+                        <form:input path="quizLink" cssClass="form-control" />
+                    </div>
+
+                    <%--                <div class="col">--%>
+                    <%--                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+                    <%--                </div>--%>
+                    <button class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn" type="submit">Add</button>
+                </form:form>
             </div>
         </div>
     </div>
