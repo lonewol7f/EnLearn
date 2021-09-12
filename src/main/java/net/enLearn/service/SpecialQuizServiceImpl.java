@@ -39,13 +39,12 @@ public class SpecialQuizServiceImpl implements SpecialQuizService{
 
     @Override
     @Transactional
-    public SpecialQuiz showSpecialQuizByTeacherId(int id){
-        return specialQuizDAO.showSpecialQuizByTeacherId(id);
+    public List<SpecialQuiz> getSpecialQuizByTeacherId(int id){
+        return specialQuizDAO.getSpecialQuizByTeacherId(id);
     }
 
     @Override
-    @Transactional
-    public List<SpecialQuiz> getSpecialQuizByTeacherId(int id){
-        return specialQuizDAO.getSpecialQuizByTeacherId(id);
+    public SpecialQuiz getSpecialQuizByVideoId(int id) {
+        return specialQuizDAO.getSpecialQuizByVideoId(id);
     }
 }

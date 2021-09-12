@@ -13,6 +13,6 @@ public interface SpecialQuizService {
     List<SpecialQuiz> getSpecialQuizList();
     void saveOrUpdateSpecialQuiz(SpecialQuiz specialQuiz);
     void deleteSpecialQuiz(int id);
-    SpecialQuiz showSpecialQuizByTeacherId(int id);
     List<SpecialQuiz> getSpecialQuizByTeacherId(int id);
+    SpecialQuiz getSpecialQuizByVideoId(int id);
 }
