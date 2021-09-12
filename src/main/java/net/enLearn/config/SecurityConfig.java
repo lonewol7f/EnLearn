@@ -53,5 +53,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .loginProcessingUrl("/authenticateTheUser")
                 .permitAll();
+
+
     }
 }
