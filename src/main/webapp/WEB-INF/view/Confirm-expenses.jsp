@@ -75,8 +75,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -95,8 +95,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -115,8 +115,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -135,8 +135,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -157,8 +157,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -177,8 +177,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -197,8 +197,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -217,8 +217,8 @@
                                 <span class="divider"></span>
                             </div>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Update</a>
+                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                <a href="index.jsp" class="btn btn-success">Update</a>
                             </div>
                             <div class="divider-h">
                                 <span class="divider"></span>
