@@ -41,7 +41,10 @@ public class TeacherController {
 
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
-        List<Course> courses = courseService.getCourseListByTeacherId();
+
+        int id = userService.getLoggedUserId();
+
+        List<Course> courses = courseService.getCourseListByTeacherId(id);
         model.addAttribute("courses", courses);
         return "profile-page-teacher";
     }
@@ -103,6 +106,39 @@ public class TeacherController {
         model.addAttribute("freeQuizList",freeQuizList);
         model.addAttribute("freeQuizLink",new FreeQuiz());
         return "free-quiz-links";
+    }
+
+    @RequestMapping("/courses/save")
+    public String saveCourse(@ModelAttribute("course") Course course) {
+
+        int teacherId = userService.getLoggedUserId();
+
+        Teacher teacher = teacherService.getTeacherById(teacherId);
+        course.setTeacher(teacher);
+
+        courseService.saveOrUpdate(course);
+        return "redirect:/teachers";
+    }
+
+
+    @GetMapping("/create-courses")
+    public String showCreateCoursePage(Model model) {
+        Course course = new Course();
+        model.addAttribute("course", course);
+        return "create-course";
+    }
+
+    @GetMapping("/courses/delete")
+    public String deleteTeacher(@RequestParam("courseId") int id) {
+        courseService.deleteCourse(id);
+        return "redirect:/teachers";
+    }
+
+    @GetMapping("/courses/update")
+    public String showCourseUpdateForm(@RequestParam("courseId") int id, Model model) {
+        Course course = courseService.getCourseById(id);
+        model.addAttribute("course", course);
+        return "create-course";
     }
 
 }
