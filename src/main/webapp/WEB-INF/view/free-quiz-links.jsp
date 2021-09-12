@@ -124,7 +124,7 @@
                         <div class="col">
                             <div>
                                 <h3 class="mg-md no-margin">
-                                    Free Quiz Links
+                                    Free Quiz Topics
                                 </h3>
                                 <div class="divider-h">
                                     <span class="divider"></span>
@@ -140,7 +140,7 @@
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
                                                 <label>
-                                                    ${freeQuiz.quizLink}
+                                                    ${freeQuiz.topic}
                                                 </label>
                                             </div>
                                         </div>
