@@ -1,6 +1,7 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.FreeQuiz;
+import net.enLearn.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -77,4 +78,14 @@ public class FreeQuizDAOImpl implements FreeQuizDAO{
         return freeQuizList;
     }
 
+    @Override
+    public List<FreeQuiz> getFreeQuizListByTeacherId(int teacherId) {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        Teacher teacher = session.get(Teacher.class, teacherId);
+        List<FreeQuiz> quizList = teacher.getFreeQuizList();
+
+        return quizList;
+    }
 }
