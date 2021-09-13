@@ -8,10 +8,12 @@ import javax.persistence.*;
 @Table(name = "discount")
 public class Discount {
 
+
     //private int Id;
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
 
@@ -59,6 +61,10 @@ public class Discount {
 
 
     //Setters and getters
+    public int getId(){return id;}
+
+    public void setId(int id){this.id = id;}
+
     public int getAdmin_id(){
         return admin_id;
     }
@@ -79,8 +85,8 @@ public class Discount {
 
     public void setDiscount(int discount){ this.discount = discount; }
 
-    public void setTeacher_name(String teacher){
-        this.teacher_name = teacher;
+    public void setTeacher_name(String teacher_name){
+        this.teacher_name = teacher_name;
     }
 
     public String getTeacher_name(){
