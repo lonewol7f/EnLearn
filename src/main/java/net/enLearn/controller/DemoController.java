@@ -1,14 +1,10 @@
 package net.enLearn.controller;
 
-import net.enLearn.entity.FreeQuiz;
 import net.enLearn.service.FreeQuizService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.List;
 
 /**
  * Created by Kalana on 14/07/2021
@@ -71,12 +67,6 @@ public class DemoController {
         return "portal";
     }
 
-    @GetMapping("/free-quiz-links")
-    public String showFreeQuizLinksPage(Model model) {
-        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
-        model.addAttribute("freeQuizList",freeQuizList);
-        model.addAttribute("freeQuizLink",new FreeQuiz());
-        return "free-quiz-links";
-    }
+
 
 }

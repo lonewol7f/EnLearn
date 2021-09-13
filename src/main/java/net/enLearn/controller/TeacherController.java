@@ -5,6 +5,7 @@ package net.enLearn.controller;
 import net.enLearn.entity.Course;
 import net.enLearn.entity.Event;
 import net.enLearn.entity.FreeQuiz;
+import net.enLearn.entity.SpecialQuiz;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
@@ -65,6 +66,13 @@ public class TeacherController {
         return "marks-and-access";
     }
 
+    @GetMapping("/free-quiz-links")
+    public String showFreeQuizLinksPage(Model model) {
+        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
+        model.addAttribute("freeQuizList",freeQuizList);
+        model.addAttribute("freeQuizLink",new FreeQuiz());
+        return "free-quiz-links";
+    }
 
     @PostMapping("/free-quiz-link/save")
     public String saveFreeQuizLink(@ModelAttribute("freeQuizLink") FreeQuiz freeQuiz){
@@ -78,6 +86,12 @@ public class TeacherController {
         freeQuizService.deleteFreeQuiz(id);
         return "redirect:/free-quiz-links";
 
+    }
+
+    @GetMapping("/special-quizzes")
+    public String showAddQuizPage(Model model) {
+        model.addAttribute("specialQuizLink",new SpecialQuiz());
+        return "add-special-quiz";
     }
 
     @GetMapping("/Teacher-Income_report")
