@@ -31,7 +31,40 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>Add Code</title>
 
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
 
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            float: right;
+        }
+
+        .close:hover,
+        .close:focus {
+            cursor: pointer;
+        }
+    </style>
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -48,13 +81,14 @@
         <form:form action="/admins/save-coupon" modelAttribute="code" method="post">
             <form:label path="code"> Code
                 <form:input type="text" path="code"
-                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
             </form:label><br>
             <form:label path="coins"> Coins
                 <form:input type="text" path="coins"
-                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
+                            class="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
             </form:label><br><br>
-            <button type="submit" class="py-2 px-4 flex justify-center items-center  bg-green-500 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+            <button type="submit"
+                    class="py-2 px-4 flex justify-center items-center  bg-green-500 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
                 Submit Code !
             </button>
         </form:form>
@@ -104,8 +138,10 @@
                                 </p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">
-                                        ${code.code}
+                                <p class="text-gray-900 whitespace-no-wrap ">
+                                    <span class="codex">
+                                            ${code.code}
+                                    </span>
                                 </p>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -136,9 +172,9 @@
                                 </c:if>
                             </td>
                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <a href="${deleteLink}" class="text-indigo-600 hover:text-indigo-900 modal-open">
-                                    Remove
-                                </a>
+                                <button href="${deleteLink}" id="myBtn"
+                                        class="text-indigo-600 hover:text-indigo-900 modal-open">Remove
+                                </button>
                             </td>
                         </tr>
                     </c:forEach>
@@ -205,93 +241,66 @@
         </div>
     </div>
 
-
-    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-        <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-
-        <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-
-            <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
-                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                     viewBox="0 0 18 18">
-                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                </svg>
-                <span class="text-sm">(Esc)</span>
-            </div>
-
-            <!-- Add margin if you want to see some of the overlay behind the modal-->
-            <div class="modal-content py-4 text-left px-6">
-                <!--Title-->
-                <div class="flex justify-between items-center pb-3">
-                    <p class="text-2xl font-bold">Remove a Code!</p>
-                    <div class="modal-close cursor-pointer z-50">
-                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                             viewBox="0 0 18 18">
-                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-                        </svg>
+    <div id="myModal" class="modal grid grid-cols-3 grid-rows-3">
+        <div class="col-span-3">
+            <br><br><br><br> <br><br><br><br> <br><br><br><br>
+        </div>
+        <div class="modal-content max-w-md shadow-lg rounded-2xl p-4 bg-white dark:bg-gray-800 w-64 m-auto col-start-2 row-start-2">
+            <div class="w-full h-full text-center">
+                <div class="flex h-full flex-col justify-between">
+                    <svg width="40" height="40" class="mt-4 w-12 h-12 m-auto text-indigo-500" fill="currentColor"
+                         viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M704 1376v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm-544-992h448l-48-117q-7-9-17-11h-317q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5h-832q-66 0-113-58.5t-47-141.5v-952h-96q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23z">
+                        </path>
+                    </svg>
+                    <p class="text-gray-800 dark:text-gray-200 text-xl font-bold mt-4">
+                        Remove Code
+                        <span id="codey"></span>
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 text-xs py-2 px-6">
+                        Are you sure you want to delete this Code ?
+                    </p>
+                    <div class="flex items-center justify-between gap-4 w-full mt-8">
+                        <button type="button"
+                                class="py-2 px-4  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                            Delete
+                        </button>
+                        <button class="close px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500 undefined px-5">Close </button>
                     </div>
                 </div>
-
-                <!--Body-->
-                <p>Are you sure that you want to remove this code ?</p>
-                <br>
-                <p>Doing this is irreversible</p>
-
-                <!--Footer-->
-                <div class="flex justify-end pt-2">
-                    <button class="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">
-                        I'm sure
-                    </button>
-                    <button class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close
-                    </button>
-                </div>
-
             </div>
         </div>
-
+        <div class="col-span-3"></div>
     </div>
 </div>
 
-    <script>
-        var openmodal = document.querySelectorAll('.modal-open')
-        for (var i = 0; i < openmodal.length; i++) {
-            openmodal[i].addEventListener('click', function (event) {
-                event.preventDefault()
-                toggleModal()
-            })
+
+<script>
+    var modal = document.getElementById("myModal");
+    var btns = document.querySelectorAll(".modal-open");
+    var span = document.getElementsByClassName("close")[0];
+
+    btns.forEach(function (btn,index){
+        btn.onclick = function () {
+
+            //methana index eka enawa
+            console.log(index);
+
+            modal.style.display = "block";
+            document.getElementById("codey").innerHTML = document.querySelectorAll(".codex")[index].innerHTML;
         }
+    })
 
-        const overlay = document.querySelector('.modal-overlay')
-        overlay.addEventListener('click', toggleModal)
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
 
-        var closemodal = document.querySelectorAll('.modal-close')
-        for (var i = 0; i < closemodal.length; i++) {
-            closemodal[i].addEventListener('click', toggleModal)
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
+    }
+</script>
 
-        document.onkeydown = function (evt) {
-            evt = evt || window.event
-            var isEscape = false
-            if ("key" in evt) {
-                isEscape = (evt.key === "Escape" || evt.key === "Esc")
-            } else {
-                isEscape = (evt.keyCode === 27)
-            }
-            if (isEscape && document.body.classList.contains('modal-active')) {
-                toggleModal()
-            }
-        };
-
-
-        function toggleModal() {
-            const body = document.querySelector('body')
-            const modal = document.querySelector('.modal')
-            modal.classList.toggle('opacity-0')
-            modal.classList.toggle('pointer-events-none')
-            body.classList.toggle('modal-active')
-        }
-
-
-    </script>
 </body>
 </html>
