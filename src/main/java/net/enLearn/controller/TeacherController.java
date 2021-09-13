@@ -5,6 +5,7 @@ package net.enLearn.controller;
 import net.enLearn.entity.Course;
 import net.enLearn.entity.Event;
 import net.enLearn.entity.FreeQuiz;
+import net.enLearn.entity.Teacher;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
@@ -16,9 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by Kalana on 21/07/2021
- */
+
 @Controller
 @RequestMapping("/teachers")
 public class TeacherController {
@@ -46,6 +45,14 @@ public class TeacherController {
     public String showTeacherRegisterPage() {
         return "register-teacher";
     }
+
+    @GetMapping("/register")
+    public String showTeacherRegistrationPage(Model model){
+        Teacher teacher1 = new Teacher();
+        model.addAttribute("teacher", teacher1);
+        return "register-teacher";
+    }
+
     
     @GetMapping("/Teacher-confirm")
     public String showTeacherConfirm() {

@@ -40,7 +40,43 @@ public class User {
     @JsonBackReference
     private List<RedeemCode> redeemCodes;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "last_name")
+    private String lastname;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "dob")
+    private int DOB;
+
+    @Column(name = "grade")
+    private int grade;
+
+    @Column(name = "district")
+    private String district;
+
+    @Column(name = "address")
+    private String Address;
+
+
+    //default Constructor
     public User() {
+    }
+
+
+    //Constructor
+    public User(String first_name,String last_name,String email,String password,int DOB,int grade,String district,String Address){
+        this.firstName =first_name;
+        this.lastname = last_name;
+        this.email = email;
+        this.password = password;
+        this.DOB = DOB;
+        this.grade = grade;
+        this.district= district;
+        this.Address = Address;
     }
 
     public int getId() {
@@ -83,4 +119,11 @@ public class User {
         this.redeemCodes = redeemCodes;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail (String email) {
+        this.email = email;
+    }
 }
