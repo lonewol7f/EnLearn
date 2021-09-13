@@ -121,7 +121,7 @@
                     <tbody>
                     <c:forEach var="code" items="${codeList}">
                         <%-- construct an 'delete' link with code id --%>
-                        <c:url var="deleteLink" value="/admins/events/delete">
+                        <c:url var="deleteLink" value="/admins/codes/delete">
                             <c:param name="codeId" value="${code.id}"/>
                         </c:url>
                         <tr>
