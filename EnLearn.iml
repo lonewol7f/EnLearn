@@ -20,7 +20,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="EnLearn" value="661593ff-3808-41dd-af5b-d2cb96d8597e" />
+          <factory-entry name="EnLearn" value="80398105-efaa-4c5a-9a38-95c423a88239" />
         </datasource-mapping>
         <naming-strategy-map>
           <unit-entry name="EnLearn" />
@@ -119,5 +119,6 @@
     <orderEntry type="library" name="Maven: org.testng:testng:7.4.0" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.78" level="project" />
     <orderEntry type="library" name="Maven: org.webjars:jquery:3.5.1" level="project" />
+    <orderEntry type="library" name="tailwindcss" level="application" />
   </component>
 </module>

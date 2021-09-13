@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: osini
@@ -123,7 +124,7 @@
                         <div class="col">
                             <div>
                                 <h3 class="mg-md no-margin">
-                                    Free Quiz Links
+                                    Free Quiz Topics
                                 </h3>
                                 <div class="divider-h">
                                     <span class="divider"></span>
@@ -139,7 +140,7 @@
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
                                                 <label>
-                                                    ${freeQuiz.quizLink}
+                                                    ${freeQuiz.topic}
                                                 </label>
                                             </div>
                                         </div>
@@ -165,14 +166,26 @@
             <span class="close">&times;</span>
                   <h3 style="text-align: center">Add Free Quiz Links In Here</h3>
             <div class="row">
-                <div class="col-lg-9">
+                <form:form action="/teachers/free-quiz-link/save" method="post" modelAttribute="freeQuizLink">
+
                     <div class="form-group">
-                        <input class="form-control" />
+                        <form:label path="topic">Topic</form:label>
+                        <form:input path="topic" cssClass="form-control"/>
                     </div>
-                </div>
-                <div class="col">
-                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                </div>
+                    <div class="form-group">
+                        <form:label path="grade">Grade</form:label>
+                        <form:input path="grade" cssClass="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <form:label path="quizLink">Free Quiz Link</form:label>
+                        <form:input path="quizLink" cssClass="form-control" />
+                    </div>
+
+<%--                <div class="col">--%>
+<%--                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                </div>--%>
+                    <button class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn" type="submit">Add</button>
+                </form:form>
             </div>
         </div>
     </div>

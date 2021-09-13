@@ -46,7 +46,7 @@ public class FreeQuizDAOImpl implements FreeQuizDAO{
         // get current session
         Session session = sessionFactory.getCurrentSession();
 
-        //get free quiz link
+        //get free quiz id
         FreeQuiz freeQuiz = getFreeQuizByQuizId(id);
         freeQuiz.getTeacher().getFreeQuizList().remove(freeQuiz);
 

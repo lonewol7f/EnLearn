@@ -70,6 +70,12 @@
                                     <input id="email7_10830" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email7" />
                                 </div>
                                 <div class="form-group">
+                                    <label>
+                                        Password
+                                    </label>
+                                    <input class="form-control" id="input_782_10830_22096_19917" name="input_782" />
+                                </div>
+                                <div class="form-group">
                                     <div class="form-group">
                                         <label>
                                             Profile Picture
