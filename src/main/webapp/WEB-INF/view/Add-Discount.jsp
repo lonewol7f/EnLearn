@@ -46,7 +46,7 @@
   <!-- bloc-0 END -->
 
   <div class="container mt-lg-5">
-    <a class="btn btn-primary" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
+    <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
   </div>
 
   <!--Add Discount START -->
