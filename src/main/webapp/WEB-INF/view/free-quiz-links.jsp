@@ -159,10 +159,10 @@
 
     </div>
 
-    <div id="myModal" class="modal" style=":mx-9">
+    <div id="myModal" class="modal" >
 
         <!-- Modal content -->
-        <div class="modal-content" style="margin-left: auto;margin-right: auto">
+        <div class="modal-content max-w-md border-2 border-indigo-500">
             <span class="close">&times;</span>
             <h3 style="text-align: center">Add Free Quiz Links In Here</h3>
             <div class="row">
@@ -184,10 +184,15 @@
                     <%--                <div class="col">--%>
                     <%--                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
                     <%--                </div>--%>
-                    <button class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn" type="submit">Add</button>
+
+                    <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        Add
+                    </button>
+
                 </form:form>
             </div>
         </div>
+
     </div>
     <%@include file="footer.jsp" %>
 
