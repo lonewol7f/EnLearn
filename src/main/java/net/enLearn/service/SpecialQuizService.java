@@ -1,6 +1,7 @@
 package net.enLearn.service;
 
 import net.enLearn.entity.SpecialQuiz;
+import net.enLearn.entity.Student;
 
 import java.util.List;
 
@@ -15,4 +16,11 @@ public interface SpecialQuizService {
     void deleteSpecialQuiz(int id);
     List<SpecialQuiz> getSpecialQuizByTeacherId(int id);
     SpecialQuiz getSpecialQuizByVideoId(int id);
+
+    //marks-and-access - many-to-many relationship
+    List<Student> getStudentList();
+    void saveOrUpdateStudentMarks(Student student);
+    void deleteStudentMarks(int student_id,int quiz_id);
+    List<Student> getStudentByQuizId(int quiz_id);
+    Student getStudentMarksByQuizId(int student_id,int quiz_id);
 }

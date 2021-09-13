@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -55,6 +56,7 @@
 
                             <div>
                                 <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                                <a class="btn btn-d btn-lg float-lg-right remove-btn btn-clean" id="myBtn">Add More Free Quiz</a>
                                 <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
                             </div>
 
@@ -68,29 +70,30 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col-12 mb-5">
-                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+<%--                                    <div class="col-12 mb-5">--%>
+<%--                                        <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="">--%>
+<%--&lt;%&ndash;                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">&ndash;%&gt;--%>
+<%--                                            <div>--%>
+<%--                                                <div class="row">--%>
+<%--                                                    <div class="col-lg-7">--%>
+<%--                                                        <div class="form-group">--%>
+<%--                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />--%>
+<%--                                                        </div>--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="col">--%>
+<%--                                                        <div class="form-group">--%>
+<%--                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />--%>
+<%--                                                        </div>--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="col">--%>
+<%--                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--&lt;%&ndash;                                        </form>&ndash;%&gt;--%>
+<%--                                        </form:form>--%>
+<%--                                    </div>--%>
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
@@ -126,24 +129,24 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-12 mb-5">
-                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-9">
-                                                         <div class="form-group">
-                                                        <input class="form-control" />
-                                                         </div>
-                                                    </div>
-                                                 <div class="col">
-                                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                   </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+<%--                                <div class="row">--%>
+<%--                                    <div class="col-lg-12 mb-5">--%>
+<%--                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">--%>
+<%--                                            <div>--%>
+<%--                                                <div class="row">--%>
+<%--                                                    <div class="col-lg-9">--%>
+<%--                                                         <div class="form-group">--%>
+<%--                                                        <input class="form-control" />--%>
+<%--                                                         </div>--%>
+<%--                                                    </div>--%>
+<%--                                                 <div class="col">--%>
+<%--                                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
+<%--                                                   </div>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </form>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="blockquote container-div-style">
@@ -176,6 +179,39 @@
         </div>
     </div>
     <!-- bloc-7 END -->
+
+    <div id="myModal" class="modal" >
+
+        <!-- Modal content -->
+        <div class="modal-content max-w-md border-2 border-indigo-500">
+            <span class="close">&times;</span>
+            <h3 style="text-align: center">Add Special Quiz Links In Here</h3>
+            <div class="row">
+                <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="freeQuizLink">
+
+                    <div class="form-group">
+                        <form:label path="mcqLink">MCQ Link</form:label>
+                        <form:input path="mcqLink" cssClass="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <form:label path="structuredLink">Structured Link</form:label>
+                        <form:input path="structuredLink" cssClass="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <form:label path="marksLimit">Marks Limit</form:label>
+                        <form:input path="marksLimit" cssClass="form-control" />
+                    </div>
+
+
+                    <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        Add
+                    </button>
+
+                </form:form>
+            </div>
+        </div>
+
+    </div>
 
     <%@include file="footer.jsp" %>
 
