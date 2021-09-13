@@ -18,5 +18,6 @@ public interface RedeemCodeService {
     List<RedeemCode> getUsedCodes();
     List<RedeemCode> listCodes();
     void deleteCouponById(int codeId);
+    void deleteCouponByCoupon(String coupon);
 
 }
