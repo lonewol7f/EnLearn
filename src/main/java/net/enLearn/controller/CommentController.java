@@ -66,12 +66,14 @@ public class CommentController {
         commentService.saveOrUpdateComment(newComment);
 
         // TODO : add notification
-        // Comment lastComment = commentService.getLastComment();
-        // Teacher teacher = lastComment.getVideo().getCourse().getTeacher();
-        //
-        // Notification notification = new Notification();
-        // notification.setTeacher(teacher);
-        // notification.setComment(lastComment);
+        Comment lastComment = commentService.getLastComment();
+        Teacher teacher = lastComment.getVideo().getCourse().getTeacher();
+
+        Notification notification = new Notification();
+        notification.setTeacher(teacher);
+        notification.setComment(lastComment);
+
+        notificationService.addNotification(notification);
 
         Response response = new Response("SUCCESS");
 
