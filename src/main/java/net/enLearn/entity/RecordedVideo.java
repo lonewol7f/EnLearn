@@ -30,7 +30,14 @@ public class RecordedVideo {
 
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name = "quiz_id")
+    @JsonBackReference
     private SpecialQuiz specialQuiz;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinColumn(name = "course_id")
+    @JsonBackReference
+    private Course course;
 
     public RecordedVideo() {
     }
@@ -65,5 +72,13 @@ public class RecordedVideo {
 
     public void setSpecialQuiz(SpecialQuiz specialQuiz) {
         this.specialQuiz = specialQuiz;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
     }
 }
