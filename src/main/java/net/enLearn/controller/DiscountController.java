@@ -18,7 +18,6 @@ public class DiscountController {
     @Autowired
     private DiscountService disService;
 
-    Discount discountObj;
 
 
     @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
@@ -31,7 +30,9 @@ public class DiscountController {
                                       @RequestParam("grade") int grade,
                                       @RequestParam("title") String title){
 
-        this.discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
+        Discount discountObj;
+        discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
+
         disService.saveDiscount(discountObj);
         return "Add-Discount";
     }

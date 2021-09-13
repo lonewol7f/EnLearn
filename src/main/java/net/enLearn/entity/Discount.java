@@ -14,6 +14,7 @@ public class Discount {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+
     @Column(name = "admin_id")
     private int admin_id;
 

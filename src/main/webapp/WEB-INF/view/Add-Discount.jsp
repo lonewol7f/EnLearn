@@ -53,7 +53,7 @@
           <div>
 
             <div class="discount-box">
-              <form id="adddiscount" data-form-type="blocs-form" action="discounts/addDiscount" method="POST">
+              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="discounts/addDiscount" method="POST">
                 <h4 class="mg-md mx-auto d-block text-lg-center">
                   Add Discount
                 </h4>
