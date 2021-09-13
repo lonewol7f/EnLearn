@@ -103,7 +103,7 @@
                     <a href="#" class="btn btn-danger" style="margin: 20px;">Delete Discount</a>
                 </div>
                 <div class="modal-footer">
-                    <a href="${pageContext.request.contextPath}/discounts/" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
+                    <a href="${pageContext.request.contextPath}/discounts/deleteDiscount" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
                 </div>
             </div>
         </div>
