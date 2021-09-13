@@ -2,7 +2,9 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Event;
 import net.enLearn.service.EventService;
+import net.enLearn.service.RedeemCodeService;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -29,6 +31,9 @@ public class ReportController {
     @Autowired
     private EventService eventService;
 
+    @Autowired
+    private RedeemCodeService redeemCodeService;
+
     @GetMapping("/single-event")
     public ResponseEntity<byte[]> generateSingleEventReport(@RequestParam("eventId") int id) throws Exception, JRException {
 
@@ -53,6 +58,30 @@ public class ReportController {
         headers.set(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=event.pdf");
 
         return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
+
+    }
+
+    @GetMapping("/available-codes")
+    public ResponseEntity<byte[]> generateAvailableCouponsReport() throws Exception, JRException {
+
+        Resource resource = new ClassPathResource("reports/available-codes.jrxml");
+        File file = resource.getFile();
+
+        JRBeanCollectionDataSource jrBeanCollectionDataSource = new JRBeanCollectionDataSource(redeemCodeService.getNonUsedCodes());
+
+        JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream(file));
+
+        HashMap<String, Object> map = new HashMap<String, Object>();
+
+        JasperPrint report = JasperFillManager.fillReport(compileReport,map, jrBeanCollectionDataSource);
+
+        byte[] data = JasperExportManager.exportReportToPdf(report);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=available-codes.pdf");
+
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
+
 
     }
 
