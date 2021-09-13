@@ -262,10 +262,14 @@
                     </p>
                     <div class="flex items-center justify-between gap-4 w-full mt-8">
                         <button type="button"
-                                class="py-2 px-4  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                id="del-code"
+                                onclick="goto()"
+                                class="del-code py-2 px-4 bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg">
                             Delete
                         </button>
-                        <button class="close px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500 undefined px-5">Close </button>
+                        <button class="close px-4 py-2  text-base rounded-full text-indigo-500 border border-indigo-500 undefined px-5">
+                            Close
+                        </button>
                     </div>
                 </div>
             </div>
@@ -279,8 +283,11 @@
     var modal = document.getElementById("myModal");
     var btns = document.querySelectorAll(".modal-open");
     var span = document.getElementsByClassName("close")[0];
+    var delbtn = document.getElementById("del-code");
 
-    btns.forEach(function (btn,index){
+    var codeName;
+
+    btns.forEach(function (btn, index) {
         btn.onclick = function () {
 
             //methana index eka enawa
@@ -288,8 +295,14 @@
 
             modal.style.display = "block";
             document.getElementById("codey").innerHTML = document.querySelectorAll(".codex")[index].innerHTML;
+            codeName = document.getElementById("codey").innerText;
         }
     })
+
+    function goto() {
+        location.href = "https://www.google.lk/" + codeName;
+    }
+
 
     span.onclick = function () {
         modal.style.display = "none";
