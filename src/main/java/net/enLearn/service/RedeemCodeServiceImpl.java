@@ -65,4 +65,10 @@ public class RedeemCodeServiceImpl implements RedeemCodeService{
     public void deleteCouponById(int codeId) {
         redeemCodeDAO.deleteCouponById(codeId);
     }
+
+    @Override
+    @Transactional
+    public void deleteCouponByCoupon(String coupon) {
+        redeemCodeDAO.deleteCouponByCoupon(coupon);
+    }
 }
