@@ -93,7 +93,25 @@ public class RedeemCodeDAOImpl implements RedeemCodeDAO{
 
         RedeemCode code = session.get(RedeemCode.class, codeId);
         code.getAdmin().getRedeemCodes().remove(code);
-        code.getUser().getRedeemCodes().remove(code);
+        if (code.getUser() != null) {
+            code.getUser().getRedeemCodes().remove(code);
+        }
+
+        session.delete(code);
+    }
+
+    @Override
+    public void deleteCouponByCoupon(String coupon) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query<RedeemCode> query = session.createQuery("from RedeemCode where code=:code",RedeemCode.class);
+        query.setParameter("code", coupon);
+
+        RedeemCode code = query.getSingleResult();
+        code.getAdmin().getRedeemCodes().remove(code);
+        if (code.getUser() != null) {
+            code.getUser().getRedeemCodes().remove(code);
+        }
 
         session.delete(code);
     }
