@@ -55,7 +55,7 @@
 	<columnHeader>
 		<band height="41" splitType="Stretch">
 			<staticText>
-				<reportElement x="80" y="10" width="250" height="30" uuid="847a791a-aa16-40bd-8816-e8c9ca721a81"/>
+				<reportElement x="80" y="0" width="250" height="41" uuid="847a791a-aa16-40bd-8816-e8c9ca721a81"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -68,7 +68,7 @@
 				<text><![CDATA[Coupon Code]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="330" y="10" width="150" height="30" uuid="48e6a6f6-07fa-44ab-b923-077c53ad6c9e"/>
+				<reportElement x="330" y="0" width="150" height="41" uuid="48e6a6f6-07fa-44ab-b923-077c53ad6c9e"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -83,22 +83,22 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="282" splitType="Stretch">
-			<textField evaluationTime="Report">
-				<reportElement x="80" y="0" width="250" height="30" uuid="de0fb077-6f5f-4047-8c5b-1cb97f06572a"/>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="250" height="31" uuid="de0fb077-6f5f-4047-8c5b-1cb97f06572a"/>
 				<box leftPadding="4">
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement verticalAlignment="Middle">
+				<textElement verticalAlignment="Middle" markup="none">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{code}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="330" y="0" width="150" height="30" uuid="c52767a7-ec51-478a-b862-dc6e48decf59"/>
+				<reportElement x="330" y="0" width="150" height="31" uuid="c52767a7-ec51-478a-b862-dc6e48decf59"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
