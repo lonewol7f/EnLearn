@@ -57,7 +57,7 @@
           <div>
 
             <div class="discount-box">
-              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="discounts/addDiscount" method="POST">
+              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="addDiscount" method="POST">
                 <h4 class="mg-md mx-auto d-block text-lg-center">
                   Add Discount
                 </h4>
@@ -185,7 +185,7 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3">
-                        <textarea type="text" name="description" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
+                        <textarea type="text" name="description" id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
                       </div>
                     </div>
                   </div>

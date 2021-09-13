@@ -54,15 +54,15 @@ public class DiscountController {
                                       @RequestParam("image") MultipartFile image,
                                       @RequestParam("description") String description,
                                       @RequestParam("grade") int grade,
-                                      @RequestParam("title") String title,
-                                      Model model){
+                                      @RequestParam("title") String title){
 
         Discount discountObj;
         discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
 
         disService.saveDiscount(discountObj);
+        System.out.println("addDiscountController Runs...");
 
-        return "Add-Discount";
+        return "redirect:/Add-Discount";
     }
 
     //==================================================================================================================
