@@ -18,5 +18,6 @@ public interface RedeemCodeDAO {
     List<RedeemCode> getUsedCodes();
     List<RedeemCode> listCodes();
     void deleteCouponById(int codeId);
+    void deleteCouponByCoupon(String coupon);
 
 }
