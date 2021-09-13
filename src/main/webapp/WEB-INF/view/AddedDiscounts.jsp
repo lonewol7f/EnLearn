@@ -77,13 +77,14 @@
                                     <td>
                                         <a href="${deleteDiscountLink}" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
                                         <%--<button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>--%>
-                                        <button class="btn btn-success" data-toggle="modal" data-target="#update">Update</button>
+                                        <button class="btn btn-success" style="margin:0px 0px 0px 5px ;" data-toggle="modal" data-target="#update">Update</button>
                                     </td>
                                 </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
+                <hr style="color: #b21f2d; height: 5px;">
                 <h2 style="color: #141e37; text-align: center; margin: 20px auto 0px;">End of Discounts</h2>
             </div>
         </div>
@@ -94,26 +95,6 @@
     <!-- END Footer -->
 
 
-
-    <!-- Delete Popup START -->
-    <div id="delete" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <%--<div class="modal-header">
-                </div>--%>
-                <div class="modal-body">
-                    <h3 class="mg-clear">
-                        Are you sure you wants to delete this Discount?
-                    </h3>
-                    <a href="${deleteDiscountLink}" class="btn btn-danger" style="margin: 20px;">Delete Discount</a>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END delete Popup -->
 
     <!-- Update Popup START -->
     <div id="update" class="modal fade" tabindex="-1" role="dialog">
@@ -128,9 +109,55 @@
                     <form id="form_23581" data-form-type="blocs-form" action="message" method="POST">
                         <div class="form-group">
                             <label>
-                                Message
+                                Admin ID
                             </label>
-                            <input id="name16_22767_28850_23581" class="form-control" required name="name16_22767_28850_23581" />
+                            <input id="admin_id" class="form-control" required name="admin_id" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Discount Amount
+                            </label>
+                            <input id="discount" class="form-control" required name="discount" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Teacher Name
+                            </label>
+                            <input id="teacher_name" class="form-control" required name="teacher_name" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Subject Category
+                            </label>
+                            <select name="course" required>
+                                <option disabled selected value>-- Select Subject Category</option>
+                                <option value="Course">Course</option>
+                                <option value="Module">Module</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Image
+                            </label>
+                            <input type="file" id="image" class="form-control" name="image" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Description
+                            </label>
+                            <input id="description" class="form-control" name="description" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Grade
+                            </label>
+                            <input id="grade" class="form-control" required name="grade" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Discount Title
+                            </label>
+                            <input id="title" class="form-control" required name="title" />
                         </div>
                         <button class="btn btn-success" type="submit">
                             Update Discount
