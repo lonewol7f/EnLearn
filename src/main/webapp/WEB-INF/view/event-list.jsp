@@ -63,10 +63,9 @@
                 <table class="table table-hover">
                     <thead class="table-primary">
                     <th>Topic</th>
-                    <th>Message</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Action</th>
+                    <th></th>
                     </thead>
 
 
@@ -83,9 +82,13 @@
                             <c:param name="eventId" value="${event.id}"/>
                         </c:url>
 
+                        <%-- construct an 'export to PDF' link with event id --%>
+                        <c:url var="exportLink" value="/reports/single-event">
+                            <c:param name="eventId" value="${event.id}"/>
+                        </c:url>
+
                         <tr>
                             <td>${event.topic}</td>
-                            <td>${event.message}</td>
                             <td>${event.date}</td>
                             <td>${event.time}</td>
                             <td>
@@ -93,6 +96,8 @@
                                 |
                                 <a href="${deleteLink}"
                                    onclick="if (!(confirm('Are you sure, You want to delete this event?'))) return false">Delete</a>
+                                |
+                                <a href="${exportLink}">PDF</a>
                             </td>
                         </tr>
                     </c:forEach>
