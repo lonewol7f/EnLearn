@@ -91,8 +91,9 @@ public class AdminController {
     }
 
     @GetMapping("/codes/delete")
-    public String deleteCoupon(@RequestParam("codeId") int codeId) {
-        redeemCodeService.deleteCouponById(codeId);
+    public String deleteCoupon(@RequestParam("coupon") String  coupon) {
+
+        redeemCodeService.deleteCouponByCoupon(coupon);
 
         return "redirect:/admins/codes";
     }
