@@ -143,20 +143,28 @@
                                     <div class="row d-flex align-items-center justify-content-around">
                                         <c:if test="${fn:length(events) > 0}">
                                             <c:forEach var="event" items="${events}">
+
+                                                <%-- construct an 'export to PDF' link with event id --%>
+                                                <c:url var="exportLink" value="/reports/single-event">
+                                                    <c:param name="eventId" value="${event.id}"/>
+                                                </c:url>
+
                                                 <div class="col-4 mt-2 mb-2" id="${event.id}">
                                                     <div class="card">
-                                                        <div class="divider-h">
-                                                            <span class="divider"></span>
-                                                        </div>
-                                                        <h3 class="ml-2 mr-2 mg-md text-lg-center">
-                                                                ${event.topic}
-                                                        </h3>
-                                                        <div class="divider-h">
-                                                            <span class="divider"></span>
-                                                        </div>
-                                                        <h3 class="mg-md text-lg-center">
-                                                                ${event.date}
-                                                        </h3>
+                                                        <a href="${exportLink}">
+                                                            <div class="divider-h">
+                                                                <span class="divider"></span>
+                                                            </div>
+                                                            <h3 class="ml-2 mr-2 mg-md text-lg-center">
+                                                                    ${event.topic}
+                                                            </h3>
+                                                            <div class="divider-h">
+                                                                <span class="divider"></span>
+                                                            </div>
+                                                            <h3 class="mg-md text-lg-center">
+                                                                    ${event.date}
+                                                            </h3>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </c:forEach>
