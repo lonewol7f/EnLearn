@@ -1,41 +1,26 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.Discount;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import javax.sql.DataSource;
-
+@Repository
 public class DiscountDAOImpl implements DiscountDAO{
 
-    private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private SessionFactory sessionFactory;
 
-    public DiscountDAOImpl(DataSource datasource) {
-        this.jdbcTemplate = new JdbcTemplate(datasource);
-    }
 
+    //---------------------------------------------------------------------------------------------------------
     //Save Discount
     //CREATE
-    public int SavaDiscount(Discount d){
-        String sql = "INSERT INTO discount(admin_id,discount,teacher_name,course,image,description,grade,title) VALUES(?,?,?,?,?,?,?,?)";
-        return jdbcTemplate.update(sql,d.getAdminIDId(),d.getAmount(),d.getTeacher(),d.getSub(),d.getImage(),d.getDescription(),d.getGrade(),d.getLable());
+    @Override
+    public void SaveDiscount(Discount discount){
+        Session session = sessionFactory.getCurrentSession();
+        session.save(discount);
     }
 
 
-    //Get Discount method
-    //READ
-    public int GetDiscount(Discount discount){
-        return 0;
-    }
-
-    //Update Discount
-    //UPDATE
-    public int UpdateDiscount(Discount discount){
-        return 0;
-    }
-
-    //Delete Discount
-    //DELETE
-    public int DeleteDiscount(Discount discount){
-        return 0;
-    }
 }

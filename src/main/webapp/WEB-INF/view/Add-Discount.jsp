@@ -53,10 +53,22 @@
           <div>
 
             <div class="discount-box">
-              <form id="adddiscount" data-form-type="blocs-form" action="addDiscount" method="POST">
+              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="discounts/addDiscount" method="POST">
                 <h4 class="mg-md mx-auto d-block text-lg-center">
                   Add Discount
                 </h4>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
+                      Admin ID
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <div class="form-group mb-3">
+                      <input type="text" id="admin_id" name="admin_id" class="form-control field-style" required/>
+                    </div>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-lg-4">
                     <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
@@ -65,7 +77,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input type="text" id="lable" class="form-control field-style" required/>
+                      <input type="text" id="lable" name="title" class="form-control field-style" required/>
                     </div>
                   </div>
                 </div>
@@ -77,7 +89,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input type="number" id="amount" class="form-control field-style" required/>
+                      <input type="number" id="amount" name="discount" class="form-control field-style" required/>
                     </div>
                   </div>
                 </div>
@@ -89,7 +101,7 @@
                   </div>
                   <div class="col">
                     <div class="form-group mb-3">
-                      <input type="text" required id="teacher" class="form-control field-style" />
+                      <input type="text" required id="teacher" name="teacher_name" class="form-control field-style" />
                     </div>
                   </div>
                 </div>
@@ -103,14 +115,14 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3 container-div-style">
-                        <select class="form-control" required>
+                        <select class="form-control" name="course" required>
                           <option disabled selected value>
                             -- Select Course/Module --
                           </option>
-                          <option value="0">
+                          <option value="course">
                             Course
                           </option>
-                          <option value="1">
+                          <option value="module">
                             Module
                           </option>
                         </select>
@@ -127,32 +139,32 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3 container-div-style">
-                        <select class="form-control" required>
+                        <select class="form-control" name="grade" required>
                           <option disabled selected value>
                             -- Grade --
                           </option>
-                          <option value="1">
+                          <option value="6">
                             6
                           </option>
-                          <option value="2">
+                          <option value="7">
                             7
                           </option>
-                          <option value="2">
+                          <option value="8">
                             8
                           </option>
-                          <option value="2">
+                          <option value="9">
                             9
                           </option>
-                          <option value="2">
+                          <option value="10">
                             10
                           </option>
-                          <option value="2">
+                          <option value="11">
                             11
                           </option>
-                          <option value="2">
+                          <option value="12">
                             12
                           </option>
-                          <option value="2">
+                          <option value="13">
                             13
                           </option>
                         </select>
@@ -169,11 +181,12 @@
                   <div class="col">
                     <div class="form-group mb-3">
                       <div class="form-group mb-3">
-                        <textarea type="text" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
+                        <textarea type="text" name="description" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
                       </div>
                     </div>
                   </div>
                 </div>
+
                 <div class="row">
                   <div class="col-lg-4">
                     <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
@@ -184,18 +197,14 @@
                     <div class="form-group mb-3">
                       <div class="row">
                         <div class="col-lg-3">
-                          <!--<a href="index.html" class="btn btn-lg w-100 btn-wire btn-button-style">Image</a>-->
-                          <input type="file" id="image" required />
+
+                          <input type="file" name="image" id="image"  />
                         </div>
-                        <!--<div class="col-lg-4">
-                          <h5 class="mg-md">
-                            No file chosen
-                          </h5>
-                        </div>-->
                       </div>
                     </div>
                   </div>
                 </div>
+
 
                 <br><br>
                 <div class="text-center">
