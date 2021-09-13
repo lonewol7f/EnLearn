@@ -60,6 +60,10 @@
                                 </tr>
                             </thead>
                             <c:forEach var="discount" items="${alldiscount}">
+
+                                <c:url var="deleteDiscountLink" value="/discounts/deleteDiscount">
+                                    <c:param name="AddedDiscountID" value="${discount.id}" />
+                                </c:url>
                                 <tr>
                                     <!--<td><<%--c:out value="${discount.id}" />--%></td>-->
                                     <td><c:out value="${discount.admin_id}" /></td>
@@ -71,7 +75,8 @@
                                     <td><c:out value="${discount.grade}" /></td>
                                     <td><c:out value="${discount.title}" /></td>
                                     <td>
-                                        <button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>
+                                        <a href="${deleteDiscountLink}" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+                                        <%--<button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>--%>
                                         <button class="btn btn-success" data-toggle="modal" data-target="#update">Update</button>
                                     </td>
                                 </tr>
@@ -100,10 +105,10 @@
                     <h3 class="mg-clear">
                         Are you sure you wants to delete this Discount?
                     </h3>
-                    <a href="#" class="btn btn-danger" style="margin: 20px;">Delete Discount</a>
+                    <a href="${deleteDiscountLink}" class="btn btn-danger" style="margin: 20px;">Delete Discount</a>
                 </div>
                 <div class="modal-footer">
-                    <a href="${pageContext.request.contextPath}/discounts/deleteDiscount" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
+                    <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
                 </div>
             </div>
         </div>

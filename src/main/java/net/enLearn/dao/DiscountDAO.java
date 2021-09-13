@@ -8,4 +8,5 @@ public interface DiscountDAO {
     public void SaveDiscount(Discount discount);
     public Discount getDiscount(Integer discountId);
     public List<Discount> getAllDiscountByAdminId();
+    public void deleteDiscount(Integer discountID);
 }

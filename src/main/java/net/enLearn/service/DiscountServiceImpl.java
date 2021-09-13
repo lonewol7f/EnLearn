@@ -35,4 +35,12 @@ public class DiscountServiceImpl implements DiscountService{
     public List<Discount> getAllDiscountByAdminId() {
         return this.discountDAO.getAllDiscountByAdminId();
     }
+
+
+
+    @Override
+    @Transactional
+    public void deleteDiscount(Integer discountID){
+        this.discountDAO.deleteDiscount(discountID);
+    }
 }

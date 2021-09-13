@@ -36,12 +36,22 @@ public class DiscountDAOImpl implements DiscountDAO{
     }
 
     //------------------------------------------------------------------------------------------------------
-    //Gea All Discount
+    //Get All Discount
     //READ ALL
     @Override
     public List<Discount> getAllDiscountByAdminId(){
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("SELECT a FROM Discount a",Discount.class).getResultList();
+    }
+
+    //------------------------------------------------------------------------------------------------------
+    //Delete Discount
+    //DELETE
+    @Override
+    public void deleteDiscount(Integer discountID){
+        Session session = sessionFactory.getCurrentSession();
+        Discount dis = session.get(Discount.class,discountID);
+        session.delete(dis);
     }
 
 

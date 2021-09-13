@@ -68,8 +68,12 @@ public class DiscountController {
     //==================================================================================================================
     //Method for deleting added discounts (DELETE)
     @RequestMapping("/deleteDiscount")
-    public String deleteDiscount(Integer discountId){
-        return "AddedDiscount";
+    public String deleteDiscount(@RequestParam("AddedDiscountID") int discountId, Model model){
+        disService.deleteDiscount(discountId);
+        List<Discount> displayallDiscount = disService.getAllDiscountByAdminId();
+        model.addAttribute("alldiscount",displayallDiscount);
+
+        return "redirect:/AddedDiscounts";
     }
 
 }
