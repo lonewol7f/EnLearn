@@ -19,6 +19,8 @@ public class Student extends User{
             inverseJoinColumns = @JoinColumn(name = "quiz_id"))
     private List<SpecialQuiz> specialQuizList;
 
+    public Student() {
+    }
 
     public List<SpecialQuiz> getSpecialQuizList() {
         return specialQuizList;
