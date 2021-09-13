@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Maneesha
@@ -44,6 +45,9 @@
   <%@include file="header.jsp"%>
   <!-- bloc-0 END -->
 
+  <div class="container mt-lg-5">
+    <a class="btn btn-primary" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
+  </div>
 
   <!--Add Discount START -->
   <div class="bloc l-bloc" id="bloc-a">
@@ -204,8 +208,6 @@
                     </div>
                   </div>
                 </div>
-
-
                 <br><br>
                 <div class="text-center">
                   <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
@@ -220,15 +222,14 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
   <!-- ADD Discount END -->
 
 
+
   <!--Slide show-->
+  <!--
   <div class="bloc l-bloc animDelay04" id="bloc-12">
     <div class="container bloc-lg bloc-no-padding-lg">
       <div class="row">
@@ -258,11 +259,6 @@
                 <img class="d-inline-block w-100" alt="slide 1" src="../../resources/img/placeholder-image-wide.png" />
                 <div class="carousel-caption caption-area-shop">
                   <div class="blockquote">
-                    <!--
-                    <p class="text-lg-left">
-                      Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
-                    </p>
-                    -->
                     <a href="index.html" class="btn btn-danger" >Delete</a>
                     <a href="index.html" class="btn btn-success">Update</a>
                   </div>
@@ -310,6 +306,7 @@
       </div>
     </div>
   </div>
+  -->
   <!-- End of Slide show -->
 
 

@@ -38,12 +38,6 @@ public class DemoController {
         return "shop";
     }
 
-
-    @GetMapping("/Add-Discount")
-    public String showAddDiscountPage() {
-        return "Add-Discount";
-    }
-
     @GetMapping("/Add-expenses")
     public String showAddExpensePage(){return "Add-expenses";}
 
