@@ -1,10 +1,5 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: flashminat0
-  Date: 2021-07-20
-  Time: 3:57 PM
---%>
+aglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -53,136 +48,98 @@
             <div class="row">
                 <div class="col">
                     <h3 class="mg-md">
-                        Advertiser Registration
+                        Advertisement Registration
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" data-form-type="blocs-form" action="custom-action-url" method="POST" modelAttribute="advertisement">
+                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/custom-action-url"  method="POST" >
+
+
                                 <div class="form-group">
                                     <label>
                                         Company Name
                                     </label>
-                                    <input id="name7_10830_22096" class="form-control" required name="name7" />
+                                    <input id="name7_10830_22096" class="form-control" required name="name" />
                                 </div>
 
                                 <div class="form-group">
                                     <label>
                                         Email
                                     </label>
-                                    <input id="email7_10830_22096" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email7" />
+                                    <input id="email7_10830_22096" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
                                 </div>
+                                <div class="form-group">
+                                    <label>
+                                        Contact Number
+                                    </label>
+
+                                    <input type="numbers" id="phone" class="form-control" name="phone" >
+                                </div>
+
                                 <div class="form-group">
                                     <label>
                                         Password
                                     </label>
-                                    <input id="name00_10830_22096" class="form-control" required name="name7" />
+                                    <input id="name00_10830_22096" class="form-control" required name="password" />
                                 </div>
 
-
                                 <div class="form-group">
-                                    <div class="form-group">
-                                        <label>
-                                            Advertisement Title
-                                        </label>
-                                        <input id="name200_10830_22096" class="form-control" required name="name7" />
-                                    </div>
-
-
-
-                                    <div class="form-group">
-                                        <label>
-                                            Advertising Packages
-                                        </label>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="form-group mb-3">
-                                            <div class="form-group mb-3 container-div-style">
-                                                <select class="form-control" required>
-                                                    <option disabled selected value>
-                                                        -- Select Package --
-                                                    </option>
-                                                    <option value="0">
-                                                        Basic-LKR 1000 over 3 days
-                                                    </option>
-                                                    <option value="1">
-                                                        Standard-LKR 5000 over 8 days
-                                                    </option>
-                                                    <option value="1">
-                                                        Premium-LKR 10000 over 15 days
-                                                    </option>
-                                                    <option value="1">
-                                                        VIP-LKR 20000 over 30 days
-                                                    </option>
-
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>
-                                            Description
-                                        </label>
-                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50"> </textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            Add Banner
-                                        </label>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="text-center">
-                                                    <a href="index.jsp" class="btn btn-lg btn-wire btn-26-style">Upload a photo</a>
-                                                </div>
-                                            </div>
-                                            <div class="col no-margin">
-                                                <h6 class="mg-md">
-                                                    No picture Selected
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="input_79_10830_22096" name="input_79" data-placement="top" data-toggle="tooltip" title="Be Sure to Read" />
-                                                <label class="form-check-label">
-                                                    I Agree to These
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <a href="#" class="a-btn a-block" data-toggle="modal" data-target="#modal-32499">Terms and Conditions</a>
-                                        </div>
-                                    </div>
+                                    <label>
+                                        Upload Profile Picture
+                                    </label>
                                     <div class="row">
                                         <div class="col">
-                                            <div id="modal-32499" class="modal fade" tabindex="-1" role="dialog">
-                                                <div class="modal-dialog  modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h3 class="mg-clear">
-                                                                Terms and Conditions
-                                                            </h3>
+                                            <div class="text-center">
+                                                <a href="index.jsp" class="btn btn-lg btn-wire btn-26-style">Upload a photo</a>
+                                            </div>
+                                        </div>
+                                        <div class="col no-margin">
+                                            <h6 class="mg-md">
+                                                No picture Selected
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="input_79_10830_22096" name="input_79" data-placement="top" data-toggle="tooltip" title="Be Sure to Read" />
+                                            <label class="form-check-label">
+                                                I Agree to These
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" class="a-btn a-block" data-toggle="modal" data-target="#modal-32499">Terms and Conditions</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div id="modal-32499" class="modal fade" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog  modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 class="mg-clear">
+                                                            Terms and Conditions
+                                                        </h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="text-lg-center">
+                                                            <img class="img-fluid img-13-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/966-privacy-policy-outline.gif" alt="966 privacy-policy-outline" />
                                                         </div>
-                                                        <div class="modal-body">
-                                                            <div class="text-lg-center">
-                                                                <img class="img-fluid img-13-style lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/966-privacy-policy-outline.gif" alt="966 privacy-policy-outline" />
-                                                            </div>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                                            </p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <a href="#" class="btn btn-d btn-lg" data-toggle="modal" data-target="#modal-32499">Agree and Close</a>
-                                                        </div>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                                        </p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <a href="#" class="btn btn-d btn-lg" data-toggle="modal" data-target="#modal-32499">Agree and Close</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
@@ -219,5 +176,3 @@
 
 </body>
 </html>
-
-

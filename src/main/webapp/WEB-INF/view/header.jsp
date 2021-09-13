@@ -63,6 +63,7 @@
                                  style="min-width: 14rem;">
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/special-quizzes">Special Quiz</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/free-quiz-links">Free Quiz Links</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/advertisers/upload">Add Advertisements</a>
                             </div>
                         </li>
 

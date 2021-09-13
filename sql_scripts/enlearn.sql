@@ -73,6 +73,11 @@ CREATE TABLE `advertiser`
 (
     `id`           INT NOT NULL,
     `company_name` VARCHAR(50),
+    `email`      VARCHAR(100),
+    `contact_no`     CHAR(10),
+    `password`   VARCHAR(60) NOT NULL,
+    `image`       BLOB,
+
 
 
     CONSTRAINT `pk_advertiser` PRIMARY KEY (`id`),
