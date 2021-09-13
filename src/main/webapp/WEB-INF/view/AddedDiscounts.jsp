@@ -71,8 +71,8 @@
                                     <td><c:out value="${discount.grade}" /></td>
                                     <td><c:out value="${discount.title}" /></td>
                                     <td>
-                                        <button class="btn btn-danger" style="margin:0 5px;">Delete</button>
-                                        <button class="btn btn-success">Update</button>
+                                        <button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#update">Update</button>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -88,8 +88,65 @@
     <%@include file="footer.jsp" %>
     <!-- END Footer -->
 
+
+
+    <!-- Delete Popup START -->
+    <div id="delete" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <%--<div class="modal-header">
+                </div>--%>
+                <div class="modal-body">
+                    <h3 class="mg-clear">
+                        Are you sure you wants to delete this Discount?
+                    </h3>
+                    <a href="#" class="btn btn-danger" style="margin: 20px;">Delete Discount</a>
+                </div>
+                <div class="modal-footer">
+                    <a href="${pageContext.request.contextPath}/discounts/" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END delete Popup -->
+
+    <!-- Update Popup START -->
+    <div id="update" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog  modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="mg-clear">
+                        Update Discount
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <form id="form_23581" data-form-type="blocs-form" action="message" method="POST">
+                        <div class="form-group">
+                            <label>
+                                Message
+                            </label>
+                            <input id="name16_22767_28850_23581" class="form-control" required name="name16_22767_28850_23581" />
+                        </div>
+                        <button class="btn btn-success" type="submit">
+                            Update Discount
+                        </button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="bloc-button btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#update">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Update Popup -->
+
+
+
+
 </div>
 <!-- Main container END -->
+
+
 
 
 <!-- Additional JS -->
