@@ -292,7 +292,7 @@
         }
     })
     function goto() {
-        location.href = "https://www.google.lk/" + codeName;
+        location.href = "/admins/codes/delete?coupon=" + codeName;
     }
     span.onclick = function () {
         modal.style.display = "none";
