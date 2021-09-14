@@ -1,5 +1,6 @@
 package net.enLearn.service;
 
+import net.enLearn.entity.RedeemCode;
 import net.enLearn.entity.User;
 
 /**
@@ -11,5 +12,6 @@ public interface UserService {
     User getUserById(int id);
     int getLoggedUserId();
     boolean checkExistingUser(String email);
+    void redeemCode(RedeemCode code);
 
 }
