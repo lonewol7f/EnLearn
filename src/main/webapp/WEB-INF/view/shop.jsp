@@ -63,7 +63,7 @@
                         </div>
                         <div class="col">
                             <h3 class="mg-md text-lg-center btn-resize-mode h3-10-style">
-                                <span>200</span>
+                                <span>${coins}</span>
                             </h3>
                         </div>
                     </div>
