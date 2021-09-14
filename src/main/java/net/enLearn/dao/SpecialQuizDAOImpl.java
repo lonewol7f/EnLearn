@@ -83,18 +83,6 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO{
 
     //Methods for marks-and-access : ManyToMany
     @Override
-    public List<Student> getStudentList() {
-
-        // get current session
-        Session session = sessionFactory.getCurrentSession();
-
-        Query<Student> studentQuery = session.createQuery("from Student",Student.class);
-        List<Student> studentList = studentQuery.getResultList();
-
-        return studentList;
-    }
-
-    @Override
     public void saveOrUpdateStudentMarks(Student student) {
 
         // get current session

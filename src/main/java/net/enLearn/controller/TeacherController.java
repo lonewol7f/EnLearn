@@ -9,6 +9,7 @@ import net.enLearn.entity.SpecialQuiz;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
+import net.enLearn.service.SpecialQuizService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +36,9 @@ public class TeacherController {
 
     @Autowired
     private EventService eventService;
+
+    @Autowired
+    private SpecialQuizService specialQuizService;
 
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
@@ -92,6 +96,13 @@ public class TeacherController {
     public String showAddQuizPage(Model model) {
         model.addAttribute("specialQuizLink",new SpecialQuiz());
         return "add-special-quiz";
+    }
+
+    @PostMapping("/special-quiz-link/save")
+    public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz){
+        specialQuizService.saveOrUpdateSpecialQuiz(specialQuiz);
+
+        return "redirect:/teachers/special-quizzes";
     }
 
     @GetMapping("/Teacher-Income_report")

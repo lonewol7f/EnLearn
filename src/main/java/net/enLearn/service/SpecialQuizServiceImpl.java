@@ -51,11 +51,6 @@ public class SpecialQuizServiceImpl implements SpecialQuizService{
 
     //Methods for marks-and-access : ManyToMany
     @Override
-    public List<Student> getStudentList() {
-        return specialQuizDAO.getStudentList();
-    }
-
-    @Override
     public void saveOrUpdateStudentMarks(Student student) {
         specialQuizDAO.saveOrUpdateStudentMarks(student);
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -95,7 +96,7 @@
                             <div>
                                 <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
-                                <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Success</button>
+                                <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
 
                                 <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
                             </div>
@@ -227,15 +228,15 @@
             <span class="close">&times;</span>
             <h3 style="text-align: center">Add Special Quiz Links In Here</h3>
             <div class="row">
-                <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="freeQuizLink">
+                <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="specialQuizLink">
 
                     <div class="form-group">
                         <form:label path="mcqLink">MCQ Link</form:label>
                         <form:input path="mcqLink" cssClass="form-control"/>
                     </div>
                     <div class="form-group">
-                        <form:label path="structuredLink">Structured Link</form:label>
-                        <form:input path="structuredLink" cssClass="form-control" />
+                        <form:label path="eAndSLink">Structured Link</form:label>
+                        <form:input path="eAndSLink" cssClass="form-control" />
                     </div>
                     <div class="form-group">
                         <form:label path="marksLimit">Marks Limit</form:label>
