@@ -22,9 +22,4 @@ public class StudentController {
         return "profile-page-student";
     }
 
-    @GetMapping("/register")
-    public String showStudentRegisterPage() {
-        return "register-student";
-    }
-
 }
