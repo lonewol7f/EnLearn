@@ -115,4 +115,16 @@ public class RedeemCodeDAOImpl implements RedeemCodeDAO{
 
         session.delete(code);
     }
+
+    @Override
+    public boolean checkExistingCoupon(String coupon) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("select count(*) from RedeemCode where code=:coupon");
+        query.setParameter("coupon", coupon);
+
+        long no = (long) query.uniqueResult();
+
+        return no > 0;
+    }
 }
