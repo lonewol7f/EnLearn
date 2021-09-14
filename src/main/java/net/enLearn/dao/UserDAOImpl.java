@@ -85,11 +85,12 @@ public class UserDAOImpl implements UserDAO{
         String strDate  = df.format(date);
 
 
-        Query orderQuery =session.createSQLQuery("insert into `order` (payment, bought_on, coupon_id) " +
-                "VALUES (:payment, :bought, :couponId)");
+        Query orderQuery =session.createSQLQuery("insert into `order` (payment, bought_on, coupon_code, user_email) " +
+                "VALUES (:payment, :bought, :couponCode, :userEmail)");
         orderQuery.setParameter("payment", code.getCoins());
         orderQuery.setParameter("bought", strDate);
-        orderQuery.setParameter("couponId", code.getId());
+        orderQuery.setParameter("couponCode", code.getCode());
+        orderQuery.setParameter("userEmail", user.getEmail());
         orderQuery.executeUpdate();
 
     }
