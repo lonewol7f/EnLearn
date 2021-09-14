@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -82,20 +83,20 @@
                             <div class="reedeem-card modal-content">
                                 <div class="card-header-style modal-header">
                                     <h3 class="mg-clear">
-                                        Reedeem
+                                        Redeem
                                     </h3>
                                 </div>
                                 <div class="modal-body">
-                                    <form id="form_15" data-form-type="blocs-form" action="reedeem-action-url" method="POST">
+                                    <form:form id="form_15" data-form-type="blocs-form" action="/students/redeem" method="POST">
                                         <div class="form-group">
-                                            <input id="name15" class="form-control" required placeholder="Enter code in the paper lol" name="name15" />
+                                            <input id="name15" class="form-control" required placeholder="Enter code in the paper lol" name="coupon" />
                                         </div>
-                                    </form>
-                                    <div class="text-center w-100">
-                                        <button class="bloc-button btn btn-d btn-lg btn-40-style" type="submit">
-                                            Apply
-                                        </button>
-                                    </div>
+                                        <div class="text-center w-100">
+                                            <button class="bloc-button btn btn-d btn-lg btn-40-style" type="submit">
+                                                Apply
+                                            </button>
+                                        </div>
+                                    </form:form>
                                 </div>
                                 <div class="modal-footer">
                                 </div>
