@@ -51,13 +51,13 @@
             <div class="row">
               <table  class="table">
                 <tr>
-                  <th>Month</th>
+                  <th>Grade</th>
                   <th>Discount No</th>
                   <th>Course</th>
                   <th>Initial Rate</th>
                   <th>Discount Rate</th>
                   <th>New Course Fee</th>
-                  <th>Added Date</th>
+                  <th>Teacher</th>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -66,7 +66,7 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -75,7 +75,7 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -84,7 +84,7 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -93,7 +93,7 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -102,7 +102,7 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
                 <tr>
                   <td>10</td>
@@ -111,14 +111,19 @@
                   <td>500</td>
                   <td>100</td>
                   <td>400</td>
-                  <td>21/08/2021</td>
+                  <td>Kamala</td>
                 </tr>
               </table>
             </div>
             <br>
+
+            <hr style="color: #8e2e48; height: 3px;">
+
             <div class="row">
               <button class="bloc-button btn btn-d btn-lg btn-block">Print</button>
             </div>
+
+            <hr style="color: #8e2e48; height: 3px;">
           </div>
         </div>
       </div>

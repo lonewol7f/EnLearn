@@ -115,7 +115,7 @@
                 <div class="row">
                   <div class="col-lg-4">
                     <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Course/Module
+                      Course/Module Code
                     </h5>
                   </div>
                   <div class="col">
@@ -125,12 +125,24 @@
                           <option disabled selected value>
                             -- Select Course/Module --
                           </option>
-                          <option value="course">
-                            Course
+                          <option value="Mathematics">
+                            Mathematics
                           </option>
-                          <option value="module">
-                            Module
+                          <option value="Science">
+                            Science
                           </option>
+                          <option value="History">
+                            History
+                          </option>
+                          <option value="English">
+                          English
+                        </option>
+                          <option value="ICT">
+                          ICT
+                        </option
+                          <option value="Sinhala">
+                          Sinhala
+                        </option>
                         </select>
                       </div>
                     </div>
