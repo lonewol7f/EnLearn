@@ -2,10 +2,7 @@
 
 package net.enLearn.controller;
 
-import net.enLearn.entity.Course;
-import net.enLearn.entity.Event;
-import net.enLearn.entity.FreeQuiz;
-import net.enLearn.entity.SpecialQuiz;
+import net.enLearn.entity.*;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.FreeQuizService;
@@ -40,6 +37,7 @@ public class TeacherController {
     @Autowired
     private SpecialQuizService specialQuizService;
 
+
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
         List<Course> courses = courseService.getCourseListByTeacherId();
@@ -66,7 +64,10 @@ public class TeacherController {
         return "notification-view";
     }
     @GetMapping("/marks-and-access")
-    public String showMarksAndAccessPage() {
+    public String showMarksAndAccessPage(Model model) {
+        List<>
+
+
         return "marks-and-access";
     }
 
@@ -108,8 +109,10 @@ public class TeacherController {
     @GetMapping("/special-quiz/delete")
     public String deleteSpecialQuiz(@RequestParam("specialQuizId")int id){
         specialQuizService.deleteSpecialQuiz(id);
-        return "redirect:/special-quizzes";
+        return "redirect:/teachers/special-quizzes";
     }
+
+
 
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
