@@ -38,6 +38,8 @@ public class TeacherController {
     private SpecialQuizService specialQuizService;
 
 
+
+
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
         List<Course> courses = courseService.getCourseListByTeacherId();
@@ -65,9 +67,6 @@ public class TeacherController {
     }
     @GetMapping("/marks-and-access")
     public String showMarksAndAccessPage(Model model) {
-        List<>
-
-
         return "marks-and-access";
     }
 
@@ -95,9 +94,12 @@ public class TeacherController {
 
     @GetMapping("/special-quizzes")
     public String showAddQuizPage(Model model) {
+//        List<SpecialQuiz> specialQuizList = specialQuizService.getSpecialQuizByTeacherId(user); // TODO Must pass Teacher Id
+//        model.addAttribute("specialQuizList",specialQuizList);
         model.addAttribute("specialQuizLink",new SpecialQuiz());
         return "add-special-quiz";
     }
+
 
     @PostMapping("/special-quiz-link/save")
     public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz){

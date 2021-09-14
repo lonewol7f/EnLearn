@@ -95,7 +95,7 @@
                     <div class="row">
 
                             <div>
-                                <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                                <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
                                 <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
 
@@ -113,7 +113,7 @@
                                     <span class="divider"></span>
                                 </div>
                                 <div class="row">
-                                    <c:forEach var="specialQuizLink" items="${specialQuizList}">
+                                    <c:forEach var="specialQuizLink" items="${specialQuizLink}">
 
                                         <%-- construct an 'delete' link with free quiz id --%>
                                         <c:url var="deleteLink" value="/teachers/special-quiz/delete">
