@@ -19,5 +19,6 @@ public interface RedeemCodeService {
     List<RedeemCode> listCodes();
     void deleteCouponById(int codeId);
     void deleteCouponByCoupon(String coupon);
+    boolean checkExistingCoupon(String coupon);
 
 }
