@@ -1,7 +1,6 @@
 package net.enLearn.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 /**
  * Created by Flashminat0 on 25/08/2021
@@ -20,7 +19,7 @@ public class Order {
     private int payment;
 
     @Column(name = "bought_on")
-    private Date boughtOn;
+    private String boughtOn;
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
@@ -47,11 +46,11 @@ public class Order {
         this.payment = payment;
     }
 
-    public Date getBoughtOn() {
+    public String getBoughtOn() {
         return boughtOn;
     }
 
-    public void setBoughtOn(Date boughtOn) {
+    public void setBoughtOn(String boughtOn) {
         this.boughtOn = boughtOn;
     }
 
