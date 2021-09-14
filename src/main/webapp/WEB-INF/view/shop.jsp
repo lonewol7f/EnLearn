@@ -154,19 +154,20 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Discount : <c:out value="${discountCard.discount}" />
+                                                    Discount<br>
+                                                    <c:out value="${discountCard.discount}" />
                                                 </h6>
                                             </div>
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Category : <c:out value="${discountCard.course}" />
+                                                    Category<br><c:out value="${discountCard.course}" />
                                                 </h6>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Teacher : <c:out value="${discountCard.teacher_name}" />
+                                                    Teacher<br><c:out value="${discountCard.teacher_name}" />
                                                 </h6>
                                             </div>
                                             <div class="col">
@@ -176,6 +177,7 @@
                                             </div>
                                         </div>
                                         <h6 class="mg-md text-lg-center">
+                                            Description<br>
                                             <c:out value="${discountCard.description}" />
                                         </h6>
                                     </div>

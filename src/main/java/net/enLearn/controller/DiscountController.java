@@ -60,7 +60,7 @@ public class DiscountController {
         discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
 
         disService.saveDiscount(discountObj);
-        System.out.println("addDiscountController Runs...");
+
 
         return "Add-Discount";
     }
