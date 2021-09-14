@@ -1,9 +1,15 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.User;
 import net.enLearn.service.FreeQuizService;
+import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -19,13 +25,22 @@ public class DemoController {
     @Autowired
     private FreeQuizService freeQuizService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("/")
     public String showHome() {
         return "index";
     }
 
     @GetMapping("/shop")
-    public String showShopPage() {
+    public String showShopPage(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            User user = userService.getUserById(userService.getLoggedUserId());
+            model.addAttribute("coins", user.getCoins());
+        }
+
         return "shop";
     }
 
