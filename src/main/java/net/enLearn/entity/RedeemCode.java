@@ -34,10 +34,6 @@ public class RedeemCode {
     @JoinColumn(name = "admin_id")
     private Admin admin;
 
-    // @OneToOne(fetch = FetchType.EAGER, mappedBy = "code", cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-    //         CascadeType.DETACH, CascadeType.REFRESH})
-    // @Fetch(value = FetchMode.JOIN)
-    // private Order order;
 
     public RedeemCode() {
     }
@@ -89,14 +85,6 @@ public class RedeemCode {
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
-
-    // public Order getOrder() {
-    //     return order;
-    // }
-    //
-    // public void setOrder(Order order) {
-    //     this.order = order;
-    // }
 
     // TODO: update user and admin with associations
 }
