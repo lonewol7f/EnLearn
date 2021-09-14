@@ -58,7 +58,7 @@ public class UserDAOImpl implements UserDAO{
         Query query = session.createQuery("select count(*) from User where email= :email");
         query.setParameter("email", email);
 
-        int no = (int) query.uniqueResult();
+        long no = (long) query.uniqueResult();
         return no > 0;
     }
 }
