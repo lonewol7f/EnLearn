@@ -1,4 +1,10 @@
-aglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: flashminat0
+  Date: 2021-07-20
+  Time: 3:57 PM
+--%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
