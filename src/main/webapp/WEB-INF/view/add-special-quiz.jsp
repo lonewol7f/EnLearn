@@ -188,11 +188,11 @@
 
                     <div class="form-group">
                         <form:label path="mcqLink">MCQ Link</form:label>
-                        <form:input path="mcqLink" cssClass="form-control"/>
+                        <form:input path="mcqLink" cssClass="form-control" type="url"/>
                     </div>
                     <div class="form-group">
                         <form:label path="eAndSLink">Structured Link</form:label>
-                        <form:input path="eAndSLink" cssClass="form-control" />
+                        <form:input path="eAndSLink" cssClass="form-control" type="url"/>
                     </div>
                     <div class="form-group">
                         <form:label path="marksLimit">Marks Limit</form:label>

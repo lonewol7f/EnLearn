@@ -178,7 +178,7 @@
                     </div>
                     <div class="form-group">
                         <form:label path="quizLink">Free Quiz Link</form:label>
-                        <form:input path="quizLink" cssClass="form-control" />
+                        <form:input path="quizLink" cssClass="form-control" type="url"/>
                     </div>
 
 
