@@ -148,7 +148,7 @@
                                     <c:out value="${discountCard.title}" />
                                 </h5>
                                 <div>
-                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/Discount_For_Card.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                                     <div class="divider-h">
                                         <span class="divider"></span>
                                         <div class="row">
@@ -254,7 +254,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                            This Area is for Advertising.
                                         </p>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            dwadwaawdadawd
+                                            This Area is for Advertising.
                                         </p>
                                     </div>
                                 </div>
@@ -274,7 +274,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Aaaaaaaaaaa
+                                            This Area is for Advertising.
                                         </p>
                                     </div>
                                 </div>
@@ -284,7 +284,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Adadadadadaada
+                                            This Area is for Advertising.
                                         </p>
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote text-lg-left">
                                         <p>
-                                            Awewsasda
+                                            This Area is for Advertising.
                                         </p>
                                     </div>
                                 </div>
