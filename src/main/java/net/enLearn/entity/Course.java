@@ -1,8 +1,11 @@
 package net.enLearn.entity;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "course")
@@ -32,6 +35,10 @@ public class Course {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "course", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<ZoomClass> zoomClassList;
 
     public Course(){}
 
@@ -87,5 +94,11 @@ public class Course {
         this.teacher = teacher;
     }
 
+    public List<ZoomClass> getZoomClassList() {
+        return zoomClassList;
+    }
 
+    public void setZoomClassList(List<ZoomClass> zoomClassList) {
+        this.zoomClassList = zoomClassList;
+    }
 }
