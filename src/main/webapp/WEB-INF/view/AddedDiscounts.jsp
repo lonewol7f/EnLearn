@@ -112,18 +112,18 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                    <form id="form_23581" data-form-type="blocs-form" action="message" method="POST">
+                    <form id="form_23581" data-form-type="blocs-form" action="/discounts/updateDiscount" method="POST" >
                         <div class="form-group">
                             <label>
                                 Admin ID
                             </label>
-                            <input id="admin_id" class="form-control" required name="admin_id" />
+                            <input type="number" id="admin_id" class="form-control" required name="admin_id" value="252345" />
                         </div>
                         <div class="form-group">
                             <label>
                                 Discount Amount
                             </label>
-                            <input id="discount" class="form-control" required name="discount" />
+                            <input type="number" id="discount" class="form-control" required name="discount" />
                         </div>
                         <div class="form-group">
                             <label>
@@ -157,7 +157,7 @@
                             <label>
                                 Grade
                             </label>
-                            <input id="grade" class="form-control" required name="grade" />
+                            <input type="number" id="grade" class="form-control" required name="grade" />
                         </div>
                         <div class="form-group">
                             <label>
