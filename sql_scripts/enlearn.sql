@@ -20,7 +20,7 @@ CREATE TABLE `user`
     `first_name` VARCHAR(50),
     `last_name`  VARCHAR(50),
     `address`    VARCHAR(255),
-    `gender`     VARCHAR(7),
+    `grade`     INT,
     `dob`        DATE,
     `email`      VARCHAR(100),
     `district`   VARCHAR(20),

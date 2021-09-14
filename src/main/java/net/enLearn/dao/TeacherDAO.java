@@ -4,6 +4,8 @@ import net.enLearn.entity.Teacher;
 
 public interface TeacherDAO {
 
-    Teacher getTeacherById(int id);
+        void saveOrUpdate(Teacher teacher);
+
+        Teacher getTeacherById(int id);
 
 }

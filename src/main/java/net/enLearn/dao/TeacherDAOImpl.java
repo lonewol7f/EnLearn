@@ -9,8 +9,16 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class TeacherDAOImpl implements TeacherDAO{
 
+
+
     @Autowired
     private SessionFactory sessionFactory;
+
+    @Override
+    public void saveOrUpdate(Teacher teacher) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(teacher);
+    }
 
     @Override
     public Teacher getTeacherById(int id) {

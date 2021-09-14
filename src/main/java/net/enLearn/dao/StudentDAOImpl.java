@@ -18,6 +18,12 @@ public class StudentDAOImpl implements StudentDAO{
     private SessionFactory sessionFactory;
 
     @Override
+    public void saveOrUpdate(Student student) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(student);
+    }
+
+    @Override
     public Student getStudentById(int id) {
 
         Session session = sessionFactory.getCurrentSession();

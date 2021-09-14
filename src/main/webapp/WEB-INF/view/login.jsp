@@ -59,7 +59,7 @@
                             <div class="carousel-item active">
                                 <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/reshot-illustration-system-user-login-GTQRL8HFXU.png" />
                                 <div class="carousel-caption login-register-form-box">
-                                    <form id="login-form" data-form-type="blocs-form" class="login-form-placement form-style" action="login-action" method="POST">
+                                    <form id="login-form" data-form-type="blocs-form" class="login-form-placement form-style" action="${pageContext.request.contextPath}/login-action" method="POST">
                                         <h3 class="mg-md text-lg-left">
                                             Login
                                         </h3>
@@ -73,14 +73,14 @@
                                             <label>
                                                 Password
                                             </label>
-                                            <input id="email" class="form-control" type="password" required name="email" />
+                                            <input id="email" class="form-control" type="password" required name="password" />
                                         </div>
                                         <div class="divider-h no-margin">
                                             <span class="divider"></span>
                                         </div>
-                                        <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                                        <input class="bloc-button btn btn-d btn-lg btn-block" value=""login type="submit">
                                             Login
-                                        </button>
+                                        </input>
                                     </form>
                                 </div>
                             </div>
