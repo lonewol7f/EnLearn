@@ -63,7 +63,7 @@
                             <div class="text-center">
                                 <a href="#" class="btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#approve-teacher">Teacher approves</a>
                                 <a href="${pageContext.request.contextPath}/admins/confirm-advertisement" class="btn btn-d btn-lg btn-block" >Banner Approves</a>
-                                <a href="${pageContext.request.contextPath}/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
+                                <a href="${pageContext.request.contextPath}/discounts/Add-Discount" class="btn btn-d btn-lg btn-block" >Add Discount</a>
                             </div>
                         </div>
                         <div class="col">
