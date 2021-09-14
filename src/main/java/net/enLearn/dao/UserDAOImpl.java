@@ -13,7 +13,9 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-
+/**
+ * Created by Kalana on 30/07/2021
+ */
 
 @Repository
 public class UserDAOImpl implements UserDAO{
