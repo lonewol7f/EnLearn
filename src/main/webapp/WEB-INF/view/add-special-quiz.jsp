@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -112,53 +113,29 @@
                                     <span class="divider"></span>
                                 </div>
                                 <div class="row">
-<%--                                    <div class="col-12 mb-5">--%>
-<%--                                        <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="">--%>
-<%--&lt;%&ndash;                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">&ndash;%&gt;--%>
-<%--                                            <div>--%>
-<%--                                                <div class="row">--%>
-<%--                                                    <div class="col-lg-7">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                    <div class="col">--%>
-<%--                                                        <div class="form-group">--%>
-<%--                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />--%>
-<%--                                                        </div>--%>
-<%--                                                    </div>--%>
-<%--                                                    <div class="col">--%>
-<%--                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--&lt;%&ndash;                                        </form>&ndash;%&gt;--%>
-<%--                                        </form:form>--%>
-<%--                                    </div>--%>
+                                    <c:forEach var="specialQuizLink" items="${specialQuizList}">
+
+                                        <%-- construct an 'delete' link with free quiz id --%>
+                                        <c:url var="deleteLink" value="/teachers/special-quiz/delete">
+                                            <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                        </c:url>
+
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
                                                 <label>
-                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                                    ${specialQuizLink.mcqLink}
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                            <a href="${deleteLink}"
+                                               class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <div class="blockquote container-div-style">
-                                                <label>
-                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
+
+
                                 </div>
                             </div>
                         </div>
@@ -170,48 +147,27 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-<%--                                <div class="row">--%>
-<%--                                    <div class="col-lg-12 mb-5">--%>
-<%--                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">--%>
-<%--                                            <div>--%>
-<%--                                                <div class="row">--%>
-<%--                                                    <div class="col-lg-9">--%>
-<%--                                                         <div class="form-group">--%>
-<%--                                                        <input class="form-control" />--%>
-<%--                                                         </div>--%>
-<%--                                                    </div>--%>
-<%--                                                 <div class="col">--%>
-<%--                                                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-<%--                                                   </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </form>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
+
+                                <c:forEach var="specialQuizLink" items="${specialQuizList}">
+
+                                    <%-- construct an 'delete' link with free quiz id --%>
+                                    <c:url var="deleteLink" value="/teachers/special-quiz/delete">
+                                        <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                    </c:url>
+
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="blockquote container-div-style">
                                             <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
+                                                ${specialQuizLink.eAndSLink}
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                        <a href="${deleteLink}" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>

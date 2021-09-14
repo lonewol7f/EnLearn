@@ -110,7 +110,7 @@
                             </div>
                             <div class="mt-4 text-center" style="width: 100%; display:flex; justify-content: center">
                                 <div class="text-center" style="width: 50%">
-                                    <a href="${pageContext.request.contextPath}/courses/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
+                                    <a href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
                                 </div>
                             </div>
                         </div>

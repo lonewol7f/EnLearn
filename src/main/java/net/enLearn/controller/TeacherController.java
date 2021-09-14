@@ -105,6 +105,12 @@ public class TeacherController {
         return "redirect:/teachers/special-quizzes";
     }
 
+    @GetMapping("/special-quiz/delete")
+    public String deleteSpecialQuiz(@RequestParam("specialQuizId")int id){
+        specialQuizService.deleteSpecialQuiz(id);
+        return "redirect:/special-quizzes";
+    }
+
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
