@@ -50,7 +50,12 @@ public class AdminController {
     }
 
     @PostMapping("/save-coupon")
-    public String saveCoupon(@ModelAttribute("coupon")RedeemCode code) {
+    public String saveCoupon(@ModelAttribute("coupon")RedeemCode code, RedirectAttributes redirectAttributes) {
+
+        if (redeemCodeService.checkExistingCoupon(code.getCode())) {
+            redirectAttributes.addAttribute("error", "codeExists");
+            return "redirect:/admins/codes";
+        }
 
         int id = userService.getLoggedUserId();
 
@@ -59,7 +64,7 @@ public class AdminController {
 
         redeemCodeService.saveCode(code);
 
-        return "redirect:/admins/codes";  // TODO: edit this redirect to correct mapping
+        return "redirect:/admins/codes";
     }
 
     @PostMapping("/search-coupon")
@@ -73,8 +78,8 @@ public class AdminController {
     public String removeUsedCoupon(RedirectAttributes redirectAttributes) {
         redeemCodeService.deleteUsedCodes();
 
-        redirectAttributes.addAttribute("remove-used");
-        return "redirect:/admins/codes";  // TODO: edit this redirect to correct mapping
+        redirectAttributes.addAttribute("success","remove-used");
+        return "redirect:/admins/codes";
     }
 
     @GetMapping("/codes")
@@ -99,7 +104,7 @@ public class AdminController {
     }
 
     @PostMapping("/events/save")
-    public String saveEvent(@ModelAttribute("event") Event event) {
+    public String saveEvent(@ModelAttribute("event") Event event, RedirectAttributes redirectAttributes) {
 
         int adminId = userService.getLoggedUserId();
 
@@ -107,6 +112,7 @@ public class AdminController {
         event.setAdmin(admin);
 
         eventService.saveOrUpdateEvent(event);
+        redirectAttributes.addAttribute("success", "saved");
 
         return "redirect:/admins/events/list";
     }
@@ -122,9 +128,10 @@ public class AdminController {
     }
 
     @GetMapping("/events/delete")
-    public String deleteEvent(@RequestParam("eventId") int id) {
+    public String deleteEvent(@RequestParam("eventId") int id, RedirectAttributes redirectAttributes) {
 
         eventService.deleteEvent(id);
+        redirectAttributes.addAttribute("success", "deleted");
 
         return "redirect:/admins/events/list";
     }
