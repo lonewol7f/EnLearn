@@ -242,9 +242,9 @@ CREATE TABLE `order`
     `id`        INT NOT NULL AUTO_INCREMENT,
     `payment`   INT,
     `bought_on` VARCHAR(50),
-    `coupon_id` INT,
-    CONSTRAINT `pk_order` PRIMARY KEY (`id`),
-    CONSTRAINT `fk_order` FOREIGN KEY (`coupon_id`) REFERENCES `redeem_code` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    `coupon_code` VARCHAR(50),
+    `user_email` VARCHAR(100),
+    CONSTRAINT `pk_order` PRIMARY KEY (`id`)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1
   DEFAULT CHARSET = latin1;
