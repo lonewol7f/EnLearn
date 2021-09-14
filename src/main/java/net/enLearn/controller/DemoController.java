@@ -29,10 +29,6 @@ public class DemoController {
         return "login";
     }
 
-    @GetMapping("/shop")
-    public String showShopPage() {
-        return "shop";
-    }
 
     @GetMapping("/Add-expenses")
     public String showAddExpensePage(){return "Add-expenses";}

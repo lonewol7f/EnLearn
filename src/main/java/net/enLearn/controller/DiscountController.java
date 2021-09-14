@@ -62,7 +62,7 @@ public class DiscountController {
         disService.saveDiscount(discountObj);
         System.out.println("addDiscountController Runs...");
 
-        return "redirect:/Add-Discount";
+        return "Add-Discount";
     }
 
     //==================================================================================================================
@@ -73,7 +73,29 @@ public class DiscountController {
         List<Discount> displayallDiscount = disService.getAllDiscountByAdminId();
         model.addAttribute("alldiscount",displayallDiscount);
 
-        return "redirect:/AddedDiscounts";
+        return "AddedDiscounts";
     }
+
+
+
+    //==================================================================================================================
+    //Display data in Shop Page
+    //For Shop Page
+    @RequestMapping("/shop")
+    public String showShopPage(Model model) {
+        List<Discount> discount = disService.getAllDiscountByAdminId();
+        model.addAttribute("showCard",discount);
+        return "shop";
+    }
+
+
+    //For Test Shop Page(Exceptional)
+    @RequestMapping("/Test-Shop")
+    public String showTestShopPage(Model model) {
+        List<Discount> discount = disService.getAllDiscountByAdminId();
+        model.addAttribute("showCard",discount);
+        return "1111111Test_shop";
+    }
+
 
 }

@@ -47,6 +47,7 @@
 
   <div class="container mt-lg-5">
     <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
+    <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/Test-Shop" role="button">Test Shop</a>
   </div>
 
   <!--Add Discount START -->
@@ -57,7 +58,7 @@
           <div>
 
             <div class="discount-box">
-              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="addDiscount" method="POST">
+              <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="/discounts/addDiscount" method="POST">
                 <h4 class="mg-md mx-auto d-block text-lg-center">
                   Add Discount
                 </h4>

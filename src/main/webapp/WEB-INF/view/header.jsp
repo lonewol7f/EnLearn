@@ -49,7 +49,7 @@
                             </a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/discounts/shop">Shop</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single Course</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue Video</a>
                             </div>
