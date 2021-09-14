@@ -63,6 +63,7 @@ public class AdminController {
         code.setAdmin(admin);
 
         redeemCodeService.saveCode(code);
+        redirectAttributes.addAttribute("success", "saved");
 
         return "redirect:/admins/codes";
     }
