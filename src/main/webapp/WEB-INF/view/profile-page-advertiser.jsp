@@ -74,7 +74,7 @@
                                 <span class="divider"></span>
                             </div>
                             <h4 class="mg-md no-margin text-lg-center">
-                                Bought Courses
+                               Advertisement Details
                             </h4>
                             <div><div class="text-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px"><path d="M2,25H498"></path></svg>

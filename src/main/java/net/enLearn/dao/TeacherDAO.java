@@ -8,5 +8,4 @@ public interface TeacherDAO {
 
         Teacher getTeacherById(int id);
 
-
 }
