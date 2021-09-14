@@ -23,6 +23,7 @@ CREATE TABLE `user`
     `gender`     VARCHAR(7),
     `dob`        DATE,
     `email`      VARCHAR(100),
+    `coins`      INT DEFAULT 0,
     `district`   VARCHAR(20),
     `password`   VARCHAR(68) NOT NULL,
     `enabled`    TINYINT(1) DEFAULT 1,
@@ -240,7 +241,7 @@ CREATE TABLE `order`
 (
     `id`        INT NOT NULL AUTO_INCREMENT,
     `payment`   INT,
-    `bought_on` DATE,
+    `bought_on` VARCHAR(50),
     `coupon_id` INT,
     CONSTRAINT `pk_order` PRIMARY KEY (`id`),
     CONSTRAINT `fk_order` FOREIGN KEY (`coupon_id`) REFERENCES `redeem_code` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -491,10 +492,10 @@ VALUES ('ROLE_STUDENT'),
        ('ROLE_ADMIN');
 
 INSERT INTO `user_authorities` (user_id, authority_id)
-VALUES (1,1),
-       (2,1),
-       (2,2),
-       (3,1),
-       (3,2),
-       (3,3),
-       (4,1);
+VALUES (1, 1),
+       (2, 1),
+       (2, 2),
+       (3, 1),
+       (3, 2),
+       (3, 3),
+       (4, 1);
