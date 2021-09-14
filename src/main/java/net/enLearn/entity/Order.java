@@ -21,11 +21,11 @@ public class Order {
     @Column(name = "bought_on")
     private String boughtOn;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
-            CascadeType.DETACH, CascadeType.REFRESH})
-    // @Fetch(value = FetchMode.JOIN)
-    @JoinColumn(name = "coupon_id")
-    private RedeemCode code;
+    @Column(name = "coupon_code")
+    private String coupon;
+
+    @Column(name = "user_email")
+    private String userEmail;
 
     public Order() {
     }
@@ -54,11 +54,19 @@ public class Order {
         this.boughtOn = boughtOn;
     }
 
-    public RedeemCode getCode() {
-        return code;
+    public String getCoupon() {
+        return coupon;
     }
 
-    public void setCode(RedeemCode code) {
-        this.code = code;
+    public void setCoupon(String coupon) {
+        this.coupon = coupon;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }
