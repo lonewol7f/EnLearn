@@ -1,6 +1,7 @@
 package net.enLearn.service;
 
 import net.enLearn.dao.UserDAO;
+import net.enLearn.entity.RedeemCode;
 import net.enLearn.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,5 +33,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public boolean checkExistingUser(String email) {
         return userDAO.checkExistingUser(email);
+    }
+
+    @Override
+    @Transactional
+    public void redeemCode(RedeemCode code) {
+        userDAO.redeemCode(code);
     }
 }
