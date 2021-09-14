@@ -3,7 +3,9 @@ package net.enLearn.entity;
 import javax.persistence.*;
 import java.util.List;
 
-
+/**
+ * Created by Kalana on 05/08/2021
+ */
 
 @Entity
 @Table(name = "student")
