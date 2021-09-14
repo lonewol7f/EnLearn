@@ -37,11 +37,13 @@ public class StudentController {
         return "profile-page-student";
     }
 
-    @GetMapping("/register")
+
+    /*@GetMapping("/register")
     public String showStudentRegisterPage() {
 
         return "register-student";
-    }
+    }*/
+
     @GetMapping("/register")
     public String showStudentRegistrationPage(Model student){
         Student student1 = new Student();

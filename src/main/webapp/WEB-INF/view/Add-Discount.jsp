@@ -46,6 +46,7 @@
   <!-- bloc-0 END -->
 
   <div class="container mt-lg-5">
+    <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/admins" role="button">Back</a>
     <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
     <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/Test-Shop" role="button">Test Shop</a>
   </div>

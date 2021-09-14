@@ -35,6 +35,12 @@
     <%@include file="header.jsp"%>
     <!-- bloc-0 END -->
 
+
+    <div class="container mt-lg-5">
+        <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/discounts/Add-Discount" role="button">Back</a>
+    </div>
+
+
     <div class="bloc l-bloc" id="bloc-8">
         <div class="container bloc-lg">
             <div class="row">
