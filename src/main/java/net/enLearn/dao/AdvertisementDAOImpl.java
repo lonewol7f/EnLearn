@@ -1,30 +1,30 @@
 package net.enLearn.dao;
 
-import net.enLearn.entity.Teacher;
+import net.enLearn.entity.Advertisement;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TeacherDAOImpl implements TeacherDAO{
-
-
+public class AdvertisementDAOImpl implements AdvertisementDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
 
+
     @Override
-    public void saveOrUpdate(Teacher teacher) {
+    public void saveOrUpdate(Advertisement advertisement) {
         Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(teacher);
+        session.saveOrUpdate(advertisement);
     }
 
     @Override
-    public Teacher getTeacherById(int id) {
+    public Advertisement getAdvertisementById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        Teacher teacher = session.get(Teacher.class, id);
-        return teacher;
+        Advertisement advertisement = session.get(Advertisement.class, id);
+        return advertisement;
     }
+
 
 }

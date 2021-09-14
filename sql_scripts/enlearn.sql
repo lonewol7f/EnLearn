@@ -20,7 +20,7 @@ CREATE TABLE `user`
     `first_name` VARCHAR(50),
     `last_name`  VARCHAR(50),
     `address`    VARCHAR(255),
-    `gender`     VARCHAR(7),
+    `grade`     INT,
     `dob`        DATE,
     `email`      VARCHAR(100),
     `district`   VARCHAR(20),
@@ -73,8 +73,6 @@ CREATE TABLE `advertiser`
 (
     `id`           INT NOT NULL,
     `company_name` VARCHAR(50),
-
-
     CONSTRAINT `pk_advertiser` PRIMARY KEY (`id`),
     CONSTRAINT `fk_advertiser` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB

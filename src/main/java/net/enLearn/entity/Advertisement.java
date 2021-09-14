@@ -44,6 +44,19 @@ public class Advertisement {
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Admin> admins;
 
+    public Advertisement(){}
+
+
+    public Advertisement(String title,String prange,MultipartFile image,String descripton){
+        this.title = title;
+        this.prange = prange;
+        this.image = image;
+        this.descripton = descripton;
+    }
+
+    public Advertisement(String title, String aPackage, String description, MultipartFile image) {
+    }
+
 
     public int getId() {
 

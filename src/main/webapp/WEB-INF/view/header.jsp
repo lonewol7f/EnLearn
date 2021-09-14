@@ -49,7 +49,7 @@
                             </a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/discounts/shop">Shop</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single Course</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/videos">Continue Video</a>
                             </div>
@@ -61,8 +61,9 @@
                                data-bs-toggle="dropdown" aria-expanded="false">Stuff</a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="portfolioMegaMenu"
                                  style="min-width: 14rem;">
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/special-quizzes">Special Quiz</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/free-quiz-links">Free Quiz Links</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/special-quizzes">Special Quiz</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/free-quiz-links">Free Quiz Links</a>
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/advertisers/upload">Add Advertisements</a>
                             </div>
                         </li>
 
