@@ -304,9 +304,9 @@ CREATE TABLE `zoom_class`
     `id`          INT NOT NULL AUTO_INCREMENT,
     `title`       VARCHAR(255),
     `description` TEXT,
-    `zoom_link`   VARCHAR(255),
-    `date`        DATE,
-    `time`        TIME,
+    `date`        VARCHAR(255),
+    `time`        VARCHAR(255),
+    `zoomLink`   VARCHAR(255),
     `course_id`   INT,
     CONSTRAINT `pk_zoom_class` PRIMARY KEY (`id`),
     CONSTRAINT `fk_zoom_class` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION

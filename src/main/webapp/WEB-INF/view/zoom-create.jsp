@@ -1,9 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: flashminat0
-  Date: 2021-07-20
-  Time: 4:00 PM
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -64,64 +60,44 @@
             <div class="row">
                 <div class="col offset-lg-1">
                     <div>
-                        <form id="create-zoom" data-form-type="blocs-form" class="form-12-style" action="create-zoom-action" method="POST">
+                        <form:form  data-form-type="blocs-form" action="/courses/save" modelAttribute="zoom" method="post">
+
+                            <form:hidden path="id"/>
+
                             <div class="form-group">
-                                <label>
-                                    URL for Week 1
-                                </label>
-                                <input id="name12" class="form-control" required name="name12" />
-                                <label>
-                                    Date when class is sheduled
-                                </label>
-                                <input class="form-control" id="input_2277" name="input_2277" />
-                                <div><div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                                </div>
-                                </div>
+                                <form:label path="title">
+                                    Title
+                                </form:label>
+                                <form:input path="title" cssClass= "form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
-                                    URL for Week 2
-                                </label>
-                                <input id="name12" class="form-control" required name="name12" />
-                                <label>
-                                    Date when class is sheduled
-                                </label>
-                                <input class="form-control" id="input_1308" name="input_1308" />
-                                <div><div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                                </div>
-                                </div>
+                                <form:label path="description">
+                                    Description
+                                </form:label>
+                                <form:input path="description" cssClass="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
-                                    URL for Week 3
-                                </label>
-                                <input id="name12" class="form-control" required name="name12" />
-                                <label>
-                                    Date when class is sheduled
-                                </label>
-                                <input class="form-control" id="input_50" name="input_50" />
-                                <div><div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                                </div>
-                                </div>
+                                <form:label path="date">
+                                    Date
+                                </form:label>
+                                <form:input path="date" cssClass="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
-                                    URL for Week 4
-                                </label>
-                                <input id="name12" class="form-control" required name="name12" />
-                                <label>
-                                    Date when class is sheduled
-                                </label>
-                                <input class="form-control" id="input_1778" name="input_1778" />
-                                <div><div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                                </div>
-                                </div>
-                            </div><a href="index.jsp" class="btn btn-d btn-lg btn-block">Submit</a>
-                        </form>
+                                <form:label path="time">
+                                    Time
+                                </form:label>
+                                <form:input path="time" cssClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <form:label path="zoomLink">
+                                    Zoom Link
+                                </form:label>
+                                <form:input path="zoomLink" cssClass="form-control"/>
+                            </div>
+                            <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                                Create Zoom Class
+                            </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
+                        </form:form>
                     </div>
                 </div>
             </div>
