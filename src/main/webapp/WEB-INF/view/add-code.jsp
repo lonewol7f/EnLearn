@@ -89,6 +89,12 @@
                 Submit Code !
             </button>
         </form:form>
+        <div>
+            <a href="${pageContext.request.contextPath}/reports/available-codes"
+                    class="py-2 px-4 flex justify-center items-center  bg-green-500 hover:bg-green-700 focus:ring-green-500 focus:ring-offset-green-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-full">
+                Report
+            </a>
+        </div>
     </div>
     <div class=""></div>
 </div>
