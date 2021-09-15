@@ -71,4 +71,10 @@ public class RedeemCodeServiceImpl implements RedeemCodeService{
     public void deleteCouponByCoupon(String coupon) {
         redeemCodeDAO.deleteCouponByCoupon(coupon);
     }
+
+    @Override
+    @Transactional
+    public boolean checkExistingCoupon(String coupon) {
+        return redeemCodeDAO.checkExistingCoupon(coupon);
+    }
 }

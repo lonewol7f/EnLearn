@@ -2,6 +2,7 @@ package net.enLearn.service;
 
 import net.enLearn.dao.SpecialQuizDAO;
 import net.enLearn.entity.SpecialQuiz;
+import net.enLearn.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -46,5 +47,28 @@ public class SpecialQuizServiceImpl implements SpecialQuizService{
     @Override
     public SpecialQuiz getSpecialQuizByVideoId(int id) {
         return specialQuizDAO.getSpecialQuizByVideoId(id);
+    }
+
+    //Methods for marks-and-access : ManyToMany
+    @Override
+    public void saveOrUpdateStudentMarks(Student student) {
+        specialQuizDAO.saveOrUpdateStudentMarks(student);
+
+    }
+
+    @Override
+    public void deleteStudentMarks(int student_id, int quiz_id) {
+        specialQuizDAO.deleteStudentMarks(student_id, quiz_id);
+
+    }
+
+    @Override
+    public List<Student> getStudentByQuizId(int quiz_id) {
+        return specialQuizDAO.getStudentByQuizId(quiz_id);
+    }
+
+    @Override
+    public Student getStudentMarksByQuizId(int student_id, int quiz_id) {
+        return specialQuizDAO.getStudentMarksByQuizId(student_id, quiz_id);
     }
 }

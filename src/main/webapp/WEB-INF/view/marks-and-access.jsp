@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -141,63 +143,38 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-7">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="student name" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" placeholder="marks" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-group">
-                                        <input class="form-control" />
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col">
-                            <ul class="list-unstyled">
-                                <li>
-                                    <div class="text-center">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-rd btn-wire">Give access</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-rd btn-wire">Button</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a href="index.jsp" class="btn btn-lg btn-block btn-rd btn-wire">Button</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <form:form action="" method="post">
+                            <div class="col-lg-7">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="student id" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="form-group">
+                                            <input class="form-control" placeholder="marks" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                    Give Access
+                                </button>
+                                    <%--                            <ul class="list-unstyled">--%>
+                                    <%--                                <li>--%>
+                                    <%--                                    <div class="text-center">--%>
+                                    <%--                                        <a href="index.jsp" class="btn btn-lg btn-block btn-rd btn-wire">Give access</a>--%>
+                                    <%--                                    </div>--%>
+                                    <%--                                </li>--%>
+                                    <%--                            </ul>--%>
+                            </div>
+                        </form:form>
                     </div>
                 </div>
             </div>

@@ -86,7 +86,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="15"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{time}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

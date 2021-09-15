@@ -33,6 +33,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "coins")
+    private int coins;
+
     @Column(name = "enabled")
     private boolean enabled;
 
@@ -101,6 +104,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
 
     public boolean isEnabled() {
