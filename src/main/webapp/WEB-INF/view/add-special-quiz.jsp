@@ -94,12 +94,12 @@
                 <div class="col">
                     <div class="row">
 
-                        <div>
+                        <div class="grid grid-cols-10">
                             <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
-                            <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
-
-                            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
+                            <button type="button" class="btn btn-success " style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
+                        <div class="col-span-5"></div>
+                            <img class="img-fluid lazyload test-img " src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="90px" height="90px" alt="reshot-illustration-woman-thinking-quizzes" />
                         </div>
 
                     </div>
