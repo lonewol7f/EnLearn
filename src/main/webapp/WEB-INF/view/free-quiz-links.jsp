@@ -49,7 +49,6 @@
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
-
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
@@ -58,7 +57,6 @@
             border: 1px solid #888;
             width: 80%; /* Could be more or less, depending on screen size */
         }
-
         /* The Close Button */
         .close {
             color: #aaa;
@@ -66,7 +64,6 @@
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
@@ -178,12 +175,9 @@
                     </div>
                     <div class="form-group">
                         <form:label path="quizLink">Free Quiz Link</form:label>
-                        <form:input path="quizLink" cssClass="form-control" />
+                        <form:input path="quizLink" cssClass="form-control" type="url"/>
                     </div>
 
-                    <%--                <div class="col">--%>
-                    <%--                    <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>--%>
-                    <%--                </div>--%>
 
                     <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                         Add
@@ -210,23 +204,18 @@
 <script>
     // Get the modal
     var modal = document.getElementById("myModal");
-
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
-
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
-
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
     }
-
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
     }
-
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
