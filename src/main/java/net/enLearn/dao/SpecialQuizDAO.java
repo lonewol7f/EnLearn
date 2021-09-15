@@ -1,6 +1,7 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.SpecialQuiz;
+import net.enLearn.entity.Student;
 
 import java.util.List;
 
@@ -16,4 +17,9 @@ public interface SpecialQuizDAO {
     List<SpecialQuiz> getSpecialQuizByTeacherId(int id);
     SpecialQuiz getSpecialQuizByVideoId(int id);
 
+    //marks-and-access - many-to-many relationship
+    void saveOrUpdateStudentMarks(Student student);
+    void deleteStudentMarks(int student_id,int quiz_id);
+    List<Student> getStudentByQuizId(int quiz_id);
+    Student getStudentMarksByQuizId(int student_id,int quiz_id);
 }
