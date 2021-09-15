@@ -33,6 +33,12 @@
         <%@include file="header.jsp"%>
         <!-- bloc-0 END -->
 
+        <!-- Back Button START -->
+        <div class="container mt-lg-5">
+            <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/admins/" role="button">Back</a>
+        </div>
+        <!-- Back Button END -->
+
         <!-- bloc-30 -->
         <div class="bloc l-bloc" id="bloc-30">
             <div class="container bloc-lg">

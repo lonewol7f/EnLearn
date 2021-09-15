@@ -98,4 +98,11 @@ public class DiscountController {
     }
 
 
+    //==================================================================================================================
+    //Update Discount (UPDATE)
+    @RequestMapping(path = "/updateDiscount", method = RequestMethod.POST)
+    public String updateDiscount(){
+        return "redirect:discounts/showDiscounts";
+    }
+
 }

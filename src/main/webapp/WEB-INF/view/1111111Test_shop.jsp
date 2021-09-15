@@ -149,25 +149,28 @@
                             <c:out value="${discountCard.title}" />
                         </h5>
                         <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/Discount_For_Card.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                             <div class="divider-h">
                                 <span class="divider"></span>
                                 <div class="row">
                                     <div class="col">
                                         <h6 class="mg-md text-lg-center">
-                                            Discount : <c:out value="${discountCard.discount}" />
+                                            Discount<br>
+                                            <c:out value="${discountCard.discount}" />
                                         </h6>
                                     </div>
                                     <div class="col">
                                         <h6 class="mg-md text-lg-center">
-                                            Category : <c:out value="${discountCard.course}" />
+                                            Subject<br>
+                                            <c:out value="${discountCard.course}" />
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <h6 class="mg-md text-lg-center">
-                                            Teacher : <c:out value="${discountCard.teacher_name}" />
+                                            Teacher<br>
+                                            <c:out value="${discountCard.teacher_name}" />
                                         </h6>
                                     </div>
                                     <div class="col">
@@ -290,7 +293,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo ligula eget.
+                                            This Area is for Advertising...
                                         </p>
                                     </div>
                                 </div>
@@ -300,7 +303,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            dwadwaawdadawd
+                                            This Area is for Advertising...
                                         </p>
                                     </div>
                                 </div>
@@ -310,7 +313,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Aaaaaaaaaaa
+                                            This Area is for Advertising...
                                         </p>
                                     </div>
                                 </div>
@@ -320,7 +323,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            Adadadadadaada
+                                            This Area is for Advertising...
                                         </p>
                                     </div>
                                 </div>
@@ -330,7 +333,7 @@
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote text-lg-left">
                                         <p>
-                                            Awewsasda
+                                            This Area is for Advertising...
                                         </p>
                                     </div>
                                 </div>
