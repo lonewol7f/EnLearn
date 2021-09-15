@@ -1,3 +1,6 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -26,7 +29,42 @@
     <title>add-special-quiz</title>
 
 
-
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -54,7 +92,10 @@
                     <div class="row">
 
                         <div>
-                            <a href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                            <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+
+                            <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
+
                             <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
                         </div>
 
@@ -68,53 +109,30 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-
                                 <div class="row">
-                                    <div class="col-12 mb-5">
-                                        <form id="form_47794" data-form-type="blocs-form" action="a-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-7">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47794" name="undefined_15821_47795" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <input class="form-control" id="undefined_15821_47795" name="undefined_15821_47795" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                    </div>
+                                    <c:forEach var="specialQuizLink" items="${specialQuizLink}">
+
+                                        <%-- construct an 'delete' link with free quiz id --%>
+                                        <c:url var="deleteLink" value="/teachers/special-quiz/delete">
+                                            <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                        </c:url>
+
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <div class="blockquote container-div-style">
+                                                    <label>
+                                                            ${specialQuizLink.mcqLink}
+                                                    </label>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <div class="blockquote container-div-style">
-                                                <label>
-                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                                </label>
+                                            <div class="col">
+                                                <a href="${deleteLink}"
+                                                   class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                             </div>
                                         </div>
-                                        <div class="col">
-                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-8">
-                                            <div class="blockquote container-div-style">
-                                                <label>
-                                                    Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                        </div>
-                                    </div>
+                                    </c:forEach>
+
+
                                 </div>
                             </div>
                         </div>
@@ -126,48 +144,27 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-12 mb-5">
-                                        <form id="form_47795" data-form-type="blocs-form" action="a-action-url" method="POST">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-9">
-                                                        <div class="form-group">
-                                                            <input class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <a href="index.jsp" class="btn btn-lg btn-block btn-d btn-clean btn-padding add-btn">Add</a>
-                                                    </div>
-                                                </div>
+
+                                <c:forEach var="specialQuizLink" items="${specialQuizList}">
+
+                                    <%-- construct an 'delete' link with free quiz id --%>
+                                    <c:url var="deleteLink" value="/teachers/special-quiz/delete">
+                                        <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                    </c:url>
+
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="blockquote container-div-style">
+                                                <label>
+                                                        ${specialQuizLink.eAndSLink}
+                                                </label>
                                             </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
+                                        </div>
+                                        <div class="col">
+                                            <a href="${deleteLink}" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-8">
-                                        <div class="blockquote container-div-style">
-                                            <label>
-                                                Lorem ipsum dolor sit amet, adipiscing elit Aenean&nbsp;
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <a href="index.jsp" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -177,11 +174,43 @@
     </div>
     <!-- bloc-7 END -->
 
+    <div id="myModal" class="modal" >
+
+        <!-- Modal content -->
+        <div class="modal-content max-w-md border-2 border-indigo-500">
+            <span class="close">&times;</span>
+            <h3 style="text-align: center">Add Special Quiz Links In Here</h3>
+            <div class="row">
+                <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="specialQuizLink">
+
+                    <div class="form-group">
+                        <form:label path="mcqLink">MCQ Link</form:label>
+                        <form:input path="mcqLink" cssClass="form-control" type="url"/>
+                    </div>
+                    <div class="form-group">
+                        <form:label path="eAndSLink">Structured Link</form:label>
+                        <form:input path="eAndSLink" cssClass="form-control" type="url"/>
+                    </div>
+                    <div class="form-group">
+                        <form:label path="marksLimit">Marks Limit</form:label>
+                        <form:input path="marksLimit" cssClass="form-control" />
+                    </div>
+
+
+                    <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                        Add
+                    </button>
+
+                </form:form>
+            </div>
+        </div>
+
+    </div>
+
     <%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->
-
 
 
 <!-- Additional JS -->
@@ -192,7 +221,27 @@
 <script src="${pageContext.request.contextPath}/resources/js/formHandler.js?4737"></script>
 <script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
 
-
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
-
