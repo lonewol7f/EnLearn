@@ -75,14 +75,36 @@
                                     <div class="col">
                                         <div>
                                             <div class="row">
-                                                <div>
-                                                    <div class="text-center">
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/fecf6a87-ef5a-4156-a0f0-205a83e35310.jpeg" class="img-fluid mx-auto img-bloc-5-style lazyload" alt="reshot illustration-education-concept-9WY6F8QKB4" />
                                                     </div>
                                                 </div>
-                                                fgfgfgfgfgfgfgf
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="course-add-box quiz-box" data-placement="bottom" data-toggle="tooltip" title="Quiz">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -108,12 +130,21 @@
                                     <div class="col">
                                         <div>
                                             <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
                                                 </div>
-                                                hhghghggfhghghh
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="course-add-box quiz-box" data-placement="bottom" data-toggle="tooltip" title="Quiz">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -139,12 +170,31 @@
                                     <div class="col">
                                         <div>
                                             <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
                                                 </div>
-                                                jghjghjjhjhgjhjgjghj
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="course-add-box quiz-box" data-placement="bottom" data-toggle="tooltip" title="Quiz">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -170,12 +220,41 @@
                                     <div class="col">
                                         <div>
                                             <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
                                                 </div>
-                                                hgfhghgfhgfhgfhgfhghgh
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="course-add-box">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="course-add-box quiz-box" data-placement="bottom" data-toggle="tooltip" title="Quiz">
+                                                        <span class="icon-md icon-inside-add-course-add ion ion-plus"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -207,3 +286,4 @@
 
 </body>
 </html>
+
