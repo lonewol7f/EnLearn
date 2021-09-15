@@ -43,6 +43,7 @@
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
+
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
@@ -51,6 +52,7 @@
             border: 1px solid #888;
             width: 80%; /* Could be more or less, depending on screen size */
         }
+
         /* The Close Button */
         .close {
             color: #aaa;
@@ -58,6 +60,7 @@
             font-size: 28px;
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: black;
@@ -110,18 +113,18 @@
                                     <span class="divider"></span>
                                 </div>
                                 <div class="row">
-                                    <c:forEach var="specialQuizLink" items="${specialQuizLink}">
+                                    <c:forEach var="specialQuizList" items="${specialQuizList}">
 
                                         <%-- construct an 'delete' link with free quiz id --%>
                                         <c:url var="deleteLink" value="/teachers/special-quiz/delete">
-                                            <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                            <c:param name="specialQuizId" value="${specialQuizList.id}"/>
                                         </c:url>
 
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="blockquote container-div-style">
                                                     <label>
-                                                            ${specialQuizLink.mcqLink}
+                                                            ${specialQuizList.mcqLink}
                                                     </label>
                                                 </div>
                                             </div>
@@ -145,18 +148,18 @@
                                     <span class="divider"></span>
                                 </div>
 
-                                <c:forEach var="specialQuizLink" items="${specialQuizList}">
+                                <c:forEach var="specialQuizList" items="${specialQuizList}">
 
                                     <%-- construct an 'delete' link with free quiz id --%>
                                     <c:url var="deleteLink" value="/teachers/special-quiz/delete">
-                                        <c:param name="freeQuizId" value="${specialQuizLink.id}"/>
+                                        <c:param name="specialQuizId" value="${specialQuizList.id}"/>
                                     </c:url>
 
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
                                                 <label>
-                                                        ${specialQuizLink.eAndSLink}
+                                                        ${specialQuizList.eAndSLink}
                                                 </label>
                                             </div>
                                         </div>
@@ -224,18 +227,23 @@
 <script>
     // Get the modal
     var modal = document.getElementById("myModal");
+
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
+
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
+
     // When the user clicks on the button, open the modal
     btn.onclick = function() {
         modal.style.display = "block";
     }
+
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
         modal.style.display = "none";
     }
+
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
