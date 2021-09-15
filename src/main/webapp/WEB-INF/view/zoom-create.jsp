@@ -60,44 +60,42 @@
             <div class="row">
                 <div class="col offset-lg-1">
                     <div>
-                        <form:form  data-form-type="blocs-form" action="/courses/save" modelAttribute="zoom" method="post">
-
-                            <form:hidden path="id"/>
+                        <form  data-form-type="blocs-form" action="/courses/save" method="post">
 
                             <div class="form-group">
-                                <form:label path="title">
+                                <label>
                                     Title
-                                </form:label>
-                                <form:input path="title" cssClass= "form-control" />
+                                </label>
+                                <input  class= "form-control" />
                             </div>
                             <div class="form-group">
-                                <form:label path="description">
+                                <label>
                                     Description
-                                </form:label>
-                                <form:input path="description" cssClass="form-control" />
+                                </label>
+                                <input class="form-control" />
                             </div>
                             <div class="form-group">
-                                <form:label path="date">
+                                <label>
                                     Date
-                                </form:label>
-                                <form:input path="date" cssClass="form-control" />
+                                </label>
+                                <input type="date" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <form:label path="time">
+                                <label>
                                     Time
-                                </form:label>
-                                <form:input path="time" cssClass="form-control" />
+                                </label>
+                                <input type="time" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <form:label path="zoomLink">
+                                <label>
                                     Zoom Link
-                                </form:label>
-                                <form:input path="zoomLink" cssClass="form-control"/>
+                                </label>
+                                <input type="url" class="form-control"/>
                             </div>
                             <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                 Create Zoom Class
                             </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
-                        </form:form>
+                        </form>
                     </div>
                 </div>
             </div>

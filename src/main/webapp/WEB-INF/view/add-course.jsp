@@ -49,7 +49,7 @@
                         <div class="row">
                             <div class="col">
                                 <h3 class="mg-md">
-                                    {Add} Course - month type
+                                    Add Course
                                 </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/62-film-outline.gif" class="img-fluid img-62-film-outli-style float-lg-none lazyload" alt="62 film-outline" />
                             </div>
                             <div class="col offset-lg-3">
@@ -82,7 +82,7 @@
                                                         <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
                                                     </div>
                                                 </div>
-                                                fgfgfgfgfgfgfgf
+                                                Test week 01
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +113,7 @@
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
                                                 </div>
-                                                hhghghggfhghghh
+                                                Test week 02
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
                                                 </div>
-                                                jghjghjjhjhgjhjgjghj
+                                                Test week 03
                                             </div>
                                         </div>
                                     </div>
@@ -175,7 +175,7 @@
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
                                                     <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
                                                 </div>
-                                                hgfhghgfhgfhgfhgfhghgh
+                                                Test week 04
                                             </div>
                                         </div>
                                     </div>
