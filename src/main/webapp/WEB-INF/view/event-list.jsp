@@ -91,7 +91,7 @@
                             <td>${event.topic}</td>
                             <td>${event.date}</td>
                             <td>${event.time}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="${updateLink}">Update</a>
                                 |
                                 <a href="${deleteLink}"
