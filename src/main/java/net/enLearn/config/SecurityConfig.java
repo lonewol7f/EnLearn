@@ -57,5 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/authenticateTheUser")
                 .permitAll();
 
+        http.csrf().disable();
+
     }
 }
