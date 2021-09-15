@@ -105,4 +105,12 @@ public class DiscountController {
         return "redirect:discounts/showDiscounts";
     }
 
+
+    //==================================================================================================================
+    @RequestMapping(path = "/getDiscountCode")
+    public String getDiscountCode(@RequestParam("DiscountCodeForModel") int discountId,Model model){
+        model.addAttribute("displayDiscountCode",discountId);
+        return "shop";
+    }
+
 }

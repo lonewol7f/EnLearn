@@ -141,7 +141,7 @@
             <div class="row">
                 <c:forEach var="discountCard" items="${showCard}" varStatus="loop">
                     <c:url var="getDiscountCode" value="/discounts/getDiscountCode">
-                        <c:param name="DiscountCodeforModel" value="${discountCard.id}" />
+                        <c:param name="DiscountCodeForModel" value="${discountCard.id}" />
                     </c:url>
 
                     <div class="col">
@@ -214,6 +214,7 @@
                                             </h5>
                                             <h3>
                                                 <c:out value="${discountCard.id}" />
+                                                <%--${displayDiscountCode}--%>
                                             </h3>
                                         </div>
                                     </form>
@@ -228,6 +229,8 @@
                 </c:forEach>
 
             </div>
+
+
 
 
 
