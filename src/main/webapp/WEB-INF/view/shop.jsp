@@ -140,6 +140,9 @@
 
             <div class="row">
                 <c:forEach var="discountCard" items="${showCard}" varStatus="loop">
+                    <c:url var="getDiscountCode" value="/discounts/getDiscountCode">
+                        <c:param name="DiscountCodeforModel" value="${discountCard.id}" />
+                    </c:url>
 
                     <div class="col">
                         <div class="col spacing-top">
@@ -182,7 +185,7 @@
                                         </h6>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
+                                        <a href="${getDiscountCode}" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                                     </div>
                                     <div class="divider-h">
                                         <span class="divider"></span>

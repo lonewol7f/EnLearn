@@ -139,7 +139,7 @@
                         </option>
                           <option value="ICT">
                           ICT
-                        </option
+                        </option>
                           <option value="Sinhala">
                           Sinhala
                         </option>
