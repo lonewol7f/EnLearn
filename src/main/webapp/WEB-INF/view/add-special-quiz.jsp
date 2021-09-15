@@ -94,12 +94,12 @@
                 <div class="col">
                     <div class="row">
 
-                        <div>
+                        <div class="grid ">
                             <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
-                            <button type="button" class="btn btn-success" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
+                            <button type="button" class="btn btn-success mb-3" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
 
-                            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="150rem" height="150rem" style="position: relative;left: 79%" alt="reshot-illustration-woman-thinking-quizzes" />
+                            <img class="img-fluid lazyload test-img" style="position:relative; left: 60%" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="120px" height="120px" alt="reshot-illustration-woman-thinking-quizzes" />
                         </div>
 
                     </div>
@@ -188,15 +188,15 @@
 
                     <div class="form-group">
                         <form:label path="mcqLink">MCQ Link</form:label>
-                        <form:input path="mcqLink" cssClass="form-control" type="url"/>
+                        <form:input path="mcqLink" cssClass="form-control" type="url" required="required"/>
                     </div>
                     <div class="form-group">
                         <form:label path="eAndSLink">Structured Link</form:label>
-                        <form:input path="eAndSLink" cssClass="form-control" type="url"/>
+                        <form:input path="eAndSLink" cssClass="form-control" type="url" required="required"/>
                     </div>
                     <div class="form-group">
                         <form:label path="marksLimit">Marks Limit</form:label>
-                        <form:input path="marksLimit" cssClass="form-control" />
+                        <form:input path="marksLimit" cssClass="form-control" required="required"/>
                     </div>
 
 

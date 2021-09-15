@@ -167,15 +167,15 @@
 
                     <div class="form-group">
                         <form:label path="topic">Topic</form:label>
-                        <form:input path="topic" cssClass="form-control"/>
+                        <form:input path="topic" cssClass="form-control" required="required"/>
                     </div>
                     <div class="form-group">
                         <form:label path="grade">Grade</form:label>
-                        <form:input path="grade" cssClass="form-control" />
+                        <form:input path="grade" cssClass="form-control" required="required"/>
                     </div>
                     <div class="form-group">
                         <form:label path="quizLink">Free Quiz Link</form:label>
-                        <form:input path="quizLink" cssClass="form-control" type="url"/>
+                        <form:input path="quizLink" cssClass="form-control" type="url" required="required"/>
                     </div>
 
 
