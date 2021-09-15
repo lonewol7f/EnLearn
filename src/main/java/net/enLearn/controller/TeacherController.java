@@ -81,9 +81,9 @@ public class TeacherController {
 
 
     @PostMapping("/free-quiz-link/save")
-    public String saveFreeQuizLink(@ModelAttribute("freeQuizLink") FreeQuiz freeQuiz){
+    public String saveFreeQuizLink(@ModelAttribute("freeQuizLink") FreeQuiz freeQuiz) {
 
-        int id  = userService.getLoggedUserId();
+        int id = userService.getLoggedUserId();
         Teacher teacher = teacherService.getTeacherById(id);
 
         freeQuiz.setTeacher(teacher);
@@ -93,7 +93,7 @@ public class TeacherController {
     }
 
     @GetMapping("/free-quiz/delete")
-    public String deleteFreeQuiz(@RequestParam("freeQuizId") int id){
+    public String deleteFreeQuiz(@RequestParam("freeQuizId") int id) {
         freeQuizService.deleteFreeQuiz(id);
         return "redirect:/teachers/free-quiz-links";
 
@@ -110,8 +110,8 @@ public class TeacherController {
         int teacherId = userService.getLoggedUserId();
 
         List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizListByTeacherId(teacherId);
-        model.addAttribute("freeQuizList",freeQuizList);
-        model.addAttribute("freeQuizLink",new FreeQuiz());
+        model.addAttribute("freeQuizList", freeQuizList);
+        model.addAttribute("freeQuizLink", new FreeQuiz());
         return "free-quiz-links";
     }
 
@@ -150,22 +150,26 @@ public class TeacherController {
 
     @GetMapping("/special-quizzes")
     public String showAddQuizPage(Model model) {
-//        List<SpecialQuiz> specialQuizList = specialQuizService.getSpecialQuizByTeacherId(user); // TODO Must pass Teacher Id
-//        model.addAttribute("specialQuizList",specialQuizList);
-        model.addAttribute("specialQuizLink",new SpecialQuiz());
+        int teacherId = userService.getLoggedUserId();
+
+        List<SpecialQuiz> specialQuizList = specialQuizService.getSpecialQuizByTeacherId(teacherId); // TODO Must pass Teacher Id
+        model.addAttribute("specialQuizList", specialQuizList);
+        model.addAttribute("specialQuizLink", new SpecialQuiz());
         return "add-special-quiz";
     }
 
 
     @PostMapping("/special-quiz-link/save")
-    public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz){
+    public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz) {
+
+        specialQuiz.setTeacher(teacherService.getTeacherById(userService.getLoggedUserId()));
         specialQuizService.saveOrUpdateSpecialQuiz(specialQuiz);
 
         return "redirect:/teachers/special-quizzes";
     }
 
     @GetMapping("/special-quiz/delete")
-    public String deleteSpecialQuiz(@RequestParam("specialQuizId")int id){
+    public String deleteSpecialQuiz(@RequestParam("specialQuizId") int id) {
         specialQuizService.deleteSpecialQuiz(id);
         return "redirect:/teachers/special-quizzes";
     }
