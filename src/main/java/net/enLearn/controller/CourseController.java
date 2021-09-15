@@ -68,43 +68,5 @@ public class CourseController {
         return "zoom-create";
     }
 
-    //    @PostMapping("/save")
-//    public String saveCourse(@ModelAttribute("course") Course course, @RequestParam("teacherId") int teacherId, RedirectAttributes redirectAttributes) {
-//        Teacher teacher = teacherService.getTeacherById(teacherId);
-//        course.setTeacher(teacher);
-//        courseService.saveOrUpdate(course);
-//        redirectAttributes.addAttribute("teacherId", teacherId);
-//        return "redirect:/teachers";
-//    }
-
-    @PostMapping("/save")
-    public String saveCourse(@ModelAttribute("course") Course course) {
-        courseService.saveOrUpdate(course);
-        return "redirect:/teachers";
-    }
-
-
-    @GetMapping("/update")
-    public String showCourseUpdateForm(@RequestParam("courseId") int id, Model model) {
-        Course course = courseService.getCourseById(id);
-        model.addAttribute("course", course);
-        return "create-course";
-    }
-
-//    @GetMapping("/delete")
-//    public String deleteCourse(@RequestParam("courseId") int id, Model model, RedirectAttributes redirectAttribute) {
-//        Course course = courseService.getCourseById(id);
-//        Teacher teacher = course.getTeacher();
-//        redirectAttribute.addAttribute("teacherId", teacher.getId());
-//        courseService.deleteCourse(id);
-//        return "redirect:/teachers";
-//    }
-
-    @GetMapping("/delete")
-    public String deleteTeacher(@RequestParam("courseId") int id) {
-        courseService.deleteCourse(id);
-        return "redirect:/teachers";
-    }
-
 }
 
