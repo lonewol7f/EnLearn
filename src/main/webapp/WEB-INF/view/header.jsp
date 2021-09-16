@@ -51,6 +51,7 @@
                             </a>
                             <div class="hs-sub-menu dropdown-menu" aria-labelledby="companyMegaMenu"
                                  style="min-width: 14rem;">
+                                <a class="dropdown-item " href="${pageContext.request.contextPath}/browse">Browse</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/shop">Shop</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/courses/">Single
                                     Course</a>

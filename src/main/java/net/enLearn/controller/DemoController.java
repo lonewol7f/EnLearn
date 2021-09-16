@@ -73,10 +73,14 @@ public class DemoController {
         return "discount-report";
     }
 
-
     @GetMapping("/portal")
     public String showPortal() {
         return "portal";
+    }
+
+    @GetMapping("/browse")
+    public String browse() {
+        return "course-list";
     }
 
 
