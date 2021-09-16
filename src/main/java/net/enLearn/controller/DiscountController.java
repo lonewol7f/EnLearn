@@ -60,7 +60,7 @@ public class DiscountController {
         discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
 
         disService.saveDiscount(discountObj);
-        System.out.println("addDiscountController Runs...");
+
 
         return "Add-Discount";
     }
@@ -103,6 +103,14 @@ public class DiscountController {
     @RequestMapping(path = "/updateDiscount", method = RequestMethod.POST)
     public String updateDiscount(){
         return "redirect:discounts/showDiscounts";
+    }
+
+
+    //==================================================================================================================
+    @RequestMapping(path = "/getDiscountCode")
+    public String getDiscountCode(@RequestParam("DiscountCodeForModel") int discountId,Model model){
+        model.addAttribute("displayDiscountCode",discountId);
+        return "shop";
     }
 
 }

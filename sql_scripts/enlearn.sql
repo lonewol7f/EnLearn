@@ -20,7 +20,7 @@ CREATE TABLE `user`
     `first_name` VARCHAR(50),
     `last_name`  VARCHAR(50),
     `address`    VARCHAR(255),
-    `grade`     INT,
+    `gender`     VARCHAR(7),
     `dob`        DATE,
     `email`      VARCHAR(100),
     `district`   VARCHAR(20),
@@ -101,11 +101,11 @@ CREATE TABLE `teacher_qualifications`
   DEFAULT CHARSET = latin1;
 
 
-DROP TABLE IF EXISTS `advertiser_contact`;
-CREATE TABLE `advertiser_contact`
+DROP TABLE IF EXISTS `advertiser_mobile`;
+CREATE TABLE `advertiser_mobile`
 (
     `advertiser_id` INT,
-    `contact_no`     CHAR(10),
+    `mobile_no`     CHAR(10),
     CONSTRAINT `pk_advertiser_mobile` PRIMARY KEY (`advertiser_id`),
     CONSTRAINT `fk_advertiser_mobile` FOREIGN KEY (`advertiser_id`) REFERENCES `advertiser` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
@@ -304,9 +304,9 @@ CREATE TABLE `zoom_class`
     `id`          INT NOT NULL AUTO_INCREMENT,
     `title`       VARCHAR(255),
     `description` TEXT,
-    `date`        VARCHAR(255),
-    `time`        VARCHAR(255),
-    `zoomLink`   VARCHAR(255),
+    `zoom_link`   VARCHAR(255),
+    `date`        DATE,
+    `time`        TIME,
     `course_id`   INT,
     CONSTRAINT `pk_zoom_class` PRIMARY KEY (`id`),
     CONSTRAINT `fk_zoom_class` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -335,7 +335,7 @@ CREATE TABLE `advertisement`
 (
     `id`            INT NOT NULL AUTO_INCREMENT,
     `title`         VARCHAR(255),
-    `package`   VARCHAR(100),
+    `price_range`   VARCHAR(100),
     `image`         BLOB,
     `description`   TEXT,
     `advertiser_id` INT,

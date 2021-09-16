@@ -140,6 +140,9 @@
 
             <div class="row">
                 <c:forEach var="discountCard" items="${showCard}" varStatus="loop">
+                    <c:url var="getDiscountCode" value="/discounts/getDiscountCode">
+                        <c:param name="DiscountCodeForModel" value="${discountCard.id}" />
+                    </c:url>
 
                     <div class="col">
                         <div class="col spacing-top">
@@ -154,19 +157,20 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Discount : <c:out value="${discountCard.discount}" />
+                                                    Discount<br>
+                                                    <c:out value="${discountCard.discount}" />
                                                 </h6>
                                             </div>
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Category : <c:out value="${discountCard.course}" />
+                                                    Category<br><c:out value="${discountCard.course}" />
                                                 </h6>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col">
                                                 <h6 class="mg-md text-lg-center">
-                                                    Teacher : <c:out value="${discountCard.teacher_name}" />
+                                                    Teacher<br><c:out value="${discountCard.teacher_name}" />
                                                 </h6>
                                             </div>
                                             <div class="col">
@@ -176,11 +180,12 @@
                                             </div>
                                         </div>
                                         <h6 class="mg-md text-lg-center">
+                                            Description<br>
                                             <c:out value="${discountCard.description}" />
                                         </h6>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
+                                        <a href="${getDiscountCode}" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd" data-toggle="modal" data-target="#shop-code">Get Discount</a>
                                     </div>
                                     <div class="divider-h">
                                         <span class="divider"></span>
@@ -209,6 +214,7 @@
                                             </h5>
                                             <h3>
                                                 <c:out value="${discountCard.id}" />
+                                                <%--${displayDiscountCode}--%>
                                             </h3>
                                         </div>
                                     </form>
@@ -223,6 +229,8 @@
                 </c:forEach>
 
             </div>
+
+
 
 
 
