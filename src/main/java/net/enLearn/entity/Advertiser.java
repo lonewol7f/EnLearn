@@ -1,8 +1,6 @@
 package net.enLearn.entity;
 
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 
 /**
@@ -12,68 +10,78 @@ import javax.persistence.*;
 @Entity
 @Table(name = "advertiser")
 @PrimaryKeyJoinColumn(name = "id")
-public class Advertiser extends User {
+public class Advertiser {
 
-    @Column(name="company_name")
-    private String cname;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "company_name")
+    private String company_name;
+
+    @Column(name = "password")
+    private String password = "";
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "contact_no")
-    private int contact_no;
+    private String contact_number;
 
-    @Column(name= "password")
-    private String password;
 
-    @Transient
     @Column(name = "image")
-    private MultipartFile image;
-
-
-
-    public Advertiser(String cname,String email,int contact_no,String password,MultipartFile image){
-        this.cname = cname;
-        this.email = email;
-        this.contact_no = contact_no;
-        this.password = password;
-        this.image = image;
-
-    }
+    private String image;
 
     public Advertiser() {
+    } //constructor
 
+    public int getId() {
+        return id;
     }
 
-
-    public String getCname() {
-        return cname;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setCname(String cname) {
-        this.cname = cname;
+    public String getCompany_name() {
+        return company_name;
     }
 
-    public String getEmail(){return email;}
+    public void setCompany_name(String company_name) {
+        this.company_name = company_name;
+    }
 
-    public void setEmail(String email){this.email = email;}
-
-    public int getContact_no(){return contact_no;}
-
-    public void setContact_no(int contact_no){this.contact_no = contact_no;}
-
-    public String getPassword(){return password;}
+    public String getPassword() {
+        return password;
+    }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public MultipartFile getImage(){return  image;}
+    public String getEmail() {
+        return email;
+    }
 
-    public void setImage(MultipartFile image){this.image = image;}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
+    public String getContact_number() {
+        return contact_number;
+    }
 
+    public void setContact_number(String contact_number) {
+        this.contact_number = contact_number;
+    }
 
+    public String getImage() {
+        return image;
+    }
 
-
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
+

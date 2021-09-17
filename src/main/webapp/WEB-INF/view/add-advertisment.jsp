@@ -57,7 +57,7 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/upload" modelAttribute="advertiser" method="POST" >
+                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/save" modelAttribute="advertisement" method="POST" >
 
                                 <!--
                                 <div class="form-group">
@@ -88,14 +88,33 @@
                                     <input id="name00_10830_22096" class="form-control" required name="password" />
                                 </div>
 
+
+
                 -->
+                                <c:if test="${edit == true}">
+                                    <%-- construct an 'update' link with course id --%>
+                                    <c:url var="updateLink" value="/advertisers/update">
+                                        <c:param name="advertisementId" value="${advertisement.id}"/>
+                                    </c:url>
+                                </c:if>
+                                <c:if test="${edit == flase}">
+                                    <%-- construct an 'update' link with course id --%>
+                                    <c:url var="updateLink" value="/advertisers/update">
+                                        <c:param name="advertisementId" value="${-1}"/>
+                                    </c:url>
+                                </c:if>
+
+                                <%-- construct an 'delete' link with course id --%>
+                                <c:url var="deleteLink" value="/courses/delete">
+                                    <c:param name="advertisementId" value="${advertisement.id}"/>
+                                </c:url>
 
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label>
                                             Advertisement Title
                                         </label>
-                                        <input id="name200_10830_22096" class="form-control" required name="title" />
+                                        <input id="name200_10830_22096" class="form-control" required name="title" value="${advertisement.title}"/>
                                     </div>
 
 
@@ -109,20 +128,20 @@
                                     <div class="form-group">
                                         <div class="form-group mb-3">
                                             <div class="form-group mb-3 container-div-style">
-                                                <select class="form-control" name="addpackage" required>
+                                                <select class="form-control" name="prange" required>
                                                     <option disabled selected value>
                                                         -- Select Package --
                                                     </option>
-                                                    <option value="0">
+                                                    <option value="Basic 3 days">
                                                         Basic-LKR 1000 over 3 days
                                                     </option>
-                                                    <option value="1">
+                                                    <option value=" Standard 8 days">
                                                         Standard-LKR 5000 over 8 days
                                                     </option>
-                                                    <option value="1">
+                                                    <option value="15 days">
                                                         Premium-LKR 10000 over 15 days
                                                     </option>
-                                                    <option value="1">
+                                                    <option value="30 days">
                                                         VIP-LKR 20000 over 30 days
                                                     </option>
 
@@ -135,7 +154,7 @@
                                         <label>
                                             Description
                                         </label>
-                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50"> </textarea>
+                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50">${advertisement.descripton} </textarea>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -148,7 +167,7 @@
                                                 <div class="row">
                                                     <div class="col-lg-3">
 
-                                                        <input type="file" name="image" id="image"  />
+                                                        <input type="file" name="imageno" id="image"  />
                                                     </div>
                                                 </div>
                                             </div>
@@ -214,8 +233,8 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
-                                    Submit
+                                <button href=${updatelink} class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                                Submit
                                 </button>
                             </form>
                         </div>
@@ -228,6 +247,14 @@
         </div>
     </div>
     <!-- bloc-8 END -->
+    <div class="text-center">
+        <div class="row">
+            <a href="${updateLink}" onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false" class="btn btn-success" >Update</a>
+            <a href="${deleteLink}" onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false" class="btn btn-danger">Delete</a>
+            </form>
+        </div>
+    </div>
+
 
     <%@include file="footer.jsp" %>
 
@@ -243,7 +270,3 @@
 <script src="../../resources/js/jqBootstrapValidation.js"></script>
 <script src="../../resources/js/formHandler.js?6451"></script>
 <script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
-
-
-</body>
-</html>

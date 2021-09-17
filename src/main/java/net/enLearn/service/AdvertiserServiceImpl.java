@@ -8,16 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AdvertiserServiceImpl implements AdvertiserService {
+    public int UserID = -1; //TODO Replace with better option
 
     @Autowired
     private AdvertiserDAO advertiserDAO;
-
-
-    @Override
-    @Transactional
-    public void saveOrUpdate(Advertiser advertiser) {
-        advertiserDAO.saveOrUpdate(advertiser);
-    }
 
     @Override
     @Transactional
@@ -25,5 +19,24 @@ public class AdvertiserServiceImpl implements AdvertiserService {
         return advertiserDAO.getAdvertiserById(id);
     }
 
+    @Override
+    @Transactional
+    public Advertiser getCurrentAdvertiserById() {
+        return advertiserDAO.getAdvertiserById(UserID);
+    }
 
+    @Override
+    @Transactional
+    public int getCurrentAdvertiserId() {
+        return UserID;
+    }
+
+
+    @Override
+    @Transactional
+    public void saveOrUpdate(Advertiser advertiser) {
+        advertiserDAO.saveOrUpdate(advertiser);
+        UserID = advertiser.getId();
+
+    }
 }

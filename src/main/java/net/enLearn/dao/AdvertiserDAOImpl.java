@@ -7,17 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AdvertiserDAOImpl implements AdvertiserDAO {
-
+public class AdvertiserDAOImpl implements AdvertiserDAO{
     @Autowired
     private SessionFactory sessionFactory;
-
-
-    @Override
-    public void saveOrUpdate(Advertiser advertiser) {
-        Session session = sessionFactory.getCurrentSession();
-        session.saveOrUpdate(advertiser);
-    }
 
     @Override
     public Advertiser getAdvertiserById(int id) {
@@ -25,4 +17,13 @@ public class AdvertiserDAOImpl implements AdvertiserDAO {
         Advertiser advertiser = session.get(Advertiser.class, id);
         return advertiser;
     }
+
+    @Override
+    public void saveOrUpdate(Advertiser advertiser) {
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(advertiser);
+
+    }
+
+
 }

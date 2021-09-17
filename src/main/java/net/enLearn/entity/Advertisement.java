@@ -2,7 +2,6 @@ package net.enLearn.entity;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "advertisement")
 @PrimaryKeyJoinColumn(name = "id")
-
 public class Advertisement {
 
     @Id
@@ -29,13 +27,14 @@ public class Advertisement {
     private String descripton;
 
 
+
     @Transient
     @Column(name = "image")
-    private MultipartFile image;
+    private String image;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "advertiser_id")
-    private Advertiser advertiser;
+    public Advertiser advertiser;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(name = "advertisements_approve",
@@ -43,20 +42,6 @@ public class Advertisement {
             inverseJoinColumns = @JoinColumn(name = "admin_id"))
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Admin> admins;
-
-    public Advertisement(){}
-
-
-    public Advertisement(String title,String prange,MultipartFile image,String descripton){
-        this.title = title;
-        this.prange = prange;
-        this.image = image;
-        this.descripton = descripton;
-    }
-
-    public Advertisement(String title, String aPackage, String description, MultipartFile image) {
-    }
-
 
     public int getId() {
 
@@ -92,15 +77,13 @@ public class Advertisement {
         this.descripton = descripton;
     }
 
-    public MultipartFile getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(MultipartFile image) {
+    public void setImage(String image) {
         this.image = image;
     }
-
-
 
 }
 

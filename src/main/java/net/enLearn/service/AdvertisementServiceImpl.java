@@ -1,17 +1,25 @@
 package net.enLearn.service;
 
-import net.enLearn.dao.AdvertisementDAOImpl;
+import net.enLearn.dao.AdvertisementDAO;
 import net.enLearn.entity.Advertisement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class AdvertisementServiceImpl implements AdvertisementService {
 
     @Autowired
-    AdvertisementDAOImpl advertisementDAO;
+    private AdvertisementDAO advertisementDAO;
 
+    @Override
+    @Transactional
+    public List<Advertisement> getAdvertisementListByAdvertiserId() {
+
+        return advertisementDAO.getAdvertisementListByAdvertiserId();
+    }
 
     @Override
     @Transactional
@@ -20,10 +28,14 @@ public class AdvertisementServiceImpl implements AdvertisementService {
     }
 
     @Override
-    public Advertisement getAdvertisementId(int id) {
+    @Transactional
+    public Advertisement getAdvertisementById(int id) {
         return advertisementDAO.getAdvertisementById(id);
     }
 
-
-
+    @Override
+    @Transactional
+    public void delete(Advertisement advertisement) {
+        advertisementDAO.delete(advertisement);
+    }
 }

@@ -52,7 +52,7 @@ public class User {
     @Column(name = "dob")
     private int DOB;
 
-    @Column(name = "grade")
+    @Column(name = "gender")
     private int grade;
 
     @Column(name = "district")

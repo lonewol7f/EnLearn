@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: flashminat0
@@ -55,7 +56,13 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="mg-md no-margin">
-                                Name of Advertisor
+                                ${advertiser.company_name}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${advertiser.email}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${advertiser.contact_number}
                             </h2>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -68,155 +75,128 @@
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/6ebaea84-c314-4dec-80fb-b4cac9fb3f63.jpg" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" />
                         </div>
                     </div>
+                    <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px"><path d="M2,25H498"></path></svg>
+                    </div>
+
                     <div class="row">
                         <div class="col">
                             <div class="divider-h">
                                 <span class="divider"></span>
                             </div>
                             <h4 class="mg-md no-margin text-lg-center">
-                               Advertisement Details
+                                Advertisement Details
                             </h4>
-                            <div><div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                            </div>
-                            </div>
-                            <div class="row ad-row">
-                                <div class="col-lg-4">
-                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg" class="img-fluid mx-auto d-block lazyload" alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e" />
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <h4 class="mg-md">
-                                            Ad name
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time left
-                                                </h6>
-                                            </div>
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time it showed
-                                                </h6>
-                                            </div>
+                        </div>
+                    </div>
+
+                    <%-- Loop over and print teachers --%>
+                    <c:forEach var="advertisement" items="${advertisements}">
+
+                        <%-- construct an 'update' link with course id --%>
+                        <c:url var="updateLink" value="/advertisers/update">
+                            <c:param name="advertisementId" value="${advertisement.id}"/>
+                        </c:url>
+
+                        <%-- construct an 'delete' link with course id --%>
+                        <c:url var="deleteLink" value="/advertisers/delete">
+                            <c:param name="advertisementId" value="${advertisement.id}"/>
+                        </c:url>
+
+                        <%--                    <c:url var="coursesLink" value="/courses/add-courses">--%>
+                        <%--                        <c:param name="courseId" value="${advertisement.escriptond}"/>--%>
+                        <%--                    </c:url>--%>
 
 
+
+
+
+
+
+                        <div class="row ad-row">
+                            <div class="col-lg-4">
+                                <img src="../../resources/img/Payload-ph.png" data-src="../../resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg" class="img-fluid mx-auto d-block lazyload" alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e" />
+                            </div>
+
+
+                            <div class="col">
+                                <div>
+                                    <h4 class="mg-md">
+                                            ${advertisement.title}
+                                    </h4>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 class="mg-md">
+                                                Time left
+                                            </h6>
                                         </div>
-                                        <br><br>
-                                        <div class="text-center">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                                </div>
-                                            </div>
+                                        <div class="col">
+                                            <h6 class="mg-md">
+                                                    ${advertisement.descripton}
+                                            </h6>
                                         </div>
+
+                                        <div class="col">
+                                            <h6 class="mg-md">
+                                                    ${advertisement.prange}
+                                            </h6>
+                                        </div>
+
+
+                                    </div>
+                                    <br><br>
+                                    <div class="text-center">
                                         <div class="row">
-                                            <div class="col">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                            </div>
+                                            <a href="${updateLink}" onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false" class="btn btn-success" >Update</a>
+                                            <a href="${deleteLink}" onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false" class="btn btn-danger">Delete</a>
+                                            </form>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row ad-row">
-                                <div class="col-lg-4">
-                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg" class="img-fluid mx-auto d-block lazyload" alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e" />
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <h4 class="mg-md">
-                                            Ad name
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time left
-                                                </h6>
-                                            </div>
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time it showed
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <br><br>
-                                        <div class="text-center">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row ad-row">
-                                <div class="col-lg-4">
-                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg" class="img-fluid mx-auto d-block lazyload" alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e" />
-                                </div>
-                                <div class="col">
-                                    <div>
-                                        <h4 class="mg-md">
-                                            Ad name
-                                        </h4>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time left
-                                                </h6>
-                                            </div>
-                                            <div class="col">
-                                                <h6 class="mg-md">
-                                                    Time it showed
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <br><br>
-                                        <div class="text-center">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div class="divider-h">
-                                                    <span class="divider"></span>
-                                                </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="divider-h">
+                                                <span class="divider"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </c:forEach>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- bloc-19 END -->
+<div class="bloc l-bloc" id="bloc-20">
+    <div class="container bloc-lg">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/add" method="POST" >
+                            <button class="bloc-button btn btn-d btn-lg btn-block" type="submit" style="width: 30%;margin-left: 30%;">
+                                Add Advertismnet
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- bloc-19 END -->
+</div>
 
-    <%@include file="footer.jsp" %>
+
+<%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->
