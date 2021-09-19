@@ -42,11 +42,10 @@ public class TeacherController {
     @Autowired
     private SpecialQuizService specialQuizService;
 
+
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
-
         int id = userService.getLoggedUserId();
-
         List<Course> courses = courseService.getCourseListByTeacherId(id);
         model.addAttribute("courses", courses);
         return "profile-page-teacher";
@@ -65,14 +64,14 @@ public class TeacherController {
     @GetMapping("/notifications")
     public String showNotificationPage(Model model) {
         int teacherId = userService.getLoggedUserId();
-
         List<Event> events = eventService.getEventList();
         List<Notification> notifications = notificationService.getNotificationByTeacherId(teacherId);
         model.addAttribute("events", events);
         model.addAttribute("notifications", notifications);
-
         return "notification-view";
     }
+
+
 
     @GetMapping("/marks-and-access")
     public String showMarksAndAccessPage(Model model) {
@@ -85,12 +84,11 @@ public class TeacherController {
 
         int id = userService.getLoggedUserId();
         Teacher teacher = teacherService.getTeacherById(id);
-
         freeQuiz.setTeacher(teacher);
         freeQuizService.saveOrUpdateFreeQuiz(freeQuiz);
-
         return "redirect:/teachers/free-quiz-links";
     }
+
 
     @GetMapping("/free-quiz/delete")
     public String deleteFreeQuiz(@RequestParam("freeQuizId") int id) {
@@ -99,6 +97,7 @@ public class TeacherController {
 
     }
 
+
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
@@ -106,27 +105,23 @@ public class TeacherController {
 
     @GetMapping("/free-quiz-links")
     public String showFreeQuizLinksPage(Model model) {
-
         int teacherId = userService.getLoggedUserId();
-
         List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizListByTeacherId(teacherId);
         model.addAttribute("freeQuizList", freeQuizList);
         model.addAttribute("freeQuizLink", new FreeQuiz());
         return "free-quiz-links";
     }
 
+
+    //Course create
     @PostMapping("/courses/save")
     public String saveCourse(@ModelAttribute("course") Course course) {
-
         int teacherId = userService.getLoggedUserId();
-
         Teacher teacher = teacherService.getTeacherById(teacherId);
         course.setTeacher(teacher);
-
         courseService.saveOrUpdate(course);
         return "redirect:/teachers";
     }
-
 
     @GetMapping("/create-courses")
     public String showCreateCoursePage(Model model) {
@@ -135,12 +130,14 @@ public class TeacherController {
         return "create-course";
     }
 
+    //Course Delete
     @GetMapping("/courses/delete")
     public String deleteTeacher(@RequestParam("courseId") int id) {
         courseService.deleteCourse(id);
         return "redirect:/teachers";
     }
 
+    //Course Edit
     @GetMapping("/courses/update")
     public String showCourseUpdateForm(@RequestParam("courseId") int id, Model model) {
         Course course = courseService.getCourseById(id);
@@ -148,10 +145,10 @@ public class TeacherController {
         return "create-course";
     }
 
+
     @GetMapping("/special-quizzes")
     public String showAddQuizPage(Model model) {
         int teacherId = userService.getLoggedUserId();
-
         List<SpecialQuiz> specialQuizList = specialQuizService.getSpecialQuizByTeacherId(teacherId); // TODO Must pass Teacher Id
         model.addAttribute("specialQuizList", specialQuizList);
         model.addAttribute("specialQuizLink", new SpecialQuiz());
@@ -164,9 +161,9 @@ public class TeacherController {
 
         specialQuiz.setTeacher(teacherService.getTeacherById(userService.getLoggedUserId()));
         specialQuizService.saveOrUpdateSpecialQuiz(specialQuiz);
-
         return "redirect:/teachers/special-quizzes";
     }
+
 
     @GetMapping("/special-quiz/delete")
     public String deleteSpecialQuiz(@RequestParam("specialQuizId") int id) {

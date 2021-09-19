@@ -77,7 +77,7 @@
                                     <form:label path="price">
                                         Course Fee
                                     </form:label>
-                                    <form:input path="price" cssClass="form-control" />
+                                    <form:input path="price"  cssClass="form-control" />
                                 </div>
                                 <div class="form-group">
                                     <form:label path="description">
@@ -114,8 +114,7 @@
                         <div class="col offset-lg-1">
                             <div class="video-box">
                                 <div class="embed-responsive embed-responsive-16by9 video-style">
-                                    <iframe class="embed-responsive-item lazyload" src="../../resources/img/lazyload-ph.png" data-src="https://www.youtube.com/embed/o6ifhsL4kKw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                    </iframe>
+                                    <img style="position: relative; bottom: 400px; border-radius: 1rem" src="${pageContext.request.contextPath}/resources/img/placeholder-image.png"  width="500" height="400">
                                 </div>
                             </div>
                         </div>

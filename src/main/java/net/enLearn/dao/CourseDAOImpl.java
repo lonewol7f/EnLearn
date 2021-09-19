@@ -15,10 +15,10 @@ public class CourseDAOImpl implements CourseDAO {
     @Autowired
     private SessionFactory sessionFactory;
 
+
     @Override
     public List<Course> getCourseListByTeacherId(int id) {
         Session session = sessionFactory.getCurrentSession();
-
         Teacher teacher = session.get(Teacher.class, id);
         List<Course> courses = teacher.getCourseList();
         return courses;
@@ -31,12 +31,14 @@ public class CourseDAOImpl implements CourseDAO {
         session.saveOrUpdate(course);
     }
 
+
     @Override
     public Course getCourseById(int id) {
         Session session = sessionFactory.getCurrentSession();
         Course course = session.get(Course.class, id);
         return course;
     }
+
 
     @Override
     public void deleteCourse(int id) {
