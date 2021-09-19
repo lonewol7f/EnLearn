@@ -2,8 +2,6 @@ package net.enLearn.entity;
 
 import javax.persistence.*;
 
-public class ZoomClass {
-
     @Entity
     @Table(name = "zoom_class")
     public class ZoomClass {
@@ -30,4 +28,4 @@ public class ZoomClass {
         private String zoom_link;
 
     }
-}
+
