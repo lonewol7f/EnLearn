@@ -57,7 +57,7 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/upload" modelAttribute="advertiser" method="POST" >
+                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/upload"  method="POST" >
 
                                 <!--
                                 <div class="form-group">
@@ -95,7 +95,8 @@
                                         <label>
                                             Advertisement Title
                                         </label>
-                                        <input id="name200_10830_22096" class="form-control" required name="title" />
+                                        <input type="hidden" id="advertisementId" name="advertisementId" value="${advertisementId}">
+                                        <input id="title" class="form-control" required name="title" value="${advertisementTitle}"/>
                                     </div>
 
 
@@ -109,7 +110,7 @@
                                     <div class="form-group">
                                         <div class="form-group mb-3">
                                             <div class="form-group mb-3 container-div-style">
-                                                <select class="form-control" name="addpackage" required>
+                                                <select id="package" class="form-control" name="package" required>
                                                     <option disabled selected value>
                                                         -- Select Package --
                                                     </option>
@@ -135,7 +136,7 @@
                                         <label>
                                             Description
                                         </label>
-                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50"> </textarea>
+                                        <textarea id="description" class="form-control" name="description" rows="4" cols="50">${advertisementDes} </textarea>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4">
