@@ -28,4 +28,8 @@ public interface UserService {
 
     @Transactional
     List<Course> getCourses(User user);
+
+
+
+    List<User> getUserByEmail(String email);
 }

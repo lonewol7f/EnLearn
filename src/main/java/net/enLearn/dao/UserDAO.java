@@ -27,5 +27,7 @@ public interface UserDAO {
     int Checkuse(String email, String password);
 
     int Chectype(int id);
+
+    List<User> getUserByEmail(String email);
 }
 

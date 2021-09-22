@@ -73,6 +73,11 @@ public class UserServiceImpl implements UserService {
         return userDAO.getCoursesByUserID(user.getId());
     }
 
+    @Override
+    @Transactional
+    public List<User> getUserByEmail(String email) {
+        return userDAO.getUserByEmail(email);
+    }
 
 
 }

@@ -1,7 +1,6 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.*;
-import net.enLearn.service.AdvertisementService;
 import net.enLearn.service.AdvertiserService;
 import net.enLearn.service.StudentService;
 import net.enLearn.service.TeacherService;
@@ -15,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -199,6 +199,19 @@ public class UserDAOImpl implements UserDAO{
 
 
 
+    }
+
+    @Override
+    public List<User> getUserByEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<User> user = session.createQuery("from User where email = '"+email+"'",
+                User.class);
+        List<User> users = user.getResultList();
+        if (users==null){
+            users = new ArrayList<>();
+        }
+
+        return users;
     }
 
 }
