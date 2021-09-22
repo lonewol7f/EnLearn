@@ -1,5 +1,6 @@
 package net.enLearn.controller;
 
+import net.enLearn.helper.Messages;
 import net.enLearn.service.RedeemCodeService;
 import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
@@ -36,17 +37,17 @@ public class StudentController {
     @PostMapping("/redeem")
     public String redeemCoupon(@RequestParam("coupon") String coupon, RedirectAttributes redirectAttributes) {
         if (!redeemCodeService.checkExistingCoupon(coupon)){
-            redirectAttributes.addAttribute("error", "notExist");
+            redirectAttributes.addFlashAttribute("error", Messages.CODE_NOT_EXIST);
             return "redirect:/shop";
         }
 
         if (redeemCodeService.getCodeByCoupon(coupon).isRedeemed()) {
-            redirectAttributes.addAttribute("error", "redeemed");
+            redirectAttributes.addFlashAttribute("error", Messages.CODE_REDEEMED);
             return "redirect:/shop";
         }
 
         userService.redeemCode(redeemCodeService.getCodeByCoupon(coupon));
-        redirectAttributes.addAttribute("success", "redeemed");
+        redirectAttributes.addFlashAttribute("success", Messages.CODE_REDEEMED);
 
         return "redirect:/shop";
     }
