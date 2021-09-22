@@ -50,7 +50,7 @@ public class User {
     private String password;
 
     @Column(name = "dob")
-    private int DOB;
+    private String DOB;
 
     @Column(name = "grade")
     private int grade;
@@ -61,6 +61,13 @@ public class User {
     @Column(name = "address")
     private String Address;
 
+    @Column(name = "pf_image")
+    private String image_path;
+
+    @Column(name = "gender")
+    private String gender;
+
+
 
     //default Constructor
     public User() {
@@ -68,19 +75,81 @@ public class User {
 
 
     //Constructor
-    public User(String first_name,String last_name,String email,String password,int DOB,int grade,String district,String Address){
-        this.firstName =first_name;
-        this.lastname = last_name;
+
+
+    public User(String firstName, String email, String lastname,
+                String password, String DOB, int grade, String district,
+                String address, String image_path, String gender) {
+        this.firstName = firstName;
         this.email = email;
+        this.lastname = lastname;
         this.password = password;
         this.DOB = DOB;
         this.grade = grade;
-        this.district= district;
-        this.Address = Address;
+        this.district = district;
+        Address = address;
+        this.image_path = image_path;
+        this.gender = gender;
     }
 
     public int getId() {
         return id;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getImage_path() {
+        return image_path;
+    }
+
+    public void setImage_path(String image_path) {
+        this.image_path = image_path;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setId(int id) {
@@ -125,5 +194,13 @@ public class User {
 
     public void setEmail (String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

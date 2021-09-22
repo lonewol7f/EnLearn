@@ -49,12 +49,23 @@
     <!-- bloc-0 END -->
 
     <!-- bloc-8 -->
+    <%
+        int id = Integer.parseInt(String.valueOf(request.getAttribute("advertiserId")));
+        boolean update = (id!=-1);
+    %>
     <div class="bloc l-bloc" id="bloc-8">
         <div class="container bloc-lg">
             <div class="row">
                 <div class="col">
                     <h3 class="mg-md">
-                        Advertisement Registration
+                        <%
+                            if (update){
+                                out.println("Update your profile");
+                            }else {
+                                out.println("Advertiser Registration");
+                            }
+                        %>
+
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
@@ -62,32 +73,40 @@
 
 
                                 <div class="form-group">
+                                    <%
+                                    String a = "<input type=\"hidden\" id=\"advertiserId\" name=\"advertiserId\" value=\""+id+"\">";
+                                    out.println(a);
+
+                                    %>
+
                                     <label>
                                         Company Name
                                     </label>
-                                    <input id="name7_10830_22096" class="form-control" required name="name" />
+                                    <input id="name" class="form-control" required name="name" value="${advertiserCN}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>
                                         Email
                                     </label>
-                                    <input id="email7_10830_22096" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
+                                    <input id="email" class="form-control" type="email" value="${advertisementEmail}" data-error-validation-msg="Not a valid email address" required name="email" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Contact Number
                                     </label>
-
-                                    <input type="numbers" id="phone" class="form-control" name="phone" >
+<%--                                    TODO type="Tel" --%>
+                                    <input type="text" id="phone" placeholder="+9471-6467055" pattern="+[0-9]{4}-[0-9]{7}" class="form-control" name="phone" value="${advertisementContact}">
                                 </div>
 
                                 <div class="form-group">
                                     <label>
                                         Password
                                     </label>
-                                    <input id="name00_10830_22096" class="form-control" required name="password" />
+                                    <input id="password" type="password" class="form-control" required name="password" />
                                 </div>
+
+
 
                                 <div class="form-group">
                                     <label>
@@ -96,7 +115,15 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="text-center">
-                                                <a href="index.jsp" class="btn btn-lg btn-wire btn-26-style">Upload a photo</a>
+                                                <input type="file" id="image"  class="btn btn-lg btn-wire btn-26-style" name="image" accept="image/png, image/jpeg" onchange="loadFile(event)" required/>
+                                                <br>
+                                                <p><img id="output" alt="expenses_image" width="300" height="300" /></p>
+                                                <script>
+                                                    var loadFile = function(event) {
+                                                        var image = document.getElementById('output');
+                                                        image.src = URL.createObjectURL(event.target.files[0]);
+                                                    };
+                                                </script>
                                             </div>
                                         </div>
                                         <div class="col no-margin">
@@ -106,6 +133,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-check">

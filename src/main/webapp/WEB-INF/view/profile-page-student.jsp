@@ -5,6 +5,8 @@
   Time: 3:53 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!doctype html>
 <html lang="en">
 <!--Created by Yasas on 20/07/2021-->
@@ -54,8 +56,39 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="mg-md no-margin">
-                                Name of Student
+                                ${user.firstName}
                             </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.address}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.DOB}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.gender}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.grade}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.district}
+                            </h2>
+
+                            <%-- construct an 'delete' link with event id --%>
+                            <c:url var="deleteLink" value="">
+                                <c:param name="userdatareg" value="${user.id}"/>
+                            </c:url>
+
+                            <%-- construct an 'update' link with event id --%>
+                            <c:url var="updateLink" value="">
+                                <c:param name="userdatareg" value="${user.id}"/>
+                            </c:url>
+
+                            <div class="text-center">
+                                <a href="${deleteLink}" onclick="if (!(confirm('Are you sure, You want to Delete this expense?'))) return false" class="btn btn-danger">Delete</a><br><br>
+                                <a href="${updateLink}" onclick="if (!(confirm('Are you sure, You want to Edit this expense?'))) return false"   class="btn btn-success">Update</a>
+                            </div>
+
                             <h4 class="mg-md no-margin">
                                 Year here
                             </h4>

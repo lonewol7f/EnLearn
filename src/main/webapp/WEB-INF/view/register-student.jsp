@@ -56,53 +56,76 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_19919" data-form-type="blocs-form" action="/students/custom-action-url" enctype="multipart/form-data"  method="POST">
+                            <form enctype="multipart/form-data" id="form_19919" data-form-type="blocs-form" action="/students/register" enctype="multipart/form-data"  method="POST">
                                 <div class="form-group">
                                     <label>
-                                        Name
+                                        Frist Name
                                     </label>
-                                    <input id="name7_10830_22096_19919" class="form-control" required name="name7" />
+                                    <input type="fristname" id="firstname" class="form-control" required name="firstname" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                       Last Name
+                                    </label>
+                                    <input type="text" id="lastname" class="form-control" required name="lastname" />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                       Distric
+                                    </label>
+                                    <input type="text" id="district" class="form-control" required name="district" />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                       Address
+                                    </label>
+                                    <input type="text" id="Address" class="form-control" required name="Address" />
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                       Gender
+                                    </label>
+                                    <select type="text" required class="form-control" id="gender" name="gender">
+                                        <option>
+                                            Select Gender
+                                        </option>
+                                        <option value="2">
+                                            Male
+                                        </option>
+                                        <option value="3">
+                                            Female
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                       Date Of Brithday
+                                    </label>
+                                    <input type="date" id="DOB" class="form-control" required name="DOB" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Email
                                     </label>
-                                    <input id="email7_10830_22096_19919" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
+                                    <input id="email" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Password
                                     </label>
-                                    <input class="form-control" id="input_782_10830_22096_19917" name="password" />
+                                    <input type="password" required class="form-control" id="password" name="password" />
                                 </div>
-                                <div class="form-group">
-                                    <label>
-                                        Address
-                                    </label>
-                                    <input class="form-control" id="input_782_10830_22096_19914" name="Address" />
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Date of birth
-                                    </label>
-                                    <input class="form-control" id="input_782_10830_22096_19911" name="DOB" />
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Phone Number
-                                    </label>
-                                    <input class="form-control" id="input_782_10830_22096_19913" name="Phone-Number" />
-                                </div>
+                     
 
 
                                 <div class="form-group">
                                     <label>
                                         Image
                                     </label>
-                                    <input type="file" name="image" />
                                 </div>
 
-                                 <%-- <div class="form-group">
+                            <div class="form-group">
                                     <div class="form-group">
                                         <label>
                                             Profile Picture
@@ -110,28 +133,34 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="text-center">
-                                                    <a href="index.jsp" class="btn btn-lg btn-wire btn-26-style">Upload a photo</a>
+                                                    <input type="file" id="image"  class="btn btn-lg btn-wire btn-26-style" name="image" accept="image/png, image/jpeg" onchange="loadFile(event)" required/>
+                                                    <br>
+                                                    <p><img id="output" alt="pfimage" width="300" height="300" /></p>
+                                                    <script>
+                                                        var loadFile = function(event) {
+                                                            var image = document.getElementById('output');
+                                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                                        };
+                                                    </script>
                                                 </div>
                                             </div>
-                                            <div class="col no-margin">
-                                                <h6 class="mg-md">
-                                                    No picture Selected
-                                                </h6>
-                                            </div>
                                         </div>
-                                    </div>--%>
+                                    </div>
+
+
+
                                     <div class="form-group">
                                         <label>
                                             School
                                         </label>
-                                        <input class="form-control" id="input_782_10830_22096_19919" name="Sch" />
+                                        <input type="text" required class="form-control" id="school" name="school" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Grade&nbsp;<br>
                                         </label>
                                         <div class="form-group">
-                                            <select class="form-control" id="select_2708" name="select_2708">
+                                            <select type="text" required class="form-control" id="grade" name="grade">
                                                 <option value="1">
                                                     Grade 1
                                                 </option>
