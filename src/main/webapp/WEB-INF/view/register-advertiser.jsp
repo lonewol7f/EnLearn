@@ -5,6 +5,7 @@
   Date: 2021-07-20
   Time: 3:57 PM
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -57,14 +58,14 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/save-details" modelAttribute="advertiser" method="POST" >
+                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/custom-action-url"  method="POST" >
 
 
                                 <div class="form-group">
                                     <label>
                                         Company Name
                                     </label>
-                                    <input id="name7_10830_22096" class="form-control" required name="company_name" />
+                                    <input id="name7_10830_22096" class="form-control" required name="name" />
                                 </div>
 
                                 <div class="form-group">
@@ -78,7 +79,7 @@
                                         Contact Number
                                     </label>
 
-                                    <input type="numbers" id="phone" class="form-control" name="contact_number" >
+                                    <input type="numbers" id="phone" class="form-control" name="phone" >
                                 </div>
 
                                 <div class="form-group">
@@ -95,7 +96,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <div class="text-center">
-                                                <input type="file"  class="btn btn-lg btn-wire btn-26-style" name="image_path" />
+                                                <a href="index.jsp" class="btn btn-lg btn-wire btn-26-style">Upload a photo</a>
                                             </div>
                                         </div>
                                         <div class="col no-margin">
@@ -142,18 +143,17 @@
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
 
-
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div>
-                                        <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
-                                            Submit
-                                        </button>
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                </div>
+                                <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                                    Submit
+                                </button>
                             </form>
                         </div>
-
-
                         <div class="col">
                             <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-business-analysis-meeting-XY2QMK9AWJ%281%29.png" alt="reshot illustration-students-at-the-library-3ESJPLQFHR" />
                         </div>
@@ -182,5 +182,3 @@
 
 </body>
 </html>
-
-

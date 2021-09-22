@@ -1,19 +1,20 @@
+
 package net.enLearn.controller;
 
 import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Advertiser;
 import net.enLearn.service.AdvertisementService;
 import net.enLearn.service.AdvertiserService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Created by thilini on 21/07/2021
+ * Created by Kalana on 21/07/2021
  */
 
 
@@ -21,8 +22,47 @@ import java.util.List;
 @RequestMapping("/advertisers")
 public class AdvertiserController {
 
-    @Autowired
+
+   /* @Autowired
     private Logger logger;
+
+
+    @Autowired
+    private AdvertisementService advertisementService;
+
+    @GetMapping("")
+    public String showAdvertiserProfilePage() {
+
+        return "profile-page-advertiser";
+    }
+
+    @GetMapping("/register")
+    public String showAdvertiserRegisterPage(Model model) {
+        Advertiser advertiser = new Advertiser();
+        model.addAttribute("advertiser", advertiser);
+
+        Advertisement advertisement = new Advertisement();
+        model.addAttribute("advertisement", advertisement);
+
+        return "register-advertiser";
+    }
+
+    /*@PostMapping("/save")
+    public String saveAdvertiserRegisterPage(@ModelAttribute("advertiser") Advertiser advertiser) {
+        advertiserService.saveOrUpdate(advertiser);
+
+        return "redirect:/advertisers";
+    }
+    @PostMapping("/save")
+    public String saveAdvertiserRegisterPage(@ModelAttribute("advertiser") Advertisement advertisement) {
+        advertisementService.saveOrUpdate(advertisement);
+        return "redirect:/advertisers";
+
+    }*/
+
+
+    //@Autowired
+    // private AdvertisementService advertisement;
 
     @Autowired
     private AdvertiserService advertiserService;
@@ -30,122 +70,70 @@ public class AdvertiserController {
     @Autowired
     private AdvertisementService advertisementService;
 
-    //show profile to advertiser
-    @GetMapping("")
-    public String showAdvertiserProfilePage(Model model) {
-        if (advertiserService.getCurrentAdvertiserId() != -1) {
-            Advertiser advertiser = advertiserService.getCurrentAdvertiserById();
-            model.addAttribute("advertiser", advertiser);
-            List<Advertisement> list = advertisementService.getAdvertisementListByAdvertiserId();
-
-
-
-//            for (int i=0; i<list.size(); i++){
-//                String d = list.get(i).getDate_time(); //YYYY.MM.DD hh.mm.ss
-//                Date date = new Date();
-//
-//
-//            }
-
-
-            model.addAttribute("advertisements", list);
-            return "profile-page-advertiser";
-
-        }else {
-            return "redirect:/advertisers/register";
-        }
-    }
-    //    @PostMapping("")
-//    public String showAdvertiserProfilePage(Model model) {
-//        Advertiser advertiser = advertiserService.getCurrentAdvertiserById();
-//        model.addAttribute("advertiser", advertiser);
-//        List<Advertisement> list = advertisementService.getAdvertisementListByAdvertiserId();
-//        model.addAttribute("advertisements", list);
-//
-//
-//        return "profile-page-advertiser";
-//    }
-    //show advertiser to register page
-    @GetMapping("/register")
+    @RequestMapping("/register")
     public String showAdvertiserRegisterPage() {
+
+
+        // Advertisement advertisement = new Advertisement();
+        //model.addAttribute("advertisement", advertisement);
+
         return "register-advertiser";
     }
 
-
-
-    //add advertisement
-    @PostMapping("/add")
-    public String addAdvertisement(Model model){
-        model.addAttribute("edit",false);
-        return "add-advertisment";
+    @GetMapping("/upload")
+    public String showAdvertisementUploadPage() {
+        return "upload-advertisement";
     }
 
-    //advertisement update function
-    @GetMapping("/update")
-    public String updateAdvertisement(Model model){
-        List<Advertisement> advertisement =
-                advertisementService.getAdvertisementListByAdvertiserId();
+    @GetMapping("")
+    public String showAdvertiserProfilePage() {
 
-        model.addAttribute("advertisement",advertisement);
-        model.addAttribute("edit",true);
-
-        return "add-advertisment";
+        return "profile-page-advertiser";
     }
 
-    //advertisement delete function
-    @GetMapping("/delete")
-    public String deleteAdvertisement(@RequestParam("advertisementId") int id){
-        Advertisement advertisement =
-                advertisementService.getAdvertisementById(id);
-        advertisementService.delete(advertisement);
 
-        return "redirect:/advertisers";
+    @RequestMapping(path = "/custom-action-url", method = RequestMethod.POST)
+    public String processAdvertiserForm(@RequestParam("name") String name,
+                                        @RequestParam("email") String email,
+                                        @RequestParam("phone") int phone,
+                                        @RequestParam("password") String password,
+                                        @RequestParam("image") MultipartFile image) {
+
+        // @RequestParam("title") String title,
+        // @RequestParam("package") String Package,
+        //@RequestParam("description") String description,
+        //@RequestParam("image") MultipartFile image)
+
+
+        //User userObj;
+        //Advertisement advertisementObj;
+
+
+        //userObj = new User();
+        ///advertiserObj = new Advertiser(name);
+        //  advertisementObj = new Advertisement(title,image,description,Package);
+        //advertisement.saveOrUpdate(advertisementObj);
+
+        Advertiser advertiserObj;
+
+        advertiserObj = new Advertiser(name, email, phone, password, image);
+        advertiserService.saveOrUpdate(advertiserObj);
+        return "register-advertiser";
     }
 
-    //advertisement details save
-    @PostMapping("/save")
-    public String saveAdvertisement
-    (@ModelAttribute("advertisement") Advertisement advertisement){
-        advertisement.advertiser = advertiserService.getCurrentAdvertiserById();
+    @RequestMapping(path = "/upload", method = RequestMethod.POST)
+    public String processAdvertisementForm(@RequestParam("title") String title,
+                                           @RequestParam("Package") String Package,
+                                           @RequestParam("description") String description,
+                                           @RequestParam("image") MultipartFile image) {
 
-        advertisementService.saveOrUpdate(advertisement);
-        return "redirect:/advertisers";
+
+        Advertisement advertisementObj;
+        advertisementObj = new Advertisement(title, Package, description, image);
+        advertisementService.saveOrUpdate(advertisementObj);
+
+
+        return "upload-advertisement";
     }
-
-    //advertiser details save
-    @PostMapping("/save-details")
-    public String saveAdvertiser
-    (@ModelAttribute("advertiser") Advertiser advertiser){
-        advertiserService.saveOrUpdate(advertiser);
-
-        return "redirect:/advertisers";
-    }
-
-//    @GetMapping("/save-profile")
-//    public String saveAdvertiserProfile(){
-//
-//
-//
-//        return "add-advertisement";
-//    }
-
-
-
-
-    /*
-    package net.enLearn.service;
-
-import net.enLearn.entity.Advertiser;
-
-
-public interface AdvertiserService {
-    void saveOrUpdate(Advertiser advertiser);
-    Advertiser getAdvertiserById(int id);
-}
-
-     */
-
-
-
 
 }

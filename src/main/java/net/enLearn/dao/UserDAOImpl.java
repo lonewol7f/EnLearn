@@ -1,6 +1,10 @@
 package net.enLearn.dao;
 
-import net.enLearn.entity.User;
+import net.enLearn.entity.*;
+import net.enLearn.service.AdvertisementService;
+import net.enLearn.service.AdvertiserService;
+import net.enLearn.service.StudentService;
+import net.enLearn.service.TeacherService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -22,6 +26,15 @@ public class UserDAOImpl implements UserDAO{
 
     @Autowired
     private SessionFactory sessionFactory;
+
+    @Autowired
+    private TeacherService teacherService;
+
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    private AdvertiserService advertiserService;
 
     private EntityManager entityManager;
 
@@ -67,14 +80,33 @@ public class UserDAOImpl implements UserDAO{
     }
 
 
-
-
-
     //==================================================================
     @Override
     public void saveOrUpdate(User student) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(student);
+    }
+
+    @Override
+    public void delete(User user) {
+        Session session = sessionFactory.getCurrentSession();
+
+        try{
+            Student student = session.get(Student.class, user.getId());
+            session.remove(student);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try{
+            Teacher student = session.get(Teacher.class, user.getId());
+            session.remove(student);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        User user2= session.get(User.class, user.getId());
+        session.remove(user2);
+
     }
 
    /* @Override
@@ -84,6 +116,90 @@ public class UserDAOImpl implements UserDAO{
         return User;
     }*/
 
+    @Override
+    public List<Course> getCoursesByUserID(int ID){
+        Session session = sessionFactory.getCurrentSession();
+        Query<Course> course = session.createQuery("from Course where teacher_id = "+ID,
+                Course.class);
+        List<Course> courses = course.getResultList();
+        return courses;
+
+
+    }
+
+    @Override
+    public int Checkuse(String email, String password){
+
+        Session session = sessionFactory.getCurrentSession();
+        User user1;
+        try{
+            Query<User> user = session.createQuery("from User where email = '"+email+"'",
+                    User.class);
+            List<User> users = user.getResultList();
+            if(users.size()>=1){
+                user1=users.get(0);
+            }
+            else{
+                return -1;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -3;
+        }
+
+        if(user1.getPassword().equals(password)){
+            return user1.getId();
+        }
+        else {
+            return -2;
+        }
+
+
+    }
+
+    @Override
+    public int Chectype(int id){
+
+        try{
+
+            Teacher teacher = teacherService.getTeacherById(id);
+            if(teacher != null){
+                return 1;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try{
+
+            Student student = studentService.getStudentById(id);
+            if(student != null){
+                return 2;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try{
+
+            Advertiser advertiser = advertiserService.getAdvertiserById(id);
+            if(advertiser != null){
+                return 3;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return -1;
+
+
+
+
+    }
 
 }
 

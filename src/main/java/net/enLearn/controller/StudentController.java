@@ -1,6 +1,8 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Student;
+import net.enLearn.entity.Teacher;
 import net.enLearn.entity.User;
 import net.enLearn.service.StudentService;
 import net.enLearn.service.UserService;
@@ -32,8 +34,12 @@ public class StudentController {
     @Autowired
     private UserService Uservice;
 
+
     @GetMapping("")
-    public String showStudentProfilePage() {
+    public String showStudentProfilePage(Model model) {
+
+        User userdata = Uservice.getUserById(Uservice.getCurrentsesion());
+        model.addAttribute("user", userdata);
         return "profile-page-student";
     }
 
@@ -50,26 +56,51 @@ public class StudentController {
         student.addAttribute("student", student);
         return "register-student";
     }
+    @GetMapping("/update")
+    public String updateStudent(@RequestParam("advertisementId") int id, Model model){
+//        Advertisement advertisement = advertisementService.getAdvertisementId(id);
+//        model.addAttribute("advertisementId", advertisement.getId());
+//        model.addAttribute("advertisementDes", advertisement.getDescription());
+//        model.addAttribute("advertisementPr", advertisement.getPrice_range());
+//        model.addAttribute("advertisementTitle", advertisement.getTitle());
+
+        return "upload-advertisement";
+    }
+
+
+    @GetMapping("/delete")
+    public String deleteAdvertisement(){
+        int id = Uservice.getCurrentsesion();
+        Uservice.delete(Uservice.getUserById(id));
+        Uservice.setCurrentsesion(-1);
+        return "redirect:/login";
+    }
 
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
-    public String processDiscountForm(@RequestParam("fname7") String first_name,
-                                      @RequestParam("lname7") String last_name,
+    public String processDiscountForm(@RequestParam("firstname") String first_name,
+                                      @RequestParam("lastname") String last_name,
                                       @RequestParam("email") String email,
                                       @RequestParam("password") String password,
                                       @RequestParam("Address") String Address,
-                                      @RequestParam("DOB") int DOB,
+                                      @RequestParam("DOB") String DOB,
                                       @RequestParam("district") String district,
                                       @RequestParam("image") MultipartFile image,
-                                      @RequestParam("grade") int grade)
+                                      @RequestParam("grade") int grade,
+                                      @RequestParam("school") String school,
+                                      @RequestParam("gender") String gender
+                                      )
                                       {
 
-        User studentObj;
-        studentObj = new User(first_name,last_name,email,password,DOB,grade,district,Address);
+        Student studentObj;
+    String image_path = image.toString();
 
-        Uservice.saveOrUpdate(studentObj);
-        //disService.saveDiscount(discountObj);
-        return "register-student";
+        studentObj = new Student(first_name,email,last_name,password,DOB,grade,
+                district,Address,image_path, school, gender);
+
+        studentService.saveOrUpdate(studentObj);
+        Uservice.setCurrentsesion(studentObj.getId());
+        return "redirect:/students";
     }
 
 }

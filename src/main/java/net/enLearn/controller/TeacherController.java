@@ -2,18 +2,14 @@
 
 package net.enLearn.controller;
 
-import net.enLearn.entity.Course;
-import net.enLearn.entity.Event;
-import net.enLearn.entity.FreeQuiz;
-import net.enLearn.entity.SpecialQuiz;
-import net.enLearn.service.CourseService;
-import net.enLearn.service.EventService;
-import net.enLearn.service.FreeQuizService;
+import net.enLearn.entity.*;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -36,10 +32,23 @@ public class TeacherController {
     @Autowired
     private EventService eventService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private TeacherService teacherService;
+
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
+
         List<Course> courses = courseService.getCourseListByTeacherId();
+        Teacher teacherdata = teacherService.getTeacherById(userService.getCurrentsesion());
+        User userdata = userService.getUserById(userService.getCurrentsesion());
+
+
         model.addAttribute("courses", courses);
+        model.addAttribute("teacher", teacherdata);
+        model.addAttribute("user", userdata);
         return "profile-page-teacher";
     }
 
@@ -94,11 +103,43 @@ public class TeacherController {
         return "add-special-quiz";
     }
 
+    @GetMapping("/delete")
+    public String deleteAdvertisement(){
+        int id = userService.getCurrentsesion();
+        userService.delete(userService.getUserById(id));
+        userService.setCurrentsesion(-1);
+        return "redirect:/login";
+    }
+
     @GetMapping("/Teacher-Income_report")
     public String showTeacherIncomeReportPage() {
         return "Teacher-Income-Report";
     }
 
 
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    public String processDiscountForm(@RequestParam("firstname") String first_name,
+                                      @RequestParam("lastname") String last_name,
+                                      @RequestParam("email") String email,
+                                      @RequestParam("password") String password,
+                                      @RequestParam("Address") String Address,
+                                      @RequestParam("DOB") String DOB,
+                                      @RequestParam("district") String district,
+                                      @RequestParam("pf_image") MultipartFile image,
+                                      @RequestParam("licence") MultipartFile licence_im,
+                                      @RequestParam("gender") String gender){
+
+        String image_path = image.toString();
+        String licence = licence_im.toString();
+
+        Teacher teacher;
+        teacher = new Teacher(first_name,email,last_name,password,DOB,0,
+                district,Address,image_path, licence,gender);
+
+        teacherService.saveOrUpdate(teacher);
+        userService.setCurrentsesion(teacher.getId());
+
+        return "redirect:/teachers";
+    }
 }
 
