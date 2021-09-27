@@ -59,12 +59,6 @@
                             <h2 class="mg-md no-margin">
                                 ${advertiser.cname}
                             </h2>
-<%--                            <div class="divider-h">--%>
-<%--                                <span class="divider"></span>--%>
-<%--                            </div>--%>
-<%--                            <div class="divider-h">--%>
-<%--                                <span class="divider"></span>--%>
-<%--                            </div>--%>
 
 
 
@@ -115,15 +109,24 @@
                                         for (int i=0; i<ad_list.size(); i++){
                                             Advertisement advertisement = ad_list.get(i);
                                     %>
-                                    <%--                            <div class="row ad-row">--%>
-                                    <div class="col-lg-4">
-                                        <img src="../../resources/img/lazyload-ph.png"
-                                             data-src="../../resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg"
-                                             class="img-fluid mx-auto d-block lazyload"
-                                             alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e" />
-                                    </div>
-                                    <div class="col">
-                                        <div>
+
+
+                                    <%--Advertesment list for loop start--%>
+                                    <div class="border-dark">
+
+                                    <div class="row" style="margin: 5%;padding: 3%; border: 4px solid #1b1d1f;">
+                                        <div class="col" >
+
+                                            <img src="<% out.println(advertisement.getImage());%>"
+                                                 data-src="<% out.println(advertisement.getImage());%>"
+                                                 class="img-fluid mx-auto d-block lazyload"
+                                                 alt="aae4217f f6b0-4c3e-ae1f-f141fff1f68e"
+                                                 height="250px" width="250px"
+
+                                            />
+                                        </div>
+
+                                        <div class="col">
                                             <h4 class="mg-md">
                                                 <% out.println(advertisement.getTitle());%>
 
@@ -134,15 +137,10 @@
                                                         <% out.println(advertisement.getRemainingTime());%>
                                                     </h6>
                                                 </div>
-                                                <div class="col">
-                                                    <h6 class="mg-md">
-                                                        <%--                                                Time it showed--%>
-                                                    </h6>
-                                                </div>
+
 
 
                                             </div>
-
                                             <div class="row">
                                                 <div class="col">
                                                     <p class="mg-md">
@@ -150,7 +148,10 @@
                                                     </p>
                                                 </div>
 
-                                                <br><br>
+                                            </div>
+                                            <div class="row">
+
+                                                <br>
                                                 <div class="text-center">
                                                     <div class="row">
                                                         <div class="col">
@@ -160,7 +161,7 @@
                                                                             "<input type=\"hidden\" id=\"advertisementId\" name=\"advertisementId\" value=\""+advertisement.getId()+"\">";
                                                                     out.println(inp);
                                                                 %>
-                                                                <button class="btn btn-success" type="submit" style="width: 30%;margin-left: 30%;">
+                                                                <button class="btn btn-success" type="submit">
                                                                     Update
                                                                 </button>
                                                             </form>
@@ -173,7 +174,7 @@
                                                                     out.println(inp);
                                                                 %>
 
-                                                                <button class="btn btn-danger" onclick="if (!(confirm('Do you want to delete this advertisement?'))) return false" type="submit" style="width: 30%;margin-left: 30%;">
+                                                                <button class="btn btn-danger" onclick="if (!(confirm('Do you want to delete this advertisement?'))) return false" type="submit">
                                                                     Delete
                                                                 </button>
                                                             </form>
@@ -184,18 +185,16 @@
                                                 </div>
 
 
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="divider-h">
-                                                            <span class="divider"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                        <%--                                </div>--%>
+
+
 
                                     </div>
+
+
+                                    </div>
+                                    <%--Advertesment list for loop end--%>
                                     <%}
                                     }%>
 
@@ -206,12 +205,30 @@
 
                     <%--Advertiser prof--%>
                     <div class="col-lg-8" style="width: 25%; margin-right: auto">
-                        <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/6ebaea84-c314-4dec-80fb-b4cac9fb3f63.jpg" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" />
+                        <img src="${advertiser.image}" data-src="${advertiser.image}" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" data-max-width="250px"/>
                         <br><br>
-                        <p><u><b>${advertiser.cname}</b></u></p>
-                        <br>
-                        <p>${advertiser.email}</p>
-                        <p>${advertiser.contact_no}</p>
+                        <style>
+                            table, th, td {
+                                border: #9fcdff 1px solid; padding: 3%;
+
+                            }
+                        </style>
+
+                        <table style="width: 100%">
+                            <tr>
+                               <th>Name</th>
+                                <td>${advertiser.cname}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>${advertiser.contact_no}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>${advertiser.email}</td>
+                            </tr>
+
+                        </table>
 
 
                         <% Advertiser advertiser = (Advertiser) request.getAttribute("advertiser");

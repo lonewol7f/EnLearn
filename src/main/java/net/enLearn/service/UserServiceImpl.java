@@ -1,5 +1,6 @@
 package net.enLearn.service;
 
+import net.enLearn.dao.CourseDAO;
 import net.enLearn.dao.UserDAO;
 import net.enLearn.entity.Course;
 import net.enLearn.entity.User;
@@ -20,6 +21,10 @@ public class UserServiceImpl implements UserService {
     private UserDAO userDAO;
 
     public  int currentsesion=-1;
+
+    @Autowired
+    private CourseDAO courseDAO;
+
 
     @Override
     public int getCurrentsesion() {
@@ -49,11 +54,6 @@ public class UserServiceImpl implements UserService {
         userDAO.saveOrUpdate(user);
     }
 
-    @Override
-    @Transactional
-    public void delete(User user) {
-        userDAO.delete(user);
-    }
 
     @Override
     @Transactional
@@ -63,8 +63,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public int Chectype(int id) {
-        return userDAO.Chectype(id);
+    public int Checktype(int id) {
+        return userDAO.Check_type(id);
     }
 
     @Override
@@ -73,6 +73,46 @@ public class UserServiceImpl implements UserService {
         return userDAO.getCoursesByUserID(user.getId());
     }
 
+    @Override
+    @Transactional
+    public List<User> getUserByEmail(String email) {
+        return userDAO.getUserByEmail(email);
+    }
+
+    @Override
+    public boolean newEmail(String email) {
+        return userDAO.newEmail(email);
+    }
+
+    @Override
+    public void addErrors(String error_message){
+        errors.add(error_message);
+    }
+
+    @Override
+    public boolean hasErrors(){
+        return errors.size()>0;
+    }
+
+    @Override
+    public void clearErrors(){
+        errors.clear();
+    }
+
+    @Override
+    public String getErrors(){
+        StringBuilder r = new StringBuilder();
+        for (String error : errors) {
+            r.append(error);
+        }
+        return r.toString();
+    }
+
+    @Override
+    @Transactional
+    public List<Course> getCoursesByUserId_TEMP(int userId) {
+        return courseDAO.getCourseByUserId(userId);
+    }
 
 
 }

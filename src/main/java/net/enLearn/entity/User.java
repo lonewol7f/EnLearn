@@ -92,10 +92,6 @@ public class User {
         this.gender = gender;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public String getLastname() {
         return lastname;
     }
@@ -150,6 +146,10 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setId(int id) {

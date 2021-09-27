@@ -4,6 +4,7 @@
   Date: 2021-07-20
   Time: 3:50 PM
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?8726">
     <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/toast.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>login</title>
@@ -32,7 +34,26 @@
     <!-- Analytics END -->
 
 </head>
-<body>
+<%
+    if (request.getAttribute("errors") !=""){
+        out.println("<body onload=\"showToast()\">");
+    }else {
+        out.println("<body>");
+    }
+%>
+
+<script>
+    function showToast() {
+
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+
+</script>
+<div id="snackbar">${errors}</div>
+
 
 <!-- Preloader -->
 <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
@@ -59,7 +80,7 @@
                             <div class="carousel-item active">
                                 <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/reshot-illustration-system-user-login-GTQRL8HFXU.png" />
                                 <div class="carousel-caption login-register-form-box">
-                                    <form id="login-form" data-form-type="blocs-form" class="login-form-placement form-style" action="${pageContext.request.contextPath}/login-action" method="POST">
+                                    <form id="login-form" data-form-type="blocs-form" class="login-form-placement form-style" action="/login" method="POST">
                                         <h3 class="mg-md text-lg-left">
                                             Login
                                         </h3>
@@ -73,14 +94,12 @@
                                             <label>
                                                 Password
                                             </label>
-                                            <input id="email" class="form-control" type="password" required name="password" />
+                                            <input id="password" class="form-control" type="password" required name="password" />
                                         </div>
                                         <div class="divider-h no-margin">
                                             <span class="divider"></span>
                                         </div>
-                                        <input class="bloc-button btn btn-d btn-lg btn-block" value=""login type="submit">
-                                            Login
-                                        </input>
+                                        <input class="bloc-button btn btn-d btn-lg btn-block" style="background-color: #0d6efd" value="Login" type="submit">
                                     </form>
                                 </div>
                             </div>

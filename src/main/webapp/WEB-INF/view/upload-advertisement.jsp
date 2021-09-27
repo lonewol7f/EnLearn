@@ -140,16 +140,46 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
+                                            <label>
                                                 Upload Banner
-                                            </h5>
+                                            </label>
+                                            <br>
                                         </div>
                                         <div class="col">
                                             <div class="form-group mb-3">
                                                 <div class="row">
                                                     <div class="col-lg-3">
 
-                                                        <input type="file" name="image" id="image"  />
+                                                        <input type="file" name="image" id="file" accept="image/png, image/jpeg" onchange="loadFile(event)" required  />
+                                                        <br>
+                                                        <p><img id="output" src="${advertisementImage}" alt="No picture selected" width="150" height="150" /></p>
+                                                        <p id="size"></p>
+                                                        <script>
+                                                            var loadFile = function(event) {
+                                                                var image = document.getElementById('output');
+                                                                image.src = URL.createObjectURL(event.target.files[0]);
+                                                                const fi = document.getElementById('file');
+                                                                // Check if any file is selected.
+                                                                if (fi.files.length > 0) {
+                                                                    for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                                                                        const fsize = fi.files.item(i).size;
+                                                                        const file = Math.round((fsize / 1024));
+                                                                        // The size of the file.
+                                                                        if (file >= 10240) {
+                                                                            alert(
+                                                                                "File too Big, please select a file less than 10mb");
+                                                                        } else if (file < 50) {
+                                                                            alert(
+                                                                                "File too small, please select a file greater than 50kb");
+                                                                        } else {
+                                                                            document.getElementById('size').innerHTML = '<b>'
+                                                                                + file + '</b> KB';
+                                                                        }
+                                                                    }
+                                                                }
+                                                            };
+                                                        </script>
                                                     </div>
                                                 </div>
                                             </div>

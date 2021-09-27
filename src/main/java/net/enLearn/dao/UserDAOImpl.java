@@ -1,10 +1,10 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.*;
-import net.enLearn.service.AdvertisementService;
 import net.enLearn.service.AdvertiserService;
 import net.enLearn.service.StudentService;
 import net.enLearn.service.TeacherService;
+import net.enLearn.service.UserService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -15,6 +15,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,6 +28,8 @@ public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
 
+    private EntityManager entityManager;
+
     @Autowired
     private TeacherService teacherService;
 
@@ -36,7 +39,9 @@ public class UserDAOImpl implements UserDAO{
     @Autowired
     private AdvertiserService advertiserService;
 
-    private EntityManager entityManager;
+    @Autowired
+    private UserService userService;
+
 
     @Override
     public User getUserById(int id) {
@@ -87,27 +92,7 @@ public class UserDAOImpl implements UserDAO{
         session.saveOrUpdate(student);
     }
 
-    @Override
-    public void delete(User user) {
-        Session session = sessionFactory.getCurrentSession();
 
-        try{
-            Student student = session.get(Student.class, user.getId());
-            session.remove(student);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try{
-            Teacher student = session.get(Teacher.class, user.getId());
-            session.remove(student);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        User user2= session.get(User.class, user.getId());
-        session.remove(user2);
-
-    }
 
    /* @Override
     public User getStudentById(int id) {
@@ -121,6 +106,8 @@ public class UserDAOImpl implements UserDAO{
         Session session = sessionFactory.getCurrentSession();
         Query<Course> course = session.createQuery("from Course where teacher_id = "+ID,
                 Course.class);
+
+
         List<Course> courses = course.getResultList();
         return courses;
 
@@ -158,8 +145,10 @@ public class UserDAOImpl implements UserDAO{
 
     }
 
+
+
     @Override
-    public int Chectype(int id){
+    public int Check_type(int id){
 
         try{
 
@@ -200,6 +189,26 @@ public class UserDAOImpl implements UserDAO{
 
 
     }
+
+    @Override
+    public List<User> getUserByEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<User> user = session.createQuery("from User where email = '"+email+"'",
+                User.class);
+        List<User> users = user.getResultList();
+        if (users==null){
+            users = new ArrayList<>();
+        }
+
+        return users;
+    }
+
+    @Override
+    public boolean newEmail(String email) {
+        List<User> users = userService.getUserByEmail(email);
+        return users.size() == 0;
+    }
+
 
 }
 
