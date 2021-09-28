@@ -42,6 +42,16 @@ public class Course {
 
     public Course(){}
 
+    public Course(int id, String title, String type, String description, int price, MultipartFile image, Teacher teacher) {
+        this.id = id;
+        this.title = title;
+        this.type = type;
+        this.description = description;
+        this.price = price;
+        this.image = image;
+        this.teacher = teacher;
+    }
+
     public int getId() {
         return id;
     }

@@ -34,6 +34,8 @@ public class Teacher extends User{
     @Column(name = "licence")
     private String licence;
 
+    @Column(name = "type")
+    private String subject;
 
 
     public Teacher() {
@@ -50,10 +52,11 @@ public class Teacher extends User{
 
     public Teacher(String firstName, String email, String lastname,
                    String password, String DOB, int grade, String district,
-                   String address, String image_path, String licence, String gender) {
+                   String address, String image_path, String licence, String gender, String subject) {
         super(firstName, email, lastname, password, DOB, grade,
                 district, address, image_path,gender);
         this.licence = licence;
+        this.subject = subject;
     }
 
     public List<Notification> getNotifications() {
@@ -88,5 +91,11 @@ public class Teacher extends User{
         this.courseList = courseList;
     }
 
+    public String getSubject() {
+        return subject;
+    }
 
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 }

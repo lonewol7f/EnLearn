@@ -1,4 +1,4 @@
-<%--
+<%@ page import="net.enLearn.entity.Student" %><%--
   Created by IntelliJ IDEA.
   User: flashminat0
   Date: 2021-07-20
@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?5388">
     <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/toast.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>register-student</title>
@@ -32,7 +33,25 @@
     <!-- Analytics END -->
 
 </head>
-<body>
+<%
+    if (request.getAttribute("errors") !=""){
+        out.println("<body onload=\"showToast()\">");
+    }else {
+        out.println("<body>");
+    }
+%>
+
+<script>
+    function showToast() {
+
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+
+</script>
+<div id="snackbar">${errors}</div>
 
 <!-- Preloader -->
 <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
@@ -52,42 +71,43 @@
             <div class="row">
                 <div class="col">
                     <h3 class="mg-md">
-                        Student Registration - School
+                        ${title}
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
                             <form enctype="multipart/form-data" id="form_19919" data-form-type="blocs-form" action="/students/register" enctype="multipart/form-data"  method="POST">
                                 <div class="form-group">
                                     <label>
-                                        Frist Name
+                                        First Name
                                     </label>
-                                    <input type="fristname" id="firstname" class="form-control" required name="firstname" />
+                                    <input type="hidden" id="id" name="id" value="${id}">
+                                    <input type="text" id="firstname" class="form-control" value="${studentFirst}" required name="firstname" />
                                 </div>
 
                                 <div class="form-group">
                                     <label>
                                        Last Name
                                     </label>
-                                    <input type="text" id="lastname" class="form-control" required name="lastname" />
+                                    <input type="text" id="lastname" value="${studentLast}" class="form-control" required name="lastname" />
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                       Distric
+                                       District
                                     </label>
-                                    <input type="text" id="district" class="form-control" required name="district" />
+                                    <input type="text" id="district" class="form-control" value="${studentDistrict}" required name="district" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                        Address
                                     </label>
-                                    <input type="text" id="Address" class="form-control" required name="Address" />
+                                    <input type="text" id="Address" class="form-control" value="${studentAddress}" required name="Address" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                        Gender
                                     </label>
-                                    <select type="text" required class="form-control" id="gender" name="gender">
-                                        <option>
+                                    <select type="text" value="${studentGen}" required class="form-control" id="gender" name="gender">
+                                        <option disabled>
                                             Select Gender
                                         </option>
                                         <option value="2">
@@ -100,15 +120,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                       Date Of Brithday
+                                       Date Of Birth
                                     </label>
-                                    <input type="date" id="DOB" class="form-control" required name="DOB" />
+                                    <input type="date" id="DOB" value="${studentDOB}" class="form-control" required name="DOB" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Email
                                     </label>
-                                    <input id="email" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
+                                    <input id="email" class="form-control" value="${studentEmail}" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -116,14 +136,7 @@
                                     </label>
                                     <input type="password" required class="form-control" id="password" name="password" />
                                 </div>
-                     
 
-
-                                <div class="form-group">
-                                    <label>
-                                        Image
-                                    </label>
-                                </div>
 
                             <div class="form-group">
                                     <div class="form-group">
@@ -135,7 +148,7 @@
                                                 <div class="text-center">
                                                     <input type="file" id="image"  class="btn btn-lg btn-wire btn-26-style" name="image" accept="image/png, image/jpeg" onchange="loadFile(event)" required/>
                                                     <br>
-                                                    <p><img id="output" alt="pfimage" width="300" height="300" /></p>
+                                                    <p><img src="${studentImg}" id="output" alt="No picture selected" width="150" height="150" /></p>
                                                     <script>
                                                         var loadFile = function(event) {
                                                             var image = document.getElementById('output');

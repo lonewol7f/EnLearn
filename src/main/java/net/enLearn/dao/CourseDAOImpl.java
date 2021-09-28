@@ -1,12 +1,14 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.Course;
+import net.enLearn.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -44,6 +46,47 @@ public class CourseDAOImpl implements CourseDAO{
         Session session = sessionFactory.getCurrentSession();
         Course course = session.get(Course.class, id);
         return course;
+    }
+
+    @Override
+    public List<Course> getCourseByUserId(int userID){
+        Session session = sessionFactory.getCurrentSession();
+        //TODO This method should be created by "Course" creator
+//        Query<Course> courseQuery = session.createQuery("from Course where user_id = "+userID, Course.class);
+//        List<Course> courses = courseQuery.getResultList();
+
+        //Below will create random courses
+        List<Course> courses = new ArrayList<>();
+
+        //Random amount of courses
+        int num = (int) ((Math.random())*3)*4;
+
+        for (int i=0; i<num; i++){
+            courses.add(getRandomCourse());
+        }
+
+
+        return courses;
+
+    }
+
+    //Temporary method
+    public static Course getRandomCourse(){
+
+        int i = (int) (Math.random()*100);
+
+        Teacher teacher = new Teacher();
+        teacher.setFirstName("Teacher "+(i+1));
+
+        return new Course(i,
+                "Title "+(i+1),
+                "Type "+(i+1),
+                "Des "+(i+1),
+                100*(i+1),
+                null,
+                teacher
+        );
+
     }
 
     @Override

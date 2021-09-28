@@ -1,8 +1,6 @@
 package net.enLearn.controller;
 
-import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Student;
-import net.enLearn.entity.Teacher;
 import net.enLearn.entity.User;
 import net.enLearn.service.StudentService;
 import net.enLearn.service.UserService;
@@ -15,6 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.util.Base64;
+import java.util.Objects;
+
+import static net.enLearn.controller.AdvertiserController.MAX_IMAGE_SIZE;
 
 /**
  * Created by Kalana on 20/07/2021
@@ -32,48 +36,40 @@ public class StudentController {
 
 
     @Autowired
-    private UserService Uservice;
+    private UserService userService;
 
 
     @GetMapping("")
     public String showStudentProfilePage(Model model) {
+        int userId = userService.getCurrentsesion();
+        model.addAttribute("user",
+                studentService.getStudentById(userId));
 
-        User userdata = Uservice.getUserById(Uservice.getCurrentsesion());
-        model.addAttribute("user", userdata);
+        model.addAttribute("courses",
+                userService.getCoursesByUserId_TEMP(userId));
+
         return "profile-page-student";
     }
 
 
-    /*@GetMapping("/register")
-    public String showStudentRegisterPage() {
-
-        return "register-student";
-    }*/
 
     @GetMapping("/register")
-    public String showStudentRegistrationPage(Model student){
-        Student student1 = new Student();
-        student.addAttribute("student", student);
+    public String showStudentRegistrationPage(Model model){
+        model.addAttribute("studentFirst", "");
+        model.addAttribute("studentLast", "");
+        model.addAttribute("studentEmail", "");
+        model.addAttribute("studentDistrict", "");
+        model.addAttribute("studentAddress", "");
+        model.addAttribute("studentDOB", "");
+        model.addAttribute("studentGen", "");
+        model.addAttribute("studentImg", "");
+        model.addAttribute("errors", userService.getErrors());
+        userService.clearErrors();
+
+        model.addAttribute("id", -1);
+        model.addAttribute("title", "Student Registration");
+
         return "register-student";
-    }
-    @GetMapping("/update")
-    public String updateStudent(@RequestParam("advertisementId") int id, Model model){
-//        Advertisement advertisement = advertisementService.getAdvertisementId(id);
-//        model.addAttribute("advertisementId", advertisement.getId());
-//        model.addAttribute("advertisementDes", advertisement.getDescription());
-//        model.addAttribute("advertisementPr", advertisement.getPrice_range());
-//        model.addAttribute("advertisementTitle", advertisement.getTitle());
-
-        return "upload-advertisement";
-    }
-
-
-    @GetMapping("/delete")
-    public String deleteAdvertisement(){
-        int id = Uservice.getCurrentsesion();
-        Uservice.delete(Uservice.getUserById(id));
-        Uservice.setCurrentsesion(-1);
-        return "redirect:/login";
     }
 
 
@@ -85,22 +81,92 @@ public class StudentController {
                                       @RequestParam("Address") String Address,
                                       @RequestParam("DOB") String DOB,
                                       @RequestParam("district") String district,
-                                      @RequestParam("image") MultipartFile image,
+                                      @RequestParam("image") MultipartFile photo,
                                       @RequestParam("grade") int grade,
                                       @RequestParam("school") String school,
-                                      @RequestParam("gender") String gender
+                                      @RequestParam("gender") String gender,
+                                      @RequestParam("id") int id
+
                                       )
                                       {
 
-        Student studentObj;
-    String image_path = image.toString();
+          String image = null;
+          try {
+              image = "data:image/jpg;base64,"+
+                      Base64.getEncoder().encodeToString(photo.getBytes());
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
 
-        studentObj = new Student(first_name,email,last_name,password,DOB,grade,
-                district,Address,image_path, school, gender);
+          if (photo.getSize()>MAX_IMAGE_SIZE){
+              userService.addErrors("Image too large!");
+              if (id==-1) return "redirect:/students/register";
+              return "redirect:/students/update-profile";
+          }
 
-        studentService.saveOrUpdate(studentObj);
-        Uservice.setCurrentsesion(studentObj.getId());
+          if (!userService.newEmail(email)){
+              if (id==-1) {
+                  userService.addErrors("Email already exist!");
+                  return "redirect:/students/register";
+              }else {
+                  User user = userService.getUserById(id);
+                  if (!Objects.equals(user.getEmail(), email)) {
+                      userService.addErrors("Email already exist!");
+                      return "redirect:/students/update";
+                  }
+              }
+
+          }
+
+
+
+
+              Student student = new Student(first_name,email,
+                  last_name,password,DOB,grade,
+                district,Address,image, school, gender);
+
+          if (id!=-1){
+              student.setId(id);
+          }
+
+        studentService.saveOrUpdate(student);
+        userService.setCurrentsesion(student.getId());
         return "redirect:/students";
     }
+
+
+
+    @GetMapping("/update")
+    public String updateStudent(@RequestParam("studentId") int id, Model model){
+        Student student = studentService.getStudentById(id);
+
+        model.addAttribute("studentFirst", student.getFirstName());
+        model.addAttribute("studentLast", student.getLastname());
+        model.addAttribute("studentEmail", student.getEmail());
+        model.addAttribute("studentDistrict", student.getDistrict());
+        model.addAttribute("studentAddress", student.getAddress());
+        model.addAttribute("studentDOB", student.getDOB());
+        model.addAttribute("studentGen", student.getGender());
+        model.addAttribute("studentImg", student.getImage_path());
+        model.addAttribute("errors", userService.getErrors());
+        userService.clearErrors();
+
+        model.addAttribute("id", id);
+        model.addAttribute("title", "Edit profile");
+
+
+        return "register-student";
+    }
+
+
+    @GetMapping("/delete")
+    public String deleteAdvertisement(){
+        int id = userService.getCurrentsesion();
+        studentService.delete(id);
+        userService.setCurrentsesion(-1);
+        userService.addErrors("Your account was deleted.");
+        return "redirect:/login";
+    }
+
 
 }

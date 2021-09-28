@@ -20,12 +20,14 @@ public interface UserDAO {
 
     void saveOrUpdate(User user);
 
-    void delete(User user);
-
     List<Course> getCoursesByUserID(int ID);
 
     int Checkuse(String email, String password);
 
-    int Chectype(int id);
+    int Check_type(int id);
+
+    List<User> getUserByEmail(String email);
+
+    boolean newEmail(String email);
 }
 

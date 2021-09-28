@@ -21,9 +21,10 @@
     <link rel="stylesheet" type="text/css" href="../../resources/css/animate.css?5710">
     <link rel="stylesheet" type="text/css" href="../../resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/css/toast.css">
     <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <title>register-student-1</title>
+    <title>Teacher registration</title>
 
 
 
@@ -32,7 +33,25 @@
     <!-- Analytics END -->
 
 </head>
-<body>
+<%
+    if (request.getAttribute("errors") !=""){
+        out.println("<body onload=\"showToast()\">");
+    }else {
+        out.println("<body>");
+    }
+%>
+
+<script>
+    function showToast() {
+
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+
+</script>
+<div id="snackbar">${errors}</div>
 
 <!-- Preloader -->
 <div id="page-loading-blocs-notifaction" class="page-preloader"></div>
@@ -61,33 +80,34 @@
                                     <label>
                                         Frist Name
                                     </label>
-                                    <input type="text" id="firstname" class="form-control" required name="firstname" />
+                                    <input type="hidden" id="id" name="id" value="${id}">
+                                    <input type="text" id="firstname" class="form-control" value="${teacherFirst}" required name="firstname" />
                                 </div>
 
                                 <div class="form-group">
                                     <label>
                                        Last Name
                                     </label>
-                                    <input type="text" id="lastname" class="form-control" required name="lastname" />
+                                    <input type="text" id="lastname" value="${teacherLast}" class="form-control" required name="lastname" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                        District
                                     </label>
-                                    <input type="text" id="district" class="form-control" required name="district" />
+                                    <input type="text" id="district" value="${teacherDistrict}" class="form-control" required name="district" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                        Address
                                     </label>
-                                    <input type="text" id="Address" class="form-control" required name="Address" />
+                                    <input type="text" id="Address" value="${teacherAddress}" class="form-control" required name="Address" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                        Gender
                                     </label>
                                     <select type="text" required class="form-control" id="gender" name="gender">
-                                        <option>
+                                        <option disabled>
                                             Select Gender
                                         </option>
                                         <option value="2">
@@ -100,15 +120,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>
-                                       Date Of Brithday
+                                       Date Of Birth
                                     </label>
-                                    <input type="date" id="DOB" class="form-control" required name="DOB" />
+                                    <input type="date" value="${teacherDOB}" id="DOB" class="form-control" required name="DOB" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Email
                                     </label>
-                                    <input id="email" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
+                                    <input id="email" value="${teacherEmail}" class="form-control" type="email" data-error-validation-msg="Not a valid email address" required name="email" />
                                 </div>
                                 <div class="form-group">
                                     <label>
@@ -118,6 +138,8 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="form-group">
+                                        <div class="form-row">
+                                    <div class="col">
                                         <label>
                                             Profile Picture
                                         </label>
@@ -126,7 +148,7 @@
                                                 <div class="text-center">
                                                     <input type="file" id="pf_image"  class="btn btn-lg btn-wire btn-26-style" name="pf_image" accept="image/png, image/jpeg" onchange="loadFile1(event)" required/>
                                                     <br>
-                                                    <p><img id="output1" alt="pf_image" width="300" height="300" /></p>
+                                                    <p><img id="output1" alt="No picture selected" width="150" height="150"  src="${teacherImg}"/></p>
                                                     <script>
                                                         var loadFile1 = function(event) {
                                                             var image = document.getElementById('output1');
@@ -135,14 +157,10 @@
                                                     </script>
                                                 </div>
                                             </div>
-                                            <div class="col no-margin">
-                                                <h6 class="mg-md">
-                                                    No picture Selected
-                                                </h6>
-                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="col">
                                         <label>
                                             Photo of teacher license
                                         </label>
@@ -151,7 +169,7 @@
                                                 <div class="text-center">
                                                     <input type="file" id="licence"  class="btn btn-lg btn-wire btn-26-style" name="licence" accept="image/png, image/jpeg" onchange="loadFile2(event)" required/>
                                                     <br>
-                                                    <p><img id="output2" alt="licence" width="300" height="300" /></p>
+                                                    <p><img id="output2" alt="No picture selected" width="150" height="150"  src="${teacherLic}"/></p>
                                                     <script>
                                                         var loadFile2 = function(event) {
                                                             var image = document.getElementById('output2');
@@ -160,13 +178,11 @@
                                                     </script>
                                                 </div>
                                             </div>
-                                            <div class="col no-margin">
-                                                <h6 class="mg-md">
-                                                    No picture Selected
-                                                </h6>
-                                            </div>
                                         </div>
                                     </div>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label>
                                             Subject of Expertise<br>
