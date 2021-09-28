@@ -11,8 +11,6 @@ public interface CourseService {
     List<Course> getCourseListByTeacherId();
     void saveOrUpdate(Course course);
     Course getCourseById(int id);
-
-    @Transactional
     List<Course> getCoursesByUserID(int ID);
 
     void deleteCourse(int id);
