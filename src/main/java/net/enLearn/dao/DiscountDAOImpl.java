@@ -58,10 +58,9 @@ public class DiscountDAOImpl implements DiscountDAO{
     //Update Discount
     //UPDATE
     @Override
-    public void updateDiscount(Integer discountID){
+    public void updateDiscount(Discount discount){
         Session session = sessionFactory.getCurrentSession();
-        Discount discount = session.get(Discount.class,discountID);
-        session.update(discount);
+        session.saveOrUpdate(discount);
     }
 
 

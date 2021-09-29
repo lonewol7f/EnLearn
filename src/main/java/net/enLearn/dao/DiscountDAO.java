@@ -9,5 +9,5 @@ public interface DiscountDAO {
     public Discount getDiscount(Integer discountId);
     public List<Discount> getAllDiscountByAdminId();
     public void deleteDiscount(Integer discountID);
-    void updateDiscount(Integer discountID);
+    void updateDiscount(Discount discountID);
 }

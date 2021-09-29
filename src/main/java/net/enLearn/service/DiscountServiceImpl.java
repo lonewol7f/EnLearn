@@ -47,7 +47,7 @@ public class DiscountServiceImpl implements DiscountService{
 
     @Override
     @Transactional
-    public void updateDiscount(Integer discountID){
-        this.discountDAO.updateDiscount(discountID);
+    public void updateDiscount(Discount discount){
+        this.discountDAO.updateDiscount(discount);
     }
 }

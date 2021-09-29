@@ -56,6 +56,19 @@ public class Discount {
         this.image = image;
     }
 
+    //constructor
+    public Discount(int id,int admin_id,int discount,String teacher_name,String course,MultipartFile image,String description,int grade,String title){
+        this.id = id;
+        this.admin_id = admin_id;
+        this.title = title;
+        this.discount =discount;
+        this.teacher_name = teacher_name;
+        this.course = course;
+        this.grade = grade;
+        this.description = description;
+        this.image = image;
+    }
+
     //default Constructor
     public Discount() {}
 

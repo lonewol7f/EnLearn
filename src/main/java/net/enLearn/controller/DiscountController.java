@@ -112,6 +112,30 @@ public class DiscountController {
     }
 
 
+    @RequestMapping(path = "/update", method = RequestMethod.POST)
+    public String update(@RequestParam("id") int id,
+                         @RequestParam("admin_id") int admin_id,
+                         @RequestParam("discount") int discount,
+                         @RequestParam("teacher_name") String teacher_name,
+                         @RequestParam("course") String course,
+                         @RequestParam("image") MultipartFile image,
+                         @RequestParam("description") String description,
+                         @RequestParam("grade") int grade,
+                         @RequestParam("title") String title,
+                         Model model1){
+
+        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,image,description,grade,title);
+        disService.updateDiscount(discount1);
+
+
+        List<Discount> displayallDiscount = disService.getAllDiscountByAdminId();
+        model1.addAttribute("alldiscount",displayallDiscount);
+
+        return "AddedDiscounts";
+
+        //return "redirect:/discounts/showDiscounts";
+    }
+
 
     //==================================================================================================================
     /*@RequestMapping(path = "/getDiscountCode")

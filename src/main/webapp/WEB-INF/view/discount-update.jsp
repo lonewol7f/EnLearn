@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="text-center">Update Discount : <%=discount.getId() %></h2>
-                            <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" modelAttribute="showDiscountForUpdate" >
+                            <form id="form_23581" data-form-type="blocs-form" enctype="multipart/form-data" action="/discounts/update" method="POST" modelAttribute="showDiscountForUpdate" >
                                 <div class="form-group">
                                     <label>
                                         Discount ID

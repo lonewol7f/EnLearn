@@ -9,5 +9,5 @@ public interface DiscountService {
     public Discount getDiscount(Integer discountID);
     public List<Discount> getAllDiscountByAdminId();
     public void deleteDiscount(Integer discountID);
-    void updateDiscount(Integer discountID);
+    void updateDiscount(Discount discount);
 }
