@@ -42,7 +42,7 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h2 class="text-center">Update Customer</h2>
+                            <h2 class="text-center">Update Discount</h2>
                             <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" >
                                     <div class="form-group">
                                         <label>
