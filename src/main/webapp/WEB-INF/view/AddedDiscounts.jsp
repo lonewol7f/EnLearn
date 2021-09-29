@@ -70,6 +70,9 @@
                                 <c:url var="deleteDiscountLink" value="/discounts/deleteDiscount">
                                     <c:param name="AddedDiscountID" value="${discount.id}" />
                                 </c:url>
+                                <c:url var="updateDiscountLink" value="/discounts/updateDiscount">
+                                    <c:param name="AddedDiscountID" value="${discount.id}" />
+                                </c:url>
                                 <tr>
                                     <!--<td><<%--c:out value="${discount.id}" />--%></td>-->
                                     <td><c:out value="${discount.admin_id}" /></td>
@@ -82,8 +85,9 @@
                                     <td><c:out value="${discount.title}" /></td>
                                     <td>
                                         <a href="${deleteDiscountLink}" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+                                        <a href="${updateDiscountLink}" class="btn btn-success">Update</a>
                                         <%--<button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>--%>
-                                        <button class="btn btn-success" style="margin:0px 0px 0px 5px ;" data-toggle="modal" data-target="#update">Update</button>
+                                        <%--<button class="btn btn-success" style="margin:0px 0px 0px 5px ;" data-toggle="modal" data-target="#update">Update</button>--%>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -117,13 +121,13 @@
                             <label>
                                 Admin ID
                             </label>
-                            <input type="number" id="admin_id" class="form-control" required name="admin_id" value="252345" />
+                            <input type="number" id="admin_id" class="form-control" required name="admin_id" value="${showDiscountForUpdate.admin_id}" />
                         </div>
                         <div class="form-group">
                             <label>
                                 Discount Amount
                             </label>
-                            <input type="number" id="discount" class="form-control" required name="discount" />
+                            <input type="number" id="discount" class="form-control" required name="discount" value="${showDiscountForUpdate.admin_id}" />
                         </div>
                         <div class="form-group">
                             <label>

@@ -5,6 +5,7 @@ import net.enLearn.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -100,17 +101,19 @@ public class DiscountController {
 
     //==================================================================================================================
     //Update Discount (UPDATE)
-    @RequestMapping(path = "/updateDiscount", method = RequestMethod.POST)
-    public String updateDiscount(){
-        return "redirect:discounts/showDiscounts";
+    @GetMapping(path = "/updateDiscount")
+    public String updateDiscount(@RequestParam("AddedDiscountID") int discountId,Model model){
+        Discount discount = disService.getDiscount(discountId);
+        model.addAttribute("showDiscountForUpdate",discount);
+        return "discount-update";
     }
-
 
     //==================================================================================================================
-    @RequestMapping(path = "/getDiscountCode")
-    public String getDiscountCode(@RequestParam("DiscountCodeForModel") int discountId,Model model){
-        model.addAttribute("displayDiscountCode",discountId);
-        return "shop";
-    }
+    /*@RequestMapping(path = "/getDiscountCode")
+    public String getDiscountCode(@RequestParam("DiscountCodeForModel") int discountId,Model model,Model model2){
+        Discount discount = disService.getDiscount(discountId);
+        model.addAttribute("showDiscountForUpdate",discount);
+        return "AddedDiscounts";
+    }*/
 
 }
