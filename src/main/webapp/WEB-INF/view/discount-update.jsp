@@ -36,71 +36,75 @@
 
 
 
-    <div class="container">
-        <div class="col-md-offset-2 col-md-7">
-            <h2 class="text-center">Update Customer</h2>
-            <div class="panel panel-info">
-                <%--<div class="panel-heading">
-                    <div class="panel-title">Add Customer</div>
-                </div>--%>
-                <div class="panel-body">
-                    <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" >
-                        <div class="form-group">
-                            <label>
-                                Admin ID
-                            </label>
-                            <input type="number" id="admin_id" class="form-control" required name="admin_id" value="" />
+    <div class="bloc l-bloc" id="bloc-8">
+        <div class="container bloc-lg">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 class="text-center">Update Customer</h2>
+                            <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" >
+                                    <div class="form-group">
+                                        <label>
+                                            Admin ID
+                                        </label>
+                                        <input type="number" id="admin_id" class="form-control" required name="admin_id" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Discount Amount
+                                        </label>
+                                        <input type="number" id="discount" class="form-control" required name="discount" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Teacher Name
+                                        </label>
+                                        <input id="teacher_name" class="form-control" required name="teacher_name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Subject Category
+                                        </label>
+                                        <select name="course" required>
+                                            <option disabled selected value>-- Select Subject Category</option>
+                                            <option value="Course">Course</option>
+                                            <option value="Module">Module</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Image
+                                        </label>
+                                        <input type="file" id="image" class="form-control" name="image" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Description
+                                        </label>
+                                        <input id="description" class="form-control" name="description" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Grade
+                                        </label>
+                                        <input type="number" id="grade" class="form-control" required name="grade" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Discount Title
+                                        </label>
+                                        <input id="title" class="form-control" required name="title" />
+                                    </div>
+                                    <button class="btn btn-success" type="submit">
+                                        Update Discount
+                                    </button>
+                                </form>
                         </div>
-                        <div class="form-group">
-                            <label>
-                                Discount Amount
-                            </label>
-                            <input type="number" id="discount" class="form-control" required name="discount" value="" />
+                        <div class="col">
+                            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-Salary.png" alt="reshot illustration-Salary" />
                         </div>
-                        <div class="form-group">
-                            <label>
-                                Teacher Name
-                            </label>
-                            <input id="teacher_name" class="form-control" required name="teacher_name" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Subject Category
-                            </label>
-                            <select name="course" required>
-                                <option disabled selected value>-- Select Subject Category</option>
-                                <option value="Course">Course</option>
-                                <option value="Module">Module</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Image
-                            </label>
-                            <input type="file" id="image" class="form-control" name="image" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Description
-                            </label>
-                            <input id="description" class="form-control" name="description" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Grade
-                            </label>
-                            <input type="number" id="grade" class="form-control" required name="grade" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Discount Title
-                            </label>
-                            <input id="title" class="form-control" required name="title" />
-                        </div>
-                        <button class="btn btn-success" type="submit">
-                            Update Discount
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
