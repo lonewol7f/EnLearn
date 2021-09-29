@@ -117,7 +117,7 @@
                                             Grade
                                         </label>
                                         <select class="form-select" name="grade" id="grade" required>
-                                            <option disabled selected value>
+                                            <option disabled value="<%=discount.getGrade() %>">
                                                 <%=discount.getGrade() %>
                                             </option>
                                             <option value="6">

@@ -55,27 +55,123 @@
   <div class="bloc l-bloc" id="bloc-a">
     <div class="container bloc-lg">
       <div class="row">
+
+
+        <div class="col">
+          <img class="img-fluid lazyload" style="margin-top: 0px" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/Update_Discount.png" alt="reshot illustration-Salary" />
+          <img class="img-fluid lazyload" style="margin-top: 250px" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/S2_Couple-removebg-preview.png" alt="reshot illustration-Salary" />
+        </div>
+
+
         <div class="col">
           <div>
-
-            <div class="discount-box">
+            <div class="discount-box" style="background-color: #7ca2d5; padding: 20px;">
               <form id="adddiscount" data-form-type="blocs-form" enctype="multipart/form-data" action="/discounts/addDiscount" method="POST">
-                <h4 class="mg-md mx-auto d-block text-lg-center">
+                <h1 class="text-center" style="color: #ffffff">
                   Add Discount
-                </h4>
+                </h1>
                 <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
+                  <div class="form-group">
+                    <label>
                       Admin ID
-                    </h5>
+                    </label>
+                    <input type="text" id="admin_id" name="admin_id" class="form-control field-style" required/>
                   </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <input type="text" id="admin_id" name="admin_id" class="form-control field-style" required/>
-                    </div>
+                  <div class="form-group">
+                    <label>
+                      Discount title name
+                    </label>
+                    <input type="text" id="lable" name="title" class="form-control field-style" required/>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Discount Amount
+                    </label>
+                    <input type="number" id="amount" name="discount" class="form-control field-style" required/>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Teacher Name
+                    </label>
+                    <input type="text" required id="teacher" name="teacher_name" class="form-control field-style" />
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Course/Module Code
+                    </label>
+                    <select class="form-select" name="course" required>
+                      <option disabled selected value>
+                        -- Select Course/Module --
+                      </option>
+                      <option value="Mathematics">
+                        Mathematics
+                      </option>
+                      <option value="Science">
+                        Science
+                      </option>
+                      <option value="History">
+                        History
+                      </option>
+                      <option value="English">
+                        English
+                      </option>
+                      <option value="ICT">
+                        ICT
+                      </option>
+                      <option value="Sinhala">
+                        Sinhala
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Grade
+                    </label>
+                    <select class="form-select" name="grade" required>
+                      <option disabled selected value>
+                        -- Grade --
+                      </option>
+                      <option value="6">
+                        6
+                      </option>
+                      <option value="7">
+                        7
+                      </option>
+                      <option value="8">
+                        8
+                      </option>
+                      <option value="9">
+                        9
+                      </option>
+                      <option value="10">
+                        10
+                      </option>
+                      <option value="11">
+                        11
+                      </option>
+                      <option value="12">
+                        12
+                      </option>
+                      <option value="13">
+                        13
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Discount Description
+                    </label>
+                    <textarea type="text" name="description" id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      Upload Image
+                    </label>
+                    <input type="file" class="form-control" name="image" id="image"  />
                   </div>
                 </div>
-                <div class="row">
+
+                <%--<div class="row">
                   <div class="col-lg-4">
                     <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
                       Discount title name
@@ -86,8 +182,8 @@
                       <input type="text" id="lable" name="title" class="form-control field-style" required/>
                     </div>
                   </div>
-                </div>
-                <div class="row">
+                </div>--%>
+                <%--<div class="row">
                   <div class="col-lg-4">
                     <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
                       Discount Amount
@@ -221,7 +317,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div>--%>
                 <br><br>
                 <div class="text-center">
                   <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
