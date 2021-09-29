@@ -102,6 +102,7 @@ public class DiscountController {
 
     //==================================================================================================================
     //Update Discount (UPDATE)
+    //Navigate to update page with details
     @GetMapping(path = "/updateDiscount")
     public ModelAndView updateDiscount(@RequestParam("AddedDiscountID") int discountId, ModelAndView model){
         Discount discount = disService.getDiscount(discountId);
@@ -112,6 +113,7 @@ public class DiscountController {
     }
 
 
+    //Update Discount
     @RequestMapping(path = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") int id,
                          @RequestParam("admin_id") int admin_id,
@@ -127,13 +129,7 @@ public class DiscountController {
         Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,image,description,grade,title);
         disService.updateDiscount(discount1);
 
-
-        List<Discount> displayallDiscount = disService.getAllDiscountByAdminId();
-        model1.addAttribute("alldiscount",displayallDiscount);
-
-        return "AddedDiscounts";
-
-        //return "redirect:/discounts/showDiscounts";
+        return "redirect:/discounts/showDiscounts";
     }
 
 
