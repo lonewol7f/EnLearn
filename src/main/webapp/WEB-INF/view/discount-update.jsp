@@ -47,8 +47,8 @@
             <div class="row">
                 <div class="col">
                     <div class="row">
-                        <div class="col-lg-8">
-                            <h2 class="text-center">Update Discount : <%=discount.getId() %></h2>
+                        <div class="col">
+                            <h1 class="text-center" style="color: #80aaea">Update Discount : <%=discount.getId() %></h1>
                             <form id="form_23581" data-form-type="blocs-form" enctype="multipart/form-data" action="/discounts/update" method="POST" modelAttribute="showDiscountForUpdate" >
                                 <div class="form-group">
                                     <label>
@@ -78,10 +78,26 @@
                                         <label>
                                             Subject Category
                                         </label>
-                                        <select name="course" required>
+                                        <select name="course" class="form-select" required>
                                             <option value="<%=discount.getCourse() %>" disabled><%=discount.getCourse() %></option>
-                                            <option value="Course">Course</option>
-                                            <option value="Module">Module</option>
+                                            <option value="Mathematics">
+                                                Mathematics
+                                            </option>
+                                            <option value="Science">
+                                                Science
+                                            </option>
+                                            <option value="History">
+                                                History
+                                            </option>
+                                            <option value="English">
+                                                English
+                                            </option>
+                                            <option value="ICT">
+                                                ICT
+                                            </option>
+                                            <option value="Sinhala">
+                                                Sinhala
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -100,7 +116,35 @@
                                         <label>
                                             Grade
                                         </label>
-                                        <input type="number" id="grade" class="form-control" required name="grade" value="<%=discount.getGrade() %>" />
+                                        <select class="form-select" name="grade" id="grade" required>
+                                            <option disabled selected value>
+                                                <%=discount.getGrade() %>
+                                            </option>
+                                            <option value="6">
+                                                6
+                                            </option>
+                                            <option value="7">
+                                                7
+                                            </option>
+                                            <option value="8">
+                                                8
+                                            </option>
+                                            <option value="9">
+                                                9
+                                            </option>
+                                            <option value="10">
+                                                10
+                                            </option>
+                                            <option value="11">
+                                                11
+                                            </option>
+                                            <option value="12">
+                                                12
+                                            </option>
+                                            <option value="13">
+                                                13
+                                            </option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>
@@ -108,13 +152,15 @@
                                         </label>
                                         <input id="title" class="form-control" required name="title" value="<%=discount.getTitle() %>" />
                                     </div>
+                                <div class="col-md-12 text-center">
                                     <button class="btn btn-success" type="submit">
                                         Update Discount
                                     </button>
+                                </div>
                                 </form>
                         </div>
-                        <div class="col">
-                            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/reshot-illustration-Salary.png" alt="reshot illustration-Salary" />
+                        <div class="col" style="margin: auto">
+                            <img class="img-fluid lazyload" src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/Update_Discount.png" alt="reshot illustration-Salary" />
                         </div>
                     </div>
                 </div>
