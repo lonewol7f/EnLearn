@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -102,11 +103,15 @@ public class DiscountController {
     //==================================================================================================================
     //Update Discount (UPDATE)
     @GetMapping(path = "/updateDiscount")
-    public String updateDiscount(@RequestParam("AddedDiscountID") int discountId,Model model){
+    public ModelAndView updateDiscount(@RequestParam("AddedDiscountID") int discountId, ModelAndView model){
         Discount discount = disService.getDiscount(discountId);
-        model.addAttribute("showDiscountForUpdate",discount);
-        return "discount-update";
+        model.addObject("showDiscountForUpdate",discount);
+
+        model.setViewName("discount-update");
+        return model;
     }
+
+
 
     //==================================================================================================================
     /*@RequestMapping(path = "/getDiscountCode")

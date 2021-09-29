@@ -1,3 +1,4 @@
+<%@ page import="net.enLearn.entity.Discount" %>
 <%--
   Created by IntelliJ IDEA.
   User: 94764
@@ -35,6 +36,11 @@
     <!-- bloc-0 END -->
 
 
+    <%
+        Discount discount = (Discount) request.getAttribute("showDiscountForUpdate");
+    %>
+
+
 
     <div class="bloc l-bloc" id="bloc-8">
         <div class="container bloc-lg">
@@ -42,32 +48,38 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h2 class="text-center">Update Discount</h2>
-                            <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" >
-                                    <div class="form-group">
+                            <h2 class="text-center">Update Discount : <%=discount.getId() %></h2>
+                            <form id="form_23581" data-form-type="blocs-form" action="#" method="POST" modelAttribute="showDiscountForUpdate" >
+                                <div class="form-group">
+                                    <label>
+                                        Discount ID
+                                    </label>
+                                    <input type="number" id="id" class="form-control" required name="id" value="<%=discount.getId() %>" readonly />
+                                </div>
+                                <div class="form-group">
                                         <label>
                                             Admin ID
                                         </label>
-                                        <input type="number" id="admin_id" class="form-control" required name="admin_id" value="" />
+                                        <input type="number" id="admin_id" class="form-control" required name="admin_id" value="<%=discount.getAdmin_id() %>" readonly />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Discount Amount
                                         </label>
-                                        <input type="number" id="discount" class="form-control" required name="discount" value="" />
+                                        <input type="number" id="discount" class="form-control" required name="discount" value="<%=discount.getDiscount() %>" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Teacher Name
                                         </label>
-                                        <input id="teacher_name" class="form-control" required name="teacher_name" />
+                                        <input id="teacher_name" class="form-control" required name="teacher_name" value="<%=discount.getTeacher_name() %>" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Subject Category
                                         </label>
                                         <select name="course" required>
-                                            <option disabled selected value>-- Select Subject Category</option>
+                                            <option value="<%=discount.getCourse() %>" disabled><%=discount.getCourse() %></option>
                                             <option value="Course">Course</option>
                                             <option value="Module">Module</option>
                                         </select>
@@ -76,25 +88,25 @@
                                         <label>
                                             Image
                                         </label>
-                                        <input type="file" id="image" class="form-control" name="image" />
+                                        <input type="file" id="image" class="form-control" name="image" value="<%=discount.getImage() %>" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Description
                                         </label>
-                                        <input id="description" class="form-control" name="description" />
+                                        <input id="description" class="form-control" name="description" value="<%=discount.getDescription() %>" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Grade
                                         </label>
-                                        <input type="number" id="grade" class="form-control" required name="grade" />
+                                        <input type="number" id="grade" class="form-control" required name="grade" value="<%=discount.getGrade() %>" />
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Discount Title
                                         </label>
-                                        <input id="title" class="form-control" required name="title" />
+                                        <input id="title" class="form-control" required name="title" value="<%=discount.getTitle() %>" />
                                     </div>
                                     <button class="btn btn-success" type="submit">
                                         Update Discount

@@ -54,5 +54,7 @@ public class DiscountDAOImpl implements DiscountDAO{
         session.delete(dis);
     }
 
+    //-------------------------------------------------------------------------------------------------------
+
 
 }
