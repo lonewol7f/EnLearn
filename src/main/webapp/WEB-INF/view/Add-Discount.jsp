@@ -167,7 +167,7 @@
                     <label>
                       Upload Image
                     </label>
-                    <input type="file" class="form-control" name="image" id="image"  />
+                    <input type="file" class="form-control" name="image" id="image" accept="image/*" />
                   </div>
                 </div>
 
