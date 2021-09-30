@@ -67,6 +67,78 @@ public class DiscountController {
         return "Add-Discount";
     }
 
+
+
+
+    //According to durgesh
+    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
+    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
+                                      @RequestParam("discount") int discount,
+                                      @RequestParam("teacher_name") String teacher_name,
+                                      @RequestParam("course") String course,
+                                      @RequestParam("image") MultipartFile image,
+                                      @RequestParam("description") String description,
+                                      @RequestParam("grade") int grade,
+                                      @RequestParam("title") String title,
+                                      HttpSession session){
+
+        try {
+            byte[] data = image.getBytes();
+            //save image to server
+            String path = session.getServletContext().getRealPath("/") + "WEB-INF" + File.separator
+                                                                        + "resources" + File.separator
+                                                                        + "img" +File.separator
+                                                                        + image.getOriginalFilename();
+            FileOutputStream fos = new FileOutputStream(path);
+            fos.write(data);
+            fos.close();
+        }catch (Exception e){
+            System.out.println("File Upload Error "+ e);
+        }
+
+
+
+
+        Discount discountObj;
+        discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
+
+        disService.saveDiscount(discountObj);
+
+
+        return "Add-Discount";
+    }*/
+
+
+    //According to tutorial
+    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
+    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
+                                      @RequestParam("discount") int discount,
+                                      @RequestParam("teacher_name") String teacher_name,
+                                      @RequestParam("course") String course,
+                                      @RequestParam("image") CommonsMultipartFile image,
+                                      @RequestParam("description") String description,
+                                      @RequestParam("grade") int grade,
+                                      @RequestParam("title") String title){
+
+        if (image != null) {
+            System.out.println("Saving file: " + image.getOriginalFilename());
+            byte[] data = image.getBytes();
+            Discount discountObj;
+            discountObj = new Discount(admin_id, discount, teacher_name, course, data, description, grade, title);
+            disService.saveDiscount(discountObj);
+        }
+
+
+
+
+        return "Add-Discount";
+    }*/
+
+
+
+
+
+
     //==================================================================================================================
     //Method for deleting added discounts (DELETE)
     @RequestMapping("/deleteDiscount")

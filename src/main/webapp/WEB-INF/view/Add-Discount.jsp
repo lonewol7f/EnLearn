@@ -72,13 +72,13 @@
                 </h1>
                 <div class="row">
                   <div class="form-group">
-                    <label>
+                    <label for="admin_id">
                       Admin ID
                     </label>
-                    <input type="text" id="admin_id" name="admin_id" class="form-control field-style" required/>
+                    <input type="number" id="admin_id" name="admin_id" class="form-control field-style" required/>
                   </div>
                   <div class="form-group">
-                    <label>
+                    <label for="lable">
                       Discount title name
                     </label>
                     <input type="text" id="lable" name="title" class="form-control field-style" required/>
