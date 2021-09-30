@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 
@@ -137,6 +139,42 @@ public class DiscountController {
 
 
 
+    //According to Sashini
+    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
+    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
+                                      @RequestParam("discount") int discount,
+                                      @RequestParam("teacher_name") String teacher_name,
+                                      @RequestParam("course") String course,
+                                      @RequestParam("image") MultipartFile image,
+                                      @RequestParam("description") String description,
+                                      @RequestParam("grade") int grade,
+                                      @RequestParam("title") String title){
+
+        String photo = null;
+        try {
+            photo = "data:image/jpg;base64,"+
+                    Base64.getEncoder().encodeToString(image.getBytes());
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        Discount discountObj;
+        discountObj = new Discount(admin_id,discount,teacher_name,course,photo,description,grade,title);
+
+        disService.saveDiscount(discountObj);
+
+
+        return "Add-Discount";
+    }*/
+
+
+
+
+
+
 
 
     //==================================================================================================================
@@ -203,6 +241,37 @@ public class DiscountController {
 
         return "redirect:/discounts/showDiscounts";
     }
+
+
+
+    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
+    public String update(@RequestParam("id") int id,
+                         @RequestParam("admin_id") int admin_id,
+                         @RequestParam("discount") int discount,
+                         @RequestParam("teacher_name") String teacher_name,
+                         @RequestParam("course") String course,
+                         @RequestParam("image") MultipartFile image,
+                         @RequestParam("description") String description,
+                         @RequestParam("grade") int grade,
+                         @RequestParam("title") String title,
+                         Model model1){
+
+
+        String photo = null;
+        try {
+            photo = "data:image/jpg;base64,"+
+                    Base64.getEncoder().encodeToString(image.getBytes());
+        } catch (
+                IOException e) {
+            e.printStackTrace();
+        }
+
+
+        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,photo,description,grade,title);
+        disService.updateDiscount(discount1);
+
+        return "redirect:/discounts/showDiscounts";
+    }*/
 
 
     //==================================================================================================================
