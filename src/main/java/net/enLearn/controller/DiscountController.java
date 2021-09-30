@@ -75,7 +75,7 @@ public class DiscountController {
 
 
     //This worked
-    private static final String UPLOAD_DIRECTORY ="/resources/img";
+    private static final String UPLOAD_DIRECTORY ="/resources/Discount_img";
 
 
     @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
