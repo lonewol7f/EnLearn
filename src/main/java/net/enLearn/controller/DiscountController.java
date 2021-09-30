@@ -50,7 +50,7 @@ public class DiscountController {
 
     //==================================================================================================================
     //Method for Adding data (CREATE)
-    @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
+    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
     public String processDiscountForm(@RequestParam("admin_id") int admin_id,
                                       @RequestParam("discount") int discount,
                                       @RequestParam("teacher_name") String teacher_name,
@@ -67,7 +67,7 @@ public class DiscountController {
 
 
         return "Add-Discount";
-    }
+    }*/
 
 
 
@@ -140,7 +140,7 @@ public class DiscountController {
 
 
     //According to Sashini
-    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
+    @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
     public String processDiscountForm(@RequestParam("admin_id") int admin_id,
                                       @RequestParam("discount") int discount,
                                       @RequestParam("teacher_name") String teacher_name,
@@ -168,7 +168,7 @@ public class DiscountController {
 
 
         return "Add-Discount";
-    }*/
+    }
 
 
 
@@ -224,7 +224,7 @@ public class DiscountController {
 
 
     //Update Discount
-    @RequestMapping(path = "/update", method = RequestMethod.POST)
+    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") int id,
                          @RequestParam("admin_id") int admin_id,
                          @RequestParam("discount") int discount,
@@ -240,11 +240,11 @@ public class DiscountController {
         disService.updateDiscount(discount1);
 
         return "redirect:/discounts/showDiscounts";
-    }
+    }*/
 
 
 
-    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
+    @RequestMapping(path = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") int id,
                          @RequestParam("admin_id") int admin_id,
                          @RequestParam("discount") int discount,
@@ -271,7 +271,7 @@ public class DiscountController {
         disService.updateDiscount(discount1);
 
         return "redirect:/discounts/showDiscounts";
-    }*/
+    }
 
 
     //==================================================================================================================
