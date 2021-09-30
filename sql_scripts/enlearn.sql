@@ -138,23 +138,6 @@ CREATE TABLE `advertiser_mobile`
   DEFAULT CHARSET = latin1;
 
 
-DROP TABLE IF EXISTS `recorded_video`;
-CREATE TABLE `recorded_video`
-(
-    `id`          INT NOT NULL AUTO_INCREMENT,
-    `title`       VARCHAR(50),
-    `description` VARCHAR(255),
-    `video_url`   VARCHAR(255),
-    `thumbnail`   BLOB,
-    `quiz_id`     INT,
-    `course_id`   INT,
-    CONSTRAINT `pk_recorded_video` PRIMARY KEY (`id`),
-    CONSTRAINT `fk_recorded_video_1` FOREIGN KEY (`quiz_id`) REFERENCES `special_quiz` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `fk_recorded_video_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 1
-  DEFAULT CHARSET = latin1;
-
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`
 (
@@ -323,16 +306,35 @@ CREATE TABLE `course_student`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
 
+DROP TABLE IF EXISTS `recorded_video`;
+CREATE TABLE `recorded_video`
+(
+    `id`          INT NOT NULL AUTO_INCREMENT,
+    `week`        VARCHAR(50),
+    `title`       VARCHAR(50),
+    `description` TEXT,
+    `videoLink`   VARCHAR(255),
+    `thumbnail`   BLOB,
+    `quiz_id`     INT,
+    `course_id`   INT,
+    CONSTRAINT `pk_recorded_video` PRIMARY KEY (`id`),
+    CONSTRAINT `fk_recorded_video_1` FOREIGN KEY (`quiz_id`) REFERENCES `special_quiz` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    CONSTRAINT `fk_recorded_video_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1
+  DEFAULT CHARSET = latin1;
+
 
 DROP TABLE IF EXISTS `zoom_class`;
 CREATE TABLE `zoom_class`
 (
     `id`          INT NOT NULL AUTO_INCREMENT,
+    `week`        VARCHAR(50),
     `title`       VARCHAR(255),
     `description` TEXT,
     `date`        VARCHAR(255),
     `time`        VARCHAR(255),
-    `zoom_link`   VARCHAR(255),
+    `zoomLink`    VARCHAR(255),
     `course_id`   INT,
     CONSTRAINT `pk_zoom_class` PRIMARY KEY (`id`),
     CONSTRAINT `fk_zoom_class` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION

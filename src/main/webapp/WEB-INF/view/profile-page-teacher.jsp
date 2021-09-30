@@ -107,12 +107,12 @@
     <!-- bloc-19 END -->
     <!-- bloc-22 -->
     <div style="display: flex; justify-content: center">
-        <c:if test="${fn:length(courses) > 0}">
+        <c:if test="${fn:length(courseList) > 0}">
             <table class="table table-hover">
 
 
-                    <%-- Loop over and print teachers --%>
-                <c:forEach var="tempCourse" items="${courses}">
+                    <%-- Loop over and print courses --%>
+                <c:forEach var="tempCourse" items="${courseList}">
 
                     <%-- construct an 'update' link with course id --%>
                     <c:url var="updateLink" value="/teachers/courses/update">
@@ -150,7 +150,7 @@
                 </c:forEach>
             </table>
         </c:if>
-        <c:if test="${fn:length(courses) == 0}">
+        <c:if test="${fn:length(courseList) == 0}">
             <div class="text-center border border-2 rounded"
                  style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
                 <p>No Courses Currently</p>

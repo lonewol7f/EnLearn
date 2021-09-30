@@ -20,8 +20,8 @@ public class CourseDAOImpl implements CourseDAO {
     public List<Course> getCourseListByTeacherId(int id) {
         Session session = sessionFactory.getCurrentSession();
         Teacher teacher = session.get(Teacher.class, id);
-        List<Course> courses = teacher.getCourseList();
-        return courses;
+        List<Course> courseList = teacher.getCourseList();
+        return courseList;
     }
 
 

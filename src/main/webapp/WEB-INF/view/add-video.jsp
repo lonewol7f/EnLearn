@@ -58,58 +58,60 @@
                             </h3>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col">
-                            <form id="add-video" data-form-type="blocs-form" action="add-video-action" method="POST">
-                                <div class="form-group">
-                                    <label>
-                                        Titlle
-                                    </label>
-                                    <input id="name" class="form-control" required name="name" />
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        URL
-                                    </label>
-                                    <input id="name" class="form-control" required name="name" />
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Photo
-                                    </label>
-                                    <div class="row">
-                                        <div class="col">
-                                            <a href="index.jsp" class="btn btn-lg btn-button-style btn-wire">Select</a>
-                                        </div>
-                                        <div class="col">
-                                            <h5 class="mg-md">
-                                                No Photo added<br>&nbsp;2 : 1&nbsp;
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>
-                                        Description
-                                    </label>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="4" cols="50" id="textarea_1485" name="textarea_1485"></textarea>
-                                    </div>
-                                </div>
-                                <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
-                                    Submit
-                                </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
-                            </form>
-                        </div>
                         <div class="col offset-lg-1">
-                            <div class="video-box">
-                                <div class="embed-responsive embed-responsive-16by9 video-style">
-                                    <iframe class="embed-responsive-item lazyload" src="../../resources/img/lazyload-ph.png" data-src="https://www.youtube.com/embed/o6ifhsL4kKw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                    </iframe>
-                                </div>
+                            <c:url var="saveLink" value="/courses/zoomClass/save">
+                                <c:param name="courseId" value="${zoomClass.course.id}"/>
+                            </c:url>
+                            <div>
+                                <form:form data-form-type="blocs-form" action="${saveLink}" modelAttribute="zoomClass" method="post">
+
+                                    <form:hidden path="id"/>
+
+                                    <div class="form-group">
+                                        <form:select  path="week" required="required" cssClass="form-control" id="select_2708">
+                                            <form:option value="Week 01">
+                                                Week 01
+                                            </form:option>
+                                            <form:option value="Week 02">
+                                                Week 02
+                                            </form:option>
+                                            <form:option value="Week 03">
+                                                Week 03
+                                            </form:option>
+                                            <form:option value="Week 04">
+                                                Week 04
+                                            </form:option>
+                                        </form:select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <form:label path="title">
+                                            Title
+                                        </form:label>
+                                        <form:input path="title" required="required" cssClass= "form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <form:label path="description">
+                                            Description
+                                        </form:label>
+                                        <form:input path="description" required="required" cssClass="form-control" />
+                                    </div>
+                                    <div class="form-group">
+                                        <form:label path="zoomLink">
+                                            Video URL
+                                        </form:label>
+                                        <form:input path="zoomLink" required="required" type="url" class="form-control"/>
+                                    </div>
+                                    <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
+                                        Add Recorded Video
+                                    </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
+                                </form:form>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

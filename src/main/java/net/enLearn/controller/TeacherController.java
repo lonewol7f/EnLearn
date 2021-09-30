@@ -46,8 +46,8 @@ public class TeacherController {
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
         int id = userService.getLoggedUserId();
-        List<Course> courses = courseService.getCourseListByTeacherId(id);
-        model.addAttribute("courses", courses);
+        List<Course> courseList = courseService.getCourseListByTeacherId(id);
+        model.addAttribute("courseList", courseList);
         return "profile-page-teacher";
     }
 
@@ -132,7 +132,7 @@ public class TeacherController {
 
     //Course Delete
     @GetMapping("/courses/delete")
-    public String deleteTeacher(@RequestParam("courseId") int id) {
+    public String deleteCourse(@RequestParam("courseId") int id) {
         courseService.deleteCourse(id);
         return "redirect:/teachers";
     }

@@ -43,6 +43,10 @@ public class Course {
     @JsonBackReference
     private List<RecordedVideo> videos;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "course", cascade = CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<ZoomClass> zoomClassList;
+
     public Course(){}
 
     public int getId() {
@@ -81,9 +85,13 @@ public class Course {
         this.price = price;
     }
 
-    public MultipartFile getImage() { return image; }
+    public MultipartFile getImage() {
+        return image;
+    }
 
-    public void setImage(MultipartFile image) { this.image = image; }
+    public void setImage(MultipartFile image) {
+        this.image = image;
+    }
 
     public Teacher getTeacher() {
         return teacher;
@@ -100,4 +108,13 @@ public class Course {
     public void setVideos(List<RecordedVideo> videos) {
         this.videos = videos;
     }
+
+    public List<ZoomClass> getZoomClassList() {
+        return zoomClassList;
+    }
+
+    public void setZoomClassList(List<ZoomClass> zoomClassList) {
+        this.zoomClassList = zoomClassList;
+    }
+
 }

@@ -20,8 +20,17 @@ public class RecordedVideo {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "week")
+    private String week;
+
     @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "videoLink")
+    private String videoLink;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "video", cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.SUBSELECT)
@@ -50,12 +59,36 @@ public class RecordedVideo {
         this.id = id;
     }
 
+    public String getWeek() {
+        return week;
+    }
+
+    public void setWeek(String week) {
+        this.week = week;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getVideoLink() {
+        return videoLink;
+    }
+
+    public void setVideoLink(String videoLink) {
+        this.videoLink = videoLink;
     }
 
     public List<Comment> getComments() {

@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -59,43 +60,68 @@
             </div>
             <div class="row">
                 <div class="col offset-lg-1">
+                    <c:url var="saveLink" value="/courses/zoomClass/save">
+                        <c:param name="courseId" value="${zoomClass.course.id}"/>
+                    </c:url>
                     <div>
-                        <form  data-form-type="blocs-form" action="/courses/save" method="post">
+                        <form:form data-form-type="blocs-form" action="${saveLink}" modelAttribute="zoomClass" method="post">
+
+                            <form:hidden path="id"/>
 
                             <div class="form-group">
-                                <label>
+                                <form:label path="week">
+                                    Select Week
+                                </form:label>
+                                <form:select  path="week" required="required" cssClass="form-control" id="select_2708">
+                                    <form:option value="Week 01">
+                                        Week 01
+                                    </form:option>
+                                    <form:option value="Week 02">
+                                        Week 02
+                                    </form:option>
+                                    <form:option value="Week 03">
+                                        Week 03
+                                    </form:option>
+                                    <form:option value="Week 04">
+                                        Week 04
+                                    </form:option>
+                                </form:select>
+                            </div>
+
+                            <div class="form-group">
+                                <form:label path="title">
                                     Title
-                                </label>
-                                <input  class= "form-control" />
+                                </form:label>
+                                <form:input path="title" required="required" cssClass= "form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
+                                <form:label path="description">
                                     Description
-                                </label>
-                                <input class="form-control" />
+                                </form:label>
+                                <form:input path="description" required="required" cssClass="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
+                                <form:label path="date">
                                     Date
-                                </label>
-                                <input type="date" class="form-control" />
+                                </form:label>
+                                <form:input path="date" type="date" required="required" cssClass="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
+                                <form:label path="time">
                                     Time
-                                </label>
-                                <input type="time" class="form-control" />
+                                </form:label>
+                                <form:input path="time" required="required" min="09:00" max="20:00" type="time" class="form-control" />
                             </div>
                             <div class="form-group">
-                                <label>
+                                <form:label path="zoomLink">
                                     Zoom Link
-                                </label>
-                                <input type="url" class="form-control"/>
+                                </form:label>
+                                <form:input path="zoomLink" required="required" type="url" class="form-control"/>
                             </div>
                             <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                 Create Zoom Class
                             </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>
-                        </form>
+                        </form:form>
                     </div>
                 </div>
             </div>

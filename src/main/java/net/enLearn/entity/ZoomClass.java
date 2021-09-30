@@ -11,6 +11,9 @@ import javax.persistence.*;
         @Column(name = "id")
         private int id;
 
+        @Column(name = "week")
+        private String week;
+
         @Column(name = "title")
         private String title;
 
@@ -24,8 +27,80 @@ import javax.persistence.*;
         @Column(name = "time")
         private String time;
 
-        @Column(name = "zoom_link")
-        private String zoom_link;
+        @Column(name = "zoomLink")
+        private String zoomLink;
+
+        @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+                CascadeType.DETACH, CascadeType.REFRESH})
+        @JoinColumn(name = "course_id")
+        private Course course;
+
+        public ZoomClass(){
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getWeek() {
+            return week;
+        }
+
+        public void setWeek(String week) {
+            this.week = week;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public String getTime() {
+            return time;
+        }
+
+        public void setTime(String time) {
+            this.time = time;
+        }
+
+        public String getZoomLink() {
+            return zoomLink;
+        }
+
+        public void setZoomLink(String zoomLink) {
+            this.zoomLink = zoomLink;
+        }
+
+        public Course getCourse() {
+            return course;
+        }
+
+        public void setCourse(Course course) {
+            this.course = course;
+        }
 
     }
 

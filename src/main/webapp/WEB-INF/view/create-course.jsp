@@ -71,26 +71,26 @@
                                     <form:label path="title">
                                         Course Name
                                     </form:label>
-                                    <form:input path="title" cssClass= "form-control" />
+                                    <form:input path="title" required="required" cssClass= "form-control" />
                                 </div>
                                 <div class="form-group">
                                     <form:label path="price">
                                         Course Fee
                                     </form:label>
-                                    <form:input path="price"  cssClass="form-control" />
+                                    <form:input path="price"  required="required" cssClass="form-control" />
                                 </div>
                                 <div class="form-group">
                                     <form:label path="description">
                                         Description
                                     </form:label>
-                                    <form:input path="description" cssClass="form-control" />
+                                    <form:input path="description" required="required" cssClass="form-control" />
                                 </div>
                                 <div class="form-group">
                                     <form:label path="type">
                                         Select Course Type
                                     </form:label>
                                     <div class="form-group">
-                                        <form:select  path="type" cssClass="form-control" id="select_2708">
+                                        <form:select  path="type" required="required" cssClass="form-control" id="select_2708">
                                             <form:option value="Recorded Video">
                                                 Recorded Video
                                             </form:option>

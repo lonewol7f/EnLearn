@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -56,128 +59,25 @@
                                 <a href="index.jsp" class="btn btn-d btn-lg btn-block add-couse-btn"><span class="icon-spacer ion ion-android-send icon-inside-btn"></span>Publish Course</a><a href="index.jsp" class="btn btn-lg btn-block save-course-btn btn-wire"><span class="icon-spacer fa fa-bookmark icon-inside-btn"></span>Save cousrse</a>
                             </div>
                         </div>
-                        <div class="row video-upload-row">
+                        <br>
+                        <br>
+                        <br>
+
+                        <div class="row">
                             <div class="col">
                                 <div>
-                                    <h5 class="mg-md week-text h5-style">
-                                        Week 1
-                                    </h5>
-                                    <form id="form_8" data-form-type="blocs-form" action="custom-action-url" method="POST">
-                                        <div class="form-group">
-                                            <label>
-                                                Topic Of the week
-                                            </label>
-                                            <input id="name8" class="form-control field-style" required name="name8" />
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <div class="row">
-                                                <div>
-                                                    <div class="text-center">
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                        <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
-                                                    </div>
-                                                </div>
-                                                Test week 01
-                                            </div>
-                                        </div>
+                                    <div class="text-center">
+                                        <a style="width: 50%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row video-upload-row">
                             <div class="col">
                                 <div>
-                                    <h5 class="mg-md week-text h5-style">
-                                        Week 2
-                                    </h5>
-                                </div>
-                                <form id="form_17302" data-form-type="blocs-form" action="custom-action-url" method="POST">
-                                    <div class="form-group">
-                                        <label>
-                                            Topic Of the week
-                                        </label>
-                                        <input id="name8_15404_16545_17302" class="form-control field-style" required name="name8" />
-                                    </div>
-                                </form>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
-                                                </div>
-                                                Test week 02
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row video-upload-row">
-                            <div class="col">
-                                <div>
-                                    <h5 class="mg-md week-text h5-style">
-                                        Week 3
-                                    </h5>
-                                    <form id="form_16545" data-form-type="blocs-form" action="custom-action-url" method="POST">
-                                        <div class="form-group">
-                                            <label>
-                                                Topic Of the week
-                                            </label>
-                                            <input id="name8_15404_16545" class="form-control field-style" required name="name8" />
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
-                                                </div>
-                                                Test week 03
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row video-upload-row">
-                            <div class="col">
-                                <h5 class="mg-md week-text h5-style">
-                                    Week 4
-                                </h5>
-                                <div>
-                                    <form id="form_15404" data-form-type="blocs-form" action="custom-action-url" method="POST">
-                                        <div class="form-group">
-                                            <label>
-                                                Topic Of the week
-                                            </label>
-                                            <input id="name8_15404" class="form-control field-style" required name="name8" />
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <div>
-                                            <div class="row">
-                                                <div class="text-center">
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/add-videos" class="btn btn-d btn-lg btn-block">Add Recorded Video</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/courses/create-zoom" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
-                                                    <a style="width: 25%; alignment: left" href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-d btn-lg btn-block">Add Special Quiz</a>
-                                                </div>
-                                                Test week 04
-                                            </div>
-                                        </div>
+                                    <div class="text-center">
+                                        <c:url var="zoomCreateLink" value="/courses/create-zoom">
+                                            <c:param name="courseId" value="${courseId}"/>
+                                        </c:url>
+                                        <a style="width: 50%; alignment: left" href="${zoomCreateLink}" class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +87,63 @@
             </div>
         </div>
     </div>
-    <!-- bloc-5 END -->
+
+
+    <!-- bloc-22 -->
+    <div style="display: flex; justify-content: center">
+
+        <c:if test="${fn:length(zoomClassList) > 0}">
+            <table class="table table-hover">
+
+
+                    <%-- Loop over and print zoom classes --%>
+                <c:forEach var="tempZoomLink" items="${zoomClassList}">
+
+                    <%-- construct an 'update' link with zoom id --%>
+                    <c:url var="updateLink" value="/courses/zoomClass/update">
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                    </c:url>
+
+                    <%-- construct an 'delete' link with zoom id --%>
+                    <c:url var="deleteLink" value="/courses/zoomClass/delete">
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                    </c:url>
+
+                    <c:url var="quizLink" value="/teachers/special-quizzes">
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                    </c:url>
+
+                    <tr>
+                        <td>${tempZoomLink.week}</td>
+                        <td>${tempZoomLink.title}</td>
+                        <td style="height:100px;width:25%">${tempZoomLink.description}</td>
+                        <td>${tempZoomLink.date}</td>
+                        <td>${tempZoomLink.time}</td>
+                        <td style="height:100px;width:30%"><a href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>
+                        <td><a href="${quizLink}">Quiz</a></td>
+
+                        <td>
+                                <%-- display the update link --%>
+                            <a href="${updateLink}"
+                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
+                               class="btn btn-success">Update</a>
+                            <a href="${deleteLink}"
+                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
+                               class="btn btn-danger">Delete</a>
+
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+        </c:if>
+        <c:if test="${fn:length(zoomClassList) == 0}">
+            <div class="text-center border border-2 rounded"
+                 style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                <p>No zoom classes Currently</p>
+            </div>
+        </c:if>
+    </div>
+    <!-- bloc-22 END -->
 
     <%@include file="footer.jsp" %>
 
