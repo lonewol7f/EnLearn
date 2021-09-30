@@ -57,7 +57,7 @@
                     </h3><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/21-avatar-outline.gif" class="img-fluid img-bloc-8-style float-lg-none mg-md lazyload" alt="21 avatar-outline" />
                     <div class="row">
                         <div class="col-lg-8">
-                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/upload" modelAttribute="advertiser" method="POST" >
+                            <form id="form_22096" enctype="multipart/form-data" data-form-type="blocs-form" action="/advertisers/upload"  method="POST" >
 
                                 <!--
                                 <div class="form-group">
@@ -95,7 +95,8 @@
                                         <label>
                                             Advertisement Title
                                         </label>
-                                        <input id="name200_10830_22096" class="form-control" required name="title" />
+                                        <input type="hidden" id="advertisementId" name="advertisementId" value="${advertisementId}">
+                                        <input id="title" class="form-control" required name="title" value="${advertisementTitle}"/>
                                     </div>
 
 
@@ -109,7 +110,7 @@
                                     <div class="form-group">
                                         <div class="form-group mb-3">
                                             <div class="form-group mb-3 container-div-style">
-                                                <select class="form-control" name="addpackage" required>
+                                                <select id="package" class="form-control" name="package" required>
                                                     <option disabled selected value>
                                                         -- Select Package --
                                                     </option>
@@ -135,20 +136,50 @@
                                         <label>
                                             Description
                                         </label>
-                                        <textarea id="name300_10830_2209" class="form-control" name="description" rows="4" cols="50"> </textarea>
+                                        <textarea id="description" class="form-control" name="description" rows="4" cols="50">${advertisementDes} </textarea>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
+                                            <label>
                                                 Upload Banner
-                                            </h5>
+                                            </label>
+                                            <br>
                                         </div>
                                         <div class="col">
                                             <div class="form-group mb-3">
                                                 <div class="row">
                                                     <div class="col-lg-3">
 
-                                                        <input type="file" name="image" id="image"  />
+                                                        <input type="file" name="image" id="file" accept="image/png, image/jpeg" onchange="loadFile(event)" required  />
+                                                        <br>
+                                                        <p><img id="output" src="${advertisementImage}" alt="No picture selected" width="150" height="150" /></p>
+                                                        <p id="size"></p>
+                                                        <script>
+                                                            var loadFile = function(event) {
+                                                                var image = document.getElementById('output');
+                                                                image.src = URL.createObjectURL(event.target.files[0]);
+                                                                const fi = document.getElementById('file');
+                                                                // Check if any file is selected.
+                                                                if (fi.files.length > 0) {
+                                                                    for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                                                                        const fsize = fi.files.item(i).size;
+                                                                        const file = Math.round((fsize / 1024));
+                                                                        // The size of the file.
+                                                                        if (file >= 10240) {
+                                                                            alert(
+                                                                                "File too Big, please select a file less than 10mb");
+                                                                        } else if (file < 50) {
+                                                                            alert(
+                                                                                "File too small, please select a file greater than 50kb");
+                                                                        } else {
+                                                                            document.getElementById('size').innerHTML = '<b>'
+                                                                                + file + '</b> KB';
+                                                                        }
+                                                                    }
+                                                                }
+                                                            };
+                                                        </script>
                                                     </div>
                                                 </div>
                                             </div>

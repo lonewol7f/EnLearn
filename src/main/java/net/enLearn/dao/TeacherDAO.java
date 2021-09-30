@@ -8,4 +8,5 @@ public interface TeacherDAO {
 
         Teacher getTeacherById(int id);
 
+    void delete(int teacherID);
 }

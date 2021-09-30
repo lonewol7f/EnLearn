@@ -1,10 +1,15 @@
-<%--
+<%@ page import="net.enLearn.entity.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="net.enLearn.entity.Course" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: flashminat0
   Date: 2021-07-20
   Time: 3:53 PM
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!doctype html>
 <html lang="en">
 <!--Created by Yasas on 20/07/2021-->
@@ -53,11 +58,95 @@
                 <div class="col">
                     <div class="row">
                         <div class="col-lg-8">
-                            <h2 class="mg-md no-margin">
-                                Name of Student
+
+                            <style>
+                                table, th, td {
+                                    border:#999999 1px solid; padding-left: 1%; padding-top: 0.5%;
+
+                                }
+                            </style>
+
+                            <table style="width: 100%">
+                                <tr>
+                                    <th>Name</th>
+                                    <td>${user.firstName} ${user.lastname}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td>${user.email}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gender</th>
+                                    <%
+                                        User user = (User) request.getAttribute("user");
+                                        if (Integer.parseInt(user.getGender())==2){
+                                            out.println("<td>Male</td>");
+                                        }else {
+                                            out.println("<td>Female</td>");
+                                        }
+                                    %>
+                                </tr>
+                                <tr>
+                                    <th>Birthday</th>
+                                    <td>${user.DOB}</td>
+                                </tr>
+                                <tr>
+                                    <th>District</th>
+                                    <td>${user.district}</td>
+                                </tr>
+                                <tr>
+                                    <th>Address</th>
+                                    <td>${user.address}</td>
+                                </tr>
+                                <tr>
+                                    <th>Grade</th>
+                                    <td>${user.grade}</td>
+                                </tr>
+
+                            </table>
+<%--                            <h2 class="mg-md no-margin">
+                                ${user.firstName}
                             </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.address}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.DOB}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.gender}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.grade}
+                            </h2>
+                            <h2 class="mg-md no-margin">
+                                ${user.district}
+                            </h2>--%>
+
+                            <br>
+                            <%-- construct an 'delete' link with event id --%>
+                            <c:url var="deleteLink" value="/students/delete">
+                                <c:param name="studentId" value="${user.id}"/>
+                            </c:url>
+
+                            <%-- construct an 'update' link with event id --%>
+                            <c:url var="updateLink" value="/students/update">
+                                <c:param name="studentId" value="${user.id}"/>
+                            </c:url>
+
+                            <div class="row">
+                                <div class="col">
+                                <a href="${deleteLink}" onclick="if (!(confirm('Are you sure, You want to Delete your profile?'))) return false" class="btn btn-danger">Delete</a>
+                                </div>
+                                <div class="col">
+                                    <a href="${updateLink}" onclick="if (!(confirm('Are you sure, You want to Edit your profile?'))) return false"   class="btn btn-success">Update</a>
+                                </div>
+
+                            </div>
+
+                            <br>
                             <h4 class="mg-md no-margin">
-                                Year here
+                                2021
                             </h4>
                             <div class="divider-h">
                                 <span class="divider"></span>
@@ -74,7 +163,7 @@
                             </h5>
                         </div>
                         <div class="col offset-lg-1">
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/b8d67043-5e4a-48ad-ad45-92f0a1352dc7.jpg" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" />
+                            <img src="${user.image_path}" data-src="${user.image_path}" class="img-fluid rounded-circle mx-auto d-block lazyload" alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7" width="250px" height="250px" />
                         </div>
                     </div>
                     <div class="row">
@@ -82,97 +171,52 @@
                             <div class="divider-h">
                                 <span class="divider"></span>
                             </div>
-                            <h4 class="mg-md no-margin text-lg-center">
-                                Bought Courses
-                            </h4>
-                            <div><div class="text-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px"><path d="M2,25H498"></path></svg>
-                            </div>
-                            </div>
-                            <div class="row">
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="col card-box">
-                                    <div class="card">
-                                        <div class="divider-h">
-                                            <span class="divider"></span>
-                                        </div><img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                                        <h5 class="mg-md text-lg-center">
-                                            Heading content
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
+
+
+                            <%
+                                List<Course> courses = (List<Course>) request.getAttribute("courses");
+                                if (courses==null || courses.size()==0){
+                                   out.println("<h4 class=\"mg-md no-margin text-lg-center\">\n" +
+                                               "No courses were bought yet\n" +
+                                               "</h4>");
+                                }else {
+                                    out.println("<h4 class=\"mg-md no-margin text-lg-center\">\n" +
+                                                "Bought Courses\n" +
+                                                "</h4>\n" +
+                                                "\n" +
+                                                "<div><div class=\"text-center\">\n" +
+                                                "    <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 500 50\" stroke-width=\"1\" stroke=\"#000000\" fill=\"none\" stroke-linecap=\"butt\" style=\"max-width:500px\"><path d=\"M2,25H498\"></path></svg>\n" +
+                                                "</div>\n" +
+                                                "</div>\n");
+                                }
+
+                                for (int i=0; i<courses.size(); i+=4){
+                                    out.println("<div class=\"row\">");
+                                    for (int j=0; j<4 && i+j < courses.size();j++){
+
+                                        out.println("<div class=\"col card-box\">\n" +
+                                                    "    <div class=\"card\">\n" +
+                                                    "        <div class=\"divider-h\">\n" +
+                                                    "            <span class=\"divider\"></span>\n" +
+                                                    "        </div><img src=\"../../resources/img/lazyload-ph.png\" data-src=\"../../resources/img/placeholder-image.png\" class=\"img-fluid mx-auto d-block lazyload\" alt=\"placeholder image\" />\n" +
+                                                    "        <h5 class=\"mg-md text-lg-center\">\n" + courses.get(i + j).getTitle() + "</h5>\n" +
+                                                    "<h6 class=\"mg-md text-lg-center\">\n" +
+                                                    "    By: " + courses.get(i + j).getTeacher().getFirstName() + "        </h6>\n" +
+                                                    "\n" +
+                                                    "    </div>\n" +
+                                                    "</div>\n" +
+                                                    "\n");
+
+
+                                    }
+                                    out.println("</div>");
+                                }
+
+
+                            %>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -180,16 +224,16 @@
         </div>
     </div>
 </div>
-<div class="text-center">
-    <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
-    <div class="row">
-        <div class="col">
-            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
-        </div>
-        <div class="col">
-            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-        </div>
-    </div>
+<%--<div class="text-center">--%>
+<%--    <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->--%>
+<%--    <div class="row">--%>
+<%--        <div class="col">--%>
+<%--            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>--%>
+<%--        </div>--%>
+<%--        <div class="col">--%>
+<%--            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <!-- bloc-19 END -->
 

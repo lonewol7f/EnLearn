@@ -1,9 +1,11 @@
 package net.enLearn.controller;
 
 import net.enLearn.service.FreeQuizService;
+import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
@@ -17,6 +19,9 @@ public class DemoController {
     private Logger logger;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private FreeQuizService freeQuizService;
 
     @GetMapping("/")
@@ -25,7 +30,10 @@ public class DemoController {
     }
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
+        model.addAttribute("errors", userService.getErrors());
+        userService.clearErrors();
+
         return "login";
     }
 
