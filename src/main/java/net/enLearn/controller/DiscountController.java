@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 
 
@@ -24,7 +28,6 @@ public class DiscountController {
 
     @Autowired
     private DiscountService disService; //Service class reference to create Object from service class
-
 
 
 
@@ -71,75 +74,10 @@ public class DiscountController {
 
 
 
-
-    //According to durgesh
-    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
-    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
-                                      @RequestParam("discount") int discount,
-                                      @RequestParam("teacher_name") String teacher_name,
-                                      @RequestParam("course") String course,
-                                      @RequestParam("image") MultipartFile image,
-                                      @RequestParam("description") String description,
-                                      @RequestParam("grade") int grade,
-                                      @RequestParam("title") String title,
-                                      HttpSession session){
-
-        try {
-            byte[] data = image.getBytes();
-            //save image to server
-            String path = session.getServletContext().getRealPath("/") + "WEB-INF" + File.separator
-                                                                        + "resources" + File.separator
-                                                                        + "img" +File.separator
-                                                                        + image.getOriginalFilename();
-            FileOutputStream fos = new FileOutputStream(path);
-            fos.write(data);
-            fos.close();
-        }catch (Exception e){
-            System.out.println("File Upload Error "+ e);
-        }
+    //This worked
+    private static final String UPLOAD_DIRECTORY ="/resources/img";
 
 
-
-
-        Discount discountObj;
-        discountObj = new Discount(admin_id,discount,teacher_name,course,image,description,grade,title);
-
-        disService.saveDiscount(discountObj);
-
-
-        return "Add-Discount";
-    }*/
-
-
-    //According to tutorial
-    /*@RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
-    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
-                                      @RequestParam("discount") int discount,
-                                      @RequestParam("teacher_name") String teacher_name,
-                                      @RequestParam("course") String course,
-                                      @RequestParam("image") CommonsMultipartFile image,
-                                      @RequestParam("description") String description,
-                                      @RequestParam("grade") int grade,
-                                      @RequestParam("title") String title){
-
-        if (image != null) {
-            System.out.println("Saving file: " + image.getOriginalFilename());
-            byte[] data = image.getBytes();
-            Discount discountObj;
-            discountObj = new Discount(admin_id, discount, teacher_name, course, data, description, grade, title);
-            disService.saveDiscount(discountObj);
-        }
-
-
-
-
-        return "Add-Discount";
-    }*/
-
-
-
-
-    //According to Sashini
     @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
     public String processDiscountForm(@RequestParam("admin_id") int admin_id,
                                       @RequestParam("discount") int discount,
@@ -148,31 +86,30 @@ public class DiscountController {
                                       @RequestParam("image") MultipartFile image,
                                       @RequestParam("description") String description,
                                       @RequestParam("grade") int grade,
-                                      @RequestParam("title") String title){
+                                      @RequestParam("title") String title, HttpSession session) throws Exception{
 
-        String photo = null;
-        try {
-            photo = "data:image/jpg;base64,"+
-                    Base64.getEncoder().encodeToString(image.getBytes());
-        } catch (
-                IOException e) {
-            e.printStackTrace();
-        }
+        ServletContext context = session.getServletContext();
+        String path = context.getRealPath(UPLOAD_DIRECTORY);
+        String filename = image.getOriginalFilename();
+
+        System.out.println(path+" "+filename);
+
+        byte[] bytes = image.getBytes();
+        BufferedOutputStream stream =new BufferedOutputStream(new FileOutputStream(new File(path + File.separator + filename)));
+        stream.write(bytes);
+        stream.flush();
+        stream.close();
 
 
 
         Discount discountObj;
-        discountObj = new Discount(admin_id,discount,teacher_name,course,photo,description,grade,title);
+        discountObj = new Discount(admin_id,discount,teacher_name,course,image.getBytes(),description,grade,title);
 
         disService.saveDiscount(discountObj);
 
 
         return "Add-Discount";
     }
-
-
-
-
 
 
 
@@ -224,7 +161,7 @@ public class DiscountController {
 
 
     //Update Discount
-    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
+    @RequestMapping(path = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") int id,
                          @RequestParam("admin_id") int admin_id,
                          @RequestParam("discount") int discount,
@@ -234,17 +171,17 @@ public class DiscountController {
                          @RequestParam("description") String description,
                          @RequestParam("grade") int grade,
                          @RequestParam("title") String title,
-                         Model model1){
+                         Model model1) throws IOException {
 
-        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,image,description,grade,title);
+        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,image.getBytes(),description,grade,title);
         disService.updateDiscount(discount1);
 
         return "redirect:/discounts/showDiscounts";
-    }*/
+    }
 
 
 
-    @RequestMapping(path = "/update", method = RequestMethod.POST)
+    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
     public String update(@RequestParam("id") int id,
                          @RequestParam("admin_id") int admin_id,
                          @RequestParam("discount") int discount,
@@ -271,7 +208,7 @@ public class DiscountController {
         disService.updateDiscount(discount1);
 
         return "redirect:/discounts/showDiscounts";
-    }
+    }*/
 
 
     //==================================================================================================================
