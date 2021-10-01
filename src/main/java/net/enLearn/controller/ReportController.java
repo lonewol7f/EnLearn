@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by Kalana on 13/09/2021
@@ -116,12 +115,5 @@ public class ReportController {
     //
     // }
 
-    @GetMapping("/test")
-    public String test() {
-        List list = teacherService.getCommentCountForCourses(userService.getLoggedUserId());
-        System.out.println(list.toString());
-
-        return "index";
-    }
 
 }
