@@ -1,10 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Flashminat0
-  Date: 9/16/2021
-  Time: 10:37 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -16,6 +12,39 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+
+<div style="display: flex; justify-content: center">
+  <c:if test="${fn:length(courseList) > 0}">
+    <table class="table table-hover">
+
+
+        <%-- Loop over and print courses --%>
+      <c:forEach var="tempCourse" items="${courseList}">
+
+
+
+
+        <tr>
+          <td>${tempCourse.title}</td>
+          <td>${tempCourse.type}</td>
+          <td style="height:100px;width:30%">${tempCourse.description}</td>
+          <td>Rs. ${tempCourse.price}.00</td>
+          <td>${tempCourse.image}</td>
+          <td>
+
+          </td>
+        </tr>
+      </c:forEach>
+    </table>
+  </c:if>
+  <c:if test="${fn:length(courseList) == 0}">
+    <div class="text-center border border-2 rounded"
+         style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+      <p>No Courses Currently</p>
+    </div>
+  </c:if>
+</div>
+
 
         <div class="bg-purple-200 mt-5 rounded-2xl mx-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 2 gap-8 p-2 6">
             <div class="bg-white rounded-2xl grid place-content-center hover:shadow-lg">

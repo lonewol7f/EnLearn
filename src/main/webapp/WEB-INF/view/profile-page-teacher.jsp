@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
-<!--Created by Yasas on 20/07/2021-->
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="">
@@ -126,6 +126,7 @@
 
                     <c:url var="coursesLink" value="/courses/add-courses">
                         <c:param name="courseId" value="${tempCourse.id}"/>
+                        <c:param name="type" value="${tempCourse.type}"/>
                     </c:url>
 
 

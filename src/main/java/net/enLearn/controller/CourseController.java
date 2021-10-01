@@ -74,6 +74,7 @@ public class CourseController {
         zoomClass.setCourse(course);
         zoomClassService.saveOrUpdate(zoomClass);
         redirectAttributes.addAttribute("courseId", courseId);
+        redirectAttributes.addAttribute("type", "Zoom Class");
         return "redirect:/courses/add-courses";
     }
 
@@ -92,6 +93,8 @@ public class CourseController {
         ZoomClass zoomClass = zoomClassService.getZoomClassById(id);
         Course course = zoomClass.getCourse();
         redirectAttribute.addAttribute("courseId", course.getId());
+        redirectAttribute.addAttribute("type", "Zoom Class");
+
         zoomClassService.deleteZoomClass(id);
         return "redirect:/courses/add-courses";
     }
@@ -112,6 +115,7 @@ public class CourseController {
         recordedVideo.setCourse(course);
         recordedVideoService.saveOrUpdate(recordedVideo);
         redirectAttributes.addAttribute("courseId", courseId);
+        redirectAttributes.addAttribute("type", "Recorded Video");
         return "redirect:/courses/add-courses";
     }
 
@@ -130,6 +134,7 @@ public class CourseController {
         RecordedVideo recordedVideo = recordedVideoService.getVideoById(id);
         Course course = recordedVideo.getCourse();
         redirectAttribute.addAttribute("courseId", course.getId());
+        redirectAttribute.addAttribute("type", "Recorded Video");
         recordedVideoService.deleteVideo(id);
         return "redirect:/courses/add-courses";
     }

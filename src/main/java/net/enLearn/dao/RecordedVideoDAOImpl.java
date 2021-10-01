@@ -47,7 +47,7 @@ public class RecordedVideoDAOImpl implements RecordedVideoDAO{
     public void deleteVideo(int id) {
         Session session = sessionFactory.getCurrentSession();
         RecordedVideo recordedVideo = session.get(RecordedVideo.class, id);
-        recordedVideo.getCourse().getZoomClassList().remove(recordedVideo);
+        recordedVideo.getCourse().getVideos().remove(recordedVideo);
         session.delete(recordedVideo);
     }
 }
