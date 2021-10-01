@@ -3,8 +3,10 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
+import net.enLearn.entity.RecordedVideo;
 import net.enLearn.entity.ZoomClass;
 import net.enLearn.service.CourseService;
+import net.enLearn.service.RecordedVideoService;
 import net.enLearn.service.ZoomClassService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,9 @@ public class CourseController {
     @Autowired
     private ZoomClassService zoomClassService;
 
+    @Autowired
+    private RecordedVideoService recordedVideoService;
+
 
     @Autowired
     private Logger logger;
@@ -40,7 +45,9 @@ public class CourseController {
     @GetMapping("/add-courses")
     public String showAddCoursePage(@RequestParam("courseId") int id, Model model) {
         List<ZoomClass> zoomClassList = zoomClassService.getZoomClassListByCourseId(id);
+        List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
         model.addAttribute("zoomClassList", zoomClassList);
+        model.addAttribute("videoList", videoList);
         model.addAttribute("courseId", id);
         return "add-course";
     }
@@ -100,12 +107,39 @@ public class CourseController {
 
     //Recorded Video
     @PostMapping("/video/save")
-    public String saveVideo(@ModelAttribute("zoomClass") ZoomClass zoomClass, @RequestParam("courseId") int courseId, RedirectAttributes redirectAttributes) {
+    public String saveVideo(@ModelAttribute("recordedVideo") RecordedVideo recordedVideo, @RequestParam("courseId") int courseId, RedirectAttributes redirectAttributes) {
         Course course = courseService.getCourseById(courseId);
-        zoomClass.setCourse(course);
-        zoomClassService.saveOrUpdate(zoomClass);
+        recordedVideo.setCourse(course);
+        recordedVideoService.saveOrUpdate(recordedVideo);
         redirectAttributes.addAttribute("courseId", courseId);
         return "redirect:/courses/add-courses";
+    }
+
+    @GetMapping("/add-video")
+    public String showAddVideoPage(@RequestParam("courseId") int courseId, Model model) {
+        RecordedVideo recordedVideo = new RecordedVideo();
+        Course course = courseService.getCourseById(courseId);
+        recordedVideo.setCourse(course);
+        model.addAttribute("recordedVideo", recordedVideo);
+        return "add-video";
+    }
+
+    //Recorded video Delete
+    @GetMapping("/video/delete")
+    public String deleteVideo(@RequestParam("recordedVideoId") int id, Model model, RedirectAttributes redirectAttribute) {
+        RecordedVideo recordedVideo = recordedVideoService.getVideoById(id);
+        Course course = recordedVideo.getCourse();
+        redirectAttribute.addAttribute("courseId", course.getId());
+        recordedVideoService.deleteVideo(id);
+        return "redirect:/courses/add-courses";
+    }
+
+    //Recorded video Edit
+    @GetMapping("/video/update")
+    public String showVideoUpdateForm(@RequestParam("recordedVideoId") int id, Model model) {
+        RecordedVideo recordedVideo = recordedVideoService.getVideoById(id);
+        model.addAttribute("recordedVideo", recordedVideo);
+        return "add-video";
     }
 
 }
