@@ -7,9 +7,6 @@ import org.hibernate.annotations.FetchMode;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Kalana on 29/07/2021
- */
 
 @Entity
 @Table(name = "recorded_video")

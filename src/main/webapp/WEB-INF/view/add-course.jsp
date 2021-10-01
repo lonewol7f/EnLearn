@@ -96,77 +96,34 @@
     <div style="display: flex; justify-content: center">
 
 
-<%--        <c:if test = "${fn:length(zoomClassList) > 0}">--%>
-<%--            <table class="table table-hover">--%>
-
-
-<%--                    &lt;%&ndash; Loop over and print zoom classes &ndash;%&gt;--%>
-<%--                <c:forEach var="tempZoomLink" items="${zoomClassList}">--%>
-
-<%--                    &lt;%&ndash; construct an 'update' link with zoom id &ndash;%&gt;--%>
-<%--                    <c:url var="updateLink" value="/courses/zoomClass/update">--%>
-<%--                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>--%>
-<%--                    </c:url>--%>
-
-<%--                    &lt;%&ndash; construct an 'delete' link with zoom id &ndash;%&gt;--%>
-<%--                    <c:url var="deleteLink" value="/courses/zoomClass/delete">--%>
-<%--                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>--%>
-<%--                    </c:url>--%>
-
-<%--                    <c:url var="quizLink" value="/teachers/special-quizzes">--%>
-<%--                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>--%>
-<%--                    </c:url>--%>
-
-<%--                    <tr>--%>
-<%--                        <td>${tempZoomLink.week}</td>--%>
-<%--                        <td>${tempZoomLink.title}</td>--%>
-<%--                        <td style="height:100px;width:25%">${tempZoomLink.description}</td>--%>
-<%--                        <td>${tempZoomLink.date}</td>--%>
-<%--                        <td>${tempZoomLink.time}</td>--%>
-<%--                        <td style="height:100px;width:30%"><a href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>--%>
-<%--                        <td><a href="${quizLink}">Quiz</a></td>--%>
-
-<%--                        <td>--%>
-<%--                                &lt;%&ndash; display the update link &ndash;%&gt;--%>
-<%--                            <a href="${updateLink}"--%>
-<%--                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"--%>
-<%--                               class="btn btn-success">Update</a>--%>
-<%--                            <a href="${deleteLink}"--%>
-<%--                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"--%>
-<%--                               class="btn btn-danger">Delete</a>--%>
-
-<%--                        </td>--%>
-<%--                    </tr>--%>
-<%--                </c:forEach>--%>
-<%--            </table>--%>
-<%--        </c:if>--%>
-
-        <c:if test="${fn:length(videoList) > 0}">
+        <c:if test = "${fn:length(zoomClassList) > 0}">
             <table class="table table-hover">
 
 
                     <%-- Loop over and print zoom classes --%>
-                <c:forEach var="tempVideoLink" items="${videoList}">
+                <c:forEach var="tempZoomLink" items="${zoomClassList}">
 
                     <%-- construct an 'update' link with zoom id --%>
-                    <c:url var="updateLink" value="/courses/video/update">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                    <c:url var="updateLink" value="/courses/zoomClass/update">
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
                     </c:url>
 
                     <%-- construct an 'delete' link with zoom id --%>
-                    <c:url var="deleteLink" value="/courses/video/delete">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                    <c:url var="deleteLink" value="/courses/zoomClass/delete">
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
                     </c:url>
 
                     <c:url var="quizLink" value="/teachers/special-quizzes">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
                     </c:url>
 
                     <tr>
-                        <td>${tempVideoLink.week}</td>
-                        <td>${tempVideoLink.title}</td>
-                        <td style="height:100px;width:25%">${tempVideoLink.description}</td>
-                        <td style="height:100px;width:30%"><a href="${tempVideoLink.videoLink}">${tempVideoLink.videoLink}</a></td>
+                        <td>${tempZoomLink.week}</td>
+                        <td>${tempZoomLink.title}</td>
+                        <td style="height:100px;width:25%">${tempZoomLink.description}</td>
+                        <td>${tempZoomLink.date}</td>
+                        <td>${tempZoomLink.time}</td>
+                        <td style="height:100px;width:30%"><a href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>
                         <td><a href="${quizLink}">Quiz</a></td>
 
                         <td>
@@ -184,12 +141,55 @@
             </table>
         </c:if>
 
-<%--        <c:if test ="${fn:length(videoList) == 0}">--%>
-<%--            <div class="text-center border border-2 rounded"--%>
-<%--                 style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">--%>
-<%--                <p>No Recorded Videos or Zoom Classes Currently</p>--%>
-<%--            </div>--%>
+<%--        <c:if test="${fn:length(videoList) > 0}">--%>
+<%--            <table class="table table-hover">--%>
+
+
+<%--                    &lt;%&ndash; Loop over and print zoom classes &ndash;%&gt;--%>
+<%--                <c:forEach var="tempVideoLink" items="${videoList}">--%>
+
+<%--                    &lt;%&ndash; construct an 'update' link with zoom id &ndash;%&gt;--%>
+<%--                    <c:url var="updateLink" value="/courses/video/update">--%>
+<%--                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>--%>
+<%--                    </c:url>--%>
+
+<%--                    &lt;%&ndash; construct an 'delete' link with zoom id &ndash;%&gt;--%>
+<%--                    <c:url var="deleteLink" value="/courses/video/delete">--%>
+<%--                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>--%>
+<%--                    </c:url>--%>
+
+<%--                    <c:url var="quizLink" value="/teachers/special-quizzes">--%>
+<%--                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>--%>
+<%--                    </c:url>--%>
+
+<%--                    <tr>--%>
+<%--                        <td>${tempVideoLink.week}</td>--%>
+<%--                        <td>${tempVideoLink.title}</td>--%>
+<%--                        <td style="height:100px;width:25%">${tempVideoLink.description}</td>--%>
+<%--                        <td style="height:100px;width:30%"><a href="${tempVideoLink.videoLink}">${tempVideoLink.videoLink}</a></td>--%>
+<%--                        <td><a href="${quizLink}">Quiz</a></td>--%>
+
+<%--                        <td>--%>
+<%--                                &lt;%&ndash; display the update link &ndash;%&gt;--%>
+<%--                            <a href="${updateLink}"--%>
+<%--                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"--%>
+<%--                               class="btn btn-success">Update</a>--%>
+<%--                            <a href="${deleteLink}"--%>
+<%--                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"--%>
+<%--                               class="btn btn-danger">Delete</a>--%>
+
+<%--                        </td>--%>
+<%--                    </tr>--%>
+<%--                </c:forEach>--%>
+<%--            </table>--%>
 <%--        </c:if>--%>
+
+        <c:if test ="${fn:length(videoList) == 0}">
+            <div class="text-center border border-2 rounded"
+                 style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 50px; width: fit-content">
+                <p>No Recorded Videos or Zoom Classes Currently</p>
+            </div>
+        </c:if>
     </div>
     <!-- bloc-22 END -->
 
