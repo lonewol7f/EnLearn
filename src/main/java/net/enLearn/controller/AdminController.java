@@ -3,6 +3,7 @@ package net.enLearn.controller;
 import net.enLearn.entity.Admin;
 import net.enLearn.entity.Event;
 import net.enLearn.entity.RedeemCode;
+import net.enLearn.helper.Messages;
 import net.enLearn.service.AdminService;
 import net.enLearn.service.EventService;
 import net.enLearn.service.RedeemCodeService;
@@ -53,7 +54,7 @@ public class AdminController {
     public String saveCoupon(@ModelAttribute("coupon")RedeemCode code, RedirectAttributes redirectAttributes) {
 
         if (redeemCodeService.checkExistingCoupon(code.getCode())) {
-            redirectAttributes.addAttribute("error", "codeExists");
+            redirectAttributes.addFlashAttribute("error", Messages.CODE_ALREADY_EXISTS);
             return "redirect:/admins/codes";
         }
 
@@ -63,7 +64,7 @@ public class AdminController {
         code.setAdmin(admin);
 
         redeemCodeService.saveCode(code);
-        redirectAttributes.addAttribute("success", "saved");
+        redirectAttributes.addFlashAttribute("success", Messages.CODE_SAVED);
 
         return "redirect:/admins/codes";
     }
@@ -79,7 +80,7 @@ public class AdminController {
     public String removeUsedCoupon(RedirectAttributes redirectAttributes) {
         redeemCodeService.deleteUsedCodes();
 
-        redirectAttributes.addAttribute("success","remove-used");
+        redirectAttributes.addFlashAttribute("success",Messages.REMOVE_USED_CODES);
         return "redirect:/admins/codes";
     }
 
@@ -113,7 +114,7 @@ public class AdminController {
         event.setAdmin(admin);
 
         eventService.saveOrUpdateEvent(event);
-        redirectAttributes.addAttribute("success", "saved");
+        redirectAttributes.addFlashAttribute("success", Messages.EVENT_SAVED);
 
         return "redirect:/admins/events/list";
     }
@@ -132,7 +133,7 @@ public class AdminController {
     public String deleteEvent(@RequestParam("eventId") int id, RedirectAttributes redirectAttributes) {
 
         eventService.deleteEvent(id);
-        redirectAttributes.addAttribute("success", "deleted");
+        redirectAttributes.addFlashAttribute("success", Messages.EVENT_DELETED);
 
         return "redirect:/admins/events/list";
     }

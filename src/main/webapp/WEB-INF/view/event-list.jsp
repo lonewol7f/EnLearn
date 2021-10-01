@@ -40,17 +40,9 @@
     <!-- bloc-0 -->
     <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
-
-    <%--TODO: create nice dive for show messages--%>
-    <c:if test="${param.deleted != null}">
-        <div class="d-flex justify-content-center">
-            <div class="mt-5 alert alert-success alert-dismissible fade show text-center" style="width: 30vw"
-                 role="alert">
-                <strong>Record Deleted</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-    </c:if>
+    <%--Notifications--%>
+    <%@include file="messsages.jsp"%>
+    <%--Notifications END--%>
 
     <div class="container">
         <div class="mt-5 mb-5">

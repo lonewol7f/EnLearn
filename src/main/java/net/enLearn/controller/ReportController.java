@@ -3,6 +3,8 @@ package net.enLearn.controller;
 import net.enLearn.entity.Event;
 import net.enLearn.service.EventService;
 import net.enLearn.service.RedeemCodeService;
+import net.enLearn.service.TeacherService;
+import net.enLearn.service.UserService;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Kalana on 13/09/2021
@@ -33,6 +36,12 @@ public class ReportController {
 
     @Autowired
     private RedeemCodeService redeemCodeService;
+
+    @Autowired
+    private TeacherService teacherService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/single-event")
     public ResponseEntity<byte[]> generateSingleEventReport(@RequestParam("eventId") int id) throws Exception, JRException {
@@ -83,6 +92,36 @@ public class ReportController {
         return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
 
 
+    }
+
+    // @GetMapping("/comment-analysis")
+    // public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
+    //
+    //     List list = teacherService.getCommentCountForCourses(userService.getLoggedUserId());
+    //
+    //     Resource resource1 = new ClassPathResource("reports/comment-report-part-1.jrxml");
+    //     File file1 = resource1.getFile();
+    //
+    //     JRBeanCollectionDataSource dataSource1 = new JRBeanCollectionDataSource(teacherService.getCommentCountForCourses(userService.getLoggedUserId()));
+    //
+    //     JasperReport compileReport1 = JasperCompileManager.compileReport(new FileInputStream(file1));
+    //
+    //     HashMap<String, Object> map1 = new HashMap<String, Object>();
+    //     map1.put("max")
+    //
+    //     JasperPrint report1 = JasperFillManager.fillReport(compileReport1, map1, dataSource1);
+    //
+    //     byte[] data = JasperExportManager.exportReportToPdf(report1);
+    //
+    //
+    // }
+
+    @GetMapping("/test")
+    public String test() {
+        List list = teacherService.getCommentCountForCourses(userService.getLoggedUserId());
+        System.out.println(list.toString());
+
+        return "index";
     }
 
 }
