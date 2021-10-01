@@ -61,9 +61,7 @@ DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student`
 (
     `id`     INT NOT NULL,
-    `module` VARCHAR(30),
     `grade`  INT,
-    `type`   VARCHAR(10),
     CONSTRAINT `pk_student` PRIMARY KEY (`id`),
     CONSTRAINT `fk_student` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
@@ -74,9 +72,8 @@ DROP TABLE IF EXISTS `teacher`;
 CREATE TABLE `teacher`
 (
     `id`     INT NOT NULL,
-    `module` VARCHAR(30),
-    `grade`  INT,
-    `type`   VARCHAR(10),
+    `salary` INT DEFAULT 0,
+    `verified` TINYINT(1) DEFAULT 0,
     CONSTRAINT `pk_teacher` PRIMARY KEY (`id`),
     CONSTRAINT `fk_teacher` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
@@ -475,15 +472,15 @@ VALUES ('Kalana', 'Madusanka', 'km@gmail.com', '$2a$10$W3E8YRbuHkjD4CBRyUdXX.qjI
        ('Osini', 'Kithma', 'ok@gmail.com', '$2a$10$ORdHGQEno9r9D8piFv8./OGITWOR8UFVhQSFLKK714mcQPfnfV.x2'),
        ('Hasintha', 'Dhanushka', 'hd@gmail.com', '$2a$10$e0N6kMTRvhUKy84emaRcYO6CMNWxVD9bw42wTSD.M3HK94KGQjaAi');
 
-INSERT INTO `student` (id, module, grade, type)
-VALUES (1, 'Who Knows_1', 12, 'IDK'),
-       (2, 'Who Knows_2', 12, 'IDK'),
-       (3, 'Who Knows_3', 12, 'IDK'),
-       (4, 'Who Knows_4', 12, 'IDK');
+INSERT INTO `student` (id,  grade)
+VALUES (1,  12),
+       (2,  12),
+       (3,  12),
+       (4,  12);
 
-INSERT INTO `teacher` (id, module, grade, type)
-VALUES (2, 'Who Knows_2', 12, 'IDK'),
-       (3, 'Who Knows_3', 12, 'IDK');
+INSERT INTO `teacher` (id, verified)
+VALUES (2, 1),
+       (3, 1);
 
 INSERT INTO `admin` (id, no_of_shares)
 VALUES (3, 51);
