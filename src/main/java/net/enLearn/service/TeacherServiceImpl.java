@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class TeacherServiceImpl implements TeacherService{
 
@@ -18,5 +20,9 @@ public class TeacherServiceImpl implements TeacherService{
         return teacherDAO.getTeacherById(id);
     }
 
-
+    @Override
+    @Transactional
+    public List getCommentCountForCourses(int teacherId) {
+        return teacherDAO.getCommentCountForCourses(teacherId);
+    }
 }
