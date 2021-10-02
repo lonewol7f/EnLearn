@@ -29,6 +29,7 @@ public class StudentController {
     @Autowired
     private UserService userService;
 
+
     @GetMapping("")
     public String showStudentProfilePage() {
         return "profile-page-student";
@@ -51,5 +52,7 @@ public class StudentController {
 
         return "redirect:/shop";
     }
+
+
 
 }

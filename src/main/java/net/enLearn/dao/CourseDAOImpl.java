@@ -4,6 +4,7 @@ import net.enLearn.entity.Course;
 import net.enLearn.entity.Teacher;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -48,4 +49,15 @@ public class CourseDAOImpl implements CourseDAO {
         session.delete(course);
 
     }
+
+    @Override
+    public List<Course> getCourseList(){
+        Session session = sessionFactory.getCurrentSession();
+        Query<Course> courseQuery = session.createQuery("from Course", Course.class);
+        List<Course> courseList = courseQuery.getResultList();
+        return courseList;
+    }
+
+
+
 }
