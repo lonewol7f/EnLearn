@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3881ef2c-6a46-405e-9e65-589cc47ae563">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="teacherId" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[SELECT count( comment.id) AS c,
+    course.title
+    FROM course,
+            comment,
+            recorded_video
+    WHERE
+    course.teacher_id = $P{teacherId}
+    AND recorded_video.course_id = course.id
+    AND comment.video_id = recorded_video.id
+    GROUP BY course.title
+    ORDER BY c DESC]]>
 	</queryString>
 	<field name="c" class="java.lang.Long"/>
 	<field name="title" class="java.lang.String"/>
@@ -37,39 +49,25 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="45" splitType="Stretch">
+		<band height="42" splitType="Stretch">
 			<staticText>
-				<reportElement x="127" y="0" width="300" height="45" uuid="11c7d273-5dc5-420d-8733-e8d688a1b264"/>
+				<reportElement isPrintRepeatedValues="false" x="0" y="0" width="555" height="42" isPrintInFirstWholeBand="true" uuid="de8f5440-3ed1-48a6-be56-188a27714fdf"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="25" isBold="true" isUnderline="true"/>
+					<font fontName="Times New Roman" size="22" isBold="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Comment Analysis]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="53" splitType="Stretch">
-			<staticText>
-				<reportElement x="10" y="10" width="280" height="30" uuid="d7146ff3-9454-4282-894e-4f47cb560f0e">
-					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="16" isBold="true"/>
-					<paragraph leftIndent="10" rightIndent="0"/>
-				</textElement>
-				<text><![CDATA[*  Number of Comments Vs Courses]]></text>
-			</staticText>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="230" splitType="Stretch">
+		<band height="251" splitType="Stretch">
 			<pieChart>
 				<chart evaluationTime="Report">
-					<reportElement x="87" y="0" width="380" height="230" uuid="2904a1e9-c3cf-4ff3-90c0-d4acd81135c8"/>
+					<reportElement x="0" y="50" width="555" height="200" uuid="db95dd40-adf5-46ea-a7dc-4fa5d04398a5"/>
+					<box leftPadding="10" rightPadding="10"/>
 					<chartTitle/>
 					<chartSubtitle/>
-					<chartLegend/>
+					<chartLegend position="Right"/>
 				</chart>
 				<pieDataset>
 					<dataset resetType="Report"/>
@@ -82,16 +80,26 @@
 					<itemLabel/>
 				</piePlot>
 			</pieChart>
+			<staticText>
+				<reportElement x="0" y="20" width="260" height="30" uuid="6b3368fe-299a-4d4b-ba24-7ddafb6953ad">
+					<property name="com.jaspersoft.studio.unit.spacingBefore" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="15" isBold="true"/>
+					<paragraph leftIndent="5" spacingBefore="0"/>
+				</textElement>
+				<text><![CDATA[*  Comment count Vs Courses]]></text>
+			</staticText>
 		</band>
-		<band height="50"/>
-	</detail>
+	</columnHeader>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="63" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="33" width="350" height="30" forecolor="#FC0C08" uuid="288ed25c-83bb-4448-b995-b1b648ac385f"/>
+				<reportElement x="0" y="33" width="350" height="30" forecolor="#FC0C08" uuid="4b1f2c19-08fb-4e14-9515-8a78e897e7c3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Times New Roman" isBold="false"/>
 				</textElement>
