@@ -31,8 +31,33 @@ public class Teacher extends User{
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Course> courseList;
 
+    @Column(name = "licence")
+    private String licence;
 
-    public Teacher() { }
+    @Column(name = "type")
+    private String subject;
+
+
+    public Teacher() {
+
+    }
+
+    public String getLicence() {
+        return licence;
+    }
+
+    public void setLicence(String licence) {
+        this.licence = licence;
+    }
+
+    public Teacher(String firstName, String email, String lastname,
+                   String password, String DOB, int grade, String district,
+                   String address, String image_path, String licence, String gender, String subject) {
+        super(firstName, email, lastname, password, DOB, grade,
+                district, address, image_path,gender);
+        this.licence = licence;
+        this.subject = subject;
+    }
 
     public List<Notification> getNotifications() {
         return notifications;
@@ -66,4 +91,11 @@ public class Teacher extends User{
         this.courseList = courseList;
     }
 
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
 }

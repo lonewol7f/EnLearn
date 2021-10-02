@@ -1,7 +1,5 @@
 package net.enLearn.entity;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 
 @Entity
@@ -40,12 +38,23 @@ public class Discount {
 
     @Transient
     @Column(name = "image")
-    private MultipartFile image;
-
-
+    private byte[] image;
 
     //constructor
-    public Discount(int admin_id,int discount,String teacher_name,String course,MultipartFile image,String description,int grade,String title){
+    public Discount(int admin_id, int discount, String teacher_name, String course, byte[] image, String description, int grade, String title){
+        this.admin_id = admin_id;
+        this.title = title;
+        this.discount =discount;
+        this.teacher_name = teacher_name;
+        this.course = course;
+        this.grade = grade;
+        this.description = description;
+        this.image = image;
+    }
+
+    //constructor
+    public Discount(int id,int admin_id,int discount,String teacher_name,String course,byte[] image,String description,int grade,String title){
+        this.id = id;
         this.admin_id = admin_id;
         this.title = title;
         this.discount =discount;
@@ -117,11 +126,7 @@ public class Discount {
         return description;
     }
 
-    public void setImage(MultipartFile image){
-        this.image = image;
-    }
+    public void setImage(byte[] image){ this.image = image; }
 
-    public MultipartFile getImage(){
-        return image;
-    }
+    public byte[] getImage(){ return image; }
 }

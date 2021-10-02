@@ -1,6 +1,7 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.Student;
+import net.enLearn.entity.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,15 @@ public class StudentDAOImpl implements StudentDAO{
         Student student = session.get(Student.class,id);
 
         return student;
+    }
+
+    @Override
+    public void delete(int id){
+        Session session = sessionFactory.getCurrentSession();
+        User user = session.get(User.class,id);
+
+        Student student = session.get(Student.class, id);
+        session.remove(student);
+        session.remove(user);
     }
 }

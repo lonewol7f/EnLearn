@@ -32,6 +32,13 @@ public class CourseServiceImpl implements CourseService{
         return courseDAO.getCourseById(id);
     }
 
+
+    @Override
+    @Transactional
+    public List<Course> getCoursesByUserID(int ID){
+        return courseDAO.getCourseByUserId(ID);
+    }
+
     @Override
     @Transactional
     public void deleteCourse(int id) {

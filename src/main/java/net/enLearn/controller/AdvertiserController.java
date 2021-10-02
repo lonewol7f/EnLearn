@@ -7,11 +7,11 @@ import net.enLearn.service.AdvertisementService;
 import net.enLearn.service.AdvertiserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * Created by Kalana on 21/07/2021
@@ -20,8 +20,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/advertisers")
-public class AdvertiserController {
+public class
+AdvertiserController {
 
+    static int MAX_IMAGE_SIZE = 10485760;
 
    /* @Autowired
     private Logger logger;
@@ -71,22 +73,43 @@ public class AdvertiserController {
     private AdvertisementService advertisementService;
 
     @RequestMapping("/register")
-    public String showAdvertiserRegisterPage() {
+    public String showAdvertiserRegisterPage(Model model) {
 
 
-        // Advertisement advertisement = new Advertisement();
-        //model.addAttribute("advertisement", advertisement);
+        model.addAttribute("advertiserId", "-1");
+        model.addAttribute("advertiserCN", "");
+        model.addAttribute("advertisementEmail", "");
+        model.addAttribute("advertisementContact", "");
+        model.addAttribute("advertisementName", "");
 
         return "register-advertiser";
     }
 
     @GetMapping("/upload")
-    public String showAdvertisementUploadPage() {
+    public String showAdvertisementUploadPage(Model model) {
+        model.addAttribute("advertisementId", "-1");
+        model.addAttribute("advertisementDes", "");
+        model.addAttribute("advertisementPr", "");
+        model.addAttribute("advertisementTitle", "");
+
+
         return "upload-advertisement";
     }
 
     @GetMapping("")
-    public String showAdvertiserProfilePage() {
+    public String showAdvertiserProfilePage(Model model) {
+        //TODO Advertiser get
+        Advertiser advertiser = advertiserService.getAdvertiserById(4);
+
+        try {
+            List<Advertisement> advertisements =
+                    advertisementService.getAdvertisementsByAdvertiser(advertiser);
+            model.addAttribute("ad_list", advertisements);
+        } catch (Exception e) {
+            e.printStackTrace();
+            model.addAttribute("ad_list", null);
+        }
+        model.addAttribute("advertiser", advertiser);
 
         return "profile-page-advertiser";
     }
@@ -97,7 +120,9 @@ public class AdvertiserController {
                                         @RequestParam("email") String email,
                                         @RequestParam("phone") int phone,
                                         @RequestParam("password") String password,
-                                        @RequestParam("image") MultipartFile image) {
+                                        @RequestParam("image") MultipartFile image,
+                                        @RequestParam("advertiserId") int id
+                                        ) {
 
         // @RequestParam("title") String title,
         // @RequestParam("package") String Package,
@@ -116,24 +141,82 @@ public class AdvertiserController {
 
         Advertiser advertiserObj;
 
-        advertiserObj = new Advertiser(name, email, phone, password, image);
+        advertiserObj = new Advertiser(null,null,email,password,"",
+                0,null,null,name,phone,image,null);
+
+        if (id!=-1){
+            advertiserObj.setId(id);
+        }
+
         advertiserService.saveOrUpdate(advertiserObj);
-        return "register-advertiser";
+        return "redirect:/advertisers";
     }
 
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     public String processAdvertisementForm(@RequestParam("title") String title,
-                                           @RequestParam("Package") String Package,
+                                           @RequestParam("package") String Package,
                                            @RequestParam("description") String description,
-                                           @RequestParam("image") MultipartFile image) {
+                                           @RequestParam("image") MultipartFile image,
+                                           @RequestParam("advertisementId") int id
+    ) {
 
+        //TODO Advertiser get
+        Advertiser advertiser = advertiserService.getAdvertiserById(4);
 
         Advertisement advertisementObj;
-        advertisementObj = new Advertisement(title, Package, description, image);
+        advertisementObj = new Advertisement(title, Package, description, image,advertiser);
+        if (id!=-1){
+            advertisementObj.setId(id);
+        }
+
         advertisementService.saveOrUpdate(advertisementObj);
 
 
+        return "redirect:/advertisers";
+    }
+
+
+
+
+    @GetMapping("/update")
+    public String updateAdvertisement(@RequestParam("advertisementId") int id, Model model){
+        Advertisement advertisement = advertisementService.getAdvertisementId(id);
+        model.addAttribute("advertisementId", advertisement.getId());
+        model.addAttribute("advertisementDes", advertisement.getDescription());
+        model.addAttribute("advertisementPr", advertisement.getPrice_range());
+        model.addAttribute("advertisementTitle", advertisement.getTitle());
+
         return "upload-advertisement";
     }
+
+
+    @GetMapping("/delete")
+    public String deleteAdvertisement(@RequestParam("advertisementId") int id){
+        advertisementService.deleteAdvertisement(id);
+
+        return "redirect:/advertisers";
+    }
+
+
+    @GetMapping("/update-profile")
+    public String updateAdvertiser(@RequestParam("advertiserId") int id, Model model){
+        Advertiser advertiser = advertiserService.getAdvertiserById(id);
+        model.addAttribute("advertiserId", advertiser.getId());
+        model.addAttribute("advertiserCN", advertiser.getContact_no());
+        model.addAttribute("advertisementEmail", advertiser.getEmail());
+        model.addAttribute("advertisementContact", advertiser.getContact_no());
+        model.addAttribute("advertisementName", advertiser.getFirstName());
+
+        return "register-advertiser";
+    }
+
+
+    @GetMapping("/delete-profile")
+    public String deleteAdvertiser(@RequestParam("advertiserId") int id){
+        advertiserService.deleteAdvertiser(id);
+        return "redirect:/";
+    }
+
+
 
 }

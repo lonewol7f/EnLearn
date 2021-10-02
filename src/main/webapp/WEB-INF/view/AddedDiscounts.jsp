@@ -70,6 +70,9 @@
                                 <c:url var="deleteDiscountLink" value="/discounts/deleteDiscount">
                                     <c:param name="AddedDiscountID" value="${discount.id}" />
                                 </c:url>
+                                <c:url var="updateDiscountLink" value="/discounts/updateDiscount">
+                                    <c:param name="AddedDiscountID" value="${discount.id}" />
+                                </c:url>
                                 <tr>
                                     <!--<td><<%--c:out value="${discount.id}" />--%></td>-->
                                     <td><c:out value="${discount.admin_id}" /></td>
@@ -82,8 +85,9 @@
                                     <td><c:out value="${discount.title}" /></td>
                                     <td>
                                         <a href="${deleteDiscountLink}" class="btn btn-danger" onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+                                        <a href="${updateDiscountLink}" class="btn btn-success">Update</a>
                                         <%--<button class="btn btn-danger" style="margin:0 5px;" data-toggle="modal" data-target="#delete">Delete</button>--%>
-                                        <button class="btn btn-success" style="margin:0px 0px 0px 5px ;" data-toggle="modal" data-target="#update">Update</button>
+                                        <%--<button class="btn btn-success" style="margin:0px 0px 0px 5px ;" data-toggle="modal" data-target="#update">Update</button>--%>
                                     </td>
                                 </tr>
                             </c:forEach>
@@ -99,87 +103,6 @@
     <!-- Footer -->
     <%@include file="footer.jsp" %>
     <!-- END Footer -->
-
-
-
-    <!-- Update Popup START -->
-    <div id="update" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="mg-clear">
-                        Update Discount
-                    </h3>
-                </div>
-                <div class="modal-body">
-                    <form id="form_23581" data-form-type="blocs-form" action="/discounts/updateDiscount" method="POST" >
-                        <div class="form-group">
-                            <label>
-                                Admin ID
-                            </label>
-                            <input type="number" id="admin_id" class="form-control" required name="admin_id" value="252345" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Discount Amount
-                            </label>
-                            <input type="number" id="discount" class="form-control" required name="discount" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Teacher Name
-                            </label>
-                            <input id="teacher_name" class="form-control" required name="teacher_name" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Subject Category
-                            </label>
-                            <select name="course" required>
-                                <option disabled selected value>-- Select Subject Category</option>
-                                <option value="Course">Course</option>
-                                <option value="Module">Module</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Image
-                            </label>
-                            <input type="file" id="image" class="form-control" name="image" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Description
-                            </label>
-                            <input id="description" class="form-control" name="description" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Grade
-                            </label>
-                            <input type="number" id="grade" class="form-control" required name="grade" />
-                        </div>
-                        <div class="form-group">
-                            <label>
-                                Discount Title
-                            </label>
-                            <input id="title" class="form-control" required name="title" />
-                        </div>
-                        <button class="btn btn-success" type="submit">
-                            Update Discount
-                        </button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="bloc-button btn btn-d btn-lg btn-block" data-toggle="modal" data-target="#update">Close</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END Update Popup -->
-
-
-
 
 </div>
 <!-- Main container END -->
