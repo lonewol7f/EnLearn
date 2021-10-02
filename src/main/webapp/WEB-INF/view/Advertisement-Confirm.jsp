@@ -1,4 +1,7 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="net.enLearn.entity.Advertisement" %>
+<%@ page import="java.util.List" %>
+<%@ page import="net.enLearn.entity.Advertiser" %><%--
   Created by IntelliJ IDEA.
   User: Thilini
   Date: 9/9/2021
@@ -60,7 +63,7 @@
                 </div>
             </div>
             <br>
-            <form class="" action="" style="margin:auto;max-width:300px">
+            <form class="" action="" style="margin:auto;max-width:300px" method="post">
                 <input type="text" placeholder="Search.." name="search2">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -68,68 +71,80 @@
 
 
 
+            <div class="row">
 
-                <div class="row">
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            Title
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Company Name
-                                        </h6>
+                <c:forEach var="advertisement" items="${allAdvertisements}">
+                    <c:forEach var="advertiser" items="${allAdvertisers}">
+                        <div class="col spacing-top">
+                            <div class="card">
+                                <h5 class="mg-md text-lg-center">
+
+                                    <c:out value="${advertisement.title}" />
+                                </h5>
+                                <div>
+                                    <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                    <div class="divider-h">
+                                        <span class="divider"></span>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 text-align: right;>
+                                                    Company Name
+                                                </h6>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 text-align: right;>
+                                                    <c:out value="${advertisement.price_range}" />
+                                                </h6>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 text-align: right;>
+                                                    Email
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 text-align: right;>
+                                                    <c:out value="${advertisement.description}" />
+                                                </h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 text-align: right;>
+                                                    Contact Number
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
-
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                            </div>
+                                            <div class="col">
+                                                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider-h">
+                                        <span class="divider"></span>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Selected package
-                                        </h6>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Email
-                                        </h6>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Contact Number
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
-                                    </div>
-                                    <div class="col">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
+
+                    </c:forEach>
+                </c:forEach>
+
+
+                <%--<div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
                             Title
@@ -190,7 +205,7 @@
                 <div class="col spacing-top">
                     <div class="card">
                         <h5 class="mg-md text-lg-center">
-                           Title
+                            Title
                         </h5>
                         <div>
                             <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -284,81 +299,81 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="text-center">
-                                <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
-                                    </div>
-                                    <div class="col">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                    </div>
+                        <div class="text-center">
+                            <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
                                 </div>
                             </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
+                        </div>
+                        <div class="divider-h">
+                            <span class="divider"></span>
                         </div>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
+</div>
 
 
-    <!--  Popup Message  -->
-    <div id="ad" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="mg-clear">
-                        Advertisement Confirm
-                    </h3>
-                </div>
-                <div class="modal-body">
-                    <form id="form_22767" data-form-type="blocs-form" action="teacher" method="POST">
-                        <div class="form-group" style="text-align: center">
-                            <h5 style="color: #34ce57; font-size: small;">
-                                Advertisement has been confirmed
-                            </h5>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#ad">Close</a>
-                </div>
+<!--  Popup Message  -->
+<div id="ad" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mg-clear">
+                    Advertisement Confirm
+                </h3>
+            </div>
+            <div class="modal-body">
+                <form id="form_22767" data-form-type="blocs-form" action="teacher" method="POST">
+                    <div class="form-group" style="text-align: center">
+                        <h5 style="color: #34ce57; font-size: small;">
+                            Advertisement has been confirmed
+                        </h5>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#ad">Close</a>
             </div>
         </div>
     </div>
-    <!-- Confirm Popup END -->
-    <!--  Delete Popup Message  -->
-    <div id="delete-ad" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="mg-clear">
-                        Advertisement Confirm
-                    </h3>
-                </div>
-                <div class="modal-body">
-                    <form id="form_22760" data-form-type="blocs-form" action="teacher" method="POST">
-                        <div class="form-group" style="text-align: center">
-                            <h5 style="color: #b21f2d; font-size: small;">
-                                Advertisement has been deleted
-                            </h5>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete-ad">Close</a>
-                </div>
+</div>
+<!-- Confirm Popup END -->
+<!--  Delete Popup Message  -->
+<div id="delete-ad" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog  modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="mg-clear">
+                    Advertisement Confirm
+                </h3>
+            </div>
+            <div class="modal-body">
+                <form id="form_22760" data-form-type="blocs-form" action="teacher" method="POST">
+                    <div class="form-group" style="text-align: center">
+                        <h5 style="color: #b21f2d; font-size: small;">
+                            Advertisement has been deleted
+                        </h5>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-d btn-lg btn-close-style" data-toggle="modal" data-target="#delete-ad">Close</a>
             </div>
         </div>
     </div>
-    <!-- Popup END -->
+</div>
+<!-- Popup END -->
 
 
-    <%@include file="footer.jsp" %>
+<%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->

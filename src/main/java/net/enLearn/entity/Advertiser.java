@@ -1,10 +1,10 @@
 package net.enLearn.entity;
 
 
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.persistence.*;
-import java.io.IOException;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 /**
  * Created by Kalana on 05/08/2021
@@ -19,40 +19,30 @@ public class Advertiser extends User {
     private String cname;
 
     @Column(name = "contact_no")
-    private int contact_no;
+    private String contact_no;
 
-    @Transient
-    @Column(name = "image", length = 1000)
-//TODO check    private MultipartFile image;
-    private byte[] image;
+    @Column(name = "image")
+    private String image;
 
 
     public Advertiser(String first_name, String last_name, String email,
                       String password, String DOB, int grade, String district,
-                      String Address, String cname, int contact_no,
-                      MultipartFile image, String gender) {
-        super(first_name, last_name, email, password, DOB, grade,
-                district, Address,image.toString(), gender);
+                      String Address, String cname, String contact_no,
+                      String image, String gender) {
+        super(first_name, email,last_name, password, DOB, grade,
+                district, Address,image, gender);
         this.cname = cname;
         this.contact_no = contact_no;
-        try {
-            this.image = image.getBytes();
-        } catch (IOException e) {
-            this.image = null;
-        }
+        this.image = image;
     }
 
-    public Advertiser(String cname, String email, int contact_no,
-                      String password, MultipartFile image){
+    public Advertiser(String cname, String email, String contact_no,
+                      String password, String image){
         this.cname = cname;
         super.setEmail(email);
         this.contact_no = contact_no;
         super.setPassword(password);
-        try {
-            this.image = image.getBytes();
-        } catch (IOException e) {
-            this.image = null;
-        }
+        this.image = image;
 
     }
 
@@ -73,9 +63,9 @@ public class Advertiser extends User {
 
     public void setEmail(String email){super.setEmail(email);}
 
-    public int getContact_no(){return contact_no;}
+    public String getContact_no(){return contact_no;}
 
-    public void setContact_no(int contact_no){this.contact_no = contact_no;}
+    public void setContact_no(String contact_no){this.contact_no = contact_no;}
 
     public String getPassword(){return super.getPassword();}
 
@@ -88,16 +78,12 @@ public class Advertiser extends User {
 //        }image;
 //    }
 
-    public void setImage(MultipartFile image){
-        try {
-            this.image = image.getBytes();
-        } catch (IOException e) {
-            this.image = null;
-        }
+    public void setImage(String image){
+        this.image = image;
     }
 
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 }
