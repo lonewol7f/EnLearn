@@ -38,7 +38,14 @@ public class CourseController {
     private Logger logger;
 
     @GetMapping("")
-    public String showCoursePage() {
+    public String showCoursePage(@RequestParam("courseId") int id, Model model) {
+        List<Course> courseList = courseService.getCourseList();
+        List<ZoomClass> zoomClassList = zoomClassService.getZoomClassListByCourseId(id);
+        List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
+        model.addAttribute("zoomClassList", zoomClassList);
+        model.addAttribute("videoList", videoList);
+        model.addAttribute("courseId", id);
+        model.addAttribute("courseList", courseList);
         return "course-page";
     }
 

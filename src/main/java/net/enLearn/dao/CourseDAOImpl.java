@@ -58,6 +58,4 @@ public class CourseDAOImpl implements CourseDAO {
         return courseList;
     }
 
-
-
 }
