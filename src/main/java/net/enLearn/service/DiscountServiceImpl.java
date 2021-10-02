@@ -43,4 +43,11 @@ public class DiscountServiceImpl implements DiscountService{
     public void deleteDiscount(Integer discountID){
         this.discountDAO.deleteDiscount(discountID);
     }
+
+
+    @Override
+    @Transactional
+    public void updateDiscount(Discount discount){
+        this.discountDAO.updateDiscount(discount);
+    }
 }

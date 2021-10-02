@@ -54,5 +54,14 @@ public class DiscountDAOImpl implements DiscountDAO{
         session.delete(dis);
     }
 
+    //-------------------------------------------------------------------------------------------------------
+    //Update Discount
+    //UPDATE
+    @Override
+    public void updateDiscount(Discount discount){
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(discount);
+    }
+
 
 }

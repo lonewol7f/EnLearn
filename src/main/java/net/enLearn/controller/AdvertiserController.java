@@ -23,6 +23,7 @@ import java.util.List;
 public class
 AdvertiserController {
 
+    static int MAX_IMAGE_SIZE = 10485760;
 
    /* @Autowired
     private Logger logger;
