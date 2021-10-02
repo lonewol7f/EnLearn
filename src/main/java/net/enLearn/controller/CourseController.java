@@ -60,7 +60,9 @@ public class CourseController {
     }
 
     @GetMapping("/videos")
-    public String showVideoPage() {
+    public String showVideoPage(@RequestParam("videoId") int id, Model model) {
+        List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
+        model.addAttribute("videoId", id);
         return "video-page";
     }
 

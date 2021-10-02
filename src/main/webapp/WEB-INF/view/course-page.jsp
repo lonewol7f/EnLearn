@@ -1,6 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<%--
+  Created by IntelliJ IDEA.
+  User: flashminat0
+  Date: 2021-07-20
+  Time: 3:50 PM
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -176,7 +182,8 @@
     </div>
     <!-- bloc-9 END -->
 
-    <!-- video-list -->
+    <!-- zoom-list -->
+<c:if test="${param.type.equals('Zoom Class')}">
     <div class="bloc l-bloc" id="video-list">
         <div class="container bloc-lg bloc-md-lg">
             <div class="row">
@@ -205,287 +212,438 @@
                             </div>
                         </div>
                         <div class="col">
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="text-center text-lg-right icon-on-videos">
-                                                    <span class="icon-md fa fa-lock-open lockunlock"></span>
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="course-box heading-box" id="week-1-intro">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <h5 class="mg-md week-label">
+                                                        Week 01
+                                                    </h5>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="course-box heading-box" id="week-1-intro">
-                                                    <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <h5 class="mg-md week-label">
-                                                                    jjhhh
-                                                            </h5>
-                                                        </div>
-                                                        <div class="col">
-                                                            <h5 class="mg-md">
-                                                                    fgfgfg
-                                                            </h5>
-                                                        </div>
-                                                        <div class="col">
-                                                            <a class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-1-content,week-1-intro">Expand</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="course-box object-hidden content-box" id="week-1-content">
-                                                    <h4 class="mg-md">
-                                                            dfgfgfgf
-                                                    </h4>
-                                                    <ol>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Name of first vid</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-1-content,week-1-intro">Collapse</a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ol>
+                                                <div class="col">
+                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-1-content,week-1-intro">Expand</a>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="text-center text-lg-right icon-on-videos">
-                                                    <span class="icon-md fa fa-lock-open lockunlock"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="course-box heading-box" >
+                                        <div class="course-box object-hidden content-box" id="week-1-content">
+                                            <h4 class="mg-md">
+                                                Week 01 - Zoom Classes
+                                            </h4>
+                                            <ol>
+                                            <c:forEach var="tempZoom" items="${zoomClassList}">
+                                            <c:if test="${tempZoom.week == 'Week 01'}">
+                                                <li>
+                                                    <h5 class="mg-md">
+                                                        ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                    </h5>
+                                                </li>
+                                            </c:if>
+                                            </c:forEach>
+                                                <li>
                                                     <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <h5 class="mg-md week-label">
-                                                                    Week 1
-                                                            </h5>
+                                                        <div class="col">
+                                                            <h4 class="mg-md no-margin">
+                                                                <a href="index.jsp">Quiz</a><br>
+                                                            </h4>
                                                         </div>
                                                         <div class="col">
-                                                            <h5 class="mg-md">
-                                                                   fhfhf
-                                                            </h5>
-                                                        </div>
-                                                        <div class="col">
-                                                            <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-1-content,week-1-intro">Expand</a>
+                                                            <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-1-content,week-1-intro">Collapse</a>
                                                         </div>
                                                     </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="course-box heading-box" id="week-2-intro">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <h5 class="mg-md week-label">
+                                                        Week 02
+                                                    </h5>
                                                 </div>
-                                                <div class="course-box object-hidden content-box" >
-                                                    <h4 class="mg-md">
-                                                        ggfgfgf
-                                                    </h4>
-                                                    <ol>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Name of first vid</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Name of Second Vid</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Heading content</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Heading content</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Heading content</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <h5 class="mg-md">
-                                                                <a href="index.jsp">Heading content</a><br>
-                                                            </h5>
-                                                        </li>
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-1-content,week-1-intro">Collapse</a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ol>
+                                                <div class="col">
+                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-2-content,week-2-intro">Expand</a>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="course-box object-hidden content-box" id="week-2-content">
+                                            <h4 class="mg-md">
+                                                Week 02 - Zoom Classes
+                                            </h4>
+                                            <ol>
+                                                <c:forEach var="tempZoom" items="${zoomClassList}">
+                                                    <c:if test="${tempZoom.week == 'Week 02'}">
+                                                        <li>
+                                                            <h5 class="mg-md">
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                            </h5>
+                                                        </li>
+                                                    </c:if>
+                                                </c:forEach>
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <h4 class="mg-md no-margin">
+                                                                <a href="index.jsp">Quiz</a><br>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-2-content,week-2-intro">Collapse</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
                                     </div>
-                                                        <div>
-                                                            <div class="row">
-                                                                <div class="col-lg-3">
-                                                                    <div class="text-center text-lg-right icon-on-videos">
-                                                                        <span class="icon-md fa fa-play icon-push lockunlock"></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="course-box heading-box" id="week-3-intro">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-3">
-                                                                                <h5 class="mg-md week-label">
-                                                                                    Week 3
-                                                                                </h5>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <h5 class="mg-md">
-                                                                                    Heading of the week
-                                                                                </h5>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-3-content,week-3-intro">Expand</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="course-box object-hidden content-box" id="week-3-content">
-                                                                        <h4 class="mg-md">
-                                                                            Heading content
-                                                                        </h4>
-                                                                        <ol>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="row">
-                                                                                    <div class="col">
-                                                                                        <h4 class="mg-md no-margin">
-                                                                                            <a href="index.jsp">Quiz</a><br>
-                                                                                        </h4>
-                                                                                    </div>
-                                                                                    <div class="col">
-                                                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-3-content,week-3-intro">Collapse</a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                        </ol>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="course-box heading-box" id="week-3-intro">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <h5 class="mg-md week-label">
+                                                        Week 03
+                                                    </h5>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-3-content,week-3-intro">Expand</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-box object-hidden content-box" id="week-3-content">
+                                            <h4 class="mg-md">
+                                                Week 03 - Zoom Classes
+                                            </h4>
+                                            <ol>
+                                                <c:forEach var="tempZoom" items="${zoomClassList}">
+                                                    <c:if test="${tempZoom.week == 'Week 03'}">
+                                                        <li>
+                                                            <h5 class="mg-md">
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                            </h5>
+                                                        </li>
+                                                    </c:if>
+                                                </c:forEach>
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <h4 class="mg-md no-margin">
+                                                                <a href="index.jsp">Quiz</a><br>
+                                                            </h4>
                                                         </div>
-                                                        <div>
-                                                            <div class="row">
-                                                                <div class="col-lg-3 icon-on-videos">
-                                                                    <div class="text-center text-lg-right">
-                                                                        <span class="icon-md fa fa-lock icon-push lockunlock"></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="course-box heading-box" id="week-4-intro">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-3">
-                                                                                <h5 class="mg-md week-label">
-                                                                                    Week 4<br>
-                                                                                </h5>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <h5 class="mg-md">
-                                                                                    Heading of the week
-                                                                                </h5>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-4-content,week-4-intro">Expand</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="course-box object-hidden content-box" id="week-4-content">
-                                                                        <h4 class="mg-md">
-                                                                            Heading content
-                                                                        </h4>
-                                                                        <ol>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">1. Name of first vid</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">2. Name of Second Vid</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <h5 class="mg-md">
-                                                                                    <a href="index.jsp">Heading content</a><br>
-                                                                                </h5>
-                                                                            </li>
-                                                                            <li>
-                                                                                <div class="row">
-                                                                                    <div class="col">
-                                                                                        <h4 class="mg-md no-margin">
-                                                                                            <a href="index.jsp">Quiz</a><br>
-                                                                                        </h4>
-                                                                                    </div>
-                                                                                    <div class="col">
-                                                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-4-content,week-4-intro">Collapse</a>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </li>
-                                                                        </ol>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        <div class="col">
+                                                            <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-3-content,week-3-intro">Collapse</a>
                                                         </div>
-
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="course-box heading-box" id="week-4-intro">
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <h5 class="mg-md week-label">
+                                                        Week 04<br>
+                                                    </h5>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-4-content,week-4-intro">Expand</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course-box object-hidden content-box" id="week-4-content">
+                                            <h4 class="mg-md">
+                                                Week 04 - Zoom Classes
+                                            </h4>
+                                            <ol>
+                                                <c:forEach var="tempZoom" items="${zoomClassList}">
+                                                    <c:if test="${tempZoom.week == 'Week 04'}">
+                                                        <li>
+                                                            <h5 class="mg-md">
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                            </h5>
+                                                        </li>
+                                                    </c:if>
+                                                </c:forEach>
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <h4 class="mg-md no-margin">
+                                                                <a href="index.jsp">Quiz</a><br>
+                                                            </h4>
+                                                        </div>
+                                                        <div class="col">
+                                                            <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-4-content,week-4-intro">Collapse</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</c:if>
     <!-- video-list END -->
+
+
+
+    <!-- video-list -->
+    <c:if test="${param.type.equals('Recorded Video')}">
+        <div class="bloc l-bloc" id="video-list">
+            <div class="container bloc-lg bloc-md-lg">
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="completion-square text-lg-center">
+                                    <div><div class="text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+                                    </div>
+                                    </div>
+                                    <h2 class="mg-md text-lg-center no-margin text-sm-center text-center">
+                                        11 / 26
+                                    </h2>
+                                    <div><div class="text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#000000" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+                                    </div>
+                                    </div>
+                                    <div><div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: 43%;" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100">43%</div>
+                                    </div>
+                                    </div>
+                                    <h6 class="mg-md text-lg-center">
+                                        Completion rate
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="course-box heading-box" id="week-1-intro">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="mg-md week-label">
+                                                            Week 01
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-1-content,week-1-intro">Expand</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="course-box object-hidden content-box" id="week-1-content">
+                                                <h4 class="mg-md">
+                                                    Week 01 - Recorded Videos
+                                                </h4>
+                                                <ol>
+                                                    <c:forEach var="tempVideo" items="${videoList}">
+                                                        <c:url var="playVideo" value="/courses/videos">
+                                                            <c:param name="videoId" value="${tempVideo.id}"/>
+                                                        </c:url>
+                                                        <c:if test="${tempVideo.week == 'Week 01'}">
+                                                            <li>
+                                                                <h5 class="mg-md">
+                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                </h5>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:forEach>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h4 class="mg-md no-margin">
+                                                                    <a href="index.jsp">Quiz</a><br>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col">
+                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-1-content,week-1-intro">Collapse</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="course-box heading-box" id="week-2-intro">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="mg-md week-label">
+                                                            Week 02
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-2-content,week-2-intro">Expand</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="course-box object-hidden content-box" id="week-2-content">
+                                                <h4 class="mg-md">
+                                                    Week 02 - Recorded Videos
+                                                </h4>
+                                                <ol>
+                                                    <c:forEach var="tempVideo" items="${videoList}">
+                                                        <c:url var="playVideo" value="/courses/videos">
+                                                            <c:param name="videoId" value="${tempVideo.id}"/>
+                                                        </c:url>
+                                                        <c:if test="${tempVideo.week == 'Week 02'}">
+                                                            <li>
+                                                                <h5 class="mg-md">
+                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                </h5>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:forEach>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h4 class="mg-md no-margin">
+                                                                    <a href="index.jsp">Quiz</a><br>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col">
+                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-2-content,week-2-intro">Collapse</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="course-box heading-box" id="week-3-intro">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="mg-md week-label">
+                                                            Week 03
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-3-content,week-3-intro">Expand</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="course-box object-hidden content-box" id="week-3-content">
+                                                <h4 class="mg-md">
+                                                    Week 03 - Recorded Videos
+                                                </h4>
+                                                <ol>
+                                                    <c:forEach var="tempVideo" items="${videoList}">
+                                                        <c:url var="playVideo" value="/courses/videos">
+                                                            <c:param name="videoId" value="${tempVideo.id}"/>
+                                                        </c:url>
+                                                        <c:if test="${tempVideo.week == 'Week 03'}">
+                                                            <li>
+                                                                <h5 class="mg-md">
+                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                </h5>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:forEach>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h4 class="mg-md no-margin">
+                                                                    <a href="index.jsp">Quiz</a><br>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col">
+                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-3-content,week-3-intro">Collapse</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="course-box heading-box" id="week-4-intro">
+                                                <div class="row">
+                                                    <div class="col-lg-3">
+                                                        <h5 class="mg-md week-label">
+                                                            Week 04<br>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right expand-btn" data-toggle-visibility="week-4-content,week-4-intro">Expand</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="course-box object-hidden content-box" id="week-4-content">
+                                                <h4 class="mg-md">
+                                                    Week 04 - Recorded Videos
+                                                </h4>
+                                                <ol>
+                                                    <c:forEach var="tempVideo" items="${videoList}">
+                                                        <c:url var="playVideo" value="/courses/videos">
+                                                            <c:param name="videoId" value="${tempVideo.id}"/>
+                                                        </c:url>
+                                                        <c:if test="${tempVideo.week == 'Week 04'}">
+                                                            <li>
+                                                                <h5 class="mg-md">
+                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                </h5>
+                                                            </li>
+                                                        </c:if>
+                                                    </c:forEach>
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <h4 class="mg-md no-margin">
+                                                                    <a href="index.jsp">Quiz</a><br>
+                                                                </h4>
+                                                            </div>
+                                                            <div class="col">
+                                                                <a href="#" class="btn float-lg-right btn-wire float-sm-right float-right" data-toggle-visibility="week-4-content,week-4-intro">Collapse</a>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </c:if>
+    <!-- video-list END -->
+
+
+
 
     <%@include file="footer.jsp" %>
 
@@ -503,3 +661,4 @@
 
 </body>
 </html>
+
