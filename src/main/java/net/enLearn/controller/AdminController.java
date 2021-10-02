@@ -168,7 +168,7 @@ public class AdminController {
     @RequestMapping("/showAdvertisements")
     public String showAdvertisement(Model model){
 
-        int advertiser_id = 20;
+        int advertiser_id = 4;
 
 
         //To retrieve all the data in the table - advertisement
