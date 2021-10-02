@@ -12,6 +12,8 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "id")
 public class Student extends User{
 
+    @Column(name = "grade")
+    private int grade;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinTable(name = "special_quiz_student",
@@ -20,6 +22,14 @@ public class Student extends User{
     private List<SpecialQuiz> specialQuizList;
 
     public Student() {
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     public List<SpecialQuiz> getSpecialQuizList() {

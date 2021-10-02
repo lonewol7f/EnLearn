@@ -15,6 +15,9 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name = "id")
 public class Teacher extends User{
 
+    @Column(name = "salary")
+    private int salary;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher", cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Notification> notifications;
@@ -33,6 +36,14 @@ public class Teacher extends User{
 
 
     public Teacher() { }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 
     public List<Notification> getNotifications() {
         return notifications;
@@ -65,5 +76,4 @@ public class Teacher extends User{
     public void setCourseList(List<Course> courseList) {
         this.courseList = courseList;
     }
-
 }

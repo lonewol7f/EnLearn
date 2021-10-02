@@ -44,11 +44,10 @@ public class UserDAOImpl implements UserDAO{
         if (!(authentication instanceof AnonymousAuthenticationToken)){
             String userName = authentication.getName();
 
-            Query<User> query = session.createQuery("from User where email=:email", User.class);
+            Query query = session.createQuery("SELECT id FROM User where email= :email");
             query.setParameter("email", userName);
 
-            User user = query.getSingleResult();
-            int userId = user.getId();
+            int userId = (int) query.getSingleResult();
 
             return userId;
         }

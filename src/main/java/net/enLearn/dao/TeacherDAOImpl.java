@@ -34,6 +34,8 @@ public class TeacherDAOImpl implements TeacherDAO{
                 "GROUP BY course.title " +
                 "ORDER BY c DESC");
 
+        query.setParameter("teacherId", teacherId);
+
         List list = query.getResultList();
         return list;
     }
