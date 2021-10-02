@@ -56,8 +56,8 @@ public class DemoController {
         return "report-page";
     }
 
-    @GetMapping("/discount-rate-report")
-    public String showDiscountRateReportPage() { return "discount-report"; }
+    /*@GetMapping("/discount-rate-report")
+    public String showDiscountRateReportPage() { return "discount-report"; }*/
 
 
     @GetMapping("/portal")

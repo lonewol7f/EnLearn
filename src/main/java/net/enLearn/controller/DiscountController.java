@@ -21,7 +21,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -227,38 +226,9 @@ public class DiscountController {
 
     //----------------------------------------------------------------------------------------------------
     //Generate PDF
-    /*@Override
-    protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception {
-        response.setHeader("Content-Disposition","attachment : filename=\"user_list.pdf\"");
 
-        @SuppressWarnings("Unchecked")
-        List<Discount> list = (List<Discount>) model.get("discountList");
 
-        Table table = new Table(9);
-        table.addCell("id");
-        table.addCell("admin_id");
-        table.addCell("discount");
-        table.addCell("teacher_name ");
-        table.addCell("course");
-        table.addCell("image");
-        table.addCell("description");
-        table.addCell("grade");
-        table.addCell("title");
-
-        for(Discount dis : list){
-            table.addCell(String.valueOf(dis.getId()));
-            table.addCell(String.valueOf(dis.getAdmin_id()));
-            table.addCell(String.valueOf(dis.getDiscount()));
-            table.addCell(String.valueOf(dis.getTeacher_name()));
-            table.addCell(String.valueOf(dis.getCourse()));
-            table.addCell(String.valueOf(dis.getImage()));
-            table.addCell(String.valueOf(dis.getDescription()));
-            table.addCell(String.valueOf(dis.getGrade()));
-            table.addCell(String.valueOf(dis.getTitle()));
-        }
-    }*/
-
-    @RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
+    /*@RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
     public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
 
         String typeReport = req.getParameter("type");
@@ -278,6 +248,23 @@ public class DiscountController {
 
         //default
         return new ModelAndView("DiscountListReport","discountList",list);
+    }*/
+
+
+    @RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
+    public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
+
+        String typeReport = req.getParameter("type");
+
+        //Create data
+        List<Discount> list = disService.getAllDiscountByAdminId();
+
+        if(typeReport != null && typeReport.equals("pdf")){
+            return new ModelAndView(new DiscountReportView(),"discountList",list);
+        }
+
+        //default
+        return new ModelAndView("discount-report","discountList",list);
     }
 
 }

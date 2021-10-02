@@ -22,10 +22,7 @@
                 <td>discount</td>
                 <td>teacher_name</td>
                 <td>course</td>
-                <td>image</td>
-                <td>description</td>
                 <td>grade</td>
-                <td>title</td>
             </tr>
         </thead>
         <tbody>
@@ -36,10 +33,7 @@
                     <td>${discount.discount}</td>
                     <td>${discount.teacher_name}</td>
                     <td>${discount.course}</td>
-                    <td>${discount.image}</td>
-                    <td>${discount.description}</td>
                     <td>${discount.grade}</td>
-                    <td>${discount.title}</td>
                 </tr>
             </c:forEach>
         </tbody>
