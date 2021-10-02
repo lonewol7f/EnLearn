@@ -1,11 +1,7 @@
 package net.enLearn.controller;
 
-import net.enLearn.entity.Admin;
-import net.enLearn.entity.Event;
-import net.enLearn.entity.RedeemCode;
-import net.enLearn.service.AdminService;
-import net.enLearn.service.EventService;
-import net.enLearn.service.RedeemCodeService;
+import net.enLearn.entity.*;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +30,36 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    
+    @Autowired
+    private ExpenseService1 expenseService;
+
+    @Autowired
+    private AdvertiserService advertiserService;
+
+    @Autowired
+    private AdvertisementService advertisementService;
+    private Advertiser advertiser;
+
+
+
+    @RequestMapping(path = "addExpenses", method = RequestMethod.POST)
+    public String AddExpenses(@RequestParam("name16_22767_28850_23581") String name,
+                              @RequestParam("id") int id,
+                              @RequestParam("price") String price,
+                              @RequestParam("des") String des,
+                              @RequestParam("image") String image){
+
+        Expense expense;
+        expense = new Expense(id,des,image,price);
+        expenseService.saveOrUpdate(expense);
+
+        /*List<Expense> getExpenses = expenseService.getAllExpenses();
+        model.addAttribute("allExpenses", getExpenses);*/
+        return "Confirm-expenses";
+    }
+
+
+
 
     @GetMapping("/confirm-advertisement")
     public String showAdvertiserConfirmPage() {
@@ -138,5 +163,24 @@ public class AdminController {
 
         return "event-form";
     }
+
+    //get uploaded advertisements from db to advertisement confirm page
+    @RequestMapping("/showAdvertisements")
+    public String showAdvertisement(Model model){
+
+        int advertiser_id = 20;
+
+
+        //To retrieve all the data in the table - advertisement
+        List<Advertisement> displayallAdvertisements = advertisementService.getAllAdvertisements(advertiser_id);
+        model.addAttribute("allAdvertisements",displayallAdvertisements);
+
+        //List<Advertiser> displayallAdvertisers = advertiserService.getAllAdvertisers();
+        Advertiser displayallAdvertisers = advertiserService.getAdvertiserById(advertiser_id);
+        model.addAttribute("allAdvertisers",displayallAdvertisers);
+
+        return "Advertisement-Confirm";
+    }
+
 
 }

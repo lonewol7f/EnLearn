@@ -58,7 +58,7 @@
                             Add Expenses
                         </h4>
                         <div class="discount-box">
-                            <form id="form_10445" data-form-type="blocs-form" action="message" method="POST">
+                            <form id="form_10445" data-form-type="blocs-form" action="/admins/addExpenses" method="POST">
                                 <div class="form-group">
                                     <label>
                                         Admin Name
@@ -69,25 +69,25 @@
                                     <label>
                                         Admin ID
                                     </label>
-                                    <input id="adminID" class="form-control" required name="name16_22767_28850_23581" />
+                                    <input id="adminID" class="form-control" required name="id" />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Price
                                     </label>
-                                    <input class="form-control" id="input_413" name="input_413" required />
+                                    <input class="form-control" id="input_413" name="price" required />
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Description
                                     </label>
-                                    <textarea type="text" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
+                                    <textarea type="text" name="des" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Upload Image
                                     </label><br>
-                                    <input type="file"  required />
+                                    <input type="file" name="image" required />
                                 </div>
                                 <!--
                                 <div class="text-center w-100">

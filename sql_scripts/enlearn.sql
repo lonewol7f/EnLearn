@@ -385,6 +385,8 @@ CREATE TABLE `expenditure`
     `admin_id`    INT,
     `image`       BLOB,
     `description` TEXT,
+    `price`       INT,
+    `name` TEXT,
     CONSTRAINT `pk_expenditure` PRIMARY KEY (`id`),
     CONSTRAINT `fk_expenditure` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE = InnoDB
