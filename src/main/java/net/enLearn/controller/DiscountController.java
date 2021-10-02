@@ -1,6 +1,7 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Discount;
+import net.enLearn.reportView.DiscountReportView;
 import net.enLearn.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,11 +14,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -218,5 +222,62 @@ public class DiscountController {
         model.addAttribute("showDiscountForUpdate",discount);
         return "AddedDiscounts";
     }*/
+
+
+
+    //----------------------------------------------------------------------------------------------------
+    //Generate PDF
+    /*@Override
+    protected void buildPdfDocument(Map<String, Object> model, Document document, PdfWriter writer, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.setHeader("Content-Disposition","attachment : filename=\"user_list.pdf\"");
+
+        @SuppressWarnings("Unchecked")
+        List<Discount> list = (List<Discount>) model.get("discountList");
+
+        Table table = new Table(9);
+        table.addCell("id");
+        table.addCell("admin_id");
+        table.addCell("discount");
+        table.addCell("teacher_name ");
+        table.addCell("course");
+        table.addCell("image");
+        table.addCell("description");
+        table.addCell("grade");
+        table.addCell("title");
+
+        for(Discount dis : list){
+            table.addCell(String.valueOf(dis.getId()));
+            table.addCell(String.valueOf(dis.getAdmin_id()));
+            table.addCell(String.valueOf(dis.getDiscount()));
+            table.addCell(String.valueOf(dis.getTeacher_name()));
+            table.addCell(String.valueOf(dis.getCourse()));
+            table.addCell(String.valueOf(dis.getImage()));
+            table.addCell(String.valueOf(dis.getDescription()));
+            table.addCell(String.valueOf(dis.getGrade()));
+            table.addCell(String.valueOf(dis.getTitle()));
+        }
+    }*/
+
+    @RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
+    public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
+
+        String typeReport = req.getParameter("type");
+
+        //Create data
+        List<Discount> list = new ArrayList<Discount>();
+        list.add(new Discount(12,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+        list.add(new Discount(11,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+        list.add(new Discount(10,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+        list.add(new Discount(9,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+        list.add(new Discount(8,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+        list.add(new Discount(7,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
+
+        if(typeReport != null && typeReport.equals("pdf")){
+            return new ModelAndView(new DiscountReportView(),"discountList",list);
+        }
+
+        //default
+        return new ModelAndView("DiscountListReport","discountList",list);
+    }
 
 }
