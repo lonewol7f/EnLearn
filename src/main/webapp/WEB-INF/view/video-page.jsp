@@ -105,7 +105,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="a-btn nav-link" id="nav-17627-tab-3" data-toggle="tab" href="#nav-17627-content-3"
-                               role="tab" aria-controls="nav-17627-content-3" aria-selected="false">Quiz</a>
+                               role="tab" aria-controls="nav-17627-content-3" aria-selected="false">Note</a>
                         </li>
                         <li class="nav-item">
                             <a class="a-btn nav-link" id="nav-17627-tab-4" data-toggle="tab" href="#nav-17627-content-4"
@@ -303,16 +303,16 @@
                             <div class="tab-pane fade-tab-bs content-inside-tab" id="nav-20063-content-3"
                                  role="tabpanel" aria-labelledby="nav-20063-content-3">
                                 <h1 class="mg-md">
-                                    Quiz
+                                    Note
                                 </h1>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                <div>
-                                    <div class="text-center">
-                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>
-                                    </div>
-                                </div>
+<%--                                <div>--%>
+<%--                                    <div class="text-center">--%>
+<%--                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>

@@ -272,7 +272,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <h4 class="mg-md no-margin">
-                                                                <a href="index.jsp">Quiz</a><br>
+                                                                <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>
                                                             </h4>
                                                         </div>
                                                         <div class="col">
@@ -349,7 +349,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <h4 class="mg-md no-margin">
-                                                                <a href="index.jsp">Quiz</a><br>
+                                                                <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>
                                                             </h4>
                                                         </div>
                                                         <div class="col">
@@ -416,7 +416,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <h4 class="mg-md no-margin">
-                                                                <a href="index.jsp">Quiz</a><br>
+                                                                <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>
                                                             </h4>
                                                         </div>
                                                         <div class="col">
@@ -493,7 +493,7 @@
                                                     <div class="row">
                                                         <div class="col">
                                                             <h4 class="mg-md no-margin">
-                                                                <a href="index.jsp">Quiz</a><br>
+                                                                <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>
                                                             </h4>
                                                         </div>
                                                         <div class="col">
