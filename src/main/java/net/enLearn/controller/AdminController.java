@@ -2,9 +2,11 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Admin;
 import net.enLearn.entity.Event;
+import net.enLearn.entity.Expense;
 import net.enLearn.entity.RedeemCode;
 import net.enLearn.service.AdminService;
 import net.enLearn.service.EventService;
+import net.enLearn.service.ExpenseService1;
 import net.enLearn.service.RedeemCodeService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +36,29 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    
+    @Autowired
+    private ExpenseService1 expenseService;
+
+
+
+    @RequestMapping(path = "addExpenses", method = RequestMethod.POST)
+    public String AddExpenses(@RequestParam("name16_22767_28850_23581") String name,
+                              @RequestParam("id") int id,
+                              @RequestParam("price") String price,
+                              @RequestParam("des") String des,
+                              @RequestParam("image") String image){
+
+        Expense expense;
+        expense = new Expense(id,des,image,price);
+        expenseService.saveOrUpdate(expense);
+
+        /*List<Expense> getExpenses = expenseService.getAllExpenses();
+        model.addAttribute("allExpenses", getExpenses);*/
+        return "Confirm-expenses";
+    }
+
+
+
 
     @GetMapping("/confirm-advertisement")
     public String showAdvertiserConfirmPage() {

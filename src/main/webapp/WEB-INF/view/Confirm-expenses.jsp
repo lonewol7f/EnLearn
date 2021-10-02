@@ -64,168 +64,31 @@
             </div>
             <div class="row">
 
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
+                <c:forEach var="expenses" items="${allExpenses}">
+                    <div class="col spacing-top">
+                        <div class="card">
+                            <h5 class="mg-md text-lg-center">
+                                <c:out value="${expenses.admin_id}" />
+                            </h5>
+                            <div>
+                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                </div>
+                                <div class="text-center">
+                                    <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
+                                    <a href="index.jsp" class="btn btn-success">Update</a>
+                                </div>
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row animDelay02">
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            100
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                            <div class="text-center">
-                                <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                <a href="index.jsp" class="btn btn-success">Update</a>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                </c:forEach>
+
+
             </div>
         </div>
     </div>
