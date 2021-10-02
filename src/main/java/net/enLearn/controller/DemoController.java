@@ -1,6 +1,8 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Course;
 import net.enLearn.entity.User;
+import net.enLearn.service.CourseService;
 import net.enLearn.service.FreeQuizService;
 import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
@@ -11,6 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 /**
  * Created by Kalana on 14/07/2021
@@ -27,6 +31,9 @@ public class DemoController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CourseService courseService;
 
     @GetMapping("/")
     public String showHome() {
@@ -79,7 +86,9 @@ public class DemoController {
     }
 
     @GetMapping("/browse")
-    public String browse() {
+    public String showCourseList(Model model) {
+        List<Course> courseList = courseService.getCourseList();
+        model.addAttribute("courseList", courseList);
         return "course-list";
     }
 
