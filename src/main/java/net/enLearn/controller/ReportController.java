@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.sql.DataSource;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Kalana on 13/09/2021
@@ -41,6 +43,9 @@ public class ReportController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private DataSource dataSource;
 
     @GetMapping("/single-event")
     public ResponseEntity<byte[]> generateSingleEventReport(@RequestParam("eventId") int id) throws Exception, JRException {
@@ -93,27 +98,36 @@ public class ReportController {
 
     }
 
-    // @GetMapping("/comment-analysis")
-    // public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
-    //
-    //     List list = teacherService.getCommentCountForCourses(userService.getLoggedUserId());
-    //
-    //     Resource resource1 = new ClassPathResource("reports/comment-report-part-1.jrxml");
-    //     File file1 = resource1.getFile();
-    //
-    //     JRBeanCollectionDataSource dataSource1 = new JRBeanCollectionDataSource(teacherService.getCommentCountForCourses(userService.getLoggedUserId()));
-    //
-    //     JasperReport compileReport1 = JasperCompileManager.compileReport(new FileInputStream(file1));
-    //
-    //     HashMap<String, Object> map1 = new HashMap<String, Object>();
-    //     map1.put("max")
-    //
-    //     JasperPrint report1 = JasperFillManager.fillReport(compileReport1, map1, dataSource1);
-    //
-    //     byte[] data = JasperExportManager.exportReportToPdf(report1);
-    //
-    //
-    // }
+    @GetMapping("/comment-analysis")
+    public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
+
+        int userId = userService.getLoggedUserId();
+        List list = teacherService.getCommentCountForCourses(userId);
+        Object[] max = (Object[]) list.get(0);
+        String maxName = (String) max[1];
+
+        Object[] min = (Object[]) list.get(list.size() - 1);
+        String minName = (String) min[1];
+
+        Resource resource1 = new ClassPathResource("reports/comment-report-1.jrxml");
+        File file1 = resource1.getFile();
+
+        JasperReport compileReport1 = JasperCompileManager.compileReport(new FileInputStream(file1));
+
+        HashMap<String, Object> map1 = new HashMap<String, Object>();
+        map1.put("teacherId", userId);
+        map1.put("maxCourseName", maxName);
+        map1.put("minCourseName", minName);
+
+        JasperPrint report1 = JasperFillManager.fillReport(compileReport1, map1, dataSource.getConnection());
+
+        byte[] data = JasperExportManager.exportReportToPdf(report1);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=comment-analysis.pdf");
+
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
+    }
 
 
 }
