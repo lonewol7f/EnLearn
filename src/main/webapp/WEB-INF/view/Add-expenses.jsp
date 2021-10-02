@@ -1,4 +1,4 @@
-<%--
+<%@ page import="net.enLearn.entity.Expense" %><%--
   Created by IntelliJ IDEA.
   User: Pehesara
   Date: 9/4/2021
@@ -57,48 +57,96 @@
                         <h4 class="mg-md mx-auto d-block text-lg-center">
                             Add Expenses
                         </h4>
+
+
+
                         <div class="discount-box">
-                            <form id="form_10445" data-form-type="blocs-form" action="/admins/addExpenses" method="POST">
+
+                            <form id="form_10445" data-form-type="blocs-form" action="/admins/add/expenses" method="POST" modelAttribute="expenses_data" enctype="multipart/form-data">
                                 <div class="form-group">
+
                                     <label>
                                         Admin Name
                                     </label>
-                                    <input id="name16_22767_28850_23581_10445" class="form-control" required name="name16_22767_28850_23581" />
+                                    <input type="text" id="name16_22767_28850_23581_10445" class="form-control" required name="name" value="${expensesu.name}" />
+
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Admin ID
                                     </label>
-                                    <input id="adminID" class="form-control" required name="id" />
+                                    <input type="number" name="adminid" id="adminID" class="form-control" required value="${expensesu.admin_id}"/>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <%  Expense expense = (Expense) request.getAttribute("expensesu");
+                                        String data;
+                                        if (expense==null){
+                                            data = "<input type=\"hidden\" name=\"expensesIdhidden\" class=\"form-control\" value=\"-1\"/>";
+
+                                        }
+                                        else{
+                                            data = "<input type=\"hidden\" name=\"expensesIdhidden\" class=\"form-control\" value=\""+expense.getId()+"\"/>";
+                                        }
+                                        out.println(data);
+                                    %>
+
+
+
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Price
                                     </label>
-                                    <input class="form-control" id="input_413" name="price" required />
+                                    <input type="number" class="form-control" id="input_413" name="price" required value="${expensesu.price}"/>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Description
                                     </label>
-                                    <textarea type="text" name="des" required id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
+                                    <textarea type="text" name="description" required id="description" class="form-control text-area-style" rows="4" cols="50">${expensesu.description}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label>
                                         Upload Image
                                     </label><br>
-                                    <input type="file" name="image" required />
+                                    <input type="file" value="${expensesu.filename}" required id="file" name="file_image" accept="image/*"  onchange="loadFile(event) " />
+
+                                    <br>
+                                    <p><img id="output" src="${expensesu.image_path}" alt="expenses_image" width="300" height="300"/></p>
+                                    <p id="size"></p>
+
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('output');
+                                            image.src = URL.createObjectURL(event.target.files[0])
+                                            const fi = document.getElementById('file');
+                                            // Check if any file is selected.
+                                            if (fi.files.length > 0) {
+                                                for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                                                    const fsize = fi.files.item(i).size;
+                                                    const file = Math.round((fsize / 1024));
+                                                    // The size of the file.
+                                                    if (file >= 10240) {
+                                                        alert(
+                                                            "File too Big, please select a file less than 10mb");
+                                                    } else if (file < 50) {
+                                                        alert(
+                                                            "File too small, please select a file greater than 50kb");
+                                                    } else {
+                                                        document.getElementById('size').innerHTML = '<b>'
+                                                            + file + '</b> KB';
+                                                    }
+                                                }
+                                            }
+                                        };
+                                    </script>
+
                                 </div>
-                                <!--
-                                <div class="text-center w-100">
-                                    <div class="row">
-                                        <div class="col-lg-7">
-                                            <input type="file" required name="expense_image" />
-                                        </div>
-                                    </div><br>
-                                </div>
-                                -->
                                 <br>
+                                <%--                                <input type="hidden" class="form-control" id="expensesId" name="expensesId" value="${expensesu.id}"/>--%>
                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                     Submit
                                 </button>
@@ -107,14 +155,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
     <%@include file="footer.jsp" %>
 
 </div>
 <!-- Main container END -->
-
-
 
 <!-- Additional JS -->
 <script src="../../resources/js/jquery.js?8669"></script>
@@ -127,4 +175,3 @@
 
 </body>
 </html>
-
