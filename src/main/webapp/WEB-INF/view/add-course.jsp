@@ -138,9 +138,9 @@
                         <td>${tempZoomLink.time}</td>
                         <td style="height:100px;width:30%"><a
                                 href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>
-                        <td><a href="${quizLink}">Quiz</a></td>
 
                         <td>
+                            <a href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-info" onclick="${quizLink}">Quiz</a>
                                 <%-- display the update link --%>
                             <a href="${updateLink}"
                                onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
@@ -184,9 +184,9 @@
                         <td style="height:100px;width:25%">${tempVideoLink.description}</td>
                         <td style="height:100px;width:30%"><a
                                 href="${tempVideoLink.videoLink}">${tempVideoLink.videoLink}</a></td>
-                        <td><a href="${quizLink}">Quiz</a></td>
 
                         <td>
+                            <a href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-info" onclick="${quizLink}">Quiz</a>
                                 <%-- display the update link --%>
                             <a href="${updateLink}"
                                onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"

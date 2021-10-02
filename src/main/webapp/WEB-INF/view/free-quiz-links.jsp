@@ -171,6 +171,9 @@
                     </div>
                     <div class="form-group">
                         <form:label path="grade">Grade</form:label>
+<%--                        $(".selector").attr({--%>
+<%--                        "type" : "number",--%>
+<%--                        });--%>
                         <form:input path="grade" cssClass="form-control" required="required"/>
                     </div>
                     <div class="form-group">
