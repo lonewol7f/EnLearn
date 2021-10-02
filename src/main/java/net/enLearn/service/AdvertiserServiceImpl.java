@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class AdvertiserServiceImpl implements AdvertiserService {
 
@@ -30,6 +32,19 @@ public class AdvertiserServiceImpl implements AdvertiserService {
     public void deleteAdvertiser(int id) {
         advertiserDAO.deleteAdvertiser(id);
     }
+
+    @Override
+    @Transactional
+    public boolean newEmail(String email) {
+        return advertiserDAO.newEmail(email);
+    }
+
+    @Override
+    @Transactional
+    public List<Advertiser> getAllAdvertisers(){
+        return advertiserDAO.getAllAdvertisers();
+    }
+
 
 
 }

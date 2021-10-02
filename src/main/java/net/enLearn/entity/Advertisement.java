@@ -2,7 +2,6 @@ package net.enLearn.entity;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -32,9 +31,8 @@ public class Advertisement {
     @Column(name = "time")
     private long time;
 
-    @Transient
     @Column(name = "image")
-    private MultipartFile image;
+    private String image;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "advertiser_id")
@@ -49,7 +47,7 @@ public class Advertisement {
 
     public Advertisement(){}
 
-    public Advertisement(String title, String price_range, String description, MultipartFile image, Advertiser advertiser) {
+    public Advertisement(String title, String price_range, String description, String image, Advertiser advertiser) {
         this.title = title;
         this.price_range = price_range;
         this.description = description;
@@ -90,11 +88,11 @@ public class Advertisement {
         this.description = description;
     }
 
-    public MultipartFile getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(MultipartFile image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -122,12 +120,13 @@ public class Advertisement {
         this.time = time;
     }
 
+    //Advertisement Remaining time
     public String getRemainingTime(){
         int[] p = {3,8,15,30};
 
         int m = p[Integer.parseInt(this.price_range)]*24*60;
 
-        long rem = new Date().getTime() - this.time;
+        long rem = this.time - new Date().getTime();
         int min = (int) (rem/(60000)) + m;
 
         if (min<0){

@@ -4,7 +4,7 @@ import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Advertiser;
 import net.enLearn.entity.User;
 import net.enLearn.service.AdvertisementService;
-import net.enLearn.service.AdvertisementServiceImpl;
+import net.enLearn.service.UserService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +20,9 @@ public class AdvertiserDAOImpl implements AdvertiserDAO {
 
     @Autowired
     private AdvertisementService advertisementService;
+
+    @Autowired
+    private UserService userService;
 
 
     @Override
@@ -52,5 +55,18 @@ public class AdvertiserDAOImpl implements AdvertiserDAO {
         session.remove(user);
 
 
+    }
+
+    @Override
+    public boolean newEmail(String email) {
+
+        List<User> users = userService.getUserByEmail(email);
+        return users.size() == 0;
+    }
+
+    @Override
+    public List<Advertiser> getAllAdvertisers(){
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("SELECT a FROM Advertiser a", Advertiser.class).getResultList();
     }
 }

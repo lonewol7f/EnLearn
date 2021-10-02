@@ -36,9 +36,7 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
     public List<Advertisement> getAdvertisementByAdvertiser(Advertiser advertiser){
         int id = advertiser.getId();
         Session session = sessionFactory.getCurrentSession();
-        Query<Advertisement> advertisement =
-                session.createQuery("from Advertisement where advertiser_id = "+id,
-                Advertisement.class);
+        Query<Advertisement> advertisement = session.createQuery("from Advertisement where advertiser_id = "+id, Advertisement.class);
 
         List<Advertisement> advertisements = advertisement.getResultList();
         return advertisements;
@@ -60,9 +58,19 @@ public class AdvertisementDAOImpl implements AdvertisementDAO {
     public void deleteAdvertisement(int id) {
         Session session = sessionFactory.getCurrentSession();
         Advertisement advertisement = session.get(Advertisement.class, id);
-//        course.getTeacher().getCourseList().remove(course);
+
         session.delete(advertisement);
 
+    }
+
+    //To READ ALL Advertisemnets
+    @Override
+    public List<Advertisement> getAllAdvertisements(int advertiser_id){
+        Session session = sessionFactory.getCurrentSession();
+        //return session.createQuery("SELECT a FROM Advertisement where advertiser_id = "+advertiser_id, Advertisement.class).getResultList();
+        return session.createQuery("from Advertisement where advertiser_id = "+advertiser_id, Advertisement.class).getResultList();
+
+        //List<Advertisement> advertisements = advertisement.getResultList();
     }
 
 

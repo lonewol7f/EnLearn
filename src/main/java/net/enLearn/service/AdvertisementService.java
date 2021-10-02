@@ -16,4 +16,8 @@ public interface AdvertisementService {
 
     @Transactional
     void deleteAdvertisement(int ID);
+
+    List<Advertisement> getAllAdvertisements(int advertiser_id);
+
+
 }

@@ -41,4 +41,10 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         advertisementDAO.deleteAdvertisement(ID);
     }
 
+    @Override
+    @Transactional
+    public List<Advertisement> getAllAdvertisements(int advertiser_id){
+        return advertisementDAO.getAllAdvertisements(advertiser_id);
+    }
+
 }

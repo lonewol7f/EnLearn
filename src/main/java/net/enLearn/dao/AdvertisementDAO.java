@@ -15,4 +15,6 @@ public interface AdvertisementDAO {
     List<Advertisement> getAdvertisements();
 
     void deleteAdvertisement(int id);
+
+    List<Advertisement> getAllAdvertisements(int advertiser_id);
 }
