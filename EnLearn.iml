@@ -20,7 +20,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="EnLearn" value="3ea9648e-c02b-4981-91f7-6f1634b68cdc" />
+          <factory-entry name="EnLearn" value="a44106ed-383e-46d6-ab51-89258961b299" />
         </datasource-mapping>
         <naming-strategy-map>
           <unit-entry name="EnLearn" />

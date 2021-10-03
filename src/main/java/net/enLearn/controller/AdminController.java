@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 /**
@@ -42,20 +45,53 @@ public class AdminController {
 
 
 
-    @RequestMapping(path = "addExpenses", method = RequestMethod.POST)
-    public String AddExpenses(@RequestParam("name16_22767_28850_23581") String name,
-                              @RequestParam("id") int id,
-                              @RequestParam("price") String price,
-                              @RequestParam("des") String des,
-                              @RequestParam("image") String image){
+    @GetMapping("/expenses/list")
+    public String showExpensesListPage(Model model) {
 
-        Expense expense;
-        expense = new Expense(id,des,image,price);
-        expenseService.saveOrUpdate(expense);
-
-        /*List<Expense> getExpenses = expenseService.getAllExpenses();
-        model.addAttribute("allExpenses", getExpenses);*/
+        List<Expense> getExpenses = expenseService.getAllExpenses();
+        model.addAttribute("expensivedata", getExpenses);
         return "Confirm-expenses";
+
+    }
+    @RequestMapping(path = "add/expenses", method = RequestMethod.POST)
+    public String AddExpenses(@ModelAttribute("expenses_data") Expense expense,
+                              @RequestParam("file_image")MultipartFile multipartFile,
+                              @RequestParam("expensesIdhidden") int eventId){
+
+        if(eventId != -1){
+
+
+            expense.setId(eventId);
+        }
+
+        try {
+            String filename = String.valueOf(multipartFile.getOriginalFilename());
+            expense.setFilename(filename);
+            expense.setImage_path("data:image/jpg;base64,"+Base64.getEncoder().encodeToString(multipartFile.getBytes()));
+            expenseService.saveOrUpdate(expense);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/admins/expenses/list";
+
+    }
+
+    @GetMapping("/expenses/update")
+    public String showExpensesUpdateForm(@RequestParam("expensesId") int eventId, Model model) {
+        Expense expense = expenseService.getExpenseById(eventId);
+
+        model.addAttribute("expensesu", expense);
+
+        return "Add-expenses";
+    }
+
+    @GetMapping("/expenses/delete")
+    public String deleteExpenses(@RequestParam("expensesId") int id,Model model) {
+
+        expenseService.deleteExpense(id);
+
+        return "redirect:/admins/expenses/list";
     }
 
 

@@ -4,9 +4,11 @@
   Date: 2021-07-20
   Time: 3:59 PM
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -53,8 +55,15 @@
             <div class="row shop-heading">
                 <div class="col-lg-2">
                     <h2 class="mg-md">
-                        Additional Expences
+                        Additional Expenses
                     </h2>
+                    <%-- construct an 'update' link with event id --%>
+                    <c:url var="addlink" value="/Add-expenses">
+                        <c:param name="expensesId" value=""/>
+                    </c:url>
+                    <a href="${addlink}" class="bloc-button btn btn-d btn-lg btn-block">
+                        Add New Expenses
+                    </a>
                 </div>
                 <div class="col go-dissapear">
                     <div class="divider-h">
@@ -62,22 +71,49 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
 
-                <c:forEach var="expenses" items="${allExpenses}">
-                    <div class="col spacing-top">
+            <div class="row">
+                <%-- Loop over and print events --%>
+                <c:forEach var="expenses" items="${expensivedata}">
+
+                    <%-- construct an 'delete' link with event id --%>
+                    <c:url var="deleteLink" value="/admins/expenses/delete">
+                        <c:param name="expensesId" value="${expenses.id}"/>
+                    </c:url>
+
+                    <%-- construct an 'update' link with event id --%>
+                    <c:url var="updateLink" value="/admins/expenses/update">
+                        <c:param name="expensesId" value="${expenses.id}"/>
+                    </c:url>
+
+
+
+                    <div class="col spacing-top" style="width: 25%; border: black 2px solid; margin: 2%;padding: 2%">
                         <div class="card">
+
                             <h5 class="mg-md text-lg-center">
-                                <c:out value="${expenses.admin_id}" />
+                                    ${expenses.admin_id}
                             </h5>
+                            <h5 class="mg-md text-lg-center">
+                                    ${expenses.description}
+                            </h5>
+                            <h5 class="mg-md text-lg-center">
+                                    ${expenses.price}
+                            </h5>
+                            <h5 class="mg-md text-lg-center">
+                                    ${expenses.name}
+
+                            </h5>
+
                             <div>
-                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+
+                                <img src="${expenses.image_path}" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" width="300" height="300"/>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
                                 <div class="text-center">
-                                    <a href="index.jsp" class="btn btn-danger">Delete</a><br><br>
-                                    <a href="index.jsp" class="btn btn-success">Update</a>
+                                    <a href="${deleteLink}" onclick="if (!(confirm('Are you sure, You want to Delete this expense?'))) return false" class="btn btn-danger">Delete</a><br><br>
+                                    <a href="${updateLink}" onclick="if (!(confirm('Are you sure, You want to Edit this expense?'))) return false"   class="btn btn-success">Update</a>
                                 </div>
                                 <div class="divider-h">
                                     <span class="divider"></span>
@@ -87,12 +123,11 @@
                     </div>
 
                 </c:forEach>
-
-
             </div>
         </div>
     </div>
     <!-- bloc-12 END -->
+
 
     <%@include file="footer.jsp" %>
 

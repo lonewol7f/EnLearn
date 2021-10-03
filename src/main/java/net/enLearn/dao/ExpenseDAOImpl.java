@@ -1,12 +1,19 @@
 package net.enLearn.dao;
 
+import net.enLearn.entity.Event;
 import net.enLearn.entity.Expense;
 import net.enLearn.service.ExpenseService1;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.List;
 
@@ -20,34 +27,23 @@ public class ExpenseDAOImpl implements ExpenseDAO {
 
 
     @Override
-    public Expense getExpenseById(int id) {
+    public void deleteExpense(int id) {
 
-
-        Connection con = null;
-        try {
-            con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/enlearn?autoReconnect=true&useSSL=false", "enlearn", "enlearn");
-            Statement statement = con.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM expenditure");
-            while (resultSet.first()) {
-                Expense expense = new Expense();
-                expense.setId(Integer.parseInt(resultSet.getString(1)));
-                expense.setPrice(resultSet.getString(2));
-                expense.setDescription(resultSet.getString(3));
-                expense.setImage_path(resultSet.getString(4));
-                expense.setAdmin_id(Integer.parseInt(resultSet.getString(5)));
-
-                return expense;
-
-            }
-            return null;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+        Session session = sessionFactory.getCurrentSession();
+        Expense expense = session.get(Expense.class,id);
+        session.delete(expense);
 
     }
+
+    @Override
+    public Expense getExpenseById(int id) {
+
+        Session session = sessionFactory.getCurrentSession();
+        Expense expense = session.get(Expense.class,id);
+        return expense;
+
+    }
+
 
     @Override
     public void saveOrUpdate(Expense expense) {
@@ -59,36 +55,23 @@ public class ExpenseDAOImpl implements ExpenseDAO {
     @Override
     public List<Expense> getAllExpense() {
 
-        Connection con = null;
-        try {
-            con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/enlearn?autoReconnect=true&useSSL=false", "enlearn", "enlearn");
-            Statement statement = con.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM expenditure");
-            while (resultSet.first()) {
-                Expense expense = new Expense();
-                expense.setId(Integer.parseInt(resultSet.getString(1)));
-                expense.setPrice(resultSet.getString(2));
-                expense.setDescription(resultSet.getString(3));
-                expense.setImage_path(resultSet.getString(4));
-                expense.setAdmin_id(Integer.parseInt(resultSet.getString(5)));
+        Session session = sessionFactory.getCurrentSession();
 
-                return (List<Expense>) expense;
+        Query<Expense> query = session.createQuery("from Expense", Expense.class);
+        List<Expense> expenses = query.getResultList();
 
-            }
-            return null;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+        return expenses;
     }
 
     @Override
-    public void delete(int expense) {
-        Session session = sessionFactory.getCurrentSession();
-        Expense ex = session.get(Expense.class,expense);
-        session.delete(expense);
+    public void saveImage(MultipartFile multipartFile) throws IOException {
+
+        String uploaddir = "C:/Users/Shan Rathsarana/Google Drive/Software Project/ITP_project/src/main/webapp/resources/expenses-images/";
+
+        byte[] bytes = multipartFile.getBytes();
+        Path path = Paths.get(uploaddir + multipartFile.getOriginalFilename());
+        Files.write(path,bytes);
 
     }
+
 }
