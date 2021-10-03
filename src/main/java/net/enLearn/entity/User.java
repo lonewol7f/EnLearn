@@ -28,15 +28,19 @@ public class User {
     private String lastName;
 
     @Column(name = "email")
+    @JsonBackReference
     private String email;
 
     @Column(name = "password")
+    @JsonBackReference
     private String password;
 
     @Column(name = "coins")
+    @JsonBackReference
     private int coins;
 
     @Column(name = "enabled")
+    @JsonBackReference
     private boolean enabled;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
