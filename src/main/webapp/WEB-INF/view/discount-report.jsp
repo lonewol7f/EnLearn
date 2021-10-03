@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: 94764
@@ -40,79 +42,35 @@
     </div>
     <!-- Back Button END -->
 
-    <div class="bloc l-bloc" id="bloc-8">
+    <%--<div class="bloc l-bloc" id="bloc-8">
       <div class="container bloc-lg">
         <div class="row">
-          <div class="col">
+          <div class="col" style="background-color: #5cc4d2">
             <h3 class="mg-md" style="text-align: center">
               Discount Rate Report
             </h3>
-            <img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/discount.png" data-src="${pageContext.request.contextPath}/resources/img/discount.png" width="450rem" height="450rem"  style="position: relative;left: 32%; padding-bottom: 30px;" alt="Discount Image" />
+            &lt;%&ndash;<img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/discount.png" data-src="${pageContext.request.contextPath}/resources/img/discount.png" width="450rem" height="450rem"  style="position: relative;left: 32%; padding-bottom: 30px;" alt="Discount Image" />&ndash;%&gt;
             <div class="row">
               <table  class="table">
                 <tr>
-                  <th>Grade</th>
-                  <th>Discount No</th>
+                  <th>Discount ID</th>
+                  <th>Admin ID</th>
+                  <th>Discount</th>
+                  <th>Teacher Name</th>
                   <th>Course</th>
-                  <th>Initial Rate</th>
-                  <th>Discount Rate</th>
-                  <th>New Course Fee</th>
-                  <th>Teacher</th>
+                  <th>Grade</th>
                 </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>100</td>
-                  <td>MAthematics</td>
-                  <td>500</td>
-                  <td>100</td>
-                  <td>400</td>
-                  <td>Kamala</td>
-                </tr>
+
+                <c:forEach items="${discountList}" var="discount">
+                  <tr>
+                    <td>${discount.id}</td>
+                    <td>${discount.admin_id}</td>
+                    <td>${discount.discount}</td>
+                    <td>${discount.teacher_name}</td>
+                    <td>${discount.course}</td>
+                    <td>${discount.grade}</td>
+                  </tr>
+                  </c:forEach>
               </table>
             </div>
             <br>
@@ -120,14 +78,71 @@
             <hr style="color: #8e2e48; height: 3px;">
 
             <div class="row">
-              <button class="bloc-button btn btn-d btn-lg btn-block">Print</button>
+              <spring:url value="/discounts/discountPDFReport/?type=pdf" var="pdfURL" />
+              <a href="${pdfURL}" class="bloc-button btn btn-d btn-lg btn-block">Download PDF</a>
             </div>
 
             <hr style="color: #8e2e48; height: 3px;">
           </div>
         </div>
       </div>
+    </div>--%>
+
+
+
+
+    <div class="bloc l-bloc" id="bloc-8">
+      <div class="container bloc-lg" style="background-color: #abb7bd; padding: 30px; margin-top: 30px;">
+        <div class="row">
+          <div class="col">
+            <h1 class="mg-md text-center" style="color: #000000">
+              Discount Rate Report
+            </h1>
+          </div>
+          <div class="col text-center">
+            <spring:url value="/discounts/discountPDFReport/?type=pdf" var="pdfURL" />
+            <a href="${pdfURL}" class="btn btn-outline-light">Download PDF</a>
+          </div>
+        </div>
+            <%--<img class="img-fluid lazyload test-img" src="${pageContext.request.contextPath}/resources/img/discount.png" data-src="${pageContext.request.contextPath}/resources/img/discount.png" width="450rem" height="450rem"  style="position: relative;left: 32%; padding-bottom: 30px;" alt="Discount Image" />--%>
+        <div class="row">
+          <table  class="table" style="color: #34ce57;">
+                <tr>
+                  <th>Discount ID</th>
+                  <th>Admin ID</th>
+                  <th>Discount</th>
+                  <th>Teacher Name</th>
+                  <th>Course</th>
+                  <th>Grade</th>
+                </tr>
+
+                <c:forEach items="${discountList}" var="discount">
+                  <tr>
+                    <td>${discount.id}</td>
+                    <td>${discount.admin_id}</td>
+                    <td>${discount.discount}</td>
+                    <td>${discount.teacher_name}</td>
+                    <td>${discount.course}</td>
+                    <td>${discount.grade}</td>
+                  </tr>
+                </c:forEach>
+              </table>
+        </div>
+            <%--<br>
+
+            <hr style="color: #8e2e48; height: 3px;">--%>
+
+            <%--<div class="row">
+              <spring:url value="/discounts/discountPDFReport/?type=pdf" var="pdfURL" />
+              <a href="${pdfURL}" class="bloc-button btn btn-d btn-lg btn-block">Download PDF</a>
+            </div>--%>
+
+            <%--<hr style="color: #8e2e48; height: 3px;">--%>
+
+      </div>
     </div>
+
+
 
     <!-- Footer -->
     <%@include file="footer.jsp" %>

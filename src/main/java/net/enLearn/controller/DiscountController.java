@@ -1,6 +1,7 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Discount;
+import net.enLearn.reportView.DiscountReportView;
 import net.enLearn.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -73,20 +76,20 @@ public class DiscountController {
     }*/
 
 
-
     //This worked
-    private static final String UPLOAD_DIRECTORY ="/resources/img";
+    private static final String UPLOAD_DIRECTORY ="/resources/Discount_img";
 
 
     @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
-    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
-                                      @RequestParam("discount") int discount,
+    public String processDiscountForm(@RequestParam("discount") int discount,
                                       @RequestParam("teacher_name") String teacher_name,
                                       @RequestParam("course") String course,
                                       @RequestParam("image") MultipartFile image,
                                       @RequestParam("description") String description,
                                       @RequestParam("grade") int grade,
                                       @RequestParam("title") String title, HttpSession session) throws Exception{
+
+
 
         ServletContext context = session.getServletContext();
         String path = context.getRealPath(UPLOAD_DIRECTORY);
@@ -101,16 +104,14 @@ public class DiscountController {
         stream.close();
 
 
-
+        int admin_id = 1;
         Discount discountObj;
         discountObj = new Discount(admin_id,discount,teacher_name,course,image.getBytes(),description,grade,title);
 
         disService.saveDiscount(discountObj);
 
-
         return "Add-Discount";
     }
-
 
 
 
@@ -181,35 +182,6 @@ public class DiscountController {
 
 
 
-    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
-    public String update(@RequestParam("id") int id,
-                         @RequestParam("admin_id") int admin_id,
-                         @RequestParam("discount") int discount,
-                         @RequestParam("teacher_name") String teacher_name,
-                         @RequestParam("course") String course,
-                         @RequestParam("image") MultipartFile image,
-                         @RequestParam("description") String description,
-                         @RequestParam("grade") int grade,
-                         @RequestParam("title") String title,
-                         Model model1){
-
-
-        String photo = null;
-        try {
-            photo = "data:image/jpg;base64,"+
-                    Base64.getEncoder().encodeToString(image.getBytes());
-        } catch (
-                IOException e) {
-            e.printStackTrace();
-        }
-
-
-        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,photo,description,grade,title);
-        disService.updateDiscount(discount1);
-
-        return "redirect:/discounts/showDiscounts";
-    }*/
-
 
     //==================================================================================================================
     /*@RequestMapping(path = "/getDiscountCode")
@@ -218,5 +190,30 @@ public class DiscountController {
         model.addAttribute("showDiscountForUpdate",discount);
         return "AddedDiscounts";
     }*/
+
+
+
+
+
+    //==================================================================================================================
+    //Generate PDF
+    @RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
+    public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
+
+        String typeReport = req.getParameter("type");
+
+        //Create data
+        List<Discount> list = disService.getAllDiscountByAdminId();
+
+        if(typeReport != null && typeReport.equals("pdf")){
+            return new ModelAndView(new DiscountReportView(),"discountList",list);
+        }
+
+        //default
+        return new ModelAndView("discount-report","discountList",list);
+    }
+
+
+    //==================================================================================================================
 
 }

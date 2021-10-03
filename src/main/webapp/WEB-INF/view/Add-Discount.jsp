@@ -26,7 +26,31 @@
   <link rel="stylesheet" type="text/css" href="../../resources/css/all.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css' rel='stylesheet'> <!-- For toast msg css -->
+
   <title>Add Discount</title>
+
+
+  <style>
+    #toast{
+      position: absolute;
+      top: 20px;
+      outline: #0b2e13 medium;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .DiscountToast{
+      background: rgba(112, 229, 112, 0.6);
+      padding: 10px 30px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      color: #235c15;
+      user-select: none;
+    }
+  </style>
 
 
 
@@ -48,13 +72,14 @@
   <div class="container mt-lg-5">
     <a class="btn btn-outline-secondary" href="${pageContext.request.contextPath}/admins" role="button">Back</a>
     <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/showDiscounts" role="button">Added Discounts</a>
-    <a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/Test-Shop" role="button">Test Shop</a>
+    <%--<a class="btn btn-info" href="${pageContext.request.contextPath}/discounts/Test-Shop" role="button">Test Shop</a>--%>
   </div>
 
   <!--Add Discount START -->
   <div class="bloc l-bloc" id="bloc-a">
     <div class="container bloc-lg">
       <div class="row">
+        <div id="toast"></div>  <!-- Toast -->
 
 
         <div class="col">
@@ -71,12 +96,16 @@
                   Add Discount
                 </h1>
                 <div class="row">
-                  <div class="form-group">
+
+                  <!-- Admin ID -->
+                  <%--<div class="form-group">
                     <label for="admin_id">
                       Admin ID
                     </label>
                     <input type="number" id="admin_id" name="admin_id" class="form-control field-style" required/>
-                  </div>
+                  </div>--%>
+
+
                   <div class="form-group">
                     <label for="lable">
                       Discount title name
@@ -170,162 +199,15 @@
                     <input type="file" class="form-control" name="image" id="image" accept="image/*" />
                   </div>
                 </div>
-
-                <%--<div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Discount title name
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <input type="text" id="lable" name="title" class="form-control field-style" required/>
-                    </div>
-                  </div>
-                </div>--%>
-                <%--<div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Discount Amount
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <input type="number" id="amount" name="discount" class="form-control field-style" required/>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Teacher Name
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <input type="text" required id="teacher" name="teacher_name" class="form-control field-style" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Course/Module Code
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <div class="form-group mb-3 container-div-style">
-                        <select class="form-control" name="course" required>
-                          <option disabled selected value>
-                            -- Select Course/Module --
-                          </option>
-                          <option value="Mathematics">
-                            Mathematics
-                          </option>
-                          <option value="Science">
-                            Science
-                          </option>
-                          <option value="History">
-                            History
-                          </option>
-                          <option value="English">
-                          English
-                        </option>
-                          <option value="ICT">
-                          ICT
-                        </option>
-                          <option value="Sinhala">
-                          Sinhala
-                        </option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Grade
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <div class="form-group mb-3 container-div-style">
-                        <select class="form-control" name="grade" required>
-                          <option disabled selected value>
-                            -- Grade --
-                          </option>
-                          <option value="6">
-                            6
-                          </option>
-                          <option value="7">
-                            7
-                          </option>
-                          <option value="8">
-                            8
-                          </option>
-                          <option value="9">
-                            9
-                          </option>
-                          <option value="10">
-                            10
-                          </option>
-                          <option value="11">
-                            11
-                          </option>
-                          <option value="12">
-                            12
-                          </option>
-                          <option value="13">
-                            13
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Discount Description
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <div class="form-group mb-3">
-                        <textarea type="text" name="description" id="description" class="form-control text-area-style" rows="4" cols="50"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-lg-4">
-                    <h5 class="form-label text-lg-center h5-style mx-auto d-block mg-clear btn-resize-mode">
-                      Upload Image
-                    </h5>
-                  </div>
-                  <div class="col">
-                    <div class="form-group mb-3">
-                      <div class="row">
-                        <div class="col-lg-3">
-
-                          <input type="file" name="image" id="image"  />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>--%>
                 <br><br>
                 <div class="text-center">
-                  <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
+                  <button class="bloc-button btn btn-d btn-lg btn-submit-style" id="AddDiscountBTN" type="submit">
                     Submit
                   </button>
-                  <button class="bloc-button btn btn-d btn-lg btn-submit-style" type="submit">
+                  <button class="bloc-button btn btn-d btn-lg btn-submit-style" >
                     Demo
                   </button>
+                  <br>
                 </div>
               </form>
             </div>
@@ -334,90 +216,32 @@
       </div>
     </div>
   </div>
-  <!-- ADD Discount END -->
 
 
 
-  <!--Slide show-->
-  <!--
-  <div class="bloc l-bloc animDelay04" id="bloc-12">
-    <div class="container bloc-lg bloc-no-padding-lg">
-      <div class="row">
-        <div class="col">
-          <div class="divider-h">
-            <span class="divider"></span>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div id="carousel-2" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-2" data-slide-to="0" class="active">
-              </li>
-              <li data-target="#carousel-2" data-slide-to="1">
-              </li>
-              <li data-target="#carousel-2" data-slide-to="2">
-              </li>
-              <li data-target="#carousel-2" data-slide-to="3">
-              </li>
-              <li data-target="#carousel-2" data-slide-to="4">
-              </li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-              <div class="carousel-item active">
-                <img class="d-inline-block w-100" alt="slide 1" src="../../resources/img/placeholder-image-wide.png" />
-                <div class="carousel-caption caption-area-shop">
-                  <div class="blockquote">
-                    <a href="index.html" class="btn btn-danger" >Delete</a>
-                    <a href="index.html" class="btn btn-success">Update</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/placeholder-image-wide.png" />
-                <div class="carousel-caption caption-area-shop">
-                  <div class="blockquote">
-                    <a href="index.html" class="btn btn-danger" >Delete</a>
-                    <a href="index.html" class="btn btn-success">Update</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-inline-block w-100" alt="slide 3" src="../../resources/img/placeholder-image-wide.png" />
-                <div class="carousel-caption caption-area-shop">
-                  <div class="blockquote">
-                    <a href="index.html" class="btn btn-danger" >Delete</a>
-                    <a href="index.html" class="btn btn-success">Update</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
-                <div class="carousel-caption caption-area-shop">
-                  <div class="blockquote">
-                    <a href="index.html" class="btn btn-danger" >Delete</a>
-                    <a href="index.html" class="btn btn-success">Update</a>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
-                <div class="carousel-caption caption-area-shop">
-                  <div class="blockquote">
-                    <a href="index.html" class="btn btn-danger" >Delete</a>
-                    <a href="index.html" class="btn btn-success">Update</a>
-                  </div>
-                </div>
-              </div>
-            </div><a class="carousel-nav-controls carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-prev-icon" d="M22,2L9,16,22,30"></path></svg><span class="sr-only">Previous</span></a><a class="carousel-nav-controls carousel-control-next" href="#carousel-2" role="button" data-slide="next"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-next-icon" d="M10.344,2l13,14-13,14"></path></svg><span class="sr-only">Next</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
-  <!-- End of Slide show -->
+
+  <script>
+    const button = document.querySelector('#AddDiscountBTN')
+    const toastCont = document.querySelector('#toast')
+
+    const randomMSG = ['Discount Not Added']
+    const colours = ['green','red']
+
+    button.addEventListener('click', ()=> createToast())
+    function createToast(){
+      let toastElement = document.createElement('div')
+      toastElement.classList.add('DiscountToast')
+      toastElement.innerText = getRandomMSG()
+      toastCont.appendChild(toastElement)
+
+      setTimeout( ()=> { toastElement.remove()}, 3000)
+    }
+
+    function getRandomMSG(){
+      return randomMSG[Math.floor(Math.random() * randomMSG.length)]
+    }
+
+  </script>
 
 
 
@@ -438,7 +262,10 @@
 <script src="../../resources/js/jquery.js?8669"></script>
 <script src="../../resources/js/bootstrap.bundle.js?9765"></script>
 <script src="../../resources/js/blocs.js?5117"></script>
-<script src="../../resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="../../resources/js/lazysizes.min.js" defer></script>
+<script src="../../resources/js/https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> <!-- For toast msg js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>  <!-- jQuery for toastr -->
+<!-- Additional JS END -->
 
 
 </body>

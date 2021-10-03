@@ -65,7 +65,7 @@
                             </div>
                             <div class="col">
                                 <div class="text-center">
-                                    <a href="${pageContext.request.contextPath}/discount-rate-report" class="btn btn-d btn-lg btn-block" >Discount Rate Report</a>
+                                    <a href="${pageContext.request.contextPath}/discounts/discountPDFReport" class="btn btn-d btn-lg btn-block" >Discount Rate Report</a>
                                     <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
                                 </div>
                             </div>
