@@ -35,8 +35,10 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @GetMapping("/login")
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
 
+        Student student = new Student();
+        model.addAttribute("student", student);
         return "login";
     }
 
@@ -78,10 +80,16 @@ public class AuthController {
         }
 
         student.setPassword(passwordEncoder.encode(student.getPassword()));
+        student.setEnabled(true);
         studentService.registerUser(student);
 
         redirectAttributes.addAttribute("registered");   // TODO: show user successfully registered message in login
 
         return "redirect:/login";
+    }
+
+    @GetMapping("/forbidden")
+    public String showForbiddenPage() {
+        return "forbidden";
     }
 }
