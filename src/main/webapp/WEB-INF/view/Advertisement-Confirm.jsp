@@ -71,6 +71,9 @@
 
             <div class="row">
                 <c:forEach var="advertisement" items="${allAdvertisements}">
+                    <c:url var="confirmAdvertisementLink" value="/admins/confirmAdvertisement">
+                        <c:param name="type" value="${advertisement.id}" />
+                    </c:url>
                     <%--<c:forEach var="advertiser" items="${allAdvertisers}">--%>
 
                     <%--<c:url var="confirmAdvertisementLink" value="/admins/confirmAdvertisement">
@@ -82,7 +85,7 @@
                                 <c:out value="${advertisement.title}" />
                             </h5>
                             <div>
-                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                <img src="${advertisement.image}" data-src="${advertisement.image}" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                     <div class="row">
@@ -135,7 +138,7 @@
                                 <div class="text-center">
                                     <div class="row">
                                         <div class="col">
-                                            <a href="confirmAdvertisementLink" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                            <a href="${confirmAdvertisementLink}" class="btn btn-success">Confirm</a><br>
                                         </div>
                                         <div class="col">
                                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>

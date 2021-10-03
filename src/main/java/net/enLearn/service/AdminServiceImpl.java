@@ -2,6 +2,7 @@ package net.enLearn.service;
 
 import net.enLearn.dao.AdminDAO;
 import net.enLearn.entity.Admin;
+import net.enLearn.entity.AdvertisementApprove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,5 +21,11 @@ public class AdminServiceImpl implements AdminService {
     @Transactional
     public Admin getAdminById(int adminId) {
         return adminDAO.getAdminById(adminId);
+    }
+
+    @Override
+    @Transactional
+    public void saveType(AdvertisementApprove advertisementApprove)  {
+        this.adminDAO.saveType(advertisementApprove);
     }
 }

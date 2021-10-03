@@ -1,6 +1,7 @@
 package net.enLearn.dao;
 
 import net.enLearn.entity.Admin;
+import net.enLearn.entity.AdvertisementApprove;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,12 @@ public class AdminDAOImpl implements AdminDAO {
         Admin admin = session.get(Admin.class, adminId);
 
         return admin;
+    }
+
+    //Advertisement confirm
+    @Override
+    public void saveType(AdvertisementApprove advertisementApprove){
+        Session session = sessionFactory.getCurrentSession();
+        session.save(advertisementApprove);
     }
 }
