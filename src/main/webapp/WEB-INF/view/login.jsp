@@ -97,8 +97,8 @@
                                 <img class="d-inline-block w-100" alt="slide 3"
                                      src="../../resources/img/reshot-illustration-user-login-3HNWGDRT5M.png"/>
                                 <div class="carousel-caption login-register-form-box">
-                                    <form id="register_form" data-form-type="blocs-form"
-                                          class="login-form-placement form-bloc-3-style" action="register"
+                                    <form:form modelAttribute="student" id="register_form" data-form-type="blocs-form"
+                                          class="login-form-placement form-bloc-3-style" action="${pageContext.request.contextPath}/register-user"
                                           method="POST">
                                         <div class="form-group">
                                             <h3 class="mg-md text-lg-left">
@@ -107,15 +107,22 @@
                                             <label>
                                                 Name
                                             </label>
-                                            <input id="name2" class="form-control" required name="name2"/>
+                                            <form:input path="firstName" id="name2" class="form-control" required="required" name="name2"/>
                                         </div>
                                         <div class="form-group">
                                             <label>
                                                 Email
                                             </label>
-                                            <input id="email2" class="form-control" type="email"
-                                                   data-error-validation-msg="Not a valid email address" required
+                                            <form:input path="email" id="email2" class="form-control" type="email"
+                                                   data-error-validation-msg="Not a valid email address" required="required"
                                                    name="email2"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                Password
+                                            </label>
+                                            <form:input path="password" id="pass" class="form-control" type="password" required="required"
+                                                        name="password"/>
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="optin2"
@@ -131,7 +138,7 @@
                                         <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                             Submit
                                         </button>
-                                    </form>
+                                    </form:form>
                                 </div>
                             </div>
                         </div>

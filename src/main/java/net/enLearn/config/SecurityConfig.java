@@ -49,13 +49,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/students/**").hasRole("STUDENT")
                 .antMatchers("/admins/**").hasRole("ADMIN")
                 .antMatchers("/teachers/**").hasRole("TEACHER")
-                .antMatchers("/reports/single-event/**").hasRole("TEACHER")
+                .antMatchers("/reports/single-event/**").hasAnyRole("TEACHER", "ADMIN")
                 .antMatchers("/reports/available-codes/**").hasRole("ADMIN")
+                .antMatchers("/reports/comment-analysis").hasAnyRole("TEACHER")
                 .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/authenticateTheUser")
-                .permitAll();
+                .permitAll()
+                .and()
+                .exceptionHandling().accessDeniedPage("/forbidden");
 
         http.csrf().disable();
 

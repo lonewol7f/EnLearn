@@ -46,6 +46,7 @@ public class TeacherController {
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
 
+
         int id = userService.getLoggedUserId();
         List<Course> courseList = courseService.getCourseListByTeacherId(id);
         model.addAttribute("courseList", courseList);
