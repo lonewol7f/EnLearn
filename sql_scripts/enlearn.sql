@@ -474,13 +474,10 @@ VALUES ('Kalana', 'Madusanka', 'km@gmail.com', '$2a$10$W3E8YRbuHkjD4CBRyUdXX.qjI
 
 INSERT INTO `student` (id,  grade)
 VALUES (1,  12),
-       (2,  12),
-       (3,  12),
        (4,  12);
 
 INSERT INTO `teacher` (id, verified)
-VALUES (2, 1),
-       (3, 1);
+VALUES (2, 1);
 
 INSERT INTO `admin` (id, no_of_shares)
 VALUES (3, 51);
@@ -492,9 +489,6 @@ VALUES ('ROLE_STUDENT'),
 
 INSERT INTO `user_authorities` (user_id, authority_id)
 VALUES (1, 1),
-       (2, 1),
        (2, 2),
-       (3, 1),
-       (3, 2),
        (3, 3),
        (4, 1);
