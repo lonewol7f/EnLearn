@@ -1,5 +1,7 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,12 +15,14 @@ import java.util.List;
 public class Student extends User{
 
     @Column(name = "grade")
+    @JsonBackReference
     private int grade;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinTable(name = "special_quiz_student",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "quiz_id"))
+    @JsonBackReference
     private List<SpecialQuiz> specialQuizList;
 
     public Student() {
