@@ -110,7 +110,6 @@ public class DiscountController {
 
         disService.saveDiscount(discountObj);
 
-
         return "Add-Discount";
     }
 
@@ -184,35 +183,6 @@ public class DiscountController {
 
 
 
-    /*@RequestMapping(path = "/update", method = RequestMethod.POST)
-    public String update(@RequestParam("id") int id,
-                         @RequestParam("admin_id") int admin_id,
-                         @RequestParam("discount") int discount,
-                         @RequestParam("teacher_name") String teacher_name,
-                         @RequestParam("course") String course,
-                         @RequestParam("image") MultipartFile image,
-                         @RequestParam("description") String description,
-                         @RequestParam("grade") int grade,
-                         @RequestParam("title") String title,
-                         Model model1){
-
-
-        String photo = null;
-        try {
-            photo = "data:image/jpg;base64,"+
-                    Base64.getEncoder().encodeToString(image.getBytes());
-        } catch (
-                IOException e) {
-            e.printStackTrace();
-        }
-
-
-        Discount discount1 = new Discount(id,admin_id,discount,teacher_name,course,photo,description,grade,title);
-        disService.updateDiscount(discount1);
-
-        return "redirect:/discounts/showDiscounts";
-    }*/
-
 
     //==================================================================================================================
     /*@RequestMapping(path = "/getDiscountCode")
@@ -224,33 +194,10 @@ public class DiscountController {
 
 
 
-    //----------------------------------------------------------------------------------------------------
+
+
+    //==================================================================================================================
     //Generate PDF
-
-
-    /*@RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
-    public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
-
-        String typeReport = req.getParameter("type");
-
-        //Create data
-        List<Discount> list = new ArrayList<Discount>();
-        list.add(new Discount(12,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-        list.add(new Discount(11,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-        list.add(new Discount(10,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-        list.add(new Discount(9,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-        list.add(new Discount(8,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-        list.add(new Discount(7,1,100,"Sumana","Mahematics",null,"Hey, description",6,"Title"));
-
-        if(typeReport != null && typeReport.equals("pdf")){
-            return new ModelAndView(new DiscountReportView(),"discountList",list);
-        }
-
-        //default
-        return new ModelAndView("DiscountListReport","discountList",list);
-    }*/
-
-
     @RequestMapping(path = "/discountPDFReport", method = RequestMethod.GET)
     public ModelAndView DiscountListReport(HttpServletRequest req, HttpServletResponse res){
 
@@ -266,5 +213,8 @@ public class DiscountController {
         //default
         return new ModelAndView("discount-report","discountList",list);
     }
+
+
+    //==================================================================================================================
 
 }
