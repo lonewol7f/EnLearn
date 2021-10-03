@@ -38,7 +38,7 @@ public class Comment {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
             CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "video_id")
-    @JsonManagedReference
+    @JsonBackReference
     private RecordedVideo video;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
