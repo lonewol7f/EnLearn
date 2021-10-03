@@ -1,7 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="net.enLearn.entity.Advertisement" %>
-<%@ page import="java.util.List" %>
-<%@ page import="net.enLearn.entity.Advertiser" %><%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%--
   Created by IntelliJ IDEA.
   User: Thilini
   Date: 9/9/2021
@@ -63,7 +60,7 @@
                 </div>
             </div>
             <br>
-            <form class="" action="" style="margin:auto;max-width:300px" method="post">
+            <form class="" action="" style="margin:auto;max-width:300px">
                 <input type="text" placeholder="Search.." name="search2">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -71,15 +68,151 @@
 
 
 
-            <div class="row">
 
+            <div class="row">
                 <c:forEach var="advertisement" items="${allAdvertisements}">
-                    <c:forEach var="advertiser" items="${allAdvertisers}">
-                        <div class="col spacing-top">
+                    <%--<c:forEach var="advertiser" items="${allAdvertisers}">--%>
+
+                    <%--<c:url var="confirmAdvertisementLink" value="/admins/confirmAdvertisement">
+                        <c:param name="type" value="${admin.id}" />
+                    </c:url>--%>
+                    <div class="col spacing-top">
+                        <div class="card">
+                            <h5 class="mg-md text-lg-center">
+                                <c:out value="${advertisement.title}" />
+                            </h5>
+                            <div>
+                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                    <%--<c:out value="${advertiser.cname}" />--%>
+                                                    ${allAdvertisers.cname}
+
+                                            </h6>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                    <%--<c:out value="${advertiser.email}" />--%>
+                                                    ${allAdvertisers.email}
+
+                                            </h6>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                    <%--<c:out value="${advertiser.contact_no}" />--%>
+                                                    ${allAdvertisers.contact_no}
+                                            </h6>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                <c:out value="${advertisement.description}" />
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                            <textarea id="w3review" name="w3review" rows="3" cols="25">
+                                            </textarea>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="text-center">
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="confirmAdvertisementLink" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%--</c:forEach>--%>
+                </c:forEach>
+                <%--
+                                <div class="col spacing-top">
+                                    <div class="card">
+                                        <h5 class="mg-md text-lg-center">
+                                            Title
+                                        </h5>
+                                        <div>
+                                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                            <div class="divider-h">
+                                                <span class="divider"></span>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h6 text-align: right;>
+                                                            Company Name
+                                                        </h6>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h6 text-align: right;>
+                                                            Selected Package
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h6 text-align: right;>
+                                                            Email
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <h6 text-align: right;>
+                                                            Contact Number
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="text-center">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                                    </div>
+                                                    <div class="col">
+                                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divider-h">
+                                                <span class="divider"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>--%>
+                <%--        <div class="col spacing-top">
                             <div class="card">
                                 <h5 class="mg-md text-lg-center">
-
-                                    <c:out value="${advertisement.title}" />
+                                   Title
                                 </h5>
                                 <div>
                                     <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
@@ -96,10 +229,9 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h6 text-align: right;>
-                                                    <c:out value="${advertisement.price_range}" />
+                                                    Selected Package
                                                 </h6>
                                             </div>
-
                                         </div>
                                         <div class="row">
                                             <div class="col">
@@ -111,19 +243,14 @@
                                         <div class="row">
                                             <div class="col">
                                                 <h6 text-align: right;>
-                                                    <c:out value="${advertisement.description}" />
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <h6 text-align: right;>
                                                     Contact Number
                                                 </h6>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="text-center">
+                                        <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
                                         <div class="row">
                                             <div class="col">
                                                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
@@ -138,41 +265,37 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
+                <%--    <div class="col spacing-top">
+                        <div class="card">
+                            <h5 class="mg-md text-lg-center">
+                                Title
+                            </h5>
+                            <div>
+                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
+                                <div class="divider-h">
+                                    <span class="divider"></span>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                Company Name
+                                            </h6>
+                                        </div>
 
-                    </c:forEach>
-                </c:forEach>
-
-
-                <%--<div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            Title
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Company Name
-                                        </h6>
                                     </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Selected Package
-                                        </h6>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                Selected Package
+                                            </h6>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Email
-                                        </h6>
+                                    <div class="row">
+                                        <div class="col">
+                                            <h6 text-align: right;>
+                                                Email
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -183,138 +306,22 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            <div class="text-center">
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                <div class="text-center">
+                                    <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                    </div>
+                                </div>
+                                <div class="divider-h">
+                                    <span class="divider"></span>
                                 </div>
                             </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            Title
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Company Name
-                                        </h6>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Selected Package
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Email
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Contact Number
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
-                                    </div>
-                                    <div class="col">
-                                        <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col spacing-top">
-                    <div class="card">
-                        <h5 class="mg-md text-lg-center">
-                            Title
-                        </h5>
-                        <div>
-                            <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/placeholder-image.png" class="img-fluid mx-auto d-block lazyload" alt="placeholder image" />
-                            <div class="divider-h">
-                                <span class="divider"></span>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Company Name
-                                        </h6>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Selected Package
-                                        </h6>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <h6 text-align: right;>
-                                            Email
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <h6 text-align: right;>
-                                        Contact Number
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <!--<a href="index.jsp" class="btn btn-d btn-lg shop-card-btn btn-43-style btn-rd">Get Discount</a>-->
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Confirm</a><br>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="divider-h">
-                            <span class="divider"></span>
-                        </div>
-                    </div>
-                </div>--%>
+                        </div>--%>
             </div>
         </div>
     </div>

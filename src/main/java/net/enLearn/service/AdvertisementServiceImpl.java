@@ -1,6 +1,6 @@
 package net.enLearn.service;
 
-import net.enLearn.dao.AdvertisementDAOImpl;
+import net.enLearn.dao.AdvertisementDAO;
 import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Advertiser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,8 @@ import java.util.List;
 public class AdvertisementServiceImpl implements AdvertisementService {
 
     @Autowired
-    AdvertisementDAOImpl advertisementDAO;
+    //AdvertisementDAOImpl advertisementDAO;
+    AdvertisementDAO advertisementDAO;
 
 
     @Override
