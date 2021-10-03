@@ -22,8 +22,15 @@ public class Expense {
     @Column(name = "description")
     private String description;
 
+
     @Column(name = "image")
     private String image_path;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "filename")
+    private String filename;
 
     //    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
 //            CascadeType.DETACH, CascadeType.REFRESH})
@@ -34,14 +41,20 @@ public class Expense {
     // assing to data to data table
     private int admin_id;
 
-    public Expense(int admin_id,String image_path,String description,String price){
-        this.admin_id = admin_id;
+    public Expense(int id, String price, String description, String image_path, String name, String filename, int admin_id) {
+        this.id = id;
+        this.price = price;
         this.description = description;
         this.image_path = image_path;
-        this.price = price;
+        this.name = name;
+        this.filename = filename;
+        this.admin_id = admin_id;
     }
 
-    public Expense(){};
+    public Expense() {
+
+    }
+
 
     public int getId() {
         return id;
@@ -73,6 +86,22 @@ public class Expense {
 
     public void setImage_path(String image_path) {
         this.image_path = image_path;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public int getAdmin_id() {
