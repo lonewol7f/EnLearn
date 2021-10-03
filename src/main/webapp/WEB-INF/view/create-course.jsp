@@ -100,12 +100,12 @@
                                         </form:select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <form:label path="image">
-                                        Image
-                                    </form:label>
-                                    <form:input path="image" type="file"  cssClass="form-control" name="image" />
-                                </div>
+<%--                                <div class="form-group">--%>
+<%--                                    <form:label path="image">--%>
+<%--                                        Image--%>
+<%--                                    </form:label>--%>
+<%--                                    <form:input path="image" type="file"  cssClass="form-control" name="image" />--%>
+<%--                                </div>--%>
                                 <button class="bloc-button btn btn-d btn-lg btn-block" type="submit">
                                     Create Course
                                 </button><a class="btn btn-lg btn-block btn-wire" href="add-course.jsp">Go Back</a>

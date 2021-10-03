@@ -48,6 +48,7 @@ public class User {
     @JsonBackReference
     private List<Comment> comments;
 
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
@@ -158,4 +159,5 @@ public class User {
     public void setAuthorities(List<Authorities> authorities) {
         this.authorities = authorities;
     }
+
 }

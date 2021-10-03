@@ -41,6 +41,7 @@ public class Teacher extends User{
     private List<Course> courseList;
 
 
+
     public Teacher() { }
 
     public int getSalary() {

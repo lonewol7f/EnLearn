@@ -33,7 +33,6 @@ public class CourseController {
     @Autowired
     private RecordedVideoService recordedVideoService;
 
-
     @Autowired
     private Logger logger;
 
@@ -42,6 +41,8 @@ public class CourseController {
         List<Course> courseList = courseService.getCourseList();
         List<ZoomClass> zoomClassList = zoomClassService.getZoomClassListByCourseId(id);
         List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
+        Course course = courseService.getCourseById(id);
+        model.addAttribute("course", course);
         model.addAttribute("zoomClassList", zoomClassList);
         model.addAttribute("videoList", videoList);
         model.addAttribute("courseId", id);

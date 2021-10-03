@@ -117,69 +117,14 @@
                                 <h1 class="mg-md">
                                     Overview
                                 </h1>
+                                <h2 class="mg-md">
+                                    ${recordedVideo.title}
+                                </h2>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes,
-                                    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
-                                    quis, sem. Nulla consequat massa quis enim.
+                                    ${recordedVideo.description}
                                 </p>
                                 <div class="divider-h">
                                     <span class="divider"></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <h4 class="mg-md">
-                                            Heading content
-                                        </h4>
-                                    </div>
-                                    <div class="col">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="divider-h">
-                                    <span class="divider"></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <h4 class="mg-md">
-                                            Heading content
-                                        </h4>
-                                    </div>
-                                    <div class="col">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                                        </p>
-                                        <div class="text-center">
-                                            <a href="${pageContext.request.contextPath}/"
-                                               class="btn btn-d btn-lg btn-58-style">Button</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="divider-h">
-                                    <span class="divider"></span>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <h4 class="mg-md">
-                                            Heading content
-                                        </h4>
-                                    </div>
-                                    <div class="col">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
-                                            parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                                            pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                                        </p>
-                                    </div>
                                 </div>
                                 <div class="divider-h">
                                     <span class="divider"></span>

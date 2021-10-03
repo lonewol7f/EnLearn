@@ -60,8 +60,11 @@
                                 <div class="col">
                                     <div>
                                         <h2 class="mg-md no-margin">
-                                            Course Name
+                                            ${course.title}
                                         </h2>
+                                        <h4 class="mg-md" style="color: darkred">
+                                            Course Type  &nbsp; &nbsp; - &nbsp; &nbsp;  ${course.type}
+                                        </h4>
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
@@ -144,7 +147,7 @@
                                         </h6>
                                     </div>
                                     <div class="col">
-                                        <div class="text-lg-center price-boxes buy-box" id="buybox" data-placement="top" data-toggle="tooltip" title="LKR 200">
+                                        <div class="text-lg-center price-boxes buy-box" id="buybox" data-placement="top" data-toggle="tooltip" title="LKR ${course.price}">
                                             <label class="text-lg-center">
                                                 Buy&nbsp;<br>
                                             </label>
@@ -168,9 +171,11 @@
                                 <h4 class="mg-md">
                                     Introduction Video or trailer
                                 </h4>
+                                <br>
+                                <br>
                                 <div class="blockquote">
                                     <p class="text-lg-left">
-                                        Description is here tbh
+                                        ${course.description}
                                     </p>
                                 </div>
                             </div>
@@ -228,7 +233,7 @@
                                             </div>
                                         </div>
                                         <div class="course-box object-hidden content-box" id="week-1-content">
-                                            <h4 class="mg-md">
+                                            <h4 class="mg-md" style="color: darkblue">
                                                 Week 01 - Zoom Classes
                                             </h4>
                                             <ol>
@@ -274,7 +279,7 @@
                                             </div>
                                         </div>
                                         <div class="course-box object-hidden content-box" id="week-2-content">
-                                            <h4 class="mg-md">
+                                            <h4 class="mg-md" style="color: darkblue">
                                                 Week 02 - Zoom Classes
                                             </h4>
                                             <ol>
@@ -320,7 +325,7 @@
                                             </div>
                                         </div>
                                         <div class="course-box object-hidden content-box" id="week-3-content">
-                                            <h4 class="mg-md">
+                                            <h4 class="mg-md" style="color: darkblue">
                                                 Week 03 - Zoom Classes
                                             </h4>
                                             <ol>
@@ -366,7 +371,7 @@
                                             </div>
                                         </div>
                                         <div class="course-box object-hidden content-box" id="week-4-content">
-                                            <h4 class="mg-md">
+                                            <h4 class="mg-md" style="color: darkblue">
                                                 Week 04 - Zoom Classes
                                             </h4>
                                             <ol>
@@ -453,7 +458,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-box object-hidden content-box" id="week-1-content">
-                                                <h4 class="mg-md">
+                                                <h4 class="mg-md" style="color: darkblue">
                                                     Week 01 - Recorded Videos
                                                 </h4>
                                                 <ol>
@@ -464,7 +469,7 @@
                                                         <c:if test="${tempVideo.week == 'Week 01'}">
                                                             <li>
                                                                 <h5 class="mg-md">
-                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                        ${tempVideo.title}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${playVideo}">Click here to watch video</a><br>
                                                                 </h5>
                                                             </li>
                                                         </c:if>
@@ -502,7 +507,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-box object-hidden content-box" id="week-2-content">
-                                                <h4 class="mg-md">
+                                                <h4 class="mg-md" style="color: darkblue">
                                                     Week 02 - Recorded Videos
                                                 </h4>
                                                 <ol>
@@ -513,7 +518,7 @@
                                                         <c:if test="${tempVideo.week == 'Week 02'}">
                                                             <li>
                                                                 <h5 class="mg-md">
-                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                        ${tempVideo.title}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${playVideo}">Click here to watch video</a><br>
                                                                 </h5>
                                                             </li>
                                                         </c:if>
@@ -551,7 +556,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-box object-hidden content-box" id="week-3-content">
-                                                <h4 class="mg-md">
+                                                <h4 class="mg-md" style="color: darkblue">
                                                     Week 03 - Recorded Videos
                                                 </h4>
                                                 <ol>
@@ -562,7 +567,7 @@
                                                         <c:if test="${tempVideo.week == 'Week 03'}">
                                                             <li>
                                                                 <h5 class="mg-md">
-                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                        ${tempVideo.title}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${playVideo}">Click here to watch video</a><br>
                                                                 </h5>
                                                             </li>
                                                         </c:if>
@@ -600,7 +605,7 @@
                                                 </div>
                                             </div>
                                             <div class="course-box object-hidden content-box" id="week-4-content">
-                                                <h4 class="mg-md">
+                                                <h4 class="mg-md" style="color: darkblue">
                                                     Week 04 - Recorded Videos
                                                 </h4>
                                                 <ol>
@@ -611,7 +616,7 @@
                                                         <c:if test="${tempVideo.week == 'Week 04'}">
                                                             <li>
                                                                 <h5 class="mg-md">
-                                                                        ${tempVideo.title} &nbsp; &nbsp; <a href="${playVideo}">Click here</a><br>
+                                                                        ${tempVideo.title}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${playVideo}">Click here to watch video</a><br>
                                                                 </h5>
                                                             </li>
                                                         </c:if>
