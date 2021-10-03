@@ -61,8 +61,8 @@ public class CourseController {
 
     @GetMapping("/videos")
     public String showVideoPage(@RequestParam("videoId") int id, Model model) {
-        List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
-        model.addAttribute("videoId", id);
+        RecordedVideo recordedVideo = recordedVideoService.getVideoById(id);
+        model.addAttribute("recordedVideo",recordedVideo);
         return "video-page";
     }
 
@@ -103,7 +103,6 @@ public class CourseController {
         Course course = zoomClass.getCourse();
         redirectAttribute.addAttribute("courseId", course.getId());
         redirectAttribute.addAttribute("type", "Zoom Class");
-
         zoomClassService.deleteZoomClass(id);
         return "redirect:/courses/add-courses";
     }

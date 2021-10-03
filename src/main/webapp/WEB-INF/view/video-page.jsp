@@ -74,7 +74,7 @@
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item lazyload"
                                 src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
-                                data-src="https://www.youtube.com/embed/kn271kr_ks0" frameborder="0"
+                                data-src="${recordedVideo.videoLink}" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen>
                         </iframe>

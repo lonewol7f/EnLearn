@@ -236,7 +236,7 @@
                                             <c:if test="${tempZoom.week == 'Week 01'}">
                                                 <li>
                                                     <h5 class="mg-md">
-                                                        ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                        ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${tempZoom.zoomLink}">Click here to join Zoom Class</a><br>
                                                     </h5>
                                                 </li>
                                             </c:if>
@@ -282,7 +282,7 @@
                                                     <c:if test="${tempZoom.week == 'Week 02'}">
                                                         <li>
                                                             <h5 class="mg-md">
-                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${tempZoom.zoomLink}">Click here to join Zoom Class</a><br>
                                                             </h5>
                                                         </li>
                                                     </c:if>
@@ -328,7 +328,7 @@
                                                     <c:if test="${tempZoom.week == 'Week 03'}">
                                                         <li>
                                                             <h5 class="mg-md">
-                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${tempZoom.zoomLink}">Click here to join Zoom Class</a><br>
                                                             </h5>
                                                         </li>
                                                     </c:if>
@@ -374,7 +374,7 @@
                                                     <c:if test="${tempZoom.week == 'Week 04'}">
                                                         <li>
                                                             <h5 class="mg-md">
-                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp; <a href="${tempZoom.zoomLink}">Click here</a><br>
+                                                                    ${tempZoom.title} &nbsp; &nbsp; ${tempZoom.date} &nbsp; &nbsp; ${tempZoom.time}&nbsp;&nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp;  |&nbsp; &nbsp; <a href="${tempZoom.zoomLink}">Click here to join Zoom Class</a><br>
                                                             </h5>
                                                         </li>
                                                     </c:if>

@@ -136,7 +136,7 @@
                         <td style="height:100px;width:30%">${tempCourse.description}</td>
                         <td>Rs. ${tempCourse.price}.00</td>
                         <td>${tempCourse.image}</td>
-                        <td><a href="${coursesLink}">Course Content</a></td>
+                        <td><a href="${coursesLink}" class="btn btn-info">Course Content</a></td>
                         <td>
                                 <%-- display the update link --%>
                             <a href="${updateLink}"
