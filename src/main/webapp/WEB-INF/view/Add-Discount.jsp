@@ -96,12 +96,16 @@
                   Add Discount
                 </h1>
                 <div class="row">
-                  <div class="form-group">
+
+                  <!-- Admin ID -->
+                  <%--<div class="form-group">
                     <label for="admin_id">
                       Admin ID
                     </label>
                     <input type="number" id="admin_id" name="admin_id" class="form-control field-style" required/>
-                  </div>
+                  </div>--%>
+
+
                   <div class="form-group">
                     <label for="lable">
                       Discount title name

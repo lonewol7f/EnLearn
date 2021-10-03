@@ -76,20 +76,20 @@ public class DiscountController {
     }*/
 
 
-
     //This worked
     private static final String UPLOAD_DIRECTORY ="/resources/Discount_img";
 
 
     @RequestMapping(path = "/addDiscount", method = RequestMethod.POST)
-    public String processDiscountForm(@RequestParam("admin_id") int admin_id,
-                                      @RequestParam("discount") int discount,
+    public String processDiscountForm(@RequestParam("discount") int discount,
                                       @RequestParam("teacher_name") String teacher_name,
                                       @RequestParam("course") String course,
                                       @RequestParam("image") MultipartFile image,
                                       @RequestParam("description") String description,
                                       @RequestParam("grade") int grade,
                                       @RequestParam("title") String title, HttpSession session) throws Exception{
+
+
 
         ServletContext context = session.getServletContext();
         String path = context.getRealPath(UPLOAD_DIRECTORY);
@@ -104,7 +104,7 @@ public class DiscountController {
         stream.close();
 
 
-
+        int admin_id = 1;
         Discount discountObj;
         discountObj = new Discount(admin_id,discount,teacher_name,course,image.getBytes(),description,grade,title);
 
@@ -112,7 +112,6 @@ public class DiscountController {
 
         return "Add-Discount";
     }
-
 
 
 
