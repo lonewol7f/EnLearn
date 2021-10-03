@@ -10,7 +10,6 @@ function loadComments() {
             videoId: videoId
         },
         function (response) {
-
             if (response.status === "SUCCESS") {
                 response.data.reverse();
                 $('#results').text('');
