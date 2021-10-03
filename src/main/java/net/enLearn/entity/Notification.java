@@ -1,5 +1,6 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -28,11 +29,13 @@ public class Notification {
             CascadeType.DETACH, CascadeType.REFRESH})
     @Fetch(value = FetchMode.JOIN)
     @JoinColumn(name = "comment_id")
+    @JsonBackReference
     private Comment comment;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "teacher_id")
+    @JsonBackReference
     private Teacher teacher;
 
     public Notification() {
