@@ -25,6 +25,7 @@ public class Admin extends User {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "admin", cascade = {CascadeType.MERGE, CascadeType.PERSIST,
             CascadeType.DETACH, CascadeType.REFRESH})
     @Fetch(value = FetchMode.SUBSELECT)
+    @JsonBackReference
     private List<RedeemCode> redeemCodes;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
@@ -32,6 +33,7 @@ public class Admin extends User {
             joinColumns = @JoinColumn(name = "admin_id"),
             inverseJoinColumns = @JoinColumn(name = "advertisement_id"))
     @Fetch(value = FetchMode.SUBSELECT)
+    @JsonBackReference
     private List<Advertisement> advertisements;
 
     public Admin() {
