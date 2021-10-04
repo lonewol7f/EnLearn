@@ -1,7 +1,9 @@
 package net.enLearn.dao;
 
+import net.enLearn.entity.Comment;
 import net.enLearn.entity.Course;
 import net.enLearn.entity.RecordedVideo;
+import net.enLearn.entity.Reply;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,17 @@ public class RecordedVideoDAOImpl implements RecordedVideoDAO{
         Session session = sessionFactory.getCurrentSession();
         RecordedVideo recordedVideo = session.get(RecordedVideo.class, id);
         recordedVideo.getCourse().getVideos().remove(recordedVideo);
+        for (Comment comment : recordedVideo.getComments()) {
+            comment.getUser().getComments().clear();
+            comment.getNotification().getTeacher().getNotifications().clear();
+            comment.getNotification().setComment(null);
+            comment.setNotification(null);
+            for (Reply reply : comment.getReplies()) {
+                reply.getUser().getReplies().clear();
+                reply.setComment(null);
+            }
+            comment.getReplies().clear();
+        }
         session.delete(recordedVideo);
     }
 }
