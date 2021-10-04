@@ -12,5 +12,6 @@ public interface TeacherDAO {
 
     Teacher getTeacherById(int id);
     List getCommentCountForCourses(int teacherId);
+    void updateTeacher(Teacher teacher);
 
 }

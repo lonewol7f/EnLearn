@@ -4,11 +4,9 @@ package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
 import net.enLearn.entity.RecordedVideo;
+import net.enLearn.entity.Student;
 import net.enLearn.entity.ZoomClass;
-import net.enLearn.service.CourseService;
-import net.enLearn.service.RecordedVideoService;
-import net.enLearn.service.UserService;
-import net.enLearn.service.ZoomClassService;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,6 +36,9 @@ public class CourseController {
     private UserService userService;
 
     @Autowired
+    private StudentService studentService;
+
+    @Autowired
     private Logger logger;
 
     @GetMapping("")
@@ -46,11 +47,25 @@ public class CourseController {
         List<ZoomClass> zoomClassList = zoomClassService.getZoomClassListByCourseId(id);
         List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
         Course course = courseService.getCourseById(id);
+
+        int userId = userService.getLoggedUserId();
+        boolean owned = false;
+        if (userId != 0) {
+            Student student = studentService.getStudentById(userId);
+            for (Course c : student.getCourseList()) {
+                if (c.getId() == course.getId()){
+                    owned = true;
+                    break;
+                }
+            }
+        }
+
         model.addAttribute("course", course);
         model.addAttribute("zoomClassList", zoomClassList);
         model.addAttribute("videoList", videoList);
         model.addAttribute("courseId", id);
         model.addAttribute("courseList", courseList);
+        model.addAttribute("owned", owned);
         return "course-page";
     }
 

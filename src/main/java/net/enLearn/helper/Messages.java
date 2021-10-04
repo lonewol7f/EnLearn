@@ -11,6 +11,7 @@ public class Messages {
     public static final String REMOVE_USED_CODES = "coup_03";
     public static final String CODE_NOT_EXIST = "coup_04";
     public static final String CODE_REDEEMED = "coup_05";
+    public static final String INSUFFICIENT_BALANCE = "coup-06";
 
     public static final String EVENT_SAVED = "eve_01";
     public static final String EVENT_DELETED = "eve_02";

@@ -14,5 +14,6 @@ public interface StudentService {
     void registerUser(Student student);
     List<Course> getEnrolledCoursesByStudentId(int id);
     Student getStudentById(int id);
+    void updateStudent(Student student);
 
 }
