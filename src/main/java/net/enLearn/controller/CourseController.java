@@ -7,6 +7,7 @@ import net.enLearn.entity.RecordedVideo;
 import net.enLearn.entity.ZoomClass;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.RecordedVideoService;
+import net.enLearn.service.UserService;
 import net.enLearn.service.ZoomClassService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,9 @@ public class CourseController {
 
     @Autowired
     private RecordedVideoService recordedVideoService;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private Logger logger;
@@ -64,6 +68,7 @@ public class CourseController {
     public String showVideoPage(@RequestParam("videoId") int id, Model model) {
         RecordedVideo recordedVideo = recordedVideoService.getVideoById(id);
         model.addAttribute("recordedVideo",recordedVideo);
+        model.addAttribute("userId", userService.getLoggedUserId());
         return "video-page";
     }
 
