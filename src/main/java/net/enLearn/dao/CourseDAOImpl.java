@@ -1,7 +1,6 @@
 package net.enLearn.dao;
 
-import net.enLearn.entity.Course;
-import net.enLearn.entity.Teacher;
+import net.enLearn.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -46,6 +45,20 @@ public class CourseDAOImpl implements CourseDAO {
         Session session = sessionFactory.getCurrentSession();
         Course course = session.get(Course.class, id);
         course.getTeacher().getCourseList().remove(course);
+        for (RecordedVideo video :course.getVideos()) {
+            for (Comment comment : video.getComments()) {
+                comment.getUser().getComments().clear();
+                comment.getNotification().getTeacher().getNotifications().clear();
+                comment.getNotification().setComment(null);
+                comment.setNotification(null);
+                for (Reply reply : comment.getReplies()) {
+                    reply.getUser().getReplies().clear();
+                    reply.setComment(null);
+                }
+                comment.getReplies().clear();
+            }
+        }
+        course.getVideos().clear();
         session.delete(course);
 
     }
