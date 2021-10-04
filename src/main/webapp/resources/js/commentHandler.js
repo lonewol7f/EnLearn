@@ -15,43 +15,46 @@ function loadComments() {
                 response.data.reverse();
                 $('#results').text('');
 
-                for (let index in response.data) {
-                    $('#results').append('<div style="margin-left: 5%;margin-right: 5%;margin-bottom: 3%;margin-top: 3%" class="border border-2 rounded mb-3">\n' +
-                        '    <div style="margin-left: 5%;margin-right: 5%;margin-bottom: 3%;margin-top: 3%" class="row">\n' +  //comment start
-                        response.data[index].user.firstName + '\n' +
-                        '        <div class="col-12 border border-1 rounded mb-2">\n' +
-                        '            <div class="item">\n' +
-                        '                <p class="mt-1">' + response.data[index].comment + '</p>\n' +
-                        '            </div>\n' +
-                        '            <div class="row">\n' +
-                        '                <div class="col-6"></div>\n' +
-                                        (response.data[index].user.id == userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>':'') +
-                        '            </div>\n' +
-                        '        </div>\n' +
-                        '        <div id="rep' + response.data[index].id + '">\n' +
-                        '            <button onclick="addField(this.id)" class="btn btn-info" id="' + response.data[index].id + '">Reply</button>\n' +
-                        '        </div>\n' +
-                        '    </div>\n' +        // comment end
-                        '    <div id="div' + response.data[index].id + '"></div>\n' +
-                        '    <div id="repliesDiv' + response.data[index].id + '" class="mb-3 row" style="margin-left: 15%;margin-right: 5%"></div>' +
-                        '</div>');
-                    response.data[index].replies.reverse();
-                    for (let reply in response.data[index].replies) {
-                        $('#repliesDiv' + response.data[index].id).append('' +
-                            '    <div class="col-12 border border-1 rounded mb-2">\n' +
-                            '        <div class="item">\n' +
-                            '            <p class="mt-1">' + response.data[index].replies[reply].reply + '</p>\n' +
-                            '        </div>\n' +
-                            '        <div class="row">\n' +
-                            '            <div class="col-6"></div>\n' +
-                                        (response.data[index].replies[reply].user.id == userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>':'') +
-                            '        </div>\n' +
-                            '    </div>');
-                    }
-                }
-                // rollback
 
-                reStructure();
+                $('#results').append(
+                    response.data.map((singleComment) => {
+                        let replyarr = []
+
+                        singleComment.replies.map((Sreply) => {
+                            replyarr.push(`
+                        <div class="ml-8 bg-gray-100">
+                            <p tabindex="0" class="focus:outline-none text-sm font-semibold leading-normal text-gray-800">${Sreply.user.firstName} ${Sreply.user.lastName}</p>
+                            <p tabindex="0" class="focus:outline-none pt-1 text-sm leading-4 text-gray-600">
+                                   ${Sreply.reply}
+                            </p>
+                        <div class="">
+                          <span class=" m-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-gray-800">
+                          Reply
+                          </span>
+                         <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800">
+                          Delete
+                          </span>
+                        </div>
+                        </div>`)
+                        })
+
+                        return `
+                        <div class="bg-gray-200 w-56 ">
+                         <div class="mt-6 flex">
+                        <div class="pl-3">
+                         <p tabindex="0" class="focus:outline-none text-sm font-semibold leading-normal text-gray-800">${singleComment.user.firstName} ${singleComment.user.lastName}</p>
+                            <span class="focus:outline-none pt-1 text-base leading-4 text-gray-800">${singleComment.comment}</span>
+                            <div class="pt-1 mb-2">
+                                <span class="m-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-gray-800"> Reply </span>
+                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800"> Delete </span>
+                            </div>
+                              ${replyarr.join(' ')}
+                        </div>
+                        </div>
+                        </div>
+                       `
+                    })
+                )
             }
         });
 
