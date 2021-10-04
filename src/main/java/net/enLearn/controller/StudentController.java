@@ -1,11 +1,14 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Student;
 import net.enLearn.helper.Messages;
 import net.enLearn.service.RedeemCodeService;
+import net.enLearn.service.StudentService;
 import net.enLearn.service.UserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +32,18 @@ public class StudentController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private StudentService studentService;
+
 
     @GetMapping("")
-    public String showStudentProfilePage() {
+    public String showStudentProfilePage(Model model) {
+        int id = userService.getLoggedUserId();
+
+        Student student = studentService.getStudentById(id);
+
+        model.addAttribute("student", student);
+
         return "profile-page-student";
     }
 
