@@ -1,9 +1,10 @@
 function loadComments() {
 
     let url = $(location).attr('origin') + "/comments/list";
-    let videoId = 1;
-    // let userId = $('#userId').val();
-    let userId = 2;
+    // let videoId = 1;
+    let videoId = $('#videoId').val();
+    let userId = $('#userId').val();
+    // let userId = 2;
 
     $.getJSON(url,
         {
@@ -17,14 +18,14 @@ function loadComments() {
                 for (let index in response.data) {
                     $('#results').append('<div style="margin-left: 5%;margin-right: 5%;margin-bottom: 3%;margin-top: 3%" class="border border-2 rounded mb-3">\n' +
                         '    <div style="margin-left: 5%;margin-right: 5%;margin-bottom: 3%;margin-top: 3%" class="row">\n' +  //comment start
-                        response.data[index].user.name + '\n' +
+                        response.data[index].user.firstName + '\n' +
                         '        <div class="col-12 border border-1 rounded mb-2">\n' +
                         '            <div class="item">\n' +
                         '                <p class="mt-1">' + response.data[index].comment + '</p>\n' +
                         '            </div>\n' +
                         '            <div class="row">\n' +
                         '                <div class="col-6"></div>\n' +
-                                        (response.data[index].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>':'') +
+                                        (response.data[index].user.id == userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteComment('+ response.data[index].id +')">Delete</a></div>':'') +
                         '            </div>\n' +
                         '        </div>\n' +
                         '        <div id="rep' + response.data[index].id + '">\n' +
@@ -43,7 +44,7 @@ function loadComments() {
                             '        </div>\n' +
                             '        <div class="row">\n' +
                             '            <div class="col-6"></div>\n' +
-                                        (response.data[index].replies[reply].user.id === userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>':'') +
+                                        (response.data[index].replies[reply].user.id == userId? '<div class="col-3"><a href="javascript:void(0);" onclick="deleteReply(' + response.data[index].replies[reply].id + ')">Delete</a></div>':'') +
                             '        </div>\n' +
                             '    </div>');
                     }
@@ -58,8 +59,8 @@ function loadComments() {
 
 function addComment() {
     let comment = $('#commentBox').val().trim();
-    let videoId = 1;
-    // let videoId = $('#videoId').val();
+    // let videoId = 1;
+    let videoId = $('#videoId').val();
     let url = $(location).attr('origin') + "/comments/add"
 
     if (comment === '') {
