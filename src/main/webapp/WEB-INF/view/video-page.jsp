@@ -65,7 +65,8 @@
     <!-- bloc-0 -->
     <%@include file="header.jsp"%>
     <!-- bloc-0 END -->
-
+    <input type="hidden" value="${recordedVideo.id}" id="videoId"/>
+    <input type="hidden" value="${userId}" id="userId"/>
     <!-- bloc-17 -->
     <div class="bloc l-bloc" id="bloc-17">
         <div class="container bloc-lg">
