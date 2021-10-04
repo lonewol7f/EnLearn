@@ -162,7 +162,7 @@
                                     <div class="col">
                                         <c:if test="${!owned}">
                                             <c:url var="buyLink" value="/students/enroll">
-                                                <c:param name="courseId" value="${course.id}"/>
+                                                <c:param name="courseId" value="${course.id}"/> 
                                             </c:url>
                                             <div class="text-lg-center price-boxes buy-box" id="buybox" onclick="window.location.href='${buyLink}'"
                                                  data-placement="top" data-toggle="tooltip" title="LKR ${course.price}">
