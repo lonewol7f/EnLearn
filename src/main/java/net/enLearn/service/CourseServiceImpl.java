@@ -2,6 +2,7 @@ package net.enLearn.service;
 
 import net.enLearn.dao.CourseDAO;
 import net.enLearn.entity.Course;
+import net.enLearn.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,5 +45,9 @@ public class CourseServiceImpl implements CourseService{
         return courseDAO.getCourseList();
     }
 
-
+    @Override
+    @Transactional
+    public void enroll(Student student, Course course) {
+        courseDAO.enroll(student, course);
+    }
 }
