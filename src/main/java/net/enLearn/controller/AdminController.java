@@ -204,7 +204,7 @@ public class AdminController {
     @RequestMapping("/showAdvertisements")
     public String showAdvertisement(Model model){
 
-        int advertiser_id = 4;
+        int advertiser_id = 32;
 
 
         //To retrieve all the data in the table - advertisement
@@ -216,6 +216,36 @@ public class AdminController {
         model.addAttribute("allAdvertisers",displayallAdvertisers);
 
         return "Advertisement-Confirm";
+    }
+
+    @GetMapping(path = "/confirm")
+    public String typeUploadPage(Model model) {
+        model.addAttribute("advertisementId", "");
+        model.addAttribute("adminId", "-1");
+        model.addAttribute("type", "");
+
+        return "Advertisement-Confirm";
+    }
+
+    @GetMapping(path = "/confirmAdvertisement")
+    public String typeConfirm(@RequestParam("type") int Advertisement_Id) {
+
+        Advertisement ad = advertisementService.getAdvertisementId(Advertisement_Id);
+        String type = "Confirmed";
+        AdvertisementApprove advertisementApprove = new AdvertisementApprove(ad.getId(),type,2);
+        //AdvertisementApprove advertisementApprove = new AdvertisementApprove(id, type, admin_id);
+        /*if (admin_id != -1) {
+            advertisementApprove.setAdmin_id(admin_id);
+        }*/
+
+        adminService.saveType(advertisementApprove);
+        //advertisementService.setCurrentsesion(advertisement.getId());
+
+
+
+        return "redirect:/admins/confirm";
+
+
     }
 
 
