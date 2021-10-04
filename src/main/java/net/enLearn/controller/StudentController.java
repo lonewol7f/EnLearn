@@ -1,10 +1,9 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Course;
 import net.enLearn.entity.Student;
 import net.enLearn.helper.Messages;
-import net.enLearn.service.RedeemCodeService;
-import net.enLearn.service.StudentService;
-import net.enLearn.service.UserService;
+import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,6 +34,12 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private CourseService courseService;
+
+    @Autowired
+    private TeacherService teacherService;
+
 
     @GetMapping("")
     public String showStudentProfilePage(Model model) {
@@ -63,6 +68,32 @@ public class StudentController {
         redirectAttributes.addFlashAttribute("success", Messages.CODE_REDEEMED);
 
         return "redirect:/shop";
+    }
+
+    @GetMapping("/enroll")
+    public String enrollCourse(@RequestParam("courseId") int courseId, RedirectAttributes redirectAttributes) {
+
+        int studentId = userService.getLoggedUserId();
+        Student student = studentService.getStudentById(studentId);
+
+        Course course = courseService.getCourseById(courseId);
+
+        if ((student.getCoins() - course.getPrice()) < 0) {
+            redirectAttributes.addFlashAttribute("error", Messages.INSUFFICIENT_BALANCE);
+            return "redirect:/shop";
+        }
+
+        student.setCoins(student.getCoins() - course.getPrice());
+        studentService.updateStudent(student);
+
+        course.getTeacher().setSalary(course.getTeacher().getSalary() + course.getPrice());
+        teacherService.updateTeacher(course.getTeacher());
+
+        courseService.enroll(student, course);
+
+        redirectAttributes.addAttribute("courseId", courseId);
+
+        return "redirect:/courses";
     }
 
 
