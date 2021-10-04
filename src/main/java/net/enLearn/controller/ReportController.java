@@ -101,13 +101,17 @@ public class ReportController {
     @GetMapping("/comment-analysis")
     public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
 
+        String maxName = null;
+        String minName = null;
         int userId = userService.getLoggedUserId();
         List list = teacherService.getCommentCountForCourses(userId);
-        Object[] max = (Object[]) list.get(0);
-        String maxName = (String) max[1];
+        if (list.size() > 0) {
+            Object[] max = (Object[]) list.get(0);
+            maxName = (String) max[1];
 
-        Object[] min = (Object[]) list.get(list.size() - 1);
-        String minName = (String) min[1];
+            Object[] min = (Object[]) list.get(list.size() - 1);
+            minName = (String) min[1];
+        }
 
         Resource resource1 = new ClassPathResource("reports/comment-report-1.jrxml");
         File file1 = resource1.getFile();
