@@ -54,6 +54,8 @@ public class CommentDAOImpl implements CommentDAO{
         Comment comment = getCommentByCommentId(id);
         comment.getVideo().getComments().remove(comment);
         comment.getUser().getComments().remove(comment);
+        comment.getNotification().setComment(null);
+        comment.setNotification(null);
 
         for (Reply reply : comment.getReplies()) {
             reply.getUser().getReplies().remove(reply);
