@@ -47,6 +47,13 @@ public class Course {
     @Fetch(value = FetchMode.SUBSELECT)
     private List<ZoomClass> zoomClassList;
 
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE,
+            CascadeType.DETACH, CascadeType.REFRESH})
+    @JoinTable(name = "course_student",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id"))
+    private List<Student> studentList;
+
     public Course(){}
 
     public int getId() {
@@ -117,4 +124,11 @@ public class Course {
         this.zoomClassList = zoomClassList;
     }
 
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(List<Student> studentList) {
+        this.studentList = studentList;
+    }
 }
