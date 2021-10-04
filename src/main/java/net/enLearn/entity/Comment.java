@@ -41,12 +41,12 @@ public class Comment {
     @JsonBackReference
     private RecordedVideo video;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonManagedReference
     private List<Reply> replies;
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "comment", cascade = CascadeType.ALL, orphanRemoval = true)
     @Fetch(value = FetchMode.JOIN)
     @JsonBackReference
     private Notification notification;
