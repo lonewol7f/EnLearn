@@ -179,18 +179,6 @@
             </div>
         </div>
     </div>
-
-    <br><br>
-    <div class="text-center">
-        <div class="row">
-            <div class="col">
-                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#ad">Update</a><br>
-            </div>
-            <div class="col">
-                <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#delete-ad">Delete</a>
-            </div>
-        </div>
-    </div>
     <!-- bloc-19 END -->
 
     <%@include file="footer.jsp" %>
