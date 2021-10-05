@@ -86,17 +86,17 @@
                             </c:if>
 
                             <c:if test="${param.type.equals('Zoom Class')}">
-                            <div class="col">
-                                <div>
-                                    <div class="text-center">
-                                        <c:url var="zoomCreateLink" value="/courses/create-zoom">
-                                            <c:param name="courseId" value="${courseId}"/>
-                                        </c:url>
-                                        <a style="width: 50%; alignment: left" href="${zoomCreateLink}"
-                                           class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
+                                <div class="col">
+                                    <div>
+                                        <div class="text-center">
+                                            <c:url var="zoomCreateLink" value="/courses/create-zoom">
+                                                <c:param name="courseId" value="${courseId}"/>
+                                            </c:url>
+                                            <a style="width: 50%; alignment: left" href="${zoomCreateLink}"
+                                               class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </c:if>
                         </div>
                     </div>
@@ -110,96 +110,98 @@
     <div style="display: flex; justify-content: center">
 
         <c:if test="${param.type.equals('Zoom Class')}">
-        <c:if test="${fn:length(zoomClassList) > 0}">
-            <table class="table table-hover">
+            <c:if test="${fn:length(zoomClassList) > 0}">
+                <table class="table table-hover">
 
-                    <%-- Loop over and print zoom classes --%>
-                <c:forEach var="tempZoomLink" items="${zoomClassList}">
+                        <%-- Loop over and print zoom classes --%>
+                    <c:forEach var="tempZoomLink" items="${zoomClassList}">
 
-                    <%-- construct an 'update' link with zoom id --%>
-                    <c:url var="updateLink" value="/courses/zoomClass/update">
-                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
-                    </c:url>
+                        <%-- construct an 'update' link with zoom id --%>
+                        <c:url var="updateLink" value="/courses/zoomClass/update">
+                            <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                        </c:url>
 
-                    <%-- construct an 'delete' link with zoom id --%>
-                    <c:url var="deleteLink" value="/courses/zoomClass/delete">
-                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
-                    </c:url>
+                        <%-- construct an 'delete' link with zoom id --%>
+                        <c:url var="deleteLink" value="/courses/zoomClass/delete">
+                            <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                        </c:url>
 
-                    <c:url var="quizLink" value="/teachers/special-quizzes">
-                        <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
-                    </c:url>
+                        <c:url var="quizLink" value="/teachers/special-quizzes">
+                            <c:param name="zoomClassId" value="${tempZoomLink.id}"/>
+                        </c:url>
 
-                    <tr>
-                        <td>${tempZoomLink.week}</td>
-                        <td>${tempZoomLink.title}</td>
-                        <td style="height:100px;width:25%">${tempZoomLink.description}</td>
-                        <td>${tempZoomLink.date}</td>
-                        <td>${tempZoomLink.time}</td>
-                        <td style="height:100px;width:30%"><a
-                                href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>
+                        <tr>
+                            <td>${tempZoomLink.week}</td>
+                            <td>${tempZoomLink.title}</td>
+                            <td style="height:100px;width:25%">${tempZoomLink.description}</td>
+                            <td>${tempZoomLink.date}</td>
+                            <td>${tempZoomLink.time}</td>
+                            <td style="height:100px;width:30%"><a
+                                    href="${tempZoomLink.zoomLink}">${tempZoomLink.zoomLink}</a></td>
 
-                        <td>
-                            <a href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-info" onclick="${quizLink}">Quiz</a>
-                                <%-- display the update link --%>
-                            <a href="${updateLink}"
-                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
-                               class="btn btn-success">Update</a>
-                            <a href="${deleteLink}"
-                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
-                               class="btn btn-danger">Delete</a>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/teachers/special-quizzes"
+                                   class="btn btn-info" onclick="${quizLink}">Quiz</a>
+                                    <%-- display the update link --%>
+                                <a href="${updateLink}"
+                                   onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
+                                   class="btn btn-success">Update</a>
+                                <a href="${deleteLink}"
+                                   onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
+                                   class="btn btn-danger">Delete</a>
 
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:if>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:if>
         </c:if>
 
 
         <c:if test="${param.type.equals('Recorded Video')}">
-        <c:if test="${fn:length(videoList) > 0}">
-            <table class="table table-hover">
+            <c:if test="${fn:length(videoList) > 0}">
+                <table class="table table-hover">
 
-                    <%-- Loop over and print zoom classes --%>
-                <c:forEach var="tempVideoLink" items="${videoList}">
+                        <%-- Loop over and print zoom classes --%>
+                    <c:forEach var="tempVideoLink" items="${videoList}">
 
-                    <%-- construct an 'update' link with zoom id --%>
-                    <c:url var="updateLink" value="/courses/video/update">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
-                    </c:url>
+                        <%-- construct an 'update' link with zoom id --%>
+                        <c:url var="updateLink" value="/courses/video/update">
+                            <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                        </c:url>
 
-                    <%-- construct an 'delete' link with zoom id --%>
-                    <c:url var="deleteLink" value="/courses/video/delete">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
-                    </c:url>
+                        <%-- construct an 'delete' link with zoom id --%>
+                        <c:url var="deleteLink" value="/courses/video/delete">
+                            <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                        </c:url>
 
-                    <c:url var="quizLink" value="/teachers/special-quizzes">
-                        <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
-                    </c:url>
+                        <c:url var="quizLink" value="/teachers/special-quizzes">
+                            <c:param name="recordedVideoId" value="${tempVideoLink.id}"/>
+                        </c:url>
 
-                    <tr>
-                        <td>${tempVideoLink.week}</td>
-                        <td>${tempVideoLink.title}</td>
-                        <td style="height:100px;width:25%">${tempVideoLink.description}</td>
-                        <td style="height:100px;width:30%"><a
-                                href="${tempVideoLink.videoLink}">${tempVideoLink.videoLink}</a></td>
+                        <tr>
+                            <td>${tempVideoLink.week}</td>
+                            <td>${tempVideoLink.title}</td>
+                            <td style="height:100px;width:25%">${tempVideoLink.description}</td>
+                            <td style="height:100px;width:30%"><a
+                                    href="${tempVideoLink.videoLink}">${tempVideoLink.videoLink}</a></td>
 
-                        <td>
-                            <a href="${pageContext.request.contextPath}/teachers/special-quizzes" class="btn btn-info" onclick="${quizLink}">Quiz</a>
-                                <%-- display the update link --%>
-                            <a href="${updateLink}"
-                               onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
-                               class="btn btn-success">Update</a>
-                            <a href="${deleteLink}"
-                               onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
-                               class="btn btn-danger">Delete</a>
+                            <td>
+                                <a href="${quizLink}"
+                                   class="btn btn-info" onclick="${quizLink}">Quiz</a>
+                                    <%-- display the update link --%>
+                                <a href="${updateLink}"
+                                   onclick="if (!(confirm('Are you sure, You want to Edit this course?'))) return false"
+                                   class="btn btn-success">Update</a>
+                                <a href="${deleteLink}"
+                                   onclick="if (!(confirm('Are you sure, You want to Delete this course?'))) return false"
+                                   class="btn btn-danger">Delete</a>
 
-                        </td>
-                    </tr>
-                </c:forEach>
-            </table>
-        </c:if>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:if>
         </c:if>
 
 
