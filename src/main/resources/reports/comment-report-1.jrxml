@@ -95,19 +95,16 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="101">
+		<band height="88" splitType="Stretch">
 			<textField textAdjust="StretchHeight">
-				<reportElement x="80" y="20" width="400" height="30" uuid="6d4d8581-4c71-47be-928e-13f77768c0ae"/>
-				<textElement verticalAlignment="Middle">
+				<reportElement isPrintRepeatedValues="false" x="80" y="20" width="400" height="60" uuid="6d4d8581-4c71-47be-928e-13f77768c0ae"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{description}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="63" splitType="Stretch">
 			<staticText>

@@ -53,7 +53,7 @@
 		<band height="76" splitType="Stretch">
 			<textField textAdjust="StretchHeight">
 				<reportElement x="50" y="30" width="470" height="30" uuid="157529d8-58cd-494d-b20d-203e4e989d9e"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="15"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{message}]]></textFieldExpression>

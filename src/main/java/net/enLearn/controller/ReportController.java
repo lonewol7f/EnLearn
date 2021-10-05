@@ -111,18 +111,20 @@ public class ReportController {
 
             Object[] min = (Object[]) list.get(list.size() - 1);
             String minName = (String) min[1];
-            StringBuilder sb = new StringBuilder("");
+            StringBuilder sb = new StringBuilder();
             sb.append("      The pie chart above will give you a broad idea of how comments in your courses will behave on a more detailed level. The ");
             sb.append(maxName);
             sb.append(" course, on the other hand, appears to be the most popular of your courses, according to the comment analysis. In addition, based to the parameters outlined above, the ");
             sb.append(minName);
             sb.append(" course garnered the lowest percentage of comments from your students across all of your courses. ");
             sb.append(System.lineSeparator());
-            sb.append("In summary, our system suggests focusing more on the ");
+            sb.append("    In summary, our system suggests focusing more on the ");
             sb.append(minName);
-            sb.append(" course and improving it");
+            sb.append(" course and improving it.");
+            sb.append(System.lineSeparator());
 
             pieDes = sb.toString();
+            System.out.println(pieDes);
 
         }
 
