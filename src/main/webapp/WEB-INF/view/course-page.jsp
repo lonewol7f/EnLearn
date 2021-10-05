@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -150,7 +151,8 @@
                                 <div class="row">
                                     <div class="col">
                                         <h4 class="mg-md">
-                                            by <a href="#">${course.teacher.firstName}&nbsp;${course.teacher.lastName}</a>
+                                            by <a
+                                                href="#">${course.teacher.firstName}&nbsp;${course.teacher.lastName}</a>
                                         </h4>
                                         <h6 class="mg-md">
                                             <br>
@@ -162,14 +164,38 @@
                                     <div class="col">
                                         <c:if test="${!owned}">
                                             <c:url var="buyLink" value="/students/enroll">
-                                                <c:param name="courseId" value="${course.id}"/> 
+                                                <c:param name="courseId" value="${course.id}"/>
                                             </c:url>
-                                            <div class="text-lg-center price-boxes buy-box" id="buybox" onclick="window.location.href='${buyLink}'"
-                                                 data-placement="top" data-toggle="tooltip" title="LKR ${course.price}">
-                                                <label class="text-lg-center">
-                                                    Buy&nbsp;<br>
-                                                </label>
-                                            </div>
+                                            <sec:authorize access="hasRole('STUDENT')">
+                                                <div class="text-lg-center price-boxes buy-box" id="buybox"
+                                                     onclick="window.location.href='${buyLink}'"
+                                                     data-placement="top" data-toggle="tooltip"
+                                                     title="LKR ${course.price}">
+                                                    <label class="text-lg-center">
+                                                        Buy&nbsp;<br>
+                                                    </label>
+                                                </div>
+                                            </sec:authorize>
+                                            <sec:authorize access="hasAnyRole('ADMIN', 'TEACHER')">
+                                                <div class="text-lg-center price-boxes buy-box" id="buybox"
+                                                     onclick="window.location.href='#'"
+                                                     data-placement="top" data-toggle="tooltip"
+                                                     title="You need to log in as Student to buy this course">
+                                                    <label class="text-lg-center">
+                                                        Buy&nbsp;<br>
+                                                    </label>
+                                                </div>
+                                            </sec:authorize>
+                                            <sec:authorize access="!isAuthenticated()">
+                                                <div class="text-lg-center price-boxes buy-box" id="buybox"
+                                                     onclick="window.location.href='/login'"
+                                                     data-placement="top" data-toggle="tooltip"
+                                                     title="You need to log in as Student to buy this course">
+                                                    <label class="text-lg-center">
+                                                        Buy&nbsp;<br>
+                                                    </label>
+                                                </div>
+                                            </sec:authorize>
                                         </c:if>
                                         <c:if test="${owned}">
                                             <div class="text-lg-center price-boxes owned-box">

@@ -9,6 +9,7 @@ import net.enLearn.entity.ZoomClass;
 import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -42,7 +43,8 @@ public class CourseController {
     private Logger logger;
 
     @GetMapping("")
-    public String showCoursePage(@RequestParam("courseId") int id, Model model) {
+    public String showCoursePage(@RequestParam("courseId") int id, Model model,
+                                 SecurityContextHolderAwareRequestWrapper request) {
         List<Course> courseList = courseService.getCourseList();
         List<ZoomClass> zoomClassList = zoomClassService.getZoomClassListByCourseId(id);
         List<RecordedVideo> videoList = recordedVideoService.getVideoListByCourseId(id);
@@ -50,7 +52,7 @@ public class CourseController {
 
         int userId = userService.getLoggedUserId();
         boolean owned = false;
-        if (userId != 0) {
+        if (userId != 0 && request.isUserInRole("ROLE_STUDENT")) {
             Student student = studentService.getStudentById(userId);
             for (Course c : student.getCourseList()) {
                 if (c.getId() == course.getId()){
