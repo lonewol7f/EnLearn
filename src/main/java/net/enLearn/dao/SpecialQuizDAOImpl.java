@@ -52,6 +52,7 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO {
 
         SpecialQuiz specialQuiz = session.get(SpecialQuiz.class, id);
         specialQuiz.getTeacher().getSpecialQuizList().remove(specialQuiz);
+        specialQuiz.getVideo().setSpecialQuiz(null);
 
         session.delete(specialQuiz);
 
@@ -130,5 +131,27 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO {
 //        Student student = specialQuiz.getStudentList().get(SpecialQuiz.class,student_id);
 
         return null;
+    }
+
+    @Override
+    public SpecialQuiz getLastSpecialQuiz() {
+
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createQuery("from SpecialQuiz order by id DESC");
+        query.setMaxResults(1);
+
+        SpecialQuiz quiz = (SpecialQuiz) query.uniqueResult();
+
+        return quiz;
+    }
+
+    @Override
+    public SpecialQuiz getSpecialQuizByQuizId(int id) {
+        Session session = sessionFactory.getCurrentSession();
+
+        SpecialQuiz quiz = session.get(SpecialQuiz.class, id);
+
+        return quiz;
     }
 }
