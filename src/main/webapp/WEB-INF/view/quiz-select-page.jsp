@@ -81,7 +81,7 @@
                                 MCQ
                             </h3>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg btn-52-style">Start</a>
+                                <a href="${quiz.mcqLink}" class="btn btn-d btn-lg btn-52-style">Start</a>
                             </div>
                         </div>
                         <div class="col">
@@ -89,7 +89,7 @@
                                 Essay + Structured
                             </h3>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg btn-53-style">Start</a>
+                                <a href="${quiz.eAndSLink}" class="btn btn-d btn-lg btn-53-style">Start</a>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                                 MCQ
                             </h3>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg btn-52-style">Send</a>
+                                <a href="${quiz.submitLink}" class="btn btn-d btn-lg btn-52-style">Send</a>
                             </div>
                         </div>
                         <div class="col">
@@ -133,7 +133,7 @@
                                 Essay + Structured
                             </h3>
                             <div class="text-center">
-                                <a href="index.jsp" class="btn btn-d btn-lg btn-53-style">Send</a>
+                                <a href="${quiz.submitLink}" class="btn btn-d btn-lg btn-53-style">Send</a>
                             </div>
                         </div>
                     </div>
