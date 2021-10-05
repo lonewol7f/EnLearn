@@ -2,10 +2,7 @@
 
 package net.enLearn.controller;
 
-import net.enLearn.entity.Course;
-import net.enLearn.entity.RecordedVideo;
-import net.enLearn.entity.Student;
-import net.enLearn.entity.ZoomClass;
+import net.enLearn.entity.*;
 import net.enLearn.service.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +35,9 @@ public class CourseController {
 
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private SpecialQuizService specialQuizService;
 
     @Autowired
     private Logger logger;
@@ -97,7 +97,12 @@ public class CourseController {
     }
 
     @GetMapping("/select-quizzes")
-    public String showQuizSelectPage() {
+    public String showQuizSelectPage(@RequestParam("quizId") int id, Model model) {
+
+        SpecialQuiz quiz = specialQuizService.getSpecialQuizByQuizId(id);
+
+        model.addAttribute("quiz", quiz);
+
         return "quiz-select-page";
     }
 
