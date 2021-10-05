@@ -215,7 +215,7 @@
         <div class="grid grid-cols-1 min-w-full mb-3">
             <input type="hidden" style="display:none" value="" id="commentIdVal"/>
             <textarea id="reply" class="col-span-full border border-blue-100 mb-3"></textarea>
-            <button id="sendReply" onclick="" class="bg-blue-100 p-2 w-2/3 mx-auto rounded-sm border border-blue-200">Reply</button>
+            <button id="sendReply" onclick="addNotificationReply()" class="bg-blue-100 p-2 w-2/3 mx-auto rounded-sm border border-blue-200">Reply</button>
         </div>
 
         <button class=" bg-red-100 p-2 w-2/3 mx-auto rounded-sm border border-red-200" id="closeModal">Close</button>
@@ -227,7 +227,8 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
 <script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
-<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script>
+<script src="${pageContext.request.contextPath}/resources/js/notificationReplyHandler.js"></script><!-- Additional JS END -->
 <script>
     var modal = document.getElementById("myModal");
     var btns = document.querySelectorAll(".modalPopupBtn");
