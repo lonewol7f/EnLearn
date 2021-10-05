@@ -27,6 +27,9 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
           rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+          integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>notification-view</title>
 
     <style>
@@ -47,7 +50,7 @@
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
+            margin: 5% auto; /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
             width: 80%; /* Could be more or less, depending on screen size */
@@ -198,14 +201,24 @@
 <!-- Main container END -->
 
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal min-h-screen">
 
     <!-- Modal content -->
-    <div class="modal-content">
-        <p id="singleIDComment"></p>
-        <p id="singleComment"></p>
-        <p id="singleLinkVideo"></p>
-        <button id="closeModal">Close</button>
+    <div class="modal-content bg-red-100 max-w-min border shadow-lg">
+        <iframe width="560" height="315" title="YouTube video player"
+                frameborder="0" id="singleLinkVideo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        <hr>
+        <p class="text-base" id="singleComment"></p>
+
+        <div class="grid grid-cols-1 min-w-full mb-3">
+            <input type="hidden" style="display:none" value="" id="commentIdVal"/>
+            <textarea id="reply" class="col-span-full border border-blue-100 mb-3"></textarea>
+            <button id="sendReply" onclick="" class="bg-blue-100 p-2 w-2/3 mx-auto rounded-sm border border-blue-200">Reply</button>
+        </div>
+
+        <button class=" bg-red-100 p-2 w-2/3 mx-auto rounded-sm border border-red-200" id="closeModal">Close</button>
     </div>
 
 </div>
@@ -224,9 +237,9 @@
         btn.onclick = function () {
             modal.style.display = "block";
 
-            document.getElementById("singleIDComment").innerHTML = document.querySelectorAll(".commentIdSingle")[index].innerHTML;
             document.getElementById("singleComment").innerHTML = document.querySelectorAll(".commentSingle")[index].innerHTML;
-            document.getElementById("singleLinkVideo").innerHTML = document.querySelectorAll(".videoLinkSingle")[index].innerHTML;
+            document.getElementById("commentIdVal").value = document.querySelectorAll(".commentIdSingle")[index].innerHTML;
+            document.getElementById("singleLinkVideo").setAttribute('src', document.querySelectorAll(".videoLinkSingle")[index].innerText)
         }
     })
 
