@@ -253,6 +253,7 @@ CREATE TABLE `special_quiz`
     `attempt`      INT,
     `mcq_link`     VARCHAR(255),
     `e_and_s_link` VARCHAR(255),
+    `submit_link`  VARCHAR(255),
     `teacher_id`   INT,
     CONSTRAINT `pk_special_quiz` PRIMARY KEY (`id`),
     CONSTRAINT `fk_special_quiz` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION

@@ -22,6 +22,8 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
           rel='stylesheet' type='text/css'>
+
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>video-page</title>
 
 
@@ -63,7 +65,7 @@
 <div class="page-container">
 
     <!-- bloc-0 -->
-    <%@include file="header.jsp"%>
+    <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
     <input type="hidden" value="${recordedVideo.id}" id="videoId"/>
     <input type="hidden" value="${userId}" id="userId"/>
@@ -226,17 +228,26 @@
                                 </div>
                                 <%--TODO: comments here--%>
                                 <div class="container">
-                                    <div>
-                                        <div class="mb-3">
-                                            <textarea class="form-control" id="commentBox"
-                                                      placeholder="Type your comment..." rows="7"
-                                                      style="resize: none;"></textarea>
+                                    <div class="bg-blue-50 min-h-full min-w-full p-4 grid grid-cols-6 grid-rows-1 gap-3 shadow-2xl rounded-2xl border-2 border-blue-300">
+                                        <textarea type="text" id="commentBox"
+                                                  class="col-span-5 p-1 border-2 border-blue-600 rounded-lg"></textarea>
+                                        <div class="flex flex-wrap content-end">
+                                            <button class="inline-flex items-center px-4 py-2 border border-transparent border-blue-200 text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 justify-self-end"
+                                                    onclick="addComment()">Add Comment
+                                            </button>
                                         </div>
-                                        <button onclick="addComment()" class="btn btn-primary" style="float: right;">
-                                            Comment
-                                        </button>
                                     </div>
-                                    <div id="results" style="clear: both; margin-top: 10vh;" class="container"></div>
+                                    <div class="py-8">
+                                        <div class=" bg-white shadow rounded p-6">
+                                            <div class="flex items-end">
+                                                <p tabindex="0"
+                                                   class="focus:outline-none text-xl font-semibold leading-5 text-gray-800">
+                                                    Comments</p>
+                                            </div>
+                                            <div id="results" style="clear: both; margin-top: 2vh;"
+                                                 class="container"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -250,11 +261,11 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-<%--                                <div>--%>
-<%--                                    <div class="text-center">--%>
-<%--                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
+                                <%--                                <div>--%>
+                                <%--                                    <div class="text-center">--%>
+                                <%--                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>--%>
+                                <%--                                    </div>--%>
+                                <%--                                </div>--%>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>

@@ -27,9 +27,50 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
           rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+          integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>notification-view</title>
 
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
 
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -75,67 +116,35 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="nav-40313-content-1" role="tabpanel"
                                      aria-labelledby="nav-40313-content-1">
+                                    <%--TODO Scroll div--%>
+
                                     <div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
+                                        <c:if test="${fn:length(notifications) > 0}">
+                                            <c:forEach var="notification" items="${notifications}">
+                                                <c:url var="videoLink" value="/courses/videos">
+                                                    <c:param name="videoId" value="${notification.comment.video.id}"/>
+                                                </c:url>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+
+                                                            <button class="modalPopupBtn">
+                                                                <p class="ml-5">
+                                                                    <strong>${notification.comment.user.firstName}&nbsp;${notification.comment.user.lastName}</strong>
+                                                                    commented on your
+                                                                    video: ${notification.comment.video.title}
+                                                                <div style="display:none;">
+                                                                    <span class="commentIdSingle">${notification.comment.id}</span>
+                                                                    <span class="commentSingle">${notification.comment.comment}</span>
+                                                                    <span class="videoLinkSingle">${notification.comment.video.videoLink}</span>
+                                                                </div>
+                                                                </p>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            </c:forEach>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade-tab-bs" id="nav-40313-content-2" role="tabpanel"
@@ -192,12 +201,57 @@
 <!-- Main container END -->
 
 
+<div id="myModal" class="modal min-h-screen">
+
+    <!-- Modal content -->
+    <div class="modal-content bg-red-100 max-w-min border shadow-lg">
+        <iframe width="560" height="315" title="YouTube video player"
+                frameborder="0" id="singleLinkVideo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        <hr>
+        <p class="text-base" id="singleComment"></p>
+
+        <div class="grid grid-cols-1 min-w-full mb-3">
+            <input type="hidden" style="display:none" value="" id="commentIdVal"/>
+            <textarea id="reply" class="col-span-full border border-blue-100 mb-3"></textarea>
+            <button id="sendReply" onclick="" class="bg-blue-100 p-2 w-2/3 mx-auto rounded-sm border border-blue-200">Reply</button>
+        </div>
+
+        <button class=" bg-red-100 p-2 w-2/3 mx-auto rounded-sm border border-red-200" id="closeModal">Close</button>
+    </div>
+
+</div>
+
 <!-- Additional JS -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
 <script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
 <script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script>
+    var modal = document.getElementById("myModal");
+    var btns = document.querySelectorAll(".modalPopupBtn");
+    var span = document.getElementById("closeModal");
 
+    btns.forEach(function (btn, index) {
+        btn.onclick = function () {
+            modal.style.display = "block";
+
+            document.getElementById("singleComment").innerHTML = document.querySelectorAll(".commentSingle")[index].innerHTML;
+            document.getElementById("commentIdVal").value = document.querySelectorAll(".commentIdSingle")[index].innerHTML;
+            document.getElementById("singleLinkVideo").setAttribute('src', document.querySelectorAll(".videoLinkSingle")[index].innerText)
+        }
+    })
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>

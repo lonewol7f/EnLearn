@@ -1,5 +1,5 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -24,8 +24,10 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/animate.css?468">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster+Two&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
     <title>add-special-quiz</title>
 
 
@@ -37,22 +39,26 @@
             z-index: 1; /* Sit on top */
             left: 0;
             top: 0;
+            bottom: 0;
             width: 100%; /* Full width */
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
+            background-clip: padding-box;
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
-
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
+            margin: 10% auto; /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-        }
+            width: 50%; /* Could be more or less, depending on screen size */
+            max-width: 60% ;
+            height: 75%;
+            max-height: 80%;
 
+        }
         /* The Close Button */
         .close {
             color: #aaa;
@@ -60,7 +66,6 @@
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
@@ -128,13 +133,9 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="col">
-                                                <a href="${deleteLink}"
-                                                   class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
-                                            </div>
+
                                         </div>
                                     </c:forEach>
-
 
                                 </div>
                             </div>
@@ -177,6 +178,7 @@
     </div>
     <!-- bloc-7 END -->
 
+    <div class="mx-5">
     <div id="myModal" class="modal" >
 
         <!-- Modal content -->
@@ -198,15 +200,20 @@
                         <form:label path="marksLimit">Marks Limit</form:label>
                         <form:input path="marksLimit" cssClass="form-control" required="required"/>
                     </div>
+                    <div class="form-group">
+                        <form:label path="submitLink">Submit Marks Link</form:label>
+                        <form:input path="submitLink" cssClass="form-control" type="url" required="required"/>
+                    </div>
 
 
-                    <button type="submit" class="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                    <button type="submit" class="py-2 px-5 btn btn-primary btn-lg bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                         Add
                     </button>
 
                 </form:form>
             </div>
         </div>
+</div>
 
     </div>
 

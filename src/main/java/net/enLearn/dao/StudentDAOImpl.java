@@ -50,4 +50,11 @@ public class StudentDAOImpl implements StudentDAO{
 
         return student;
     }
+
+    @Override
+    public void updateStudent(Student student) {
+        Session session = sessionFactory.getCurrentSession();
+
+        session.update(student);
+    }
 }

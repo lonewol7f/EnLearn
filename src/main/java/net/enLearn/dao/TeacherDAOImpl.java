@@ -39,4 +39,11 @@ public class TeacherDAOImpl implements TeacherDAO{
         List list = query.getResultList();
         return list;
     }
+
+    @Override
+    public void updateTeacher(Teacher teacher) {
+        Session session = sessionFactory.getCurrentSession();
+
+        session.update(teacher);
+    }
 }

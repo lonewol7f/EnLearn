@@ -71,4 +71,14 @@ public class CourseDAOImpl implements CourseDAO {
         return courseList;
     }
 
+    @Override
+    public void enroll(Student student, Course course) {
+        Session session = sessionFactory.getCurrentSession();
+
+        Query query = session.createSQLQuery("INSERT INTO course_student (course_id, student_id) VALUE (:courseId, :studentId)");
+        query.setParameter("courseId", course.getId());
+        query.setParameter("studentId", student.getId());
+
+        query.executeUpdate();
+    }
 }

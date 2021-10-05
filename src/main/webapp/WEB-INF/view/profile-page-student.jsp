@@ -105,18 +105,24 @@
                             <div class="row justify-content-around">
                                 <c:if test="${fn:length(student.courseList) > 0}">
                                     <c:forEach var="course" items="${student.courseList}">
-                                        <div class="col-3 card-box">
+                                        <c:url var="courseLink" value="/courses/">
+                                            <c:param name="courseId" value="${course.id}"/>
+                                            <c:param name="type" value="${course.type}"/>
+                                        </c:url>
+                                        <div class="col-3 card-box" onclick="window.location.href='${courseLink}'">
                                             <div class="card">
                                                 <div class="divider-h">
                                                     <span class="divider"></span>
                                                 </div>
                                                 <img src="../../resources/img/lazyload-ph.png"
-                                                     data-src="../../resources/img/placeholder-image.png"
+                                                     data-src="${pageContext.request.contextPath}/resources/img/aae4217f-f6b0-4c3e-ae1f-f141fff1f68e.jpg"
                                                      class="img-fluid mx-auto d-block lazyload"
                                                      alt="placeholder image"/>
+                                                <button class="btn">
                                                 <h5 class="mg-md text-lg-center">
                                                     ${course.title}
                                                 </h5>
+                                                </button>
                                             </div>
                                         </div>
                                     </c:forEach>
