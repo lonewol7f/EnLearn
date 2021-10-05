@@ -1,5 +1,7 @@
 package net.enLearn.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -35,6 +37,10 @@ public class SpecialQuiz {
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "specialQuiz")
+    @JsonBackReference
+    private RecordedVideo video;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinTable(name = "special_quiz_student",
@@ -75,6 +81,14 @@ public class SpecialQuiz {
 
     public void setMcqLink(String mcqLink) {
         this.mcqLink = mcqLink;
+    }
+
+    public RecordedVideo getVideo() {
+        return video;
+    }
+
+    public void setVideo(RecordedVideo video) {
+        this.video = video;
     }
 
     public String geteAndSLink() {
