@@ -45,30 +45,47 @@ public class SpecialQuizServiceImpl implements SpecialQuizService{
     }
 
     @Override
+    @Transactional
     public SpecialQuiz getSpecialQuizByVideoId(int id) {
         return specialQuizDAO.getSpecialQuizByVideoId(id);
     }
 
     //Methods for marks-and-access : ManyToMany
     @Override
+    @Transactional
     public void saveOrUpdateStudentMarks(Student student) {
         specialQuizDAO.saveOrUpdateStudentMarks(student);
 
     }
 
     @Override
+    @Transactional
     public void deleteStudentMarks(int student_id, int quiz_id) {
         specialQuizDAO.deleteStudentMarks(student_id, quiz_id);
 
     }
 
     @Override
+    @Transactional
     public List<Student> getStudentByQuizId(int quiz_id) {
         return specialQuizDAO.getStudentByQuizId(quiz_id);
     }
 
     @Override
+    @Transactional
     public Student getStudentMarksByQuizId(int student_id, int quiz_id) {
         return specialQuizDAO.getStudentMarksByQuizId(student_id, quiz_id);
+    }
+
+    @Override
+    @Transactional
+    public SpecialQuiz getLastSpecialQuiz() {
+        return specialQuizDAO.getLastSpecialQuiz();
+    }
+
+    @Override
+    @Transactional
+    public SpecialQuiz getSpecialQuizByQuizId(int id) {
+        return specialQuizDAO.getSpecialQuizByQuizId(id);
     }
 }
