@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -42,6 +43,9 @@ public class TeacherController {
     @Autowired
     private SpecialQuizService specialQuizService;
 
+    @Autowired
+    private RecordedVideoService recordedVideoService;
+
 
     @GetMapping("")
     public String showTeacherProfilePage(Model model) {
@@ -70,7 +74,6 @@ public class TeacherController {
         model.addAttribute("notifications", notifications);
         return "notification-view";
     }
-
 
 
     @GetMapping("/marks-and-access")
@@ -147,27 +150,39 @@ public class TeacherController {
 
 
     @GetMapping("/special-quizzes")
-    public String showAddQuizPage(Model model) {
+    public String showAddQuizPage(@RequestParam("recordedVideoId") int id, Model model) {
         int teacherId = userService.getLoggedUserId();
-        List<SpecialQuiz> specialQuizList = specialQuizService.getSpecialQuizByTeacherId(teacherId); // TODO Must pass Teacher Id
-        model.addAttribute("specialQuizList", specialQuizList);
+        SpecialQuiz quiz = specialQuizService.getSpecialQuizByVideoId(id); // TODO Must pass Teacher Id
+        model.addAttribute("specialQuiz", quiz);
         model.addAttribute("specialQuizLink", new SpecialQuiz());
         return "add-special-quiz";
     }
 
 
     @PostMapping("/special-quiz-link/save")
-    public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz) {
+    public String saveSpecialQuizLink(@ModelAttribute("specialQuizLink") SpecialQuiz specialQuiz, @RequestParam("videoId") int id, RedirectAttributes redirectAttributes) {
+
+        RecordedVideo video = recordedVideoService.getVideoById(id);
 
         specialQuiz.setTeacher(teacherService.getTeacherById(userService.getLoggedUserId()));
         specialQuizService.saveOrUpdateSpecialQuiz(specialQuiz);
+        SpecialQuiz quiz = specialQuizService.getLastSpecialQuiz();
+        video.setSpecialQuiz(quiz);
+        recordedVideoService.saveOrUpdate(video);
+
+        redirectAttributes.addAttribute("recordedVideoId", id);
+
         return "redirect:/teachers/special-quizzes";
     }
 
 
     @GetMapping("/special-quiz/delete")
-    public String deleteSpecialQuiz(@RequestParam("specialQuizId") int id) {
+    public String deleteSpecialQuiz(@RequestParam("specialQuizId") int id, RedirectAttributes redirectAttributes) {
+        SpecialQuiz specialQuiz = specialQuizService.getSpecialQuizByQuizId(id);
+        int vidId = specialQuiz.getVideo().getId();
         specialQuizService.deleteSpecialQuiz(id);
+
+        redirectAttributes.addAttribute("recordedVideoId", vidId);
         return "redirect:/teachers/special-quizzes";
     }
 
