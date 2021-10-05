@@ -101,16 +101,29 @@ public class ReportController {
     @GetMapping("/comment-analysis")
     public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
 
-        String maxName = null;
-        String minName = null;
+
+        String pieDes = null;
         int userId = userService.getLoggedUserId();
         List list = teacherService.getCommentCountForCourses(userId);
         if (list.size() > 0) {
             Object[] max = (Object[]) list.get(0);
-            maxName = (String) max[1];
+            String maxName = (String) max[1];
 
             Object[] min = (Object[]) list.get(list.size() - 1);
-            minName = (String) min[1];
+            String minName = (String) min[1];
+            StringBuilder sb = new StringBuilder("");
+            sb.append("      The pie chart above will give you a broad idea of how comments in your courses will behave on a more detailed level. The ");
+            sb.append(maxName);
+            sb.append(" course, on the other hand, appears to be the most popular of your courses, according to the comment analysis. In addition, based to the parameters outlined above, the ");
+            sb.append(minName);
+            sb.append(" course garnered the lowest percentage of comments from your students across all of your courses. ");
+            sb.append(System.lineSeparator());
+            sb.append("In summary, our system suggests focusing more on the ");
+            sb.append(minName);
+            sb.append(" course and improving it");
+
+            pieDes = sb.toString();
+
         }
 
         Resource resource1 = new ClassPathResource("reports/comment-report-1.jrxml");
@@ -120,8 +133,8 @@ public class ReportController {
 
         HashMap<String, Object> map1 = new HashMap<String, Object>();
         map1.put("teacherId", userId);
-        map1.put("maxCourseName", maxName);
-        map1.put("minCourseName", minName);
+        map1.put("description", pieDes);
+
 
         JasperPrint report1 = JasperFillManager.fillReport(compileReport1, map1, dataSource.getConnection());
 
