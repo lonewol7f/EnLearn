@@ -503,11 +503,11 @@
                                                         </c:forEach>
                                                         <li>
                                                             <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
+<%--                                                                <div class="col">--%>
+<%--                                                                    <h4 class="mg-md no-margin">--%>
+<%--                                                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes">Quiz</a><br>--%>
+<%--                                                                    </h4>--%>
+<%--                                                                </div>--%>
                                                                 <div class="col">
                                                                     <a href="#"
                                                                        class="btn float-lg-right btn-wire float-sm-right float-right"
@@ -626,11 +626,11 @@
                                                         </c:forEach>
                                                         <li>
                                                             <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
+<%--                                                                <div class="col">--%>
+<%--                                                                    <h4 class="mg-md no-margin">--%>
+<%--                                                                        <a href="index.jsp">Quiz</a><br>--%>
+<%--                                                                    </h4>--%>
+<%--                                                                </div>--%>
                                                                 <div class="col">
                                                                     <a href="#"
                                                                        class="btn float-lg-right btn-wire float-sm-right float-right"
@@ -682,11 +682,11 @@
                                                         </c:forEach>
                                                         <li>
                                                             <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
+<%--                                                                <div class="col">--%>
+<%--                                                                    <h4 class="mg-md no-margin">--%>
+<%--                                                                        <a href="index.jsp">Quiz</a><br>--%>
+<%--                                                                    </h4>--%>
+<%--                                                                </div>--%>
                                                                 <div class="col">
                                                                     <a href="#"
                                                                        class="btn float-lg-right btn-wire float-sm-right float-right"
@@ -738,11 +738,11 @@
                                                         </c:forEach>
                                                         <li>
                                                             <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
+<%--                                                                <div class="col">--%>
+<%--                                                                    <h4 class="mg-md no-margin">--%>
+<%--                                                                        <a href="${pageContext.request.contextPath}/quiz-select-page">Quiz</a><br>--%>
+<%--                                                                    </h4>--%>
+<%--                                                                </div>--%>
                                                                 <div class="col">
                                                                     <a href="#"
                                                                        class="btn float-lg-right btn-wire float-sm-right float-right"
@@ -794,11 +794,11 @@
                                                         </c:forEach>
                                                         <li>
                                                             <div class="row">
-                                                                <div class="col">
-                                                                    <h4 class="mg-md no-margin">
-                                                                        <a href="index.jsp">Quiz</a><br>
-                                                                    </h4>
-                                                                </div>
+<%--                                                                <div class="col">--%>
+<%--                                                                    <h4 class="mg-md no-margin">--%>
+<%--                                                                        <a href="index.jsp">Quiz</a><br>--%>
+<%--                                                                    </h4>--%>
+<%--                                                                </div>--%>
                                                                 <div class="col">
                                                                     <a href="#"
                                                                        class="btn float-lg-right btn-wire float-sm-right float-right"
