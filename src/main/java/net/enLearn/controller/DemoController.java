@@ -1,6 +1,7 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Course;
+import net.enLearn.entity.FreeQuiz;
 import net.enLearn.entity.User;
 import net.enLearn.service.CourseService;
 import net.enLearn.service.FreeQuizService;
@@ -88,6 +89,9 @@ public class DemoController {
     @GetMapping("/browse")
     public String showCourseList(Model model) {
         List<Course> courseList = courseService.getCourseList();
+        List<FreeQuiz> freeQuizList = freeQuizService.getFreeQuizList();
+
+        model.addAttribute("freeQuizList", freeQuizList);
         model.addAttribute("courseList", courseList);
         return "course-list";
     }
