@@ -75,68 +75,26 @@
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="nav-40313-content-1" role="tabpanel"
                                      aria-labelledby="nav-40313-content-1">
-                                <%--TODO Scroll div--%>
+                                    <%--TODO Scroll div--%>
                                     <div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
+                                        <c:if test="${fn:length(notifications) > 0}">
+                                            <c:forEach var="notification" items="${notifications}">
+                                                <c:url var="videoLink" value="/courses/videos">
+                                                    <c:param name="videoId" value="${notification.comment.video.id}"/>
+                                                </c:url>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+                                                            <button class="btn" onclick="window.location.href='${videoLink}'">
+                                                                <p class="ml-5">
+                                                                    <strong>${notification.comment.user.firstName}&nbsp;${notification.comment.user.lastName}</strong> commented on your video: ${notification.comment.video.title}
+                                                                </p>
+                                                            </button>
+                                                        </div>
                                                     </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col">
-                                                <div>
-                                                    <div class="blockquote">
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, adipiscing elit Aenean commodo
-                                                            ligula eget.
-                                                        </p>
-                                                    </div>
-                                                    <a href="index.jsp"
-                                                       class="btn btn-lg float-lg-right btn-77-style btn-wire">Go to
-                                                        Video</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                            </c:forEach>
+                                        </c:if>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade-tab-bs" id="nav-40313-content-2" role="tabpanel"
