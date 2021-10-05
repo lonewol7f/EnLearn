@@ -83,14 +83,21 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO {
     }
 
     //Methods for marks-and-access : ManyToMany
-    @Override
-    public void saveOrUpdateStudentMarks(Student student) {
 
-        // get current session
+
+    @Override
+    public void saveOrUpdateStudentMarks(int studentId, int quizId, int marks, boolean status) {
         Session session = sessionFactory.getCurrentSession();
 
-        session.saveOrUpdate(student);
+        Query query = session.createSQLQuery("insert into special_quiz_student(quiz_id, student_id, student_mark, access_status) " +
+                "VALUES (:quizId, :studentId, :marks, :status)");
 
+        query.setParameter("quizId", quizId);
+        query.setParameter("studentId", studentId);
+        query.setParameter("marks", marks);
+        query.setParameter("status", status);
+
+        query.executeUpdate();
     }
 
     @Override
