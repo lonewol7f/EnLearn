@@ -20,7 +20,7 @@ public class Teacher extends User{
     @JsonBackReference
     private int salary;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "teacher", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "teacher", cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     @JsonBackReference
     private List<Notification> notifications;
