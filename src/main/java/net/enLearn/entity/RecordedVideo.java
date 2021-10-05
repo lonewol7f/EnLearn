@@ -34,7 +34,7 @@ public class RecordedVideo {
     @JsonBackReference
     private List<Comment> comments;
 
-    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "quiz_id")
     @JsonBackReference
     private SpecialQuiz specialQuiz;
