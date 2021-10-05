@@ -1,7 +1,9 @@
 package net.enLearn.controller;
 
+import net.enLearn.entity.Advertisement;
 import net.enLearn.entity.Discount;
 import net.enLearn.reportView.DiscountReportView;
+import net.enLearn.service.AdvertisementService;
 import net.enLearn.service.DiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +33,10 @@ public class DiscountController {
 
     @Autowired
     private DiscountService disService; //Service class reference to create Object from service class
+
+    //Advertisement
+    @Autowired
+    AdvertisementService advertisementService;
 
 
 
@@ -135,6 +141,13 @@ public class DiscountController {
     public String showShopPage(Model model) {
         List<Discount> discount = disService.getAllDiscountByAdminId();
         model.addAttribute("showCard",discount);
+
+        int advertiser_id = 4;
+
+        //Display Advertisements
+        List<Advertisement> displayallAdvertisements = advertisementService.getAllAdvertisements(advertiser_id);
+        model.addAttribute("allAdvertisements",displayallAdvertisements);
+
         return "shop";
     }
 
