@@ -29,6 +29,9 @@ public class SpecialQuiz {
     @Column(name = "e_and_s_link")
     private String eAndSLink;
 
+    @Column(name = "submit_link")
+    private String submitLink;
+
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
@@ -82,6 +85,14 @@ public class SpecialQuiz {
         this.eAndSLink = eAndSLink;
     }
 
+    public String getSubmitLink() {
+        return submitLink;
+    }
+
+    public void setSubmitLink(String submitLink) {
+        this.submitLink = submitLink;
+    }
+
     public Teacher getTeacher() {
         return teacher;
     }
@@ -97,5 +108,6 @@ public class SpecialQuiz {
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
+
 }
 
