@@ -37,7 +37,7 @@
     <!-- bloc-0 END -->
 
     <div class="bloc l-bloc" id="bloc-8">
-        <div class="container bloc-lg" style="background: #94ee94; padding: 30px;margin-top: 40px;">
+        <div class="container bloc-lg" style="background: #7575aa; padding: 30px;margin-top: 40px;">
             <div class="row">
                 <div class="col">
                     <h3 class="mg-md" style="text-align: center;">
