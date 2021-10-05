@@ -241,6 +241,7 @@
                     </div>
                 </div>
             </div>
+            <c:forEach var="adverisement" items="${allAdvertisements}">
             <div class="row">
                 <div class="col">
                     <div id="carousel-2" class="carousel slide" data-ride="carousel">
@@ -258,16 +259,16 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
-                                <img class="d-inline-block w-100" alt="slide 1" src="../../resources/img/placeholder-image-wide.png" />
+                                <img class="d-inline-block w-100" alt="slide 1" src = <c:out value="${adverisement.image}" />
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
                                         <p class="text-lg-left">
-                                            This Area is for Advertising.
+                                            <c:out value="${adverisement.description}" />
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <%--<div class="carousel-item">
                                 <img alt="slide 2" class="d-inline-block w-100" src="../../resources/img/placeholder-image-wide.png" />
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
@@ -276,8 +277,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
+                            </div>--%>
+                           <%-- <div class="carousel-item">
                                 <img class="d-inline-block w-100" alt="slide 3" src="../../resources/img/placeholder-image-wide.png" />
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
@@ -286,8 +287,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
+                            </div>--%>
+                            <%--<div class="carousel-item">
                                 <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote">
@@ -296,8 +297,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item">
+                            </div>--%>
+                            <%--<div class="carousel-item">
                                 <img class="d-inline-block w-100" alt="placeholder image-wide" src="../../resources/img/placeholder-image-wide.png" />
                                 <div class="carousel-caption caption-area-shop">
                                     <div class="blockquote text-lg-left">
@@ -306,11 +307,12 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                         </div><a class="carousel-nav-controls carousel-control-prev" href="#carousel-2" role="button" data-slide="prev"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-prev-icon" d="M22,2L9,16,22,30"></path></svg><span class="sr-only">Previous</span></a><a class="carousel-nav-controls carousel-control-next" href="#carousel-2" role="button" data-slide="next"><svg width="26" height="26" viewBox="0 0 32 32"><path class="carousel-nav-icon carousel-next-icon" d="M10.344,2l13,14-13,14"></path></svg><span class="sr-only">Next</span></a>
                     </div>
                 </div>
             </div>
+            </c:forEach>
         </div>
     </div>
     <!-- bloc-12 END -->
