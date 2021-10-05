@@ -53,13 +53,11 @@
                         <div class="row">
                             <div class="col">
                                 <div class="text-center">
-                                    <a href="${pageContext.request.contextPath}/teachers/Teacher-Income_report" class="btn btn-d btn-lg btn-block" >Teacher Income Report</a>
-                                    <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
+                                    <a href="${pageContext.request.contextPath}/admins/expensePDFReport" class="btn btn-d btn-lg btn-block" >Expense Report</a>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="text-center">
-                                    <a href="${pageContext.request.contextPath}/admins/admin-report" class="btn btn-d btn-lg btn-block" >Admin Income Report</a>
                                     <a href="${pageContext.request.contextPath}/#" class="btn btn-d btn-lg btn-block" >#</a>
                                 </div>
                             </div>

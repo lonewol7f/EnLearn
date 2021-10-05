@@ -77,7 +77,6 @@
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/students">User Profile</a>
                                 <a class="dropdown-item"  href="${pageContext.request.contextPath}/advertisers">Advertiser Profile</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers" >Teacher Profile Page</a>
-                                <a class="dropdown-item " href="${pageContext.request.contextPath}/Salaries" >Salaries</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/admins">Admin Panel</a>
                                 <a class="dropdown-item " href="${pageContext.request.contextPath}/teachers/notifications">Notifications</a>

@@ -151,10 +151,7 @@ public class TeacherController {
         return "add-special-quiz";
     }
 
-    @GetMapping("/Teacher-Income_report")
-    public String showTeacherIncomeReportPage() {
-        return "Teacher-Income-Report";
-    }
+
 
 
     @RequestMapping(path = "/register", method = RequestMethod.POST)
