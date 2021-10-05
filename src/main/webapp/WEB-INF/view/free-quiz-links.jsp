@@ -102,7 +102,7 @@
                         </div>
                         <div class="col">
                             <a
-                                    class="btn btn-d btn-lg float-lg-right remove-btn btn-clean"
+                                    class="btn btn-success btn-lg float-lg-right remove-btn btn-clean"
                                     id="myBtn">Add More Free Quiz</a>
                         </div>
                     </div>
