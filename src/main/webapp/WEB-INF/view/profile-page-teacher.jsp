@@ -46,9 +46,6 @@
                             <h4 class="mg-md no-margin">
                                 Expertiese level
                             </h4>
-                            <h5 class="mg-md no-margin">
-                                Expertiese level
-                            </h5>
                             <div class="divider-h">
                                 <span class="divider"></span>
                             </div>

@@ -137,7 +137,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <h4 class="mg-md">
-                                            by <a href="index.jsp">ara sir</a>
+                                            by <a href="#">${course.teacher.firstName}&nbsp;${course.teacher.lastName}</a>
                                         </h4>
                                         <h6 class="mg-md">
                                             <br>

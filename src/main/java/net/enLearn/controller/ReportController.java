@@ -1,10 +1,7 @@
 package net.enLearn.controller;
 
 import net.enLearn.entity.Event;
-import net.enLearn.service.EventService;
-import net.enLearn.service.RedeemCodeService;
-import net.enLearn.service.TeacherService;
-import net.enLearn.service.UserService;
+import net.enLearn.service.*;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +43,9 @@ public class ReportController {
 
     @Autowired
     private DataSource dataSource;
+
+    @Autowired
+    private ZoomClassService zoomClassService;
 
     @GetMapping("/single-event")
     public ResponseEntity<byte[]> generateSingleEventReport(@RequestParam("eventId") int id) throws Exception, JRException {
@@ -98,6 +98,7 @@ public class ReportController {
 
     }
 
+
     @GetMapping("/comment-analysis")
     public ResponseEntity<byte[]> generateCommentAnalyzeReport() throws Exception, JRException {
 
@@ -129,5 +130,27 @@ public class ReportController {
         return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
     }
 
+
+    @GetMapping("/zoom-class-report")
+    public ResponseEntity<byte[]> generateZoomClassReport(@RequestParam("courseId") int courseId) throws Exception, JRException {
+
+        Resource resource = new ClassPathResource("reports/zoom-classes.jrxml");
+        File file = resource.getFile();
+
+        JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream(file));
+
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("courseId", courseId);
+
+        JasperPrint report = JasperFillManager.fillReport(compileReport,map, dataSource.getConnection());
+
+        byte[] data = JasperExportManager.exportReportToPdf(report);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=zoom-class-timetable.pdf");
+
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
+
+    }
 
 }

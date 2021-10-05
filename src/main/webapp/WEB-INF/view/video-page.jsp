@@ -133,20 +133,19 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <h4 class="mg-md">
-                                            Heading content
+                                            About Teacher
                                         </h4>
                                     </div>
                                     <div class="col">
                                         <div class="row">
                                             <div class="col-lg-4">
-                                                <img src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
-                                                     data-src="${pageContext.request.contextPath}/resources/img/placeholder-user.png"
+                                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/a356cca4-fad9-4d98-bc8e-940cba7abf0e.jpeg"
                                                      class="img-fluid rounded-circle mx-auto d-block img-placeholder-us-style lazyload"
                                                      alt="placeholder user"/>
                                             </div>
                                             <div class="col offset-lg-0">
                                                 <h4 class="mg-md">
-                                                    Heading content
+                                                    ${course.teacher.firstName}&nbsp;${course.teacher.lastName}
                                                 </h4>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
