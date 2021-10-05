@@ -50,6 +50,8 @@ public class RecordedVideoDAOImpl implements RecordedVideoDAO{
         Session session = sessionFactory.getCurrentSession();
         RecordedVideo recordedVideo = session.get(RecordedVideo.class, id);
         recordedVideo.getCourse().getVideos().remove(recordedVideo);
+        recordedVideo.getSpecialQuiz().getTeacher().getSpecialQuizList().remove(recordedVideo.getSpecialQuiz());
+        recordedVideo.setSpecialQuiz(null);
         for (Comment comment : recordedVideo.getComments()) {
             comment.getUser().getComments().clear();
             comment.getNotification().getTeacher().getNotifications().clear();
