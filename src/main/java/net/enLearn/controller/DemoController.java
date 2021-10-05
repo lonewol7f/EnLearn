@@ -58,10 +58,6 @@ public class DemoController {
     }
 
 
-    @GetMapping("/Salaries")
-    public String showSalariesPage() {
-        return "Salaries";
-    }
 
     @GetMapping("/report")
     public String showReportPage() {
