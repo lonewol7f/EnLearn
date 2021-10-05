@@ -51,7 +51,7 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO {
         Session session = sessionFactory.getCurrentSession();
 
         SpecialQuiz specialQuiz = session.get(SpecialQuiz.class, id);
-        specialQuiz.getTeacher().getSpecialQuizList().remove(id);
+        specialQuiz.getTeacher().getSpecialQuizList().remove(specialQuiz);
 
         session.delete(specialQuiz);
 
@@ -103,8 +103,8 @@ public class SpecialQuizDAOImpl implements SpecialQuizDAO {
         SpecialQuiz specialQuiz = session.get(SpecialQuiz.class, quiz_id);
         specialQuiz.getStudentList().remove(quiz_id);
 
-        session.delete(student_id);
-        session.delete(quiz_id);
+        session.delete(student);
+        session.delete(specialQuiz);
 
     }
 
