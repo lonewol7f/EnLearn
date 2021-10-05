@@ -29,7 +29,45 @@
           rel='stylesheet' type='text/css'>
     <title>notification-view</title>
 
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
 
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
     <!-- Analytics -->
 
     <!-- Analytics END -->
@@ -76,6 +114,7 @@
                                 <div class="tab-pane fade show active" id="nav-40313-content-1" role="tabpanel"
                                      aria-labelledby="nav-40313-content-1">
                                     <%--TODO Scroll div--%>
+
                                     <div>
                                         <c:if test="${fn:length(notifications) > 0}">
                                             <c:forEach var="notification" items="${notifications}">
@@ -85,9 +124,17 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div>
-                                                            <button class="btn" onclick="window.location.href='${videoLink}'">
+
+                                                            <button class="modalPopupBtn">
                                                                 <p class="ml-5">
-                                                                    <strong>${notification.comment.user.firstName}&nbsp;${notification.comment.user.lastName}</strong> commented on your video: ${notification.comment.video.title}
+                                                                    <strong>${notification.comment.user.firstName}&nbsp;${notification.comment.user.lastName}</strong>
+                                                                    commented on your
+                                                                    video: ${notification.comment.video.title}
+                                                                <div style="display:none;">
+                                                                    <span class="commentIdSingle">${notification.comment.id}</span>
+                                                                    <span class="commentSingle">${notification.comment.comment}</span>
+                                                                    <span class="videoLinkSingle">${notification.comment.video.videoLink}</span>
+                                                                </div>
                                                                 </p>
                                                             </button>
                                                         </div>
@@ -151,12 +198,47 @@
 <!-- Main container END -->
 
 
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <p id="singleIDComment"></p>
+        <p id="singleComment"></p>
+        <p id="singleLinkVideo"></p>
+        <button id="closeModal">Close</button>
+    </div>
+
+</div>
+
 <!-- Additional JS -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js?8669"></script>
 <script src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.js?9765"></script>
 <script src="${pageContext.request.contextPath}/resources/js/blocs.js?5117"></script>
 <script src="${pageContext.request.contextPath}/resources/js/lazysizes.min.js" defer></script><!-- Additional JS END -->
+<script>
+    var modal = document.getElementById("myModal");
+    var btns = document.querySelectorAll(".modalPopupBtn");
+    var span = document.getElementById("closeModal");
 
+    btns.forEach(function (btn, index) {
+        btn.onclick = function () {
+            modal.style.display = "block";
+
+            document.getElementById("singleIDComment").innerHTML = document.querySelectorAll(".commentIdSingle")[index].innerHTML;
+            document.getElementById("singleComment").innerHTML = document.querySelectorAll(".commentSingle")[index].innerHTML;
+            document.getElementById("singleLinkVideo").innerHTML = document.querySelectorAll(".videoLinkSingle")[index].innerHTML;
+        }
+    })
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>
