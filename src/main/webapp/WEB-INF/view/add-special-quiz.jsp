@@ -117,6 +117,15 @@
                                         id="myBtn">Add More Special Quiz
                                 </button>
                             </c:if>
+                            <c:if test="${specialQuiz != null}">
+                                <c:url var="addMarksLink" value="/teachers/marks-and-access">
+                                    <c:param name="quizId" value="${specialQuiz.id}"/>
+                                </c:url>
+                                <button onclick="window.location.href='${addMarksLink}'" type="button" class="btn btn-success mb-3"
+                                        style="position:relative; bottom: 16%"
+                                        id="adMarksBtn">Add Marks
+                                </button>
+                            </c:if>
 
                             <img class="img-fluid lazyload test-img" style="position:relative; left: 60%"
                                  src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
