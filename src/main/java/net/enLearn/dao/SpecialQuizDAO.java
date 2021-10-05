@@ -16,6 +16,8 @@ public interface SpecialQuizDAO {
     void deleteSpecialQuiz(int id);
     List<SpecialQuiz> getSpecialQuizByTeacherId(int id);
     SpecialQuiz getSpecialQuizByVideoId(int id);
+    SpecialQuiz getLastSpecialQuiz();
+    SpecialQuiz getSpecialQuizByQuizId(int id);
 
     //marks-and-access - many-to-many relationship
     void saveOrUpdateStudentMarks(Student student);
