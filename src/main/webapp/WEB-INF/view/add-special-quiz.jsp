@@ -16,7 +16,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow"/>
     <link rel="shortcut icon" type="image/png" href="${pageContext.request.contextPath}/resources/img/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/bootstrap.css?1588">
@@ -44,9 +44,10 @@
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-clip: padding-box;
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
         }
+
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
@@ -54,11 +55,12 @@
             padding: 20px;
             border: 1px solid #888;
             width: 50%; /* Could be more or less, depending on screen size */
-            max-width: 60% ;
+            max-width: 60%;
             height: 75%;
             max-height: 80%;
 
         }
+
         /* The Close Button */
         .close {
             color: #aaa;
@@ -66,6 +68,7 @@
             font-size: 28px;
             font-weight: bold;
         }
+
         .close:hover,
         .close:focus {
             color: black;
@@ -89,7 +92,7 @@
 <div class="page-container">
 
     <!-- bloc-0 -->
-    <%@include file="header.jsp"%>
+    <%@include file="header.jsp" %>
     <!-- bloc-0 END -->
 
     <!-- bloc-7 -->
@@ -100,78 +103,84 @@
                     <div class="row">
 
                         <div class="grid ">
-                            <a href="${pageContext.request.contextPath}/courses/add-courses" class="btn btn-lg go-back-btn btn-wire">Go Back</a>
+                            <a href="${pageContext.request.contextPath}/courses/add-courses"
+                               class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
-                            <button type="button" class="btn btn-success mb-3" style="position:relative; bottom: 16%" id="myBtn">Add More Special Quiz</button>
+                            <c:if test="${specialQuiz == null}">
+                                <button type="button" class="btn btn-success mb-3"
+                                        style="position:relative; bottom: 16%"
+                                        id="myBtn">Add More Special Quiz
+                                </button>
+                            </c:if>
 
-                            <img class="img-fluid lazyload test-img" style="position:relative; left: 60%" src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png" data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png" width="120px" height="120px" alt="reshot-illustration-woman-thinking-quizzes" />
+                            <img class="img-fluid lazyload test-img" style="position:relative; left: 60%"
+                                 src="${pageContext.request.contextPath}/resources/img/lazyload-ph.png"
+                                 data-src="${pageContext.request.contextPath}/resources/img/reshot-illustration-woman-thinking-quizzes.png"
+                                 width="120px" height="120px" alt="reshot-illustration-woman-thinking-quizzes"/>
                         </div>
 
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div>
-                                <h3 class="mg-md no-margin">
-                                    MCQ
-                                </h3>
-                                <div class="divider-h">
-                                    <span class="divider"></span>
-                                </div>
-                                <div class="row">
-                                    <c:forEach var="specialQuizList" items="${specialQuizList}">
-
-                                        <%-- construct an 'delete' link with free quiz id --%>
+                    <c:if test="${specialQuiz != null}">
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <h3 class="mg-md no-margin">
+                                        MCQ
+                                    </h3>
+                                    <div class="divider-h">
+                                        <span class="divider"></span>
+                                    </div>
+                                    <div class="row">
+                                            <%-- construct an 'delete' link with free quiz id --%>
                                         <c:url var="deleteLink" value="/teachers/special-quiz/delete">
-                                            <c:param name="specialQuizId" value="${specialQuizList.id}"/>
+                                            <c:param name="specialQuizId" value="${specialQuiz.id}"/>
                                         </c:url>
 
                                         <div class="row">
                                             <div class="col-lg-8">
                                                 <div class="blockquote container-div-style">
                                                     <label>
-                                                            ${specialQuizList.mcqLink}
+                                                            ${specialQuiz.mcqLink}
                                                     </label>
                                                 </div>
                                             </div>
 
                                         </div>
-                                    </c:forEach>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col">
-                            <div>
-                                <h3 class="mg-md no-margin">
-                                    Essay + Structured
-                                </h3>
-                                <div class="divider-h">
-                                    <span class="divider"></span>
-                                </div>
-
-                                <c:forEach var="specialQuizList" items="${specialQuizList}">
-
-                                    <%-- construct an 'delete' link with free quiz id --%>
+                            <div class="col">
+                                <div>
+                                    <h3 class="mg-md no-margin">
+                                        Essay + Structured
+                                    </h3>
+                                    <div class="divider-h">
+                                        <span class="divider"></span>
+                                    </div>
+                                        <%-- construct an 'delete' link with free quiz id --%>
                                     <c:url var="deleteLink" value="/teachers/special-quiz/delete">
-                                        <c:param name="specialQuizId" value="${specialQuizList.id}"/>
+                                        <c:param name="specialQuizId" value="${specialQuiz.id}"/>
                                     </c:url>
 
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="blockquote container-div-style">
                                                 <label>
-                                                        ${specialQuizList.eAndSLink}
+                                                        ${specialQuiz.eAndSLink}
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col">
-                                            <a href="${deleteLink}" class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
+                                            <a href="${deleteLink}"
+                                               class="btn btn-d btn-lg float-lg-right remove-btn btn-clean">Remove</a>
                                         </div>
                                     </div>
-                                </c:forEach>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:if>
+                    <%--TODO: aaaaa --%>
                 </div>
             </div>
         </div>
@@ -179,41 +188,43 @@
     <!-- bloc-7 END -->
 
     <div class="mx-5">
-    <div id="myModal" class="modal" >
+        <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-content max-w-md border-2 border-indigo-500">
-            <span class="close">&times;</span>
-            <h3 style="text-align: center">Add Special Quiz Links In Here</h3>
-            <div class="row">
-                <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="specialQuizLink">
+            <!-- Modal content -->
+            <div class="modal-content max-w-md border-2 border-indigo-500">
+                <span class="close">&times;</span>
+                <h3 style="text-align: center">Add Special Quiz Links In Here</h3>
+                <div class="row">
+                    <form:form action="/teachers/special-quiz-link/save" method="post" modelAttribute="specialQuizLink">
+                        <input type="hidden" value="${param.recordedVideoId}" name="videoId">
 
-                    <div class="form-group">
-                        <form:label path="mcqLink">MCQ Link</form:label>
-                        <form:input path="mcqLink" cssClass="form-control" type="url" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <form:label path="eAndSLink">Structured Link</form:label>
-                        <form:input path="eAndSLink" cssClass="form-control" type="url" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <form:label path="marksLimit">Marks Limit</form:label>
-                        <form:input path="marksLimit" cssClass="form-control" required="required"/>
-                    </div>
-                    <div class="form-group">
-                        <form:label path="submitLink">Submit Marks Link</form:label>
-                        <form:input path="submitLink" cssClass="form-control" type="url" required="required"/>
-                    </div>
+                        <div class="form-group">
+                            <form:label path="mcqLink">MCQ Link</form:label>
+                            <form:input path="mcqLink" cssClass="form-control" type="url" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <form:label path="eAndSLink">Structured Link</form:label>
+                            <form:input path="eAndSLink" cssClass="form-control" type="url" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <form:label path="marksLimit">Marks Limit</form:label>
+                            <form:input path="marksLimit" cssClass="form-control" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <form:label path="submitLink">Submit Marks Link</form:label>
+                            <form:input path="submitLink" cssClass="form-control" type="url" required="required"/>
+                        </div>
 
 
-                    <button type="submit" class="py-2 px-5 btn btn-primary btn-lg bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                        Add
-                    </button>
+                        <button type="submit"
+                                class="py-2 px-5 btn btn-primary btn-lg bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                            Add
+                        </button>
 
-                </form:form>
+                    </form:form>
+                </div>
             </div>
         </div>
-</div>
 
     </div>
 
@@ -242,17 +253,17 @@
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal
-    btn.onclick = function() {
+    btn.onclick = function () {
         modal.style.display = "block";
     }
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    span.onclick = function () {
         modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
