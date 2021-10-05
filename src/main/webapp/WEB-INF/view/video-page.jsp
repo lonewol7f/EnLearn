@@ -141,7 +141,8 @@
                                     <div class="col">
                                         <div class="row">
                                             <div class="col-lg-4">
-                                                <img src="../../resources/img/lazyload-ph.png" data-src="../../resources/img/a356cca4-fad9-4d98-bc8e-940cba7abf0e.jpeg"
+                                                <img src="../../resources/img/lazyload-ph.png"
+                                                     data-src="../../resources/img/a356cca4-fad9-4d98-bc8e-940cba7abf0e.jpeg"
                                                      class="img-fluid rounded-circle mx-auto d-block img-placeholder-us-style lazyload"
                                                      alt="placeholder user"/>
                                             </div>
@@ -261,11 +262,17 @@
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
-                                                                <div>
-                                                                    <div class="text-center">
-                                                                        <a href="${pageContext.request.contextPath}/courses/select-quizzes" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>
-                                                                    </div>
-                                                                </div>
+                                <c:if test="${recordedVideo.specialQuiz.id != null}">
+                                    <div>
+                                        <c:url var="quizLink" value="/courses/select-quizzes">
+                                            <c:param name="quizId" value="${recordedVideo.specialQuiz.id}"/>
+                                        </c:url>
+                                        <div class="text-center">
+                                            <a href="${quizLink}" class="btn btn-d btn-lg btn-59-style">Attempt Quiz</a>
+                                        </div>
+                                    </div>
+                                </c:if>
+                                <%--TODO : abcd--%>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
