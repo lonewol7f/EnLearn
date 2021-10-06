@@ -21,7 +21,7 @@ public interface SpecialQuizService {
 
     //marks-and-access - many-to-many relationship
 
-    void saveOrUpdateStudentMarks(Student student);
+    void saveOrUpdateStudentMarks(int studentId, int quizId, int marks, boolean status);
     void deleteStudentMarks(int student_id,int quiz_id);
     List<Student> getStudentByQuizId(int quiz_id);
     Student getStudentMarksByQuizId(int student_id,int quiz_id);

@@ -53,8 +53,8 @@ public class SpecialQuizServiceImpl implements SpecialQuizService{
     //Methods for marks-and-access : ManyToMany
     @Override
     @Transactional
-    public void saveOrUpdateStudentMarks(Student student) {
-        specialQuizDAO.saveOrUpdateStudentMarks(student);
+    public void saveOrUpdateStudentMarks(int studentId, int quizId, int marks, boolean status) {
+        specialQuizDAO.saveOrUpdateStudentMarks(studentId, quizId, marks, status);
 
     }
 

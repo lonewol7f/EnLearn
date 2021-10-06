@@ -68,6 +68,7 @@ public class CourseController {
         model.addAttribute("courseId", id);
         model.addAttribute("courseList", courseList);
         model.addAttribute("owned", owned);
+        model.addAttribute("created", course.getTeacher().getId() == userId);
         return "course-page";
     }
 

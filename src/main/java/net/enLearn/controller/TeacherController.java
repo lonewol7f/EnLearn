@@ -77,7 +77,10 @@ public class TeacherController {
 
 
     @GetMapping("/marks-and-access")
-    public String showMarksAndAccessPage(Model model) {
+    public String showMarksAndAccessPage(@RequestParam("quizId") int quizId, Model model) {
+
+        model.addAttribute("quizId", quizId);
+
         return "marks-and-access";
     }
 
@@ -185,6 +188,22 @@ public class TeacherController {
 
         redirectAttributes.addAttribute("recordedVideoId", vidId);
         return "redirect:/teachers/special-quizzes";
+    }
+
+    @PostMapping("/marks-and-access/save")
+    public String saveMarks(@RequestParam("studentId") int studentId, @RequestParam("quizId") int quizId,
+                            @RequestParam("marks") int marks, RedirectAttributes redirectAttributes) {
+
+        SpecialQuiz specialQuiz = specialQuizService.getSpecialQuizByQuizId(quizId);
+        boolean status = specialQuiz.getMarksLimit() <= marks;
+
+        specialQuizService.saveOrUpdateStudentMarks(studentId, quizId, marks, status);
+
+        redirectAttributes.addAttribute("recordedVideoId", specialQuiz.getVideo().getId());
+
+        return "redirect:/teachers/special-quizzes";
+
+
     }
 
 }

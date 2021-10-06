@@ -143,21 +143,22 @@
                         </div>
                     </div>
                     <div class="row">
-                        <form:form action="" method="post">
+                        <form:form action="/teachers/marks-and-access/save" method="post">
+                            <input type="hidden" name="quizId" value="${quizId}">
                             <div class="col-lg-7">
                                 <ul class="list-unstyled">
                                     <li>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="student id" />
+                                            <input class="form-control" placeholder="student id" name="studentId" />
                                         </div>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col">
+                            <div class="col-lg-7">
                                 <ul class="list-unstyled">
                                     <li>
                                         <div class="form-group">
-                                            <input class="form-control" placeholder="marks" />
+                                            <input class="form-control" placeholder="total marks"  name="marks"/>
                                         </div>
                                     </li>
                                 </ul>

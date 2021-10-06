@@ -99,7 +99,7 @@
                                                class="btn btn-d btn-lg btn-block">Create a course</a>
                                             <%--TODO--%>
                                             <a id="openModal"
-                                               class="btn btn-d btn-lg btn-block">Students Marks</a>
+                                               class="btn btn-d btn-lg btn-block">Reports</a>
                                         </div>
 
                                     </div>
@@ -203,8 +203,8 @@
         <div class="grid grid-rows-2 place-items-center gap-3">
 
             <div class="grid grid-cols-2 w-96 gap-3">
-                <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
-                    Option 1
+                <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80" onclick="window.location.href='reports/comment-analysis'">
+                    Comment Analysis
                 </button>
                 <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
                     Option 2
