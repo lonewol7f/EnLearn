@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @Repository
-public class RecordedVideoDAOImpl implements RecordedVideoDAO{
+public class RecordedVideoDAOImpl implements RecordedVideoDAO {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -50,7 +50,9 @@ public class RecordedVideoDAOImpl implements RecordedVideoDAO{
         Session session = sessionFactory.getCurrentSession();
         RecordedVideo recordedVideo = session.get(RecordedVideo.class, id);
         recordedVideo.getCourse().getVideos().remove(recordedVideo);
-        recordedVideo.getSpecialQuiz().getTeacher().getSpecialQuizList().remove(recordedVideo.getSpecialQuiz());
+        if (recordedVideo.getSpecialQuiz() != null) {
+            recordedVideo.getSpecialQuiz().getTeacher().getSpecialQuizList().remove(recordedVideo.getSpecialQuiz());
+        }
         recordedVideo.setSpecialQuiz(null);
         for (Comment comment : recordedVideo.getComments()) {
             comment.getUser().getComments().clear();
