@@ -172,4 +172,25 @@ public class ReportController {
 
     }
 
+    @GetMapping("/student-marks")
+    public ResponseEntity<byte[]> generateQuizClassReport() throws Exception, JRException {
+
+        Resource resource = new ClassPathResource("reports/students-marks.jrxml");
+        File file = resource.getFile();
+
+        JasperReport compileReport = JasperCompileManager.compileReport(new FileInputStream(file));
+
+        HashMap<String, Object> map = new HashMap<String, Object>();
+
+        JasperPrint report = JasperFillManager.fillReport(compileReport,map, dataSource.getConnection());
+
+        byte[] data = JasperExportManager.exportReportToPdf(report);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=marks-report.pdf");
+
+        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(data);
+
+    }
+
 }
