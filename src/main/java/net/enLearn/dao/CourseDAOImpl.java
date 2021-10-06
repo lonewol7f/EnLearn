@@ -46,7 +46,9 @@ public class CourseDAOImpl implements CourseDAO {
         Course course = session.get(Course.class, id);
         course.getTeacher().getCourseList().remove(course);
         for (RecordedVideo video :course.getVideos()) {
-            video.getSpecialQuiz().getTeacher().getSpecialQuizList().remove(video.getSpecialQuiz());
+            if (video.getSpecialQuiz() != null) {
+                video.getSpecialQuiz().getTeacher().getSpecialQuizList().remove(video.getSpecialQuiz());
+            }
             video.setSpecialQuiz(null);
             for (Comment comment : video.getComments()) {
                 comment.getUser().getComments().clear();
