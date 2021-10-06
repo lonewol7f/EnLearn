@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <h3 class="mg-md h3-13-style">
-                                Select Prefered Quiz Type
+                                Select Preferred Quiz Type
                             </h3>
                         </div>
                         <div class="col offset-lg-5">
