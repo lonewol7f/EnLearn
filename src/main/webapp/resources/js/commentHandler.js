@@ -27,10 +27,10 @@ function loadComments() {
                         '                <div class="col-6"></div>\n' +
                         '            </div>\n' +
                         '        </div>\n' +
-                        ' <div  class="grid grid-cols-2 gap-3">' +
-                        (response.data[index].user.id == userId ? '<div class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800"><a href="javascript:void(0);" onclick="deleteComment(' + response.data[index].id + ')">Delete</a></div>' : '') +
+                        ' <div  class="grid grid-cols-10 gap-3">' +
+                        (response.data[index].user.id == userId ? '<div><a class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800" href="javascript:void(0);" onclick="deleteComment(' + response.data[index].id + ')">Delete</a></div>' : '') +
                         '        <div id="rep' + response.data[index].id + '">\n' +
-                        '            <button onclick="addField(this.id)" class="m-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-gray-800" id="' + response.data[index].id + '">Reply</button>\n' +
+                        '            <button onclick="addField(this.id)" class="m-2 inline-flex items-center px-3 rounded-full text-sm font-medium bg-green-100 text-gray-800 relative bottom-1" id="' + response.data[index].id + '">Reply</button>\n' +
                         '        </div>\n' +
                         '</div>' +
                         '    </div>\n' +        // comment end
@@ -114,9 +114,13 @@ function addField(id) {
         '            <textarea class="form-control" id="replyBox' + id + '" placeholder="Type your reply..." rows="3"\n' +
         '                      style="resize: none;"></textarea>\n' +
         '            <div class="grid grid-cols-4">\n' +
-        '                <div class="col-start-3">' +
+        '                <div class="col-start-4 mt-2 grid grid-cols-2 gap-1">' +
+        '                   <div>' +
         '                   <button style="float: right" class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800" id="cancel' + id + '" onclick="cancelRep(this.id)">Cancel</button>' +
+        '</div>' +
+        '<div>' +
         '                   <button style="float: right" class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-gray-800" id="replybtn' + id + '" onclick="addReply(this.id)">Send</button>' +
+        '</div>' +
         '               </div>\n' +
         '            </div>' +
         '        </div>');
