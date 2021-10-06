@@ -14,7 +14,6 @@
 	student_mark AS marks,
 	access_status AS access
 FROM special_quiz_student
-Group by qId
 Order by qId]]>
 	</queryString>
 	<field name="qId" class="java.lang.Integer">
