@@ -20,9 +20,51 @@
           rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script&display=swap&subset=latin,latin-ext'
           rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css"
+          integrity="sha512-5D0ofs3AsWoKsspH9kCWlY7qGxnHvdN/Yz2rTNwD9L271Mno85s+5ERo03qk9SUNtdgOZ4A9t8kRDexkvnWByA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>profile-page-teacher</title>
     <!-- Analytics -->
     <!-- Analytics END -->
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <!-- Preloader -->
@@ -55,9 +97,11 @@
                                         <div class="text-center">
                                             <a href="${pageContext.request.contextPath}/teachers/create-courses"
                                                class="btn btn-d btn-lg btn-block">Create a course</a>
-                                            <a href="${pageContext.request.contextPath}/teachers/marks-and-access"
+                                            <%--TODO--%>
+                                            <a id="openModal"
                                                class="btn btn-d btn-lg btn-block">Students Marks</a>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="col">
@@ -76,25 +120,18 @@
                             <img src="../../resources/img/lazyload-ph.png"
                                  data-src="../../resources/img/e91b91aa-c033-4f41-b5aa-585a81bf4cd4.jpg"
                                  class="img-fluid rounded-circle mx-auto d-block lazyload"
-                                 alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7"/>
+                                 alt="b8d67043 5e4a-48ad-ad45-92f0a1352dc7">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <div class="divider-h">
+                            <div class=" divider-h ">
                                 <span class="divider"></span>
                             </div>
                             <h4 class="mg-md no-margin text-lg-center">
                                 Created Courses
                             </h4>
-                            <div>
-                                <div class="text-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1"
-                                         stroke="#000000" fill="none" stroke-linecap="butt" style="max-width:500px">
-                                        <path d="M2,25H498"></path>
-                                    </svg>
-                                </div>
-                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
@@ -159,6 +196,48 @@
     <%@include file="footer.jsp" %>
 </div>
 <!-- Main container END -->
+<div id="twobtnmodal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content max-w-min">
+        <div class="grid grid-rows-2 place-items-center gap-3">
+
+            <div class="grid grid-cols-2 w-96 gap-3">
+                <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
+                    Option 1
+                </button>
+                <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-80">
+                    Option 2
+                </button>
+            </div>
+            <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-80 closemodal ">Close</button>
+        </div>
+    </div>
+
+</div>
+<script>
+    var modal = document.getElementById("twobtnmodal");
+    var btn = document.getElementById("openModal");
+    var span = document.getElementsByClassName("closemodal")[0];
+
+    // When the user clicks on the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
 <!-- Additional JS -->
 <script src="../../resources/js/jquery.js?8669"></script>
 <script src="../../resources/js/bootstrap.bundle.js?9765"></script>
