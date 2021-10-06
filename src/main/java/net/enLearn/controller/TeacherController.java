@@ -155,6 +155,7 @@ public class TeacherController {
         SpecialQuiz quiz = specialQuizService.getSpecialQuizByVideoId(id); // TODO Must pass Teacher Id
         model.addAttribute("specialQuiz", quiz);
         model.addAttribute("specialQuizLink", new SpecialQuiz());
+        model.addAttribute("courseId", recordedVideoService.getVideoById(id).getCourse().getId());
         return "add-special-quiz";
     }
 
