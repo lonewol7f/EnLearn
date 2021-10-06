@@ -35,7 +35,7 @@
 
             $('.item').each(function (event) { /* select all divs with the item class */
 
-                var max_length = 150; /* set the max content length before a read more link will be added */
+                var max_length = 500; /* set the max content length before a read more link will be added */
 
                 if ($(this).html().length > max_length) { /* check for content length */
 
