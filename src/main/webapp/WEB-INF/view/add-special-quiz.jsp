@@ -195,6 +195,12 @@
                         </div>
                     </c:if>
                     <%--TODO: aaaaa --%>
+                    <c:if test="${specialQuiz == null}">
+                        <div class="text-center border border-2 rounded"
+                             style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 40px; width: fit-content">
+                            <p>No Quizzes Currently</p>
+                        </div>
+                    </c:if>
                 </div>
             </div>
         </div>
