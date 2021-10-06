@@ -273,11 +273,17 @@
                                     </div>
                                 </c:if>
                                 <%--TODO : abcd--%>
+                                <c:if test="${recordedVideo.specialQuiz.id == null}">
+                                    <div class="text-center border border-2 rounded"
+                                         style="padding: 50px; font-family: 'Ubuntu Mono'; font-size: 30px; width: fit-content">
+                                        <p>No Quizzes for this video</p>
+                                    </div>
+                                </c:if>
                                 <div class="divider-h">
                                     <span class="divider"></span>
                                 </div>
                                 <h3 class="mg-md">
-                                    <span class="fa fa-star"></span>Note 1
+                                    <span class="fa fa-star"></span>Quiz Guide
                                 </h3>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
