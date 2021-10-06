@@ -235,7 +235,7 @@
     </div>
     <!-- bloc-9 END -->
     <!-- zoom-list -->
-    <c:if test="${owned}">
+    <c:if test="${owned || created}">
         <c:if test="${param.type.equals('Zoom Class')}">
             <div class="bloc l-bloc" id="video-list">
                 <div class="container bloc-lg bloc-md-lg">

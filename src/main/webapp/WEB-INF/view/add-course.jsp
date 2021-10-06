@@ -94,6 +94,11 @@
                                             </c:url>
                                             <a style="width: 50%; alignment: left" href="${zoomCreateLink}"
                                                class="btn btn-d btn-lg btn-block">Add Zoom Class</a>
+                                            <c:url var="zoomReport" value="/reports/zoom-class-report">
+                                                <c:param name="courseId" value="${courseId}"/>
+                                            </c:url>
+                                            <a style="width: 50%; alignment: left" href="${zoomReport}"
+                                               class="btn btn-d btn-lg btn-block">Download Zoom Classes Timetable</a>
                                         </div>
                                     </div>
                                 </div>

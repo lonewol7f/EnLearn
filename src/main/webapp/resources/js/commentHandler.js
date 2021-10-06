@@ -27,7 +27,7 @@ function loadComments() {
                         '                <div class="col-6"></div>\n' +
                         '            </div>\n' +
                         '        </div>\n' +
-                        ' <div>' +
+                        ' <div  class="grid grid-cols-2 gap-3">' +
                         (response.data[index].user.id == userId ? '<div class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-gray-800"><a href="javascript:void(0);" onclick="deleteComment(' + response.data[index].id + ')">Delete</a></div>' : '') +
                         '        <div id="rep' + response.data[index].id + '">\n' +
                         '            <button onclick="addField(this.id)" class="m-2 inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-gray-800" id="' + response.data[index].id + '">Reply</button>\n' +
