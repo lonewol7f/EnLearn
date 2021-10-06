@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3881ef2c-6a46-405e-9e65-589cc47ae563">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="zoom"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Dataset1" uuid="a5e2f6d9-ea0c-4f2a-a867-1becb3243b34">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT quiz_id AS qId,
+	student_id AS sId,
+	student_mark AS marks,
+	access_status AS access
+FROM special_quiz_student
+Group by qId
+Order by qId]]>
+	</queryString>
+	<field name="qId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quiz_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="qId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="special_quiz_student"/>
+	</field>
+	<field name="sId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="student_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="sId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="special_quiz_student"/>
+	</field>
+	<field name="marks" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="student_mark"/>
+		<property name="com.jaspersoft.studio.field.label" value="marks"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="special_quiz_student"/>
+	</field>
+	<field name="access" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="access_status"/>
+		<property name="com.jaspersoft.studio.field.label" value="access"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="special_quiz_student"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="82" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="70" forecolor="#030303" backcolor="#EDEDED" uuid="2a6c9c79-72f4-4f7c-aa57-a0ed788d7864"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="70" uuid="ceea29c8-4d9e-4408-ba68-e765ec788026"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[EnLearn Institute]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="440" y="40" width="110" height="30" uuid="a65ec65b-ffd1-42fb-aae5-ef71c916ccb8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="10" y="9" width="100" height="60" uuid="365196c2-eb14-4260-8db4-346ea17fb3d2"/>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1PstaeQDosc7_YNPr5XpQr7LbQvm0bBXR"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement x="52" y="7" width="450" height="55" uuid="77e08df1-38a6-404b-b513-54fa718ad813"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student Marks List]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="6" width="140" height="41" uuid="847a791a-aa16-40bd-8816-e8c9ca721a81"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quiz ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="6" width="150" height="41" uuid="48e6a6f6-07fa-44ab-b923-077c53ad6c9e"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="6" width="135" height="41" uuid="3a024ec5-9d66-47df-8bca-5bfc65fdbb82"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Access Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="6" width="110" height="41" uuid="2451a550-09c1-43c0-b4dd-b9a289a3b4f8"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Student ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="140" height="31" uuid="de0fb077-6f5f-4047-8c5b-1cb97f06572a"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="1" width="150" height="31" uuid="c52767a7-ec51-478a-b862-dc6e48decf59"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="1" width="134" height="31" uuid="8af09810-6464-4a28-a57a-791ed793e2de"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{access}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="1" width="110" height="31" uuid="de775ecc-230e-489b-af8a-bcd5cf2dca61"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sId}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="55" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="33" width="350" height="30" forecolor="#FC0C08" uuid="0d4dba4e-bc3f-468d-88d0-e65e2995b0fa"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[*  This report was automatically generated by  EnLearn System]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
