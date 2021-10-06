@@ -102,8 +102,13 @@
                 <div class="col">
                     <div class="row">
 
+                        <c:url value="/courses/add-courses" var="backBtn">
+                            <c:param name="courseId" value="${courseId}"/>
+                            <c:param name="type" value="Recorded Video"/>
+                        </c:url>
+
                         <div class="grid ">
-                            <a href="${pageContext.request.contextPath}/courses/add-courses"
+                            <a href="${backBtn}"
                                class="btn btn-lg go-back-btn btn-wire">Go Back</a>
 
                             <c:if test="${specialQuiz == null}">
